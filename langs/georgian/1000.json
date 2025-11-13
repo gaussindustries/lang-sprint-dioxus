@@ -1,0 +1,15 @@
+[
+  {
+    "word": "და",
+    "def": "and",
+    "pos": "conjunction",
+    "freq": 1,
+    "example": "მე და შენ"
+  },
+  {
+    "word": "რომ",
+    "def": "that, which",
+    "pos": "relative pronoun",
+    "freq": 2
+  }
+]

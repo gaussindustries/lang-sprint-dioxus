@@ -1,0 +1,26 @@
+{
+  "name": "lang-sprint-dioxus",
+  "version": "1.0.0",
+  "description": "Your new jumpstart project includes basic organization with an organized `assets` folder and a `components` folder. If you chose to develop with the router feature, you will also have a `views` folder.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaussindustries/lang-sprint-dioxus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gaussindustries/lang-sprint-dioxus/issues"
+  },
+  "homepage": "https://github.com/gaussindustries/lang-sprint-dioxus#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  }
+}

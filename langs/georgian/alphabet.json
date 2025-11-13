@@ -1,0 +1,266 @@
+[
+  {
+    "letter": "ა",
+    "name": "ani",
+    "pron": "/ɑ/",
+    "audio": "a.mp3",
+    "finger": "little_left",
+    "key_code": "KeyQ"
+  },
+  {
+    "letter": "ბ",
+    "name": "bani",
+    "pron": "/b/",
+    "audio": "b.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyW"
+  },
+  {
+    "letter": "გ",
+    "name": "gani",
+    "pron": "/ɡ/",
+    "audio": "g.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyE"
+  },
+  {
+    "letter": "დ",
+    "name": "doni",
+    "pron": "/d/",
+    "audio": "d.mp3",
+    "finger": "index_left",
+    "key_code": "KeyR"
+  },
+  {
+    "letter": "ე",
+    "name": "eni",
+    "pron": "/ɛ/",
+    "audio": "e.mp3",
+    "finger": "index_left",
+    "key_code": "KeyT"
+  },
+  {
+    "letter": "ვ",
+    "name": "vini",
+    "pron": "/v/",
+    "audio": "v.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyY"
+  },
+  {
+    "letter": "ზ",
+    "name": "zeni",
+    "pron": "/z/",
+    "audio": "z.mp3",
+    "finger": "little_left",
+    "key_code": "KeyU"
+  },
+  {
+    "letter": "თ",
+    "name": "tani",
+    "pron": "/tʰ/",
+    "audio": "t.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyI"
+  },
+  {
+    "letter": "ი",
+    "name": "ini",
+    "pron": "/i/",
+    "audio": "i.mp3",
+    "finger": "index_left",
+    "key_code": "KeyO"
+  },
+  {
+    "letter": "კ",
+    "name": "k'ani",
+    "pron": "/kʼ/",
+    "audio": "k.mp3",
+    "finger": "index_right",
+    "key_code": "KeyP"
+  },
+  {
+    "letter": "ლ",
+    "name": "lasi",
+    "pron": "/l/",
+    "audio": "l.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyA"
+  },
+  {
+    "letter": "მ",
+    "name": "mani",
+    "pron": "/m/",
+    "audio": "m.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyS"
+  },
+  {
+    "letter": "ნ",
+    "name": "nari",
+    "pron": "/n/",
+    "audio": "n.mp3",
+    "finger": "index_left",
+    "key_code": "KeyD"
+  },
+  {
+    "letter": "ო",
+    "name": "oni",
+    "pron": "/ɔ/",
+    "audio": "o.mp3",
+    "finger": "index_left",
+    "key_code": "KeyF"
+  },
+  {
+    "letter": "პ",
+    "name": "p'ari",
+    "pron": "/pʼ/",
+    "audio": "p.mp3",
+    "finger": "index_right",
+    "key_code": "KeyG"
+  },
+  {
+    "letter": "ჟ",
+    "name": "zhani",
+    "pron": "/ʒ/",
+    "audio": "zh.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyH"
+  },
+  {
+    "letter": "რ",
+    "name": "rae",
+    "pron": "/r/",
+    "audio": "r.mp3",
+    "finger": "index_left",
+    "key_code": "KeyJ"
+  },
+  {
+    "letter": "ს",
+    "name": "sani",
+    "pron": "/s/",
+    "audio": "s.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyK"
+  },
+  {
+    "letter": "ტ",
+    "name": "t'ari",
+    "pron": "/tʼ/",
+    "audio": "t.mp3",
+    "finger": "index_left",
+    "key_code": "KeyL"
+  },
+  {
+    "letter": "უ",
+    "name": "uni",
+    "pron": "/u/",
+    "audio": "u.mp3",
+    "finger": "index_right",
+    "key_code": "KeyZ"
+  },
+  {
+    "letter": "ფ",
+    "name": "pari",
+    "pron": "/pʰ/",
+    "audio": "f.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyX"
+  },
+  {
+    "letter": "ქ",
+    "name": "kani",
+    "pron": "/kʰ/",
+    "audio": "q.mp3",
+    "finger": "index_left",
+    "key_code": "KeyC"
+  },
+  {
+    "letter": "ღ",
+    "name": "ghani",
+    "pron": "/ɣ/",
+    "audio": "gh.mp3",
+    "finger": "index_right",
+    "key_code": "KeyV"
+  },
+  {
+    "letter": "ყ",
+    "name": "q'ari",
+    "pron": "/qʼ/",
+    "audio": "q.mp3",
+    "finger": "index_left",
+    "key_code": "KeyB"
+  },
+  {
+    "letter": "შ",
+    "name": "shini",
+    "pron": "/ʃ/",
+    "audio": "sh.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyN"
+  },
+  {
+    "letter": "ჩ",
+    "name": "chini",
+    "pron": "/tʃ/",
+    "audio": "ch.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyM"
+  },
+  {
+    "letter": "ც",
+    "name": "tsani",
+    "pron": "/ts/",
+    "audio": "ts.mp3",
+    "finger": "index_left",
+    "key_code": "KeyQ"
+  },
+  {
+    "letter": "ძ",
+    "name": "dzili",
+    "pron": "/dz/",
+    "audio": "dz.mp3",
+    "finger": "index_right",
+    "key_code": "KeyW"
+  },
+  {
+    "letter": "წ",
+    "name": "ts'ili",
+    "pron": "/tsʼ/",
+    "audio": "ts.mp3",
+    "finger": "index_left",
+    "key_code": "KeyE"
+  },
+  {
+    "letter": "ჭ",
+    "name": "ch'ili",
+    "pron": "/tʃʼ/",
+    "audio": "ch.mp3",
+    "finger": "index_right",
+    "key_code": "KeyR"
+  },
+  {
+    "letter": "ხ",
+    "name": "khani",
+    "pron": "/x/",
+    "audio": "kh.mp3",
+    "finger": "middle_left",
+    "key_code": "KeyT"
+  },
+  {
+    "letter": "ჯ",
+    "name": "jani",
+    "pron": "/dʒ/",
+    "audio": "j.mp3",
+    "finger": "index_left",
+    "key_code": "KeyY"
+  },
+  {
+    "letter": "ჰ",
+    "name": "hae",
+    "pron": "/h/",
+    "audio": "h.mp3",
+    "finger": "ring_left",
+    "key_code": "KeyU"
+  }
+]
