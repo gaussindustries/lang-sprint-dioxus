@@ -1,16 +1,7 @@
 // src/views/home.rs
 use dioxus::prelude::*;
 use std::fs;
-use crate::components::{Keyboard, WordCard};
-
-#[derive(serde::Deserialize, Clone, Debug)]
-struct Letter {
-    letter: String,
-    name:   String,
-    pron:   String,
-    audio:  Option<String>,
-    finger: String,
-}
+use crate::{components::{Keyboard, WordCard}, models::letter::Letter};
 
 #[component]
 pub fn Home() -> Element {
@@ -32,7 +23,7 @@ pub fn Home() -> Element {
             serde_json::from_str::<Vec<Letter>>(&raw).unwrap_or_default()
         }
     });
-
+	let letters_vec = letters.read().clone().unwrap_or_default();
     // -------------------------------------------------------------
     // 3. Render
     // -------------------------------------------------------------
@@ -68,7 +59,6 @@ pub fn Home() -> Element {
                                             div { class: "text-3xl font-bold", "{letter.letter}" }
                                             div { class: "text-sm text-gray-600 italic", "{letter.name}" }
                                             div { class: "text-xs text-gray-500", "{letter.pron}" }
-                                            div { class: "mt-1 text-xs font-medium text-indigo-600", "{letter.finger}" }
                                         }
                                     }
                                 }).collect::<Vec<_>>().into_iter()
@@ -83,8 +73,9 @@ pub fn Home() -> Element {
                 }
             }
 
+			hr {  }
             // ── Test preview ───────────────────────────────────
-            section { class: "p-6 bg-black flex justify-center",
+            section { class: "p-6 flex justify-center",
                 div { 
 					h2 { class: "text-2xl font-semibold mb-4", "Typing Test (preview)" }
 					WordCard {
@@ -93,12 +84,13 @@ pub fn Home() -> Element {
 						pos: "conjunction",
 						example: "მე და შენ"
 					}
+					input {class:"border border-white rounded white w-full",  }
 				}
             }
 
             // ── Keyboard ───────────────────────────────────────
             div { class: "mt-auto p-4 bg-gray-900 border-t",
-                Keyboard { calibration: "None" }
+                Keyboard { letters: letters_vec }
             }
         }
     }

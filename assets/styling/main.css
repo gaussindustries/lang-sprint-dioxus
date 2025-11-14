@@ -7,3 +7,28 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
 }
+
+.index_left{
+background-color: orangered;
+}
+.index_right{
+background-color: orange;
+}
+.middle_left{
+background-color: rgb(252, 230, 60);
+}
+.middle_right{
+background-color: seagreen;
+}
+.ring_left{
+background-color: rgb(0, 174, 255);
+}
+.ring_right{
+background-color: rgb(232, 124, 232);
+}
+.little_left & .little_right{
+background-color: rgb(226, 31, 226);
+}
+#space{
+	background-color: salmon;
+}

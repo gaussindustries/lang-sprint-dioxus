@@ -5,6 +5,7 @@ mod views;
 mod calibration;
 mod keyboard;
 mod state;
+pub mod models;
 
 use dioxus::prelude::*;
 use dioxus_router::prelude::*;
