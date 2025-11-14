@@ -24,9 +24,22 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 
     // Build lookup: (key_code, shifted) -> Letter
     let mut map: HashMap<(String, bool), Letter> = HashMap::new();
-    for l in letters.into_iter() {
+
+	for l in letters.into_iter() {
         map.insert((l.key_code.clone(), l.shifted), l);
     }
+
+	let space_pressed = pressed()
+    .map(|(code, _shift)| code == "Space")
+    .unwrap_or(false);
+
+	let space_classes = if space_pressed {
+    "px-20 py-3 bg-blue-500 text-white rounded text-2xl font-bold \
+     transition ring-4 ring-white shadow-lg"
+	} else {
+		"px-20 py-3 bg-gray-300 rounded text-2xl font-bold text-gray-700 \
+		hover:bg-gray-400 transition ring-4 ring-blue-500"
+	};
 
     let make_row = |row_codes: &[&str]| -> Vec<KeySlot> {
         row_codes
@@ -90,15 +103,14 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
                 })}
             }
 
-            // Space bar (can wire later if you want)
             div { class: "flex justify-center mt-1",
-                div {
-                    id: "space",
-                    class: "px-20 py-3 bg-gray-300 rounded text-2xl font-bold text-gray-700 \
-                            hover:bg-gray-400 transition ring-4 ring-blue-500",
-                    "Space"
-                }
-            }
+				div {
+					id: "space",
+					class: "{space_classes}",
+					"Space"
+				}
+			}
+
         }
     }
 }
