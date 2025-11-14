@@ -1,6 +1,6 @@
 use dioxus::events::KeyboardEvent;
 use dioxus::prelude::*;
-use std::collections::HashMap;
+use std::collections::{HashMap,HashSet};
 
 use crate::models::letter::Letter;
 
@@ -20,7 +20,7 @@ struct KeySlot {
 #[component]
 pub fn Keyboard(letters: Vec<Letter>) -> Element {
     // track currently pressed: (key_code, shift_down)
-    let mut pressed = use_signal(|| None::<(String, bool)>);
+    let mut pressed = use_signal(|| HashSet::<String>::new());
 
     // Build lookup: (key_code, shifted) -> Letter
     let mut map: HashMap<(String, bool), Letter> = HashMap::new();
@@ -29,9 +29,7 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
         map.insert((l.key_code.clone(), l.shifted), l);
     }
 
-	let space_pressed = pressed()
-    .map(|(code, _shift)| code == "Space")
-    .unwrap_or(false);
+	let space_pressed = pressed().contains("Space");
 
 	let space_classes = if space_pressed {
     "px-20 py-3 bg-blue-500 text-white rounded text-2xl font-bold \
@@ -73,14 +71,21 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
             tabindex: "0",
 
             onkeydown: move |evt: KeyboardEvent| {
-                let code  = evt.code().to_string();
-                let shift = evt.modifiers().shift(); // true if Shift is held
-                pressed.set(Some((code, shift)));
-            },
+				let code = evt.code().to_string();
 
-            onkeyup: move |_evt: KeyboardEvent| {
-                pressed.set(None);
-            },
+				pressed.with_mut(|set| {
+					set.insert(code);
+				});
+			},
+
+            onkeyup: move |evt: KeyboardEvent| {
+				let code = evt.code().to_string();
+
+				pressed.with_mut(|set| {
+					set.remove(&code);
+				});
+			},
+
 
             // Row 1
             div { class: "flex justify-center gap-1 mb-1",
@@ -117,9 +122,13 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 
 // Render one physical key (slot), handling base/shifted + pressed state
 #[component]
-fn KeySlotView(slot: KeySlot, pressed: Option<(String, bool)>) -> Element {
-    let (pressed_code, shift_down) = pressed.unwrap_or_else(|| ("".into(), false));
-    let is_pressed = pressed_code == slot.key_code;
+fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
+
+    let is_pressed = pressed.contains(&slot.key_code);
+
+	let shift_down =
+		pressed.contains("ShiftLeft") || pressed.contains("ShiftRight");
+
 
     // Which letter do we *show*? If Shift is down and we have a shifted letter, use that.
     let active_letter = if shift_down && slot.shifted.is_some() {
