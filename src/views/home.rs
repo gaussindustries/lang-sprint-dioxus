@@ -1,7 +1,7 @@
 // src/views/home.rs
 use dioxus::prelude::*;
 use std::fs;
-use crate::{components::{Keyboard, WordCard}, models::letter::Letter};
+use crate::{views::Alphabet, components::{ Keyboard }, models::letter::Letter};
 
 #[component]
 pub fn Home() -> Element {
@@ -36,61 +36,11 @@ pub fn Home() -> Element {
             }
 
             // ── Alphabet Grid ─────────────────────────────────
-            section { class: "p-6",
-                h2 { class: "text-2xl font-semibold mb-4 text-center", "Alphabet - ანბანი" }
-                div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
-                    {
-                        // Clone the data *once* for the entire render
-                        let data = letters.read().clone();  // <-- CRITICAL
-                        match data {
-                            Some(letters_vec) => {
-                                letters_vec.into_iter().map(|letter| {
-                                    let current_lang = lang.read().clone();
-                                    rsx! {
-                                        button {
-                                            key: "{letter.letter}",
-                                            class: "group p-4 rounded-lg border-2 hover:border-indigo-500 hover:cursor-help active:cursor-wait transition-all text-center",
-                                            onclick: move |_| {
-                                                if let Some(file) = &letter.audio {
-                                                    let path = format!("langs/{}/pronunciation/alphabet/{}", current_lang, file);
-                                                    // play_audio(&path);
-                                                }
-                                            },
-                                            div { class: "text-3xl font-bold", "{letter.letter}" }
-                                            div { class: "text-sm text-gray-600 italic", "{letter.name}" }
-                                            div { class: "text-xs text-gray-500", "{letter.pron}" }
-                                        }
-                                    }
-                                }).collect::<Vec<_>>().into_iter()
-                            },
-                            None => {
-                                vec![rsx! {
-                                    p { class: "col-span-6 text-center text-gray-500", "Loading…" }
-                                }].into_iter()
-                            }
-                        }
-                    }
-                }
-            }
-
-			hr {  }
-            // ── Test preview ───────────────────────────────────
-            section { class: "p-6 flex justify-center",
-                div { 
-					h2 { class: "text-2xl font-semibold mb-4", "Typing Test (preview)" }
-					WordCard {
-						word: "და",
-						def: "and",
-						pos: "conjunction",
-						example: "მე და შენ"
-					}
-					input {class:"border border-white rounded white w-full",  }
-				}
-            }
+			Alphabet { letters: letters_vec.clone() , lang: lang.clone()}
 
             // ── Keyboard ───────────────────────────────────────
             div { class: "mt-auto p-4 bg-gray-900 border-t",
-                Keyboard { letters: letters_vec }
+                Keyboard { letters: letters_vec.clone() }
             }
         }
     }

@@ -1,13 +1,14 @@
-use dioxus::events::KeyboardEvent;
+use dioxus::{events::KeyboardEvent, html::div};
 use dioxus::prelude::*;
 use std::collections::{HashMap,HashSet};
 
-use crate::models::letter::Letter;
+use crate::{components::{WordCard}, models::letter::Letter};
+
 
 // QWERTY rows: physical keys
 const ROW1: [&str; 10] = ["KeyQ","KeyW","KeyE","KeyR","KeyT","KeyY","KeyU","KeyI","KeyO","KeyP"];
 const ROW2: [&str; 9]  = ["KeyA","KeyS","KeyD","KeyF","KeyG","KeyH","KeyJ","KeyK","KeyL"];
-const ROW3: [&str; 7]  = ["KeyZ","KeyX","KeyC","KeyV","KeyB","KeyN","KeyM"];
+const ROW3: [&str; 9]  = ["KeyLShift","KeyZ","KeyX","KeyC","KeyV","KeyB","KeyN","KeyM", "KeyRShift"];
 
 #[derive(Clone,PartialEq)]
 struct KeySlot {
@@ -36,7 +37,7 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
      transition ring-4 ring-white shadow-lg"
 	} else {
 		"px-20 py-3 bg-gray-300 rounded text-2xl font-bold text-gray-700 \
-		hover:bg-gray-400 transition ring-4 ring-blue-500"
+		hover:bg-gray-400 transition ring-1"
 	};
 
     let make_row = |row_codes: &[&str]| -> Vec<KeySlot> {
@@ -66,6 +67,7 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 
     rsx! {
         // outer "global" listener: focusable container
+		
         div {
             class: "keyboard p-4 bg-gray-800 rounded-lg shadow-inner select-none",
             tabindex: "0",
@@ -85,7 +87,19 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 					set.remove(&code);
 				});
 			},
-
+			// ── Test preview ───────────────────────────────────
+            section { class: "p-6 flex justify-center",
+                div { 
+					h2 { class: "text-2xl font-semibold mb-4", "Typing Test (preview)" }
+					WordCard {
+						word: "და",
+						def: "and",
+						pos: "conjunction",
+						example: "მე და შენ"
+					}
+					input {class:"border border-white rounded white w-full",  }
+				}
+            }
 
             // Row 1
             div { class: "flex justify-center gap-1 mb-1",
@@ -115,7 +129,43 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 					"Space"
 				}
 			}
+			div { class:"flex justify-center white",
+				div { 
+					div { class:"text-center", 
+						"Legend"
+					}
+					div{ class:"flex",
+						section{h5{class:"text-center", "Left"}
+							div{ class:"flex gap-2 place-items-center",
+								"Ring =>" div{class:"ring_left h-[15px] w-[15px] rounded",}
+							}
+							div{ class:"flex gap-2 place-items-center",
+								"Middle =>" div{class:"middle_left h-[15px] w-[15px] rounded",}
+							}
+							div{ class:"flex gap-2 place-items-center",
+								"Index =>" div{class:"index_left h-[15px] w-[15px] rounded",}
+							}
+						}
+						
+						div { class:"flex h-[50px] w-[2px] rounded bg-black my-1 mx-2" }
 
+						section{h5{class:"text-center", "Right"}
+							div{ class:"flex gap-2 place-items-center",
+								"Ring =>" div{class:"ring_right h-[15px] w-[15px] rounded",}
+							}
+							div{ class:"flex gap-2 place-items-center",
+								"Middle =>" div{class:"middle_right h-[15px] w-[15px] rounded",}
+							}
+							div{ class:"flex gap-2 place-items-center",
+								"Index =>" div{class:"index_right h-[15px] w-[15px] rounded",}
+							}
+						}
+					}
+					div{ class:"flex gap-2 place-items-center justify-center",
+						"Little Finger =>" div{class:"little_left h-[15px] w-[15px] rounded",}
+					}
+				}
+			}
         }
     }
 }
@@ -216,6 +266,8 @@ fn code_to_qwerty_label(code: &str) -> &'static str {
         "KeyB" => "B",
         "KeyN" => "N",
         "KeyM" => "M",
+		"KeyLShift" => "Shift",
+		"KeyRShift" => "Shift",
         _ => "",
     }
 }

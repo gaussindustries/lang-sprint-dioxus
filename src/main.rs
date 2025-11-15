@@ -8,7 +8,6 @@ mod state;
 pub mod models;
 
 use dioxus::prelude::*;
-use dioxus_router::prelude::*;
 
 // ---------------------------------------------------------------------
 // Assets – keep them exactly where you have them
