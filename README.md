@@ -1,22 +1,143 @@
-# Development
+# **LangSprint – Multilingual Alphabet & Typing Trainer**
 
-Your new jumpstart project includes basic organization with an organized `assets` folder and a `components` folder.
-If you chose to develop with the router feature, you will also have a `views` folder.
+*A modular learning tool for alphabets, frequency vocabulary, and typing fluency across multiple languages.*
+
+LangSprint is a cross-language educational application built to help learners master **alphabets**, **high-frequency vocabulary**, and **typing proficiency** for any language they choose to study.
+It currently includes full support for **Georgian**, with the system designed to add more languages as you progress on your learning journey.
+
+The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful input**, blending typing practice with actual language understanding.
+
+---
+
+## **Features**
+
+### **✓ Modular Alphabet System**
+
+* Each language has its own `/langs/<language>/alphabet.json` file
+* For each character:
+
+  * Letter representation
+  * Name
+  * IPA pronunciation
+  * Audio playback
+  * Finger-position hints (touch-typing guidance)
+* Designed to map foreign alphabets onto your **physical QWERTY keyboard**, so you always know where to press.
+
+### **✓ Fully Interactive Keyboard**
+
+* Real-time per-key highlighting
+* Shift-left / shift-right tracking
+* Multiple simultaneous keypress support
+* Spacebar visualization
+* Works with custom key maps per language
+
+Useful for:
+
+* Learning new keyboard layouts
+* Typing drills
+* Muscle-memory training for foreign alphabets
+
+### **✓ Frequency-Based Typing Test (Top 1000 Words)**
+
+* For each language, the app can load a frequency list:
+
+  * Word in target language
+  * English definition
+  * Pronunciation
+  * Optional example sentences
+* Trains both recognition and typing fluency using practical vocabulary.
+
+---
+
+## **Future Language Support**
+
+LangSprint is architected so you can add new languages simply by dropping files into:
 
 ```
-project/
-├─ assets/ # Any assets that are used by the app should be placed here
-├─ src/
-│  ├─ main.rs # The entrypoint for the app. It also defines the routes for the app.
-│  ├─ components/
-│  │  ├─ mod.rs # Defines the components module
-│  │  ├─ hero.rs # The Hero component for use in the home page
-│  ├─ views/ # The views each route will render in the app.
-│  │  ├─ mod.rs # Defines the module for the views route and re-exports the components for each route
-│  │  ├─ blog.rs # The component that will render at the /blog/:id route
-│  │  ├─ home.rs # The component that will render at the / route
-├─ Cargo.toml # The Cargo.toml file defines the dependencies and feature flags for your project
+/langs/<language>/alphabet.json
+/langs/<language>/words.json
+/langs/<language>/pronunciation/...
 ```
+
+Planned expansions as you personally learn and study new languages:
+
+* **Georgian** (current)
+* **Russian**
+* **Spanish**
+* **German**
+* **Dutch**
+* **Swedish**
+* **Polish**
+* **Hungarian**
+* **etc.**
+  (Whatever you choose to learn—you can add effortlessly.)
+
+---
+
+## **Upcoming Features**
+
+### **→ Grammar Modules**
+
+Per-language grammar lessons such as:
+
+* Case systems
+* Verb conjugations
+* Core syntax patterns
+* Particles & function words
+* Inline grammar tips during tests
+
+### **→ Progress & Stats**
+
+* Typing accuracy
+* Per-letter difficulty heatmaps
+* Words per minute
+* Mastery tracking across languages
+
+### **→ Listening & Pronunciation**
+
+* Sentence audio
+* Listening-based typing
+* Shadowing/pronunciation mimic mode
+
+### **→ Custom Lessons**
+
+* Create your own word lists
+* Import vocabulary sets
+* Spaced repetition review
+
+---
+
+## **Tech Stack**
+
+* **Rust**
+* **Dioxus 0.7**
+* **TailwindCSS**
+* JSON-based content system
+* Real-time input handling with keyboard visualization
+
+---
+
+## **Why This Exists**
+
+LangSprint is designed as a tool to support your long-term multilingual learning journey.
+
+It blends:
+
+* **Typing training**
+* **Alphabet acquisition**
+* **Vocabulary reinforcement**
+* **Interactive bilingual input**
+
+This avoids the trap of learning “words without knowing how to type or pronounce them,” and instead makes you comfortable using the language as a real skill.
+
+---
+
+## **Contributing**
+
+Pull requests, feature requests, and contributions are welcome—especially for additional languages or grammar packs.
+
+---
+
 
 ### Tailwind
 1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
