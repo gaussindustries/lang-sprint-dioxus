@@ -1,52 +1,87 @@
 // src/views/alphabet.rs
 use dioxus::prelude::*;
 use crate::{audio, models::letter::Letter};
+use std::time::Duration;
+
+const FLASH_DURATION: Duration = Duration::from_millis(700);
 
 #[component]
 pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
-    // Status string to show success / error messages from audio.rs
-    let mut audio_status = use_signal(|| None::<String>);
+    // Which button should show the ring?
+    let mut flashing = use_signal(|| None::<String>);
 
-    // Cards iterator
+    // Whenever `flashing` changes, start a 700ms timer to clear it
+    use_resource(move || {
+        let mut flashing_signal = flashing.clone();
+
+        async move {
+            // Take a snapshot in a *separate scope* so the read borrow ends
+            let maybe_path: Option<String> = {
+                let read_guard = flashing_signal.read();
+                read_guard.clone()
+            };
+
+            if let Some(path) = maybe_path {
+                tokio::time::sleep(FLASH_DURATION).await;
+
+                // Now we can borrow mutably safely
+                flashing_signal.with_mut(|current| {
+                    if current.as_ref() == Some(&path) {
+                        *current = None;
+                    }
+                });
+            }
+        }
+    });
+
     let cards = letters.into_iter().map(move |letter| {
-        let lang = lang.clone();
+        let lang_signal = lang.clone();
         let letter_for_click = letter.clone();
-        let mut status = audio_status.clone();
+        let mut flashing_signal = flashing.clone();
+
+        let lang_name = lang_signal.read().clone();
+        let path = format!(
+            "langs/{}/pronunciation/alphabet/{}",
+            lang_name,
+            letter_for_click.audio.as_deref().unwrap_or("<missing>.wav")
+        );
+
+        // Does this letter match the current flashing path?
+        let is_flashing = flashing_signal
+            .read()
+            .as_ref()
+            .map(|p| p == &path)
+            .unwrap_or(false);
+
+        let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
+                            hover:border-indigo-500 hover:cursor-pointer";
+
+        let ring_classes = if is_flashing {
+            " border-indigo-400 ring-4 ring-indigo-400"
+        } else {
+            " border-gray-600"
+        };
 
         rsx! {
             button {
                 key: "{letter.letter}",
-                class: "group p-4 rounded-lg border-2 hover:border-indigo-500 \
-                        hover:cursor-pointer active:cursor-wait transition-all text-center",
+                class: "{base_classes}{ring_classes}",
+
                 onclick: move |_| {
                     if let Some(file) = &letter_for_click.audio {
-                        let lang_name = lang.read().clone();
-                        let path = format!(
+                        let lang_name = lang_signal.read().clone();
+                        let play_path = format!(
                             "langs/{}/pronunciation/alphabet/{}",
                             lang_name,
                             file
                         );
 
+                        // Play audio
                         #[cfg(not(target_arch = "wasm32"))]
-                        {
-                            match audio::play_audio(&path) {
-                                Ok(()) => {
-                                    status.set(Some(format!("Playing: {}", file)));
-                                }
-                                Err(err) => {
-                                    status.set(Some(err));
-                                }
-                            }
-                        }
+                        audio::play_audio(&play_path);
 
-                        #[cfg(target_arch = "wasm32")]
-                        {
-                            status.set(Some(
-                                "Audio not supported in web build yet".to_string()
-                            ));
-                        }
-                    } else {
-                        status.set(Some("No audio file for this letter".to_string()));
+                        // Start 700ms flash
+                        flashing_signal.set(Some(play_path));
                     }
                 },
 
@@ -64,20 +99,6 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
                 {cards}
             }
-
-            // Status line for audio
-            // {
-            //     audio_status()
-            //         .as_ref()
-            //         .map(|msg| {
-            //             rsx! {
-            //                 div {
-            //                     class: "mt-4 text-center text-sm text-gray-300",
-            //                     "{msg}"
-            //                 }
-            //             }
-            //         })
-            // }
         }
     }
 }

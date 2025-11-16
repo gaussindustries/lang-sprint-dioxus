@@ -2601,6 +2601,7 @@ dependencies = [
  "rodio",
  "serde",
  "serde_json",
+ "tokio",
  "wasm-bindgen",
  "web-sys",
 ]

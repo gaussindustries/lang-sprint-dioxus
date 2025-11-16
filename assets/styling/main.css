@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @source "./src/**/*.{rs,html,css}";
 
+@tailwind utilities;
+
+.index_left   { @apply bg-orange-500; }
+.index_right  { @apply bg-orange-400; }
+.middle_left  { @apply bg-yellow-400; }
+.middle_right { @apply bg-green-500; }
+.ring_left    { @apply bg-blue-500; }
+.ring_right   { @apply bg-purple-400; }
+.little_left,
+.little_right { @apply bg-pink-500; }
+#space        { @apply bg-red-400; }
 body {
     background-color: #0f1116;
     color: #ffffff;
