@@ -54,7 +54,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             .unwrap_or(false);
 
         let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
-                            hover:border-indigo-500 hover:cursor-pointer";
+                            hover:border-indigo-500 hover:cursor-pointer select-none";
 
         let ring_classes = if is_flashing {
             " border-indigo-400 ring-4 ring-indigo-400"
