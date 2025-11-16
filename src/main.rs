@@ -6,6 +6,7 @@ mod calibration;
 mod keyboard;
 mod state;
 pub mod models;
+pub mod audio;
 
 use dioxus::prelude::*;
 
