@@ -2,7 +2,7 @@ use dioxus::{events::KeyboardEvent, html::div};
 use dioxus::prelude::*;
 use std::collections::{HashMap,HashSet};
 
-use crate::{components::{WordCard}, models::letter::Letter};
+use crate::{components::{WordCard, TypingTest}, models::letter::Letter};
 
 
 // QWERTY rows: physical keys
@@ -64,6 +64,8 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
     let row1 = make_row(&ROW1);
     let row2 = make_row(&ROW2);
     let row3 = make_row(&ROW3);
+	
+	let lang_signal = use_signal(|| "georgian".to_string());
 
     rsx! {
         // outer "global" listener: focusable container
@@ -87,19 +89,17 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 					set.remove(&code);
 				});
 			},
-			// ── Test preview ───────────────────────────────────
-            section { class: "p-6 flex justify-center",
-                div { 
-					h2 { class: "text-2xl font-semibold mb-4", "Typing Test (preview)" }
-					WordCard {
-						word: "და",
-						def: "and",
-						pos: "conjunction",
-						example: "მე და შენ"
-					}
-					input {class:"border border-white rounded white w-full",  }
+			// ── Typing test using frequency list ───────────────
+			// (Pass `lang` down from Home instead if you want to respect language choice)
+			section { class: "p-6 flex justify-center",
+				div {
+					h2 { class: "text-2xl font-semibold mb-4 text-center", "Typing Test" }
+					// if you keep `lang` up in Home, pass it in as a prop.
+					// For now, hardcode Georgian:
+					TypingTest { lang: lang_signal }
 				}
-            }
+			}
+
 
             // Row 1
             div { class: "flex justify-center gap-1 mb-1",

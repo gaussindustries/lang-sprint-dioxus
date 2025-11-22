@@ -4,6 +4,8 @@
 
 pub mod wordcard;
 pub mod keyboard;
+pub mod typing_test;
 
 pub use keyboard::Keyboard;
 pub use wordcard::WordCard;
+pub use typing_test::TypingTest;

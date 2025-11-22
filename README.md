@@ -26,7 +26,7 @@ The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful
 ### **✓ Fully Interactive Keyboard**
 
 * Real-time per-key highlighting
-* Shift-left / shift-right tracking
+* Shift-left / shift-right tracking (soon)
 * Multiple simultaneous keypress support
 * Spacebar visualization
 * Works with custom key maps per language
@@ -70,7 +70,7 @@ Planned expansions as you personally learn and study new languages:
 * **Polish**
 * **Hungarian**
 * **etc.**
-  (Whatever you choose to learn—you can add effortlessly.)
+  (Whatever you choose to learn—you can add effortlessly when I make more scripts to digest information.)
 
 ---
 
@@ -144,14 +144,17 @@ Pull requests, feature requests, and contributions are welcome—especially for 
 2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
 3. Run the following command in the root of the project to start the Tailwind CSS compiler:
 
-```bash
-npx tailwindcss -i ./tailwind.css -o ./assets/tailwind.css --watch
+```
+	linux:
+./tailwind.sh
+	(((windows))):
+	just run it
 ```
 
 ### Serving Your App
 
 Run the following command in the root of your project to start developing with the default platform:
-
+ (it will serve desktop by default, will implement web version in the future)
 ```bash
 dx serve
 ```
@@ -161,3 +164,13 @@ To run for a different platform, use the `--platform platform` flag. E.g.
 dx serve --platform desktop
 ```
 
+### Rust && Dioxus Required 
+goes without saying, but if you need a guide:
+
+1:
+``https://rust-lang.org/learn/get-started/``
+
+2:
+```bash
+	cargo install dioxus-cli
+```
