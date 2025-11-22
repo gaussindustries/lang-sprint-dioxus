@@ -139,6 +139,8 @@ Pull requests, feature requests, and contributions are welcome—especially for 
 ---
 
 
+### Please keep in mind for development you must run tailwind in order for the UI to render properly!
+
 ### Tailwind
 1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
@@ -163,6 +165,18 @@ To run for a different platform, use the `--platform platform` flag. E.g.
 ```bash
 dx serve --platform desktop
 ```
+
+if for some reason on linux it doesn't display anything:
+```bash
+ export WEBKIT_DISABLE_DMABUF_RENDERER=1
+ ```
+
+ or you can include it in the command to run this like so:
+
+
+ ```bash
+ WEBKIT_DISABLE_DMABUF_RENDERER=1 dx serve
+ ```
 
 ### Rust && Dioxus Required 
 goes without saying, but if you need a guide:

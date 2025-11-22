@@ -3,8 +3,6 @@ mod components;
 use views::{Home, Navbar};
 mod views;
 mod calibration;
-mod keyboard;
-mod state;
 pub mod models;
 pub mod audio;
 
