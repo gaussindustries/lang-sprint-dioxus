@@ -144,13 +144,16 @@ Pull requests, feature requests, and contributions are welcome—especially for 
 ### Tailwind
 1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
+```bash
+npm install tailwindcss @tailwindcss/cli
+```
 3. Run the following command in the root of the project to start the Tailwind CSS compiler:
 
 ```
 	linux:
 ./tailwind.sh
 	(((windows))):
-	just run it
+	just the tailwind.sh command manually in a separate terminal
 ```
 
 ### Serving Your App
@@ -186,5 +189,28 @@ goes without saying, but if you need a guide:
 
 2:
 ```bash
-	cargo install dioxus-cli
+	cargo install dioxus-cli --version 0.7.0
+```
+## additional (((Windows))) caveats before step 2
+
+install choco
+Follow this guide: https://chocolatey.org/install#individual
+install nasm
+```bash
+choco install nasm
+
+then
+
+Win + R "sysdm.cpl" , Advanced -> Enviroment Variables, System variables, Select Path, Edit, Create New -> " C:\Program Files\NASM\ "
+```
+install cmake
+```bash
+choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+```
+
+
+### IMPORTANT!
+add this line at the top of ``src/main.rs``
+```rust
+#![windows_subsystem = "windows"]
 ```
