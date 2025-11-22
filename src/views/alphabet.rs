@@ -57,7 +57,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
                             hover:border-indigo-500 hover:cursor-pointer select-none";
 
         let ring_classes = if is_flashing {
-            " border-indigo-400 ring-4 ring-indigo-400"
+            " border-indigo-400 ring-4 ring-indigo-400 text-indigo-500"
         } else {
             " border-gray-600"
         };
