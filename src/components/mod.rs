@@ -8,4 +8,4 @@ pub mod typing_test;
 
 pub use keyboard::Keyboard;
 pub use wordcard::WordCard;
-pub use typing_test::TypingTest;
+pub use typing_test::TypingTest;pub mod slider;

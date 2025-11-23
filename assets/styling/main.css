@@ -20,26 +20,27 @@ body {
 }
 
 .index_left{
-background-color: orangered;
+background-color: #ff4500;
 }
 .index_right{
-background-color: orange;
+background-color: #ffa500;
 }
 .middle_left{
-background-color: rgb(252, 230, 60);
+background-color: #fce63c;
 }
 .middle_right{
-background-color: seagreen;
+background-color: #2e8b57;
 }
 .ring_left{
-background-color: rgb(0, 174, 255);
+background-color: #00aeff;
 }
 .ring_right{
-background-color: rgb(232, 124, 232);
+background-color: #e87ce8;
 }
 .little_left {
-background-color: rgb(226, 31, 226);
+background-color: #e21fe2;
 }
 #space{
-	background-color: salmon;
+	background-color: #fa8072;
 }
+

@@ -1,6 +1,7 @@
 // src/views/alphabet.rs
 use dioxus::prelude::*;
-use crate::{audio, models::letter::Letter};
+use dioxus_primitives::slider::SliderValue;
+use crate::{audio, components::slider::{Slider,SliderRange, SliderThumb, SliderTrack}, models::letter::Letter};
 use std::time::Duration;
 
 const FLASH_DURATION: Duration = Duration::from_millis(700);
@@ -9,6 +10,7 @@ const FLASH_DURATION: Duration = Duration::from_millis(700);
 pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     // Which button should show the ring?
     let mut flashing = use_signal(|| None::<String>);
+    let mut volume = use_signal(|| 0.4);
 
     // Whenever `flashing` changes, start a 700ms timer to clear it
     use_resource(move || {
@@ -62,6 +64,8 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             " border-gray-600"
         };
 
+
+
         rsx! {
             button {
                 key: "{letter.letter}",
@@ -78,7 +82,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
 
                         // Play audio
                         #[cfg(not(target_arch = "wasm32"))]
-                        audio::play_audio(&play_path);
+                        audio::play_audio(&play_path, volume());
 
                         // Start 700ms flash
                         flashing_signal.set(Some(play_path));
@@ -91,12 +95,38 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             }
         }
     });
+	let mut volume_pct = (volume() * 100.0).round() as i32;
 
     rsx! {
         section { class: "p-6",
             h2 { class: "text-2xl font-semibold mb-4 text-center", "Alphabet - ანბანი" }
+			div{ class:"flex justify-center gap-3",
+				h4 { class:"text-center flex", "Volume"}
+				div { 
+					Slider {
+						default_value: SliderValue::Single(volume() as f64),
+						min: 0.0,
+						max: 1.0,
+						step: 0.05,
+						horizontal: true,
+						on_value_change: move |value: SliderValue| {
+							// Extract the f64 value from SliderValue::Single
+							let SliderValue::Single(v) = value;
+							volume.set(v as f32);
+						},
+					
+						SliderTrack { class:"slider-track",
+							SliderRange {}
+							SliderThumb {}
+					}
+				}
+			}
+			div { style: "margin-bottom: 15px; font-size: 16px; font-weight: bold;",
+				"{volume_pct}%" 
+			}
 
-            div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
+		}
+			div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
                 {cards}
             }
         }

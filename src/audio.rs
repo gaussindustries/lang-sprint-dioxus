@@ -25,7 +25,7 @@ static PLAYING_FILES: Lazy<Mutex<HashSet<PathBuf>>> = Lazy::new(|| Mutex::new(Ha
 /// Desktop: fire-and-forget playback of a WAV/OGG/etc file.
 /// - If the same absolute path is already playing, this call is ignored.
 #[cfg(not(target_arch = "wasm32"))]
-pub fn play_audio<P: AsRef<Path>>(path: P) {
+pub fn play_audio<P: AsRef<Path>>(path: P, volume: f32) {
     // Canonicalize so we don't get dupes like "./foo.wav" vs "foo.wav"
     let path = path.as_ref();
     let abs = match std::fs::canonicalize(path) {
@@ -82,7 +82,7 @@ pub fn play_audio<P: AsRef<Path>>(path: P) {
         // 4. Play via rodio::play using BufReader<File>
         match rodio::play(&mixer, BufReader::new(file)) {
             Ok(sink) => {
-                sink.set_volume(0.4);
+                sink.set_volume(volume);
                 // This blocks the *audio thread*, not the UI.
                 sink.sleep_until_end();
             }
