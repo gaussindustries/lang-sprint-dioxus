@@ -206,9 +206,6 @@
   .absolute {
     position: absolute;
   }
-  .relative {
-    position: relative;
-  }
   .static {
     position: static;
   }
@@ -262,9 +259,6 @@
   }
   .grid {
     display: grid;
-  }
-  .hidden {
-    display: none;
   }
   .table {
     display: table;
