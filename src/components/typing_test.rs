@@ -7,7 +7,7 @@ use std::time::Duration;
 use crate::components::WordCard;
 use crate::models::freq_word::FrequencyWord;
 
-const ADVANCE_DELAY: Duration = Duration::from_millis(500);
+const ADVANCE_DELAY: Duration = Duration::from_millis(1500);
 
 #[component]
 pub fn TypingTest(lang: Signal<String>) -> Element {
@@ -17,6 +17,9 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     let mut typed = use_signal(|| String::new());
     // Whether to show the English definition on the card
     let mut show_english = use_signal(|| true);
+
+    // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
+    let mut advance_progress = use_signal(|| None::<f32>);
 
     // Load the 1000-word frequency list for the current language
     let words_res = use_resource(move || {
@@ -56,50 +59,78 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
             .zip(target_chars.iter())
             .all(|(a, b)| a == b);
 
-    // === AUTO-ADVANCE EFFECT =========================================
-    //
-    // Whenever `typed` or `target_word` changes, this resource re-runs,
-    // snapshots them, and if they match, waits 500ms then advances.
+    // === AUTO-ADVANCE EFFECT + COUNTDOWN ================================
     let word_count = words.len();
     {
-        let mut idx_sig   = current_index.clone();
-        let mut typed_sig = typed.clone();
-        let target_for_effect = target_word.clone(); // captured immutably
+        let mut idx_sig       = current_index.clone();
+        let mut typed_sig     = typed.clone();
+        let mut progress_sig  = advance_progress.clone();
+        let target_effect = target_word.clone();
 
         use_resource(move || {
-            // snapshot current typed, index, and target
+            // Register dependencies so resource restarts when these change
             let typed_snapshot = typed_sig.read().clone();
-            let cur_idx_snapshot = idx_sig(); // registers dependency on index
-            let target_snapshot = target_for_effect.clone();
+            let cur_idx_snapshot = idx_sig();
+            let target_snapshot = target_effect.clone();
+            let len_snapshot = word_count;
 
             async move {
-                // Don't advance on empty or wrong input
-                if typed_snapshot.is_empty() || typed_snapshot != target_snapshot {
+                // If not exactly correct, ensure progress is cleared and bail
+                if typed_snapshot.is_empty() || typed_snapshot != target_snapshot || len_snapshot == 0 {
+                    progress_sig.set(None);
                     return;
                 }
 
-                if word_count == 0 {
-                    return;
+                // We are correct → run countdown
+                let steps = 20;
+                let step_ms = (ADVANCE_DELAY.as_millis() / steps) as u64;
+
+                for step in 0..=steps {
+                    let fraction = 1.0 - (step as f32 / steps as f32);
+                    progress_sig.set(Some(fraction.max(0.0).min(1.0)));
+
+                    // Last step: no need to sleep again
+                    if step < steps {
+                        tokio::time::sleep(Duration::from_millis(step_ms)).await;
+                    }
                 }
 
-                // Wait so the user can see "Correct! 🎉"
-                tokio::time::sleep(ADVANCE_DELAY).await;
-
-                let len = word_count;
+                // After the countdown, pick a new word
                 let mut rng = rand::rng();
-                let mut next = rng.random_range(0..len);
+                let mut next = rng.random_range(0..len_snapshot);
 
-                // avoid repeating the same word when possible
-                if len > 1 && next == cur_idx_snapshot {
-                    next = (next + 1) % len;
+                if len_snapshot > 1 && next == cur_idx_snapshot {
+                    next = (next + 1) % len_snapshot;
                 }
 
                 idx_sig.set(next);
                 typed_sig.set(String::new());
+                progress_sig.set(None);
             }
         });
     }
- // Left side: WordCard (re-enable when you want)
+
+    // === CIRCLE PROGRESS VISUAL ========================================
+    let progress_opt = advance_progress();
+    let (is_counting, circumference_str, offset_str) = if let Some(p) = progress_opt {
+        let radius: f32 = 16.0;
+        let circumference: f32 = 2.0 * std::f32::consts::PI * radius;
+        let clamped = p.max(0.0).min(1.0);
+        let offset: f32 = circumference * (1.0 - clamped);
+        (
+            true,
+            format!("{:.3}", circumference),
+            format!("{:.3}", offset),
+        )
+    } else {
+        (false, String::new(), String::new())
+    };
+
+    rsx! {
+        section { class: "p-6 flex justify-center",
+            div { class: "w-full max-w-4xl flex gap-8",
+
+                // Left side: WordCard (enable whenever you want)
                 // div { class: "flex-1",
                 //     WordCard {
                 //         word: current.ge.clone(),
@@ -116,10 +147,6 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                 //         if show_english() { "Hide English" } else { "Show English" }
                 //     }
                 // }
-
-    rsx! {
-        section { class: "p-6 flex justify-center",
-            div { class: "w-full max-w-4xl flex gap-8",
 
                 // Right side: typing practice
                 div { class: "flex-1 flex flex-col gap-4",
@@ -160,13 +187,52 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                         }
                     }
 
-                    // Status
+                    // Status + countdown indicator
                     div { class: "flex items-center justify-between text-sm",
+
+                        // Left: status text
                         if all_correct {
                             span { class: "text-green-400 font-semibold", "Correct! 🎉" }
                         } else {
                             span { class: "text-gray-400",
                                 "Letters: {typed_chars.len()} / {target_chars.len()}"
+                            }
+                        }
+
+                        // Right: circular countdown (only visible while counting)
+                        if is_counting {
+                            div { class: "w-10 h-10",
+                                svg {
+                                    width: "40",
+                                    height: "40",
+                                    view_box: "0 0 40 40",
+
+                                    // background circle
+                                    circle {
+                                        cx: "20",
+                                        cy: "20",
+                                        r: "16",
+                                        stroke: "rgba(255,255,255,0.2)",
+                                        "stroke-width": "4",
+                                        fill: "none",
+                                    }
+
+                                    // foreground arc
+                                    circle {
+                                        cx: "20",
+                                        cy: "20",
+                                        r: "16",
+                                        stroke: "rgb(129, 140, 248)", // indigo-400-ish
+                                        "stroke-width": "4",
+                                        fill: "none",
+                                        "stroke-linecap": "round",
+                                        "stroke-dasharray": "{circumference_str}",
+                                        "stroke-dashoffset": "{offset_str}",
+                                        transform: "rotate(-90 20 20)",
+                                        // small transition so it feels smooth
+                                        class: "transition-[stroke-dashoffset] duration-50 linear",
+                                    }
+                                }
                             }
                         }
                     }
