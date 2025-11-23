@@ -139,6 +139,40 @@ Pull requests, feature requests, and contributions are welcome—especially for 
 ---
 
 
+### Rust && Dioxus Required 
+goes without saying, but if you need a guide:
+
+1:
+``https://rust-lang.org/learn/get-started/``
+
+2:
+```bash
+	cargo install dioxus-cli --version 0.7.0
+```
+## additional (((Windows))) caveats before step 2
+
+install choco
+Follow this guide: https://chocolatey.org/install#individual
+install nasm
+```bash
+choco install nasm
+
+then
+
+Win + R "sysdm.cpl" , Advanced -> Enviroment Variables, System variables, Select Path, Edit, Create New -> " C:\Program Files\NASM\ "
+```
+install cmake
+```bash
+choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+```
+
+
+### IMPORTANT!
+add this line at the top of ``src/main.rs``
+```rust
+#![windows_subsystem = "windows"]
+```
+
 ### Please keep in mind for development you must run tailwind in order for the UI to render properly!
 
 ### Tailwind
@@ -181,36 +215,3 @@ if for some reason on linux it doesn't display anything:
  WEBKIT_DISABLE_DMABUF_RENDERER=1 dx serve
  ```
 
-### Rust && Dioxus Required 
-goes without saying, but if you need a guide:
-
-1:
-``https://rust-lang.org/learn/get-started/``
-
-2:
-```bash
-	cargo install dioxus-cli --version 0.7.0
-```
-## additional (((Windows))) caveats before step 2
-
-install choco
-Follow this guide: https://chocolatey.org/install#individual
-install nasm
-```bash
-choco install nasm
-
-then
-
-Win + R "sysdm.cpl" , Advanced -> Enviroment Variables, System variables, Select Path, Edit, Create New -> " C:\Program Files\NASM\ "
-```
-install cmake
-```bash
-choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
-```
-
-
-### IMPORTANT!
-add this line at the top of ``src/main.rs``
-```rust
-#![windows_subsystem = "windows"]
-```
