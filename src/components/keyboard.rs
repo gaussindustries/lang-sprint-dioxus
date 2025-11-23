@@ -1,7 +1,8 @@
 use dioxus::{events::KeyboardEvent, html::div};
 use dioxus::prelude::*;
 use std::collections::{HashMap,HashSet};
-
+use dioxus_primitives::{ContentSide, ContentAlign};
+use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::{components::{WordCard, TypingTest}, models::letter::Letter};
 
 
@@ -67,6 +68,8 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 	
 	let lang_signal = use_signal(|| "georgian".to_string());
 
+	let mut show_legend = use_signal(||false);
+
     rsx! {
         // outer "global" listener: focusable container
 		
@@ -129,28 +132,42 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 					"Space"
 				}
 			}
-			div { class:"flex justify-center white",
-				div { class:"border rounded mt-6",
-					div { class:"text-center py-2 border-b-2 border-b-black", 
-						b{"Legend"}
-					}
-					div{ class:"flex",
-						section{h5{class:"text-center border-x border-x-black", "Left"}
-							img { 
-								src:asset!("assets/LeftHand.svg"), 
-								class: "w-[300px] h-auto select-none border-r border-r-black"
+			if(show_legend()){
+				div { class:"flex justify-center white",
+					div { class:"border rounded mt-6",
+						div { class:"text-center py-2 border-b-2 border-b-black", 
+							button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+								show_legend.set(false);
+							},
+								b{"Hide Legend"}
 							}
 						}
-						
-						section{h5{class:"text-center border-x border-x-black", "Right"}
-							img { 
-								src:asset!("assets/RightHand.svg"), 
-								class: "w-[300px] h-auto select-none border-l border-l-black"
+						div{ class:"flex",
+							section{h5{class:"text-center border-x border-x-black", "Left"}
+								img { 
+									src:asset!("assets/LeftHand.svg"), 
+									class: "w-[300px] h-auto select-none border-r border-r-black"
+								}
+							}
+							
+							section{h5{class:"text-center border-x border-x-black", "Right"}
+								img { 
+									src:asset!("assets/RightHand.svg"), 
+									class: "w-[300px] h-auto select-none border-l border-l-black"
+								}
 							}
 						}
 					}
 				}
-        	}
+			} else {
+				div { class:"flex justify-center",
+					button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer  mt-3", onclick: move |_| {
+						show_legend.set(true);
+					},
+						b{"Show Legend"}
+					}
+				}
+			}
     	}
 	}
 }

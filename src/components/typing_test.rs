@@ -4,9 +4,9 @@ use rand::Rng;
 use std::fs;
 use std::time::Duration;
 use dioxus_primitives::slider::SliderValue;
-use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use crate::components::WordCard;
+use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::models::freq_word::FrequencyWord;
 
