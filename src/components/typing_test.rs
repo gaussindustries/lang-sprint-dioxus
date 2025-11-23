@@ -4,8 +4,10 @@ use rand::Rng;
 use std::fs;
 use std::time::Duration;
 use dioxus_primitives::slider::SliderValue;
+use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use crate::components::WordCard;
+use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::models::freq_word::FrequencyWord;
 
 #[component]
@@ -134,14 +136,16 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     };
 	let delay_ms = advance_delay().as_millis() as f32;
 
-// Determine label:
-let duration_display = if delay_ms >= 1000.0 {
-    // Show seconds with one decimal: 1500 → 1.5s
-    format!("{:.1} s", delay_ms / 1000.0)
-} else {
-    // Show plain milliseconds
-    format!("{} ms", delay_ms.round() as i32)
-};
+	// Determine label:
+	let duration_display = if delay_ms >= 1000.0 {
+		// Show seconds with one decimal: 1500 → 1.5s
+		format!("{:.1} s", delay_ms / 1000.0)
+	} else {
+		// Show plain milliseconds
+		format!("{} ms", delay_ms.round() as i32)
+	};
+
+	let mut show_set_delay = use_signal(|| false );
     rsx! {
         section { class: "p-6 flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
@@ -238,31 +242,54 @@ let duration_display = if delay_ms >= 1000.0 {
                     div { class: "text-xs text-gray-500 mt-1",
                         "Rank #{current.rank} — {current.en}"
                     }
-					div { class:"flex gap-5 border-t border-t-black pt-1 justify-center", 
-						Slider {
-							default_value: SliderValue::Single(advance_delay().as_millis() as f64),
-							min: 100.0,
-							max: 1500.0,
-							step: 50.0,
-							horizontal: true,
-							on_value_change: move |value: SliderValue| {
-								// Extract the f64 value from SliderValue::Single
-								let SliderValue::Single(v) = value;
-								advance_delay.set(Duration::from_millis(v as u64));
-							},
-						
-							SliderTrack {
-								SliderRange {}
-								SliderThumb {}
+					if (show_set_delay()) {
+						div { class:"flex gap-5 border-t border-t-black pt-1 justify-center", 
+							Slider {
+								default_value: SliderValue::Single(advance_delay().as_millis() as f64),
+								min: 100.0,
+								max: 1500.0,
+								step: 50.0,
+								horizontal: true,
+								on_value_change: move |value: SliderValue| {
+									// Extract the f64 value from SliderValue::Single
+									let SliderValue::Single(v) = value;
+									advance_delay.set(Duration::from_millis(v as u64));
+								},
+							
+								SliderTrack {
+									SliderRange {}
+									SliderThumb {}
+								}
+							}
+							div { style: "font-size: 16px; font-weight: bold;",
+								"{duration_display}" 
+							}
+							button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+									show_set_delay.set(false);
+								},
+								"Hide"
 							}
 						}
-						div { style: "font-size: 16px; font-weight: bold;",
-							"{duration_display}" 
+					} else {
+						div {class:"flex justify-center",
+							Tooltip { 
+								TooltipTrigger { class:"flex justify-center",
+								button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+										show_set_delay.set(true);
+									},
+									"Set Auto-Advance Delay"
+								}
+							}
+							TooltipContent {
+								side: ContentSide::Top,
+								align: ContentAlign::Center,
+								div{class:"w-[125px] text-center","Current Delay: {duration_display}"}
+								}
+							}
 						}
 					}
-					div{ class:"text-center","Auto-Advance Delay"}
-                }
-            }
+				}
+			}
         }
     }
 }
