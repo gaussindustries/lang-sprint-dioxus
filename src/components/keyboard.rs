@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use std::collections::{HashMap,HashSet};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
-use crate::{components::{WordCard, TypingTest}, models::letter::Letter};
+use crate::models::letter::Letter;
 
 
 // QWERTY rows: physical keys
@@ -20,7 +20,7 @@ struct KeySlot {
 }
 
 #[component]
-pub fn Keyboard(letters: Vec<Letter>) -> Element {
+pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
     // track currently pressed: (key_code, shift_down)
     let mut pressed = use_signal(|| HashSet::<String>::new());
 
@@ -72,7 +72,6 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 
     rsx! {
         // outer "global" listener: focusable container
-		
         div {
             class: "keyboard p-4 bg-gray-800 rounded-lg shadow-inner select-none",
             tabindex: "0",
@@ -92,17 +91,9 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 					set.remove(&code);
 				});
 			},
-			// ── Typing test using frequency list ───────────────
-			// (Pass `lang` down from Home instead if you want to respect language choice)
-			section { class: "p-6 flex justify-center",
-				div {
-					h2 { class: "text-2xl font-semibold mb-4 text-center", "Typing Test" }
-					// if you keep `lang` up in Home, pass it in as a prop.
-					// For now, hardcode Georgian:
-					TypingTest { lang: lang_signal }
-				}
-			}
-
+			
+			//the keyboard will always show below the children
+			{children}
 
             // Row 1
             div { class: "flex justify-center gap-1 mb-1",

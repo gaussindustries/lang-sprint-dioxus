@@ -7,10 +7,10 @@ use dioxus_primitives::slider::SliderValue;
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
-use crate::models::freq_word::FrequencyWord;
+use crate::models::{freq_word::FrequencyWord, letter::Letter};
 
 #[component]
-pub fn TypingTest(lang: Signal<String>) -> Element {
+pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     // Which word index we are on
     let current_index = use_signal(|| 0usize);
     // What the user has typed for the current word
@@ -175,12 +175,9 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
 
                     // Input field
                     div {
-                        label { class: "block text-sm text-gray-300 mb-1",
-                            "Type the word in Georgian:"
-                        }
                         input {
                             class: "w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 \
-                                    text-white focus:border-indigo-500 focus:outline-none",
+                                    text-white focus:border-indigo-500 focus:outline-none text-center",
                             value: "{typed_now}",
                             oninput: move |evt: FormEvent| {
                                 typed.set(evt.value());
@@ -272,7 +269,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
 					} else {
 						div {class:"flex justify-center",
 							Tooltip { 
-								TooltipTrigger { class:"flex justify-center",
+								TooltipTrigger { class:"flex justify-center mb-3",
 								button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
 										show_set_delay.set(true);
 									},
