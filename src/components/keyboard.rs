@@ -130,44 +130,29 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 				}
 			}
 			div { class:"flex justify-center white",
-				div { 
-					div { class:"text-center", 
-						"Legend"
+				div { class:"border rounded mt-6",
+					div { class:"text-center py-2 border-b-2 border-b-black", 
+						b{"Legend"}
 					}
 					div{ class:"flex",
-						section{h5{class:"text-center", "Left"}
-							div{ class:"flex gap-2 place-items-center",
-								"Ring =>" div{class:"ring_left h-[15px] w-[15px] rounded",}
-							}
-							div{ class:"flex gap-2 place-items-center",
-								"Middle =>" div{class:"middle_left h-[15px] w-[15px] rounded",}
-							}
-							div{ class:"flex gap-2 place-items-center",
-								"Index =>" div{class:"index_left h-[15px] w-[15px] rounded",}
+						section{h5{class:"text-center border-x border-x-black", "Left"}
+							img { 
+								src:asset!("assets/LeftHand.svg"), 
+								class: "w-[300px] h-auto select-none border-r border-r-black"
 							}
 						}
 						
-						div { class:"flex h-[50px] w-[2px] rounded bg-black my-1 mx-2" }
-
-						section{h5{class:"text-center", "Right"}
-							div{ class:"flex gap-2 place-items-center",
-								"Ring =>" div{class:"ring_right h-[15px] w-[15px] rounded",}
-							}
-							div{ class:"flex gap-2 place-items-center",
-								"Middle =>" div{class:"middle_right h-[15px] w-[15px] rounded",}
-							}
-							div{ class:"flex gap-2 place-items-center",
-								"Index =>" div{class:"index_right h-[15px] w-[15px] rounded",}
+						section{h5{class:"text-center border-x border-x-black", "Right"}
+							img { 
+								src:asset!("assets/RightHand.svg"), 
+								class: "w-[300px] h-auto select-none border-l border-l-black"
 							}
 						}
 					}
-					div{ class:"flex gap-2 place-items-center justify-center",
-						"Little Finger =>" div{class:"little_left h-[15px] w-[15px] rounded",}
-					}
 				}
-			}
-        }
-    }
+        	}
+    	}
+	}
 }
 
 // Render one physical key (slot), handling base/shifted + pressed state
