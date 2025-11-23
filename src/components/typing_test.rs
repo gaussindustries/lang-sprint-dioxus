@@ -3,11 +3,10 @@ use dioxus::prelude::*;
 use rand::Rng;
 use std::fs;
 use std::time::Duration;
-
+use dioxus_primitives::slider::SliderValue;
+use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use crate::components::WordCard;
 use crate::models::freq_word::FrequencyWord;
-
-const ADVANCE_DELAY: Duration = Duration::from_millis(1500);
 
 #[component]
 pub fn TypingTest(lang: Signal<String>) -> Element {
@@ -20,6 +19,8 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
 
     // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
     let mut advance_progress = use_signal(|| None::<f32>);
+    // How long to wait before auto-advance
+    let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
     // Load the 1000-word frequency list for the current language
     let words_res = use_resource(move || {
@@ -62,34 +63,39 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     // === AUTO-ADVANCE EFFECT + COUNTDOWN ================================
     let word_count = words.len();
     {
-        let mut idx_sig       = current_index.clone();
-        let mut typed_sig     = typed.clone();
-        let mut progress_sig  = advance_progress.clone();
-        let target_effect = target_word.clone();
+        let mut idx_sig      = current_index.clone();
+        let mut typed_sig    = typed.clone();
+        let mut progress_sig = advance_progress.clone();
+        let delay_sig        = advance_delay.clone();
+        let target_effect    = target_word.clone(); // captured immutably
 
         use_resource(move || {
             // Register dependencies so resource restarts when these change
-            let typed_snapshot = typed_sig.read().clone();
-            let cur_idx_snapshot = idx_sig();
+            let typed_snapshot  = typed_sig.read().clone();
+            let cur_idx_snapshot = idx_sig();          // current index
             let target_snapshot = target_effect.clone();
-            let len_snapshot = word_count;
+            let len_snapshot    = word_count;
+            let delay_snapshot  = delay_sig();        // Duration
 
             async move {
-                // If not exactly correct, ensure progress is cleared and bail
-                if typed_snapshot.is_empty() || typed_snapshot != target_snapshot || len_snapshot == 0 {
+                // Not exactly correct OR nothing to do
+                if typed_snapshot.is_empty()
+                    || typed_snapshot != target_snapshot
+                    || len_snapshot == 0
+                {
                     progress_sig.set(None);
                     return;
                 }
 
-                // We are correct → run countdown
-                let steps = 20;
-                let step_ms = (ADVANCE_DELAY.as_millis() / steps) as u64;
+                // Split the delay into N steps for the countdown
+                let steps: u64 = 20;
+                let total_ms: u64 = delay_snapshot.as_millis() as u64;
+                let step_ms: u64 = (total_ms / steps).max(1);
 
                 for step in 0..=steps {
                     let fraction = 1.0 - (step as f32 / steps as f32);
-                    progress_sig.set(Some(fraction.max(0.0).min(1.0)));
+                    progress_sig.set(Some(fraction.clamp(0.0, 1.0)));
 
-                    // Last step: no need to sleep again
                     if step < steps {
                         tokio::time::sleep(Duration::from_millis(step_ms)).await;
                     }
@@ -99,6 +105,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                 let mut rng = rand::rng();
                 let mut next = rng.random_range(0..len_snapshot);
 
+                // avoid repeating the same word when possible
                 if len_snapshot > 1 && next == cur_idx_snapshot {
                     next = (next + 1) % len_snapshot;
                 }
@@ -115,7 +122,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     let (is_counting, circumference_str, offset_str) = if let Some(p) = progress_opt {
         let radius: f32 = 16.0;
         let circumference: f32 = 2.0 * std::f32::consts::PI * radius;
-        let clamped = p.max(0.0).min(1.0);
+        let clamped = p.clamp(0.0, 1.0);
         let offset: f32 = circumference * (1.0 - clamped);
         (
             true,
@@ -125,28 +132,19 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     } else {
         (false, String::new(), String::new())
     };
+	let delay_ms = advance_delay().as_millis() as f32;
 
+// Determine label:
+let duration_display = if delay_ms >= 1000.0 {
+    // Show seconds with one decimal: 1500 → 1.5s
+    format!("{:.1} s", delay_ms / 1000.0)
+} else {
+    // Show plain milliseconds
+    format!("{} ms", delay_ms.round() as i32)
+};
     rsx! {
         section { class: "p-6 flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
-
-                // Left side: WordCard (enable whenever you want)
-                // div { class: "flex-1",
-                //     WordCard {
-                //         word: current.ge.clone(),
-                //         def: if show_english() { current.en.clone() } else { String::new() },
-                //         pos: current.pos.clone().unwrap_or_else(|| "".into()),
-                //         example: current.example.clone().unwrap_or_else(|| "".into()),
-                //     }
-                //
-                //     button {
-                //         class: "mt-3 px-3 py-1 text-xs rounded bg-gray-700 hover:bg-gray-600",
-                //         onclick: move |_| {
-                //             show_english.with_mut(|v| *v = !*v);
-                //         },
-                //         if show_english() { "Hide English" } else { "Show English" }
-                //     }
-                // }
 
                 // Right side: typing practice
                 div { class: "flex-1 flex flex-col gap-4",
@@ -222,14 +220,13 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                                         cx: "20",
                                         cy: "20",
                                         r: "16",
-                                        stroke: "rgb(129, 140, 248)", // indigo-400-ish
+                                        stroke: "rgb(129, 140, 248)", // indigo-ish
                                         "stroke-width": "4",
                                         fill: "none",
                                         "stroke-linecap": "round",
                                         "stroke-dasharray": "{circumference_str}",
                                         "stroke-dashoffset": "{offset_str}",
                                         transform: "rotate(-90 20 20)",
-                                        // small transition so it feels smooth
                                         class: "transition-[stroke-dashoffset] duration-50 linear",
                                     }
                                 }
@@ -241,6 +238,29 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                     div { class: "text-xs text-gray-500 mt-1",
                         "Rank #{current.rank} — {current.en}"
                     }
+					div { class:"flex gap-5 border-t border-t-black pt-1 justify-center", 
+						Slider {
+							default_value: SliderValue::Single(advance_delay().as_millis() as f64),
+							min: 100.0,
+							max: 1500.0,
+							step: 50.0,
+							horizontal: true,
+							on_value_change: move |value: SliderValue| {
+								// Extract the f64 value from SliderValue::Single
+								let SliderValue::Single(v) = value;
+								advance_delay.set(Duration::from_millis(v as u64));
+							},
+						
+							SliderTrack {
+								SliderRange {}
+								SliderThumb {}
+							}
+						}
+						div { style: "font-size: 16px; font-weight: bold;",
+							"{duration_display}" 
+						}
+					}
+					div{ class:"text-center","Auto-Advance Delay"}
                 }
             }
         }
