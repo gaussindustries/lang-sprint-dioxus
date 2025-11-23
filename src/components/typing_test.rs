@@ -239,7 +239,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                         "Rank #{current.rank} — {current.en}"
                     }
 					if show_set_delay() {
-						div { class:"flex gap-5 border-t border-t-black pt-1 justify-center", 
+						div { class:"flex gap-5 justify-center mb-3", 
 							Slider {
 								default_value: SliderValue::Single(advance_delay().as_millis() as f64),
 								min: 100.0,
@@ -267,9 +267,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 							}
 						}
 					} else {
-						div {class:"flex justify-center",
+						div {class:"flex justify-center mb-3",
 							Tooltip { 
-								TooltipTrigger { class:"flex justify-center mb-3",
+								TooltipTrigger { class:"flex justify-center",
 								button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
 										show_set_delay.set(true);
 									},
