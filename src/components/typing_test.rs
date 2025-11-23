@@ -2,9 +2,12 @@ use dioxus::events::FormEvent;
 use dioxus::prelude::*;
 use rand::Rng;
 use std::fs;
+use std::time::Duration;
 
 use crate::components::WordCard;
 use crate::models::freq_word::FrequencyWord;
+
+const ADVANCE_DELAY: Duration = Duration::from_millis(500);
 
 #[component]
 pub fn TypingTest(lang: Signal<String>) -> Element {
@@ -45,7 +48,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
     let target_chars: Vec<char> = target_word.chars().collect();
     let typed_chars: Vec<char> = typed_now.chars().collect();
 
-    // Check if fully correct
+    // Check if fully correct (for UI only)
     let all_correct = !typed_chars.is_empty()
         && typed_chars.len() == target_chars.len()
         && typed_chars
@@ -53,32 +56,70 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
             .zip(target_chars.iter())
             .all(|(a, b)| a == b);
 
+    // === AUTO-ADVANCE EFFECT =========================================
+    //
+    // Whenever `typed` or `target_word` changes, this resource re-runs,
+    // snapshots them, and if they match, waits 500ms then advances.
+    let word_count = words.len();
+    {
+        let mut idx_sig   = current_index.clone();
+        let mut typed_sig = typed.clone();
+        let target_for_effect = target_word.clone(); // captured immutably
+
+        use_resource(move || {
+            // snapshot current typed, index, and target
+            let typed_snapshot = typed_sig.read().clone();
+            let cur_idx_snapshot = idx_sig(); // registers dependency on index
+            let target_snapshot = target_for_effect.clone();
+
+            async move {
+                // Don't advance on empty or wrong input
+                if typed_snapshot.is_empty() || typed_snapshot != target_snapshot {
+                    return;
+                }
+
+                if word_count == 0 {
+                    return;
+                }
+
+                // Wait so the user can see "Correct! 🎉"
+                tokio::time::sleep(ADVANCE_DELAY).await;
+
+                let len = word_count;
+                let mut rng = rand::rng();
+                let mut next = rng.random_range(0..len);
+
+                // avoid repeating the same word when possible
+                if len > 1 && next == cur_idx_snapshot {
+                    next = (next + 1) % len;
+                }
+
+                idx_sig.set(next);
+                typed_sig.set(String::new());
+            }
+        });
+    }
+ // Left side: WordCard (re-enable when you want)
+                // div { class: "flex-1",
+                //     WordCard {
+                //         word: current.ge.clone(),
+                //         def: if show_english() { current.en.clone() } else { String::new() },
+                //         pos: current.pos.clone().unwrap_or_else(|| "".into()),
+                //         example: current.example.clone().unwrap_or_else(|| "".into()),
+                //     }
+                //
+                //     button {
+                //         class: "mt-3 px-3 py-1 text-xs rounded bg-gray-700 hover:bg-gray-600",
+                //         onclick: move |_| {
+                //             show_english.with_mut(|v| *v = !*v);
+                //         },
+                //         if show_english() { "Hide English" } else { "Show English" }
+                //     }
+                // }
+
     rsx! {
         section { class: "p-6 flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
-
-                // Left side: WordCard
-                div { class: "flex-1",
-                    WordCard {
-                        word: current.ge.clone(),
-                        def: if show_english() { current.en.clone() } else { String::new() },
-                        pos: current.pos.clone().unwrap_or_else(|| "".into()),
-                        example: current.example.clone().unwrap_or_else(|| "".into()),
-                    }
-
-                    // Small toggle to hide/show English def (future: slider/shortcut)
-                    button {
-                        class: "mt-3 px-3 py-1 text-xs rounded bg-gray-700 hover:bg-gray-600",
-                        onclick: move |_| {
-                            show_english.with_mut(|v| *v = !*v);
-                        },
-                        if show_english() {
-                            "Hide English"
-                        } else {
-                            "Show English"
-                        }
-                    }
-                }
 
                 // Right side: typing practice
                 div { class: "flex-1 flex flex-col gap-4",
@@ -89,15 +130,12 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                             target_chars.iter().enumerate().map(|(i, ch)| {
                                 let class = if i < typed_chars.len() {
                                     if typed_chars[i] == *ch {
-                                        // correct letter
-                                        "text-white"
+                                        "text-white"       // correct letter
                                     } else {
-                                        // typed but wrong at this position
-                                        "text-red-400"
+                                        "text-red-400"     // wrong at this position
                                     }
                                 } else {
-                                    // not reached yet
-                                    "text-gray-500"
+                                    "text-gray-500"       // not reached yet
                                 };
 
                                 rsx! {
@@ -122,7 +160,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                         }
                     }
 
-                    // Status + controls
+                    // Status
                     div { class: "flex items-center justify-between text-sm",
                         if all_correct {
                             span { class: "text-green-400 font-semibold", "Correct! 🎉" }
@@ -130,37 +168,6 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                             span { class: "text-gray-400",
                                 "Letters: {typed_chars.len()} / {target_chars.len()}"
                             }
-                        }
-
-                        button {
-                            class: format!(
-                                "px-4 py-2 rounded text-sm font-semibold {}",
-                                if all_correct {
-                                    "bg-indigo-600 hover:bg-indigo-500 text-white"
-                                } else {
-                                    "bg-gray-700 text-gray-400 cursor-not-allowed"
-                                }
-                            ),
-                            disabled: !all_correct,
-                            onclick: move |_| {
-                                if words.is_empty() {
-                                    return;
-                                }
-                                // Simple RNG: pick a new index
-                                let len = words.len();
-                                let mut rng = rand::thread_rng();
-                                let mut next = rng.gen_range(0..len);
-
-                                // avoid repeating same word when possible
-                                let cur_idx = current_index();
-                                if len > 1 && next == cur_idx {
-                                    next = (next + 1) % len;
-                                }
-
-                                current_index.set(next);
-                                typed.set(String::new());
-                            },
-                            "Next word"
                         }
                     }
 
