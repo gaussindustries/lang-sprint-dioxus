@@ -115,7 +115,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
 							volume.set(v as f32);
 						},
 					
-						SliderTrack { class:"slider-track",
+						SliderTrack {
 							SliderRange {}
 							SliderThumb {}
 					}
