@@ -146,7 +146,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
 
 	let mut show_set_delay = use_signal(|| false );
     rsx! {
-        section { class: "p-6 flex justify-center",
+        section { class: "flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
 
                 // Right side: typing practice
