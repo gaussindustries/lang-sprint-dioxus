@@ -134,7 +134,7 @@ pub fn Keyboard(letters: Vec<Letter>) -> Element {
 			}
 			if(show_legend()){
 				div { class:"flex justify-center white",
-					div { class:"border rounded mt-6",
+					div { class:"border-2 border-black rounded mt-6",
 						div { class:"text-center py-2 border-b-2 border-b-black", 
 							button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
 								show_legend.set(false);

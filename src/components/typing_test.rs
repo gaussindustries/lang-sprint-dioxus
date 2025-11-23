@@ -5,7 +5,6 @@ use std::fs;
 use std::time::Duration;
 use dioxus_primitives::slider::SliderValue;
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
-use crate::components::WordCard;
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::models::freq_word::FrequencyWord;
@@ -13,14 +12,14 @@ use crate::models::freq_word::FrequencyWord;
 #[component]
 pub fn TypingTest(lang: Signal<String>) -> Element {
     // Which word index we are on
-    let mut current_index = use_signal(|| 0usize);
+    let current_index = use_signal(|| 0usize);
     // What the user has typed for the current word
     let mut typed = use_signal(|| String::new());
     // Whether to show the English definition on the card
     let mut show_english = use_signal(|| true);
 
     // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
-    let mut advance_progress = use_signal(|| None::<f32>);
+    let advance_progress = use_signal(|| None::<f32>);
     // How long to wait before auto-advance
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
@@ -242,7 +241,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
                     div { class: "text-xs text-gray-500 mt-1",
                         "Rank #{current.rank} — {current.en}"
                     }
-					if (show_set_delay()) {
+					if show_set_delay() {
 						div { class:"flex gap-5 border-t border-t-black pt-1 justify-center", 
 							Slider {
 								default_value: SliderValue::Single(advance_delay().as_millis() as f64),
