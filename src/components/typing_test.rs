@@ -283,7 +283,7 @@ pub fn TypingTest(lang: Signal<String>) -> Element {
 							TooltipContent {
 								side: ContentSide::Top,
 								align: ContentAlign::Center,
-								div{class:"w-[125px] text-center","Current Delay: {duration_display}"}
+								div{class:"w-[150px] text-center","Current Delay: {duration_display}"}
 								}
 							}
 						}
