@@ -1,7 +1,7 @@
 // src/views/home.rs
 use dioxus::prelude::*;
 use std::fs;
-use crate::{components::{TypingTest, Keyboard}, models::letter::Letter, views::Alphabet};
+use crate::{components::{TypingTest, Keyboard, separator::Separator}, models::letter::Letter, views::Alphabet};
 
 pub fn Home() -> Element {
     let lang = use_signal(|| "georgian".to_string());
@@ -22,24 +22,27 @@ pub fn Home() -> Element {
     rsx! {
         div { class: "flex flex-col min-h-screen bg-gray-800",
 
-            header { class: "bg-indigo-600 text-white p-4 text-center",
+            header { class: "bg-indigo-600 text-white text-center p-3",
                 h1 { class: "text-3xl font-bold", "LangSprint – ქართული" }
             }
-
-            Alphabet { letters: letters_vec.clone(), lang: lang.clone() }
-
-            section { class: "p-6 flex justify-center",
-                div {
-                    h2 { class: "text-2xl font-semibold mb-4 text-center", "Typing Test" }
+			div { class:"shadow-inner",
+            	Alphabet { letters: letters_vec.clone(), lang: lang.clone() }
+			}
+			div{ class:"mx-4", 
+				Separator{
+					horizontal:true
+				}
+			}
+            section { class: "flex justify-center",
+					// ⬇️ Keyboard wraps TypingTest so it captures key events
+					div { class: "mt-auto p-4 w-full shadow-inner",
+	                    h2 { class: "text-2xl font-semibold text-center", "Typing Test" }
+						Keyboard { letters: letters_vec.clone(),
+							TypingTest { lang: lang.clone(), letters_vec: letters_vec.clone() }
+						}
+					}
                 }
             }
 
-            // ⬇️ Keyboard wraps TypingTest so it captures key events
-            div { class: "mt-auto p-4 bg-gray-900 border-t",
-                Keyboard { letters: letters_vec.clone(),
-                    TypingTest { lang: lang.clone(), letters_vec: letters_vec.clone() }
-                }
-            }
         }
     }
-}

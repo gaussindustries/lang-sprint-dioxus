@@ -73,7 +73,7 @@ pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
     rsx! {
         // outer "global" listener: focusable container
         div {
-            class: "keyboard p-4 bg-gray-800 rounded-lg shadow-inner select-none",
+            class: "keyboard p-4 bg-gray-800 rounded-lg select-none",
             tabindex: "0",
 
             onkeydown: move |evt: KeyboardEvent| {
@@ -91,7 +91,7 @@ pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
 					set.remove(&code);
 				});
 			},
-			
+
 			//the keyboard will always show below the children
 			{children}
 
