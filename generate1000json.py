@@ -1,47 +1,68 @@
 import json
 from pathlib import Path
-#input can be gathered from https://1000mostcommonwords.com/
-INPUT = Path("example.txt")
-OUTPUT = Path("langs/")
+from openpyxl import load_workbook
 
-entries = []
+INPUT_XLSX = Path("746 most common words.xlsx")  # update if different
+OUTPUT_JSON = Path("langs/georgian/test.json")
 
-with INPUT.open("r", encoding="utf-8") as f:
-    for line in f:
-        line = line.strip()
-        if not line:
-            continue
+def main():
+    if not INPUT_XLSX.exists():
+        raise FileNotFoundError(f"Input file not found: {INPUT_XLSX}")
 
-        # Split into 3 parts: rank, ka, en
-        # Your file is "rank<TAB>Georgian<TAB>English...".
-        parts = line.split("\t")
-        if len(parts) < 3:
-            # fallback if it's space-separated instead of tabs
-            parts = line.split(maxsplit=2)
+    wb = load_workbook(INPUT_XLSX, data_only=True)
 
-        if len(parts) < 3:
-            print("Skipping weird line:", line)
-            continue
+    print("Sheets in workbook:", wb.sheetnames)
 
-        rank_str, ka, en = parts[0], parts[1], parts[2]
+    entries = []
+    rank = 1
 
-        try:
-            rank = int(rank_str)
-        except ValueError:
-            print("Skipping non-numeric rank:", line)
-            continue
+    # Go through *all* sheets, just in case
+    for sheet_name in wb.sheetnames:
+        ws = wb[sheet_name]
+        print(f"Scanning sheet: {sheet_name}")
 
-        entries.append({
-            "rank": rank,
-            "ge": ka, #suffix for target language
-            "en": en.strip()
-        })
+        for row_idx, row in enumerate(ws.iter_rows(values_only=True), start=1):
+            # Skip completely empty rows
+            if not any(cell is not None and str(cell).strip() for cell in row):
+                continue
 
-# Sort by rank just to be sure
-entries.sort(key=lambda x: x["rank"])
+            # Grab all non-empty cells as strings
+            cells = [
+                str(cell).strip()
+                for cell in row
+                if cell is not None and str(cell).strip()
+            ]
 
-OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-with OUTPUT.open("w", encoding="utf-8") as f:
-    json.dump(entries, f, ensure_ascii=False, indent=2)
+            # We expect at least 2 non-empty cells: English + Georgian
+            if len(cells) < 2:
+                continue
 
-print(f"Wrote {len(entries)} entries to {OUTPUT}")
+            # If you know English is ALWAYS first and Georgian second:
+            en_str = cells[0]
+            ge_str = cells[1]
+
+            # Quick heuristic: ignore rows that look like headers
+            # Adjust these checks as needed.
+            if row_idx == 1 and (
+                en_str.lower() in ("english", "en") or ge_str.lower() in ("georgian", "ka", "ge")
+            ):
+                print(f"Skipping header row on sheet {sheet_name}: {cells}")
+                continue
+
+            entries.append({
+                "rank": rank,
+                "ge": ge_str,
+                "en": en_str,
+            })
+            rank += 1
+
+    print(f"Collected {len(entries)} entries before writing.")
+
+    OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_JSON.open("w", encoding="utf-8") as f:
+        json.dump(entries, f, ensure_ascii=False, indent=2)
+
+    print(f"Wrote {len(entries)} entries to {OUTPUT_JSON}")
+
+if __name__ == "__main__":
+    main()

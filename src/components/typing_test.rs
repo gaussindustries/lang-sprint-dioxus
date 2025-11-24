@@ -47,7 +47,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let idx = current_index().min(words.len() - 1);
     let current = words[idx].clone();
 
-    let target_word = current.ge.clone();
+    let target_word = current.xx.clone();
     let typed_now = typed();
 
     let target_chars: Vec<char> = target_word.chars().collect();

@@ -1,5002 +1,3732 @@
 [
   {
     "rank": 1,
-    "ge": "როგორც",
-    "en": "as"
-  },
-  {
-    "rank": 2,
-    "ge": "თოვლი",
-    "en": "I"
-  },
-  {
-    "rank": 3,
-    "ge": "მისი",
-    "en": "his"
-  },
-  {
-    "rank": 4,
-    "ge": "რომ",
-    "en": "that"
-  },
-  {
-    "rank": 5,
-    "ge": "ის",
-    "en": "he"
-  },
-  {
-    "rank": 6,
-    "ge": "იყო",
-    "en": "was"
-  },
-  {
-    "rank": 7,
-    "ge": "განთავსების",
-    "en": "for"
-  },
-  {
-    "rank": 8,
-    "ge": "წელი",
-    "en": "on"
-  },
-  {
-    "rank": 9,
-    "ge": "არის",
-    "en": "are"
-  },
-  {
-    "rank": 10,
-    "ge": "ერთად",
-    "en": "with"
-  },
-  {
-    "rank": 11,
-    "ge": "ისინი",
-    "en": "they"
-  },
-  {
-    "rank": 12,
-    "ge": "იყოს",
-    "en": "be"
-  },
-  {
-    "rank": 13,
-    "ge": "ზე",
-    "en": "at"
-  },
-  {
-    "rank": 14,
-    "ge": "ერთი",
-    "en": "one"
-  },
-  {
-    "rank": 15,
-    "ge": "აქვს",
-    "en": "have"
-  },
-  {
-    "rank": 16,
-    "ge": "ამ",
-    "en": "this"
-  },
-  {
-    "rank": 17,
-    "ge": "საწყისი",
-    "en": "from"
-  },
-  {
-    "rank": 18,
-    "ge": "მიერ",
-    "en": "by"
-  },
-  {
-    "rank": 19,
-    "ge": "ცხელი",
-    "en": "hot"
-  },
-  {
-    "rank": 20,
-    "ge": "სიტყვა",
-    "en": "word"
-  },
-  {
-    "rank": 21,
-    "ge": "მაგრამ",
-    "en": "but"
-  },
-  {
-    "rank": 22,
-    "ge": "რა",
-    "en": "what"
-  },
-  {
-    "rank": 23,
-    "ge": "ზოგიერთი",
-    "en": "some"
-  },
-  {
-    "rank": 24,
-    "ge": "არის",
-    "en": "is"
-  },
-  {
-    "rank": 25,
-    "ge": "ის",
-    "en": "it"
-  },
-  {
-    "rank": 26,
-    "ge": "თქვენ",
-    "en": "you"
-  },
-  {
-    "rank": 27,
-    "ge": "ან",
-    "en": "or"
-  },
-  {
-    "rank": 28,
-    "ge": "ჰქონდა",
-    "en": "had"
-  },
-  {
-    "rank": 29,
-    "ge": "ზე",
-    "en": "the"
-  },
-  {
-    "rank": 30,
-    "ge": "საქართველოს",
-    "en": "of"
-  },
-  {
-    "rank": 31,
-    "ge": "მიზეზი",
-    "en": "to"
-  },
-  {
-    "rank": 32,
     "ge": "და",
     "en": "and"
   },
   {
-    "rank": 33,
-    "ge": "საკვები",
-    "en": "a"
+    "rank": 2,
+    "ge": "ყოფნა",
+    "en": "to be"
   },
   {
-    "rank": 34,
-    "ge": "წლის",
-    "en": "in"
+    "rank": 3,
+    "ge": "შენ",
+    "en": "you"
   },
   {
-    "rank": 35,
+    "rank": 4,
+    "ge": "ის",
+    "en": "he/she/it, that"
+  },
+  {
+    "rank": 5,
+    "ge": "მე",
+    "en": "I"
+  },
+  {
+    "rank": 6,
+    "ge": "მისი",
+    "en": "his"
+  },
+  {
+    "rank": 7,
+    "ge": "ისინი",
+    "en": "they"
+  },
+  {
+    "rank": 8,
+    "ge": "ერთი",
+    "en": "one"
+  },
+  {
+    "rank": 9,
+    "ge": "ყოლა",
+    "en": "to have (living)"
+  },
+  {
+    "rank": 10,
+    "ge": "ქონა",
+    "en": "to have (non-living)"
+  },
+  {
+    "rank": 11,
+    "ge": "ეს",
+    "en": "this"
+  },
+  {
+    "rank": 12,
+    "ge": "ან",
+    "en": "or"
+  },
+  {
+    "rank": 13,
+    "ge": "არ",
+    "en": "not"
+  },
+  {
+    "rank": 14,
+    "ge": "სიტყვა",
+    "en": "word"
+  },
+  {
+    "rank": 15,
+    "ge": "მაგრამ",
+    "en": "but"
+  },
+  {
+    "rank": 16,
+    "ge": "რა",
+    "en": "what"
+  },
+  {
+    "rank": 17,
     "ge": "ჩვენ",
     "en": "we"
   },
   {
-    "rank": 36,
-    "ge": "სისტემაში",
-    "en": "can"
+    "rank": 18,
+    "ge": "შეძლება",
+    "en": "to be able to"
   },
   {
-    "rank": 37,
-    "ge": "აქტის",
-    "en": "out"
-  },
-  {
-    "rank": 38,
+    "rank": 19,
     "ge": "სხვა",
     "en": "other"
   },
   {
-    "rank": 39,
-    "ge": "იყო",
-    "en": "were"
-  },
-  {
-    "rank": 40,
-    "ge": "რომელიც",
-    "en": "which"
-  },
-  {
-    "rank": 41,
-    "ge": "გაკეთება",
-    "en": "do"
-  },
-  {
-    "rank": 42,
-    "ge": "მათი",
-    "en": "their"
-  },
-  {
-    "rank": 43,
-    "ge": "დრო",
-    "en": "time"
-  },
-  {
-    "rank": 44,
-    "ge": "თუ",
-    "en": "if"
-  },
-  {
-    "rank": 45,
-    "ge": "იქნება",
-    "en": "will"
-  },
-  {
-    "rank": 46,
-    "ge": "როგორ",
-    "en": "how"
-  },
-  {
-    "rank": 47,
-    "ge": "განაცხადა",
-    "en": "said"
-  },
-  {
-    "rank": 48,
-    "ge": "ითამაშეთ",
-    "en": "an"
-  },
-  {
-    "rank": 49,
-    "ge": "თითოეული",
-    "en": "each"
-  },
-  {
-    "rank": 50,
-    "ge": "ვუთხრა",
-    "en": "tell"
-  },
-  {
-    "rank": 51,
-    "ge": "ჯერ",
-    "en": "does"
-  },
-  {
-    "rank": 52,
-    "ge": "კომპლექტი",
-    "en": "set"
-  },
-  {
-    "rank": 53,
-    "ge": "სამ",
-    "en": "three"
-  },
-  {
-    "rank": 54,
-    "ge": "მინდა",
-    "en": "want"
-  },
-  {
-    "rank": 55,
-    "ge": "საჰაერო",
-    "en": "air"
-  },
-  {
-    "rank": 56,
-    "ge": "კარგად",
-    "en": "well"
-  },
-  {
-    "rank": 57,
-    "ge": "ასევე",
-    "en": "also"
-  },
-  {
-    "rank": 58,
-    "ge": "ითამაშეთ",
-    "en": "play"
-  },
-  {
-    "rank": 59,
-    "ge": "პატარა",
-    "en": "small"
-  },
-  {
-    "rank": 60,
-    "ge": "ბოლოს",
-    "en": "end"
-  },
-  {
-    "rank": 61,
-    "ge": "მა",
-    "en": "put"
-  },
-  {
-    "rank": 62,
-    "ge": "მთავარი",
-    "en": "home"
-  },
-  {
-    "rank": 63,
-    "ge": "წაკითხული",
-    "en": "read"
-  },
-  {
-    "rank": 64,
-    "ge": "ხელი",
-    "en": "hand"
-  },
-  {
-    "rank": 65,
-    "ge": "პორტი",
-    "en": "port"
-  },
-  {
-    "rank": 66,
-    "ge": "დიდი",
-    "en": "large"
-  },
-  {
-    "rank": 67,
-    "ge": "სიტყვიერად",
-    "en": "spell"
-  },
-  {
-    "rank": 68,
-    "ge": "რჩეულებში",
-    "en": "add"
-  },
-  {
-    "rank": 69,
-    "ge": "კი",
-    "en": "even"
-  },
-  {
-    "rank": 70,
-    "ge": "მიწის",
-    "en": "land"
-  },
-  {
-    "rank": 71,
-    "ge": "აქ",
-    "en": "here"
-  },
-  {
-    "rank": 72,
-    "ge": "უნდა",
-    "en": "must"
-  },
-  {
-    "rank": 73,
-    "ge": "დიდი",
-    "en": "big"
-  },
-  {
-    "rank": 74,
-    "ge": "მაღალი",
-    "en": "high"
-  },
-  {
-    "rank": 75,
-    "ge": "ასეთი",
-    "en": "such"
-  },
-  {
-    "rank": 76,
-    "ge": "დაიცვას",
-    "en": "follow"
-  },
-  {
-    "rank": 77,
-    "ge": "აქტის",
-    "en": "act"
-  },
-  {
-    "rank": 78,
-    "ge": "რატომ",
-    "en": "why"
-  },
-  {
-    "rank": 79,
-    "ge": "ითხოვენ",
-    "en": "ask"
-  },
-  {
-    "rank": 80,
-    "ge": "მამაკაცის",
-    "en": "men"
-  },
-  {
-    "rank": 81,
-    "ge": "ცვლილება",
-    "en": "change"
-  },
-  {
-    "rank": 82,
-    "ge": "წავიდა",
-    "en": "went"
-  },
-  {
-    "rank": 83,
-    "ge": "მსუბუქი",
-    "en": "light"
-  },
-  {
-    "rank": 84,
-    "ge": "სახის",
-    "en": "kind"
-  },
-  {
-    "rank": 85,
-    "ge": "გამორთვის",
-    "en": "off"
-  },
-  {
-    "rank": 86,
-    "ge": "უნდა",
-    "en": "need"
-  },
-  {
-    "rank": 87,
-    "ge": "სახლი",
-    "en": "house"
-  },
-  {
-    "rank": 88,
-    "ge": "სურათი",
-    "en": "picture"
-  },
-  {
-    "rank": 89,
-    "ge": "ცდილობენ",
-    "en": "try"
-  },
-  {
-    "rank": 90,
-    "ge": "ჩვენთვის",
-    "en": "us"
-  },
-  {
-    "rank": 91,
-    "ge": "ერთხელ",
-    "en": "again"
-  },
-  {
-    "rank": 92,
-    "ge": "ცხოველთა",
-    "en": "animal"
-  },
-  {
-    "rank": 93,
-    "ge": "წერტილი",
-    "en": "point"
-  },
-  {
-    "rank": 94,
-    "ge": "დედა",
-    "en": "mother"
-  },
-  {
-    "rank": 95,
-    "ge": "მსოფლიო",
-    "en": "world"
-  },
-  {
-    "rank": 96,
-    "ge": "ახლოს",
-    "en": "near"
-  },
-  {
-    "rank": 97,
-    "ge": "ავაშენოთ",
-    "en": "build"
-  },
-  {
-    "rank": 98,
-    "ge": "თვითმმართველობის",
-    "en": "self"
-  },
-  {
-    "rank": 99,
-    "ge": "დედამიწაზე",
-    "en": "earth"
-  },
-  {
-    "rank": 100,
-    "ge": "მამა",
-    "en": "father"
-  },
-  {
-    "rank": 101,
-    "ge": "ნებისმიერი",
-    "en": "any"
-  },
-  {
-    "rank": 102,
-    "ge": "ახალი",
-    "en": "new"
-  },
-  {
-    "rank": 103,
-    "ge": "მუშაობა",
-    "en": "work"
-  },
-  {
-    "rank": 104,
-    "ge": "ნაწილი",
-    "en": "part"
-  },
-  {
-    "rank": 105,
-    "ge": "მიიღოს",
-    "en": "take"
-  },
-  {
-    "rank": 106,
-    "ge": "მიიღეთ",
-    "en": "get"
-  },
-  {
-    "rank": 107,
-    "ge": "ადგილი",
-    "en": "place"
-  },
-  {
-    "rank": 108,
-    "ge": "გააკეთა",
-    "en": "made"
-  },
-  {
-    "rank": 109,
-    "ge": "ცხოვრება",
-    "en": "live"
-  },
-  {
-    "rank": 110,
-    "ge": "სადაც",
-    "en": "where"
-  },
-  {
-    "rank": 111,
-    "ge": "შემდეგ",
-    "en": "after"
-  },
-  {
-    "rank": 112,
-    "ge": "უკან",
-    "en": "back"
-  },
-  {
-    "rank": 113,
-    "ge": "პატარა",
-    "en": "little"
-  },
-  {
-    "rank": 114,
-    "ge": "მხოლოდ",
-    "en": "only"
-  },
-  {
-    "rank": 115,
-    "ge": "რაუნდი",
-    "en": "round"
-  },
-  {
-    "rank": 116,
-    "ge": "კაცი",
-    "en": "man"
-  },
-  {
-    "rank": 117,
-    "ge": "წელი",
-    "en": "year"
-  },
-  {
-    "rank": 118,
-    "ge": "მოვიდა",
-    "en": "came"
-  },
-  {
-    "rank": 119,
-    "ge": "შოუ",
-    "en": "show"
-  },
-  {
-    "rank": 120,
-    "ge": "ყველა",
-    "en": "every"
-  },
-  {
-    "rank": 121,
-    "ge": "კარგი",
-    "en": "good"
-  },
-  {
-    "rank": 122,
-    "ge": "მე",
-    "en": "me"
-  },
-  {
-    "rank": 123,
-    "ge": "მისცეს",
-    "en": "give"
-  },
-  {
-    "rank": 124,
-    "ge": "ჩვენი",
-    "en": "our"
-  },
-  {
-    "rank": 125,
-    "ge": "ფარგლებში",
-    "en": "under"
-  },
-  {
-    "rank": 126,
-    "ge": "სახელი",
-    "en": "name"
-  },
-  {
-    "rank": 127,
-    "ge": "ძალიან",
-    "en": "very"
-  },
-  {
-    "rank": 128,
-    "ge": "მეშვეობით",
-    "en": "through"
-  },
-  {
-    "rank": 129,
-    "ge": "უბრალოდ",
-    "en": "just"
-  },
-  {
-    "rank": 130,
-    "ge": "ფორმა",
-    "en": "form"
-  },
-  {
-    "rank": 131,
-    "ge": "სასჯელი",
-    "en": "sentence"
-  },
-  {
-    "rank": 132,
-    "ge": "დიდი",
-    "en": "great"
-  },
-  {
-    "rank": 133,
-    "ge": "ვფიქრობ,",
-    "en": "think"
-  },
-  {
-    "rank": 134,
-    "ge": "ამბობენ,",
-    "en": "say"
-  },
-  {
-    "rank": 135,
-    "ge": "დაეხმაროს",
-    "en": "help"
-  },
-  {
-    "rank": 136,
-    "ge": "დაბალი",
-    "en": "low"
-  },
-  {
-    "rank": 137,
-    "ge": "ონლაინ",
-    "en": "line"
-  },
-  {
-    "rank": 138,
-    "ge": "განსხვავდება",
-    "en": "differ"
-  },
-  {
-    "rank": 139,
-    "ge": "თავის მხრივ,",
-    "en": "turn"
-  },
-  {
-    "rank": 140,
-    "ge": "მიზეზი",
-    "en": "cause"
-  },
-  {
-    "rank": 141,
-    "ge": "ბევრი",
-    "en": "much"
-  },
-  {
-    "rank": 142,
-    "ge": "ნიშნავს",
-    "en": "mean"
-  },
-  {
-    "rank": 143,
-    "ge": "ადრე",
-    "en": "before"
-  },
-  {
-    "rank": 144,
-    "ge": "ნაბიჯი",
-    "en": "move"
-  },
-  {
-    "rank": 145,
-    "ge": "უფლება",
-    "en": "right"
-  },
-  {
-    "rank": 146,
-    "ge": "ბიჭი",
-    "en": "boy"
-  },
-  {
-    "rank": 147,
-    "ge": "ძველი",
-    "en": "old"
-  },
-  {
-    "rank": 148,
-    "ge": "ძალიან",
-    "en": "too"
-  },
-  {
-    "rank": 149,
-    "ge": "იგივე",
-    "en": "same"
-  },
-  {
-    "rank": 150,
-    "ge": "იგი",
-    "en": "she"
-  },
-  {
-    "rank": 151,
+    "rank": 20,
     "ge": "ყველა",
     "en": "all"
   },
   {
-    "rank": 152,
-    "ge": "არსებობს",
+    "rank": 21,
+    "ge": "ყველაფერი",
+    "en": "everything"
+  },
+  {
+    "rank": 22,
+    "ge": "იქ",
     "en": "there"
   },
   {
-    "rank": 153,
-    "ge": "როდესაც",
+    "rank": 23,
+    "ge": "როდის",
     "en": "when"
   },
   {
-    "rank": 154,
-    "ge": "გოლი",
+    "rank": 24,
+    "ge": "ზევით",
     "en": "up"
   },
   {
-    "rank": 155,
+    "rank": 25,
     "ge": "გამოყენება",
-    "en": "use"
+    "en": "to use"
   },
   {
-    "rank": 156,
-    "ge": "თქვენი",
+    "rank": 26,
+    "ge": "შენი",
     "en": "your"
   },
   {
-    "rank": 157,
-    "ge": "გზა",
-    "en": "way"
+    "rank": 27,
+    "ge": "როგორ",
+    "en": "how"
   },
   {
-    "rank": 158,
+    "rank": 28,
+    "ge": "თქმა",
+    "en": "to say / to tell"
+  },
+  {
+    "rank": 29,
+    "ge": "თითოეული",
+    "en": "each"
+  },
+  {
+    "rank": 30,
+    "ge": "რომელი",
+    "en": "which (one) ?"
+  },
+  {
+    "rank": 31,
+    "ge": "რომელიც",
+    "en": "which (as in xx which xx)"
+  },
+  {
+    "rank": 32,
+    "ge": "კეთება",
+    "en": "to do"
+  },
+  {
+    "rank": 33,
+    "ge": "მათი",
+    "en": "their"
+  },
+  {
+    "rank": 34,
+    "ge": "დრო",
+    "en": "time"
+  },
+  {
+    "rank": 35,
+    "ge": "თუ",
+    "en": "if"
+  },
+  {
+    "rank": 36,
+    "ge": "გზა",
+    "en": "way / road / path"
+  },
+  {
+    "rank": 37,
     "ge": "შესახებ",
     "en": "about"
   },
   {
-    "rank": 159,
+    "rank": 38,
     "ge": "ბევრი",
     "en": "many"
   },
   {
-    "rank": 160,
-    "ge": "შემდეგ",
+    "rank": 39,
+    "ge": "მაშინ",
     "en": "then"
   },
   {
-    "rank": 161,
+    "rank": 40,
     "ge": "მათ",
     "en": "them"
   },
   {
-    "rank": 162,
+    "rank": 41,
     "ge": "დაწერა",
-    "en": "write"
+    "en": "to write"
   },
   {
-    "rank": 163,
-    "ge": "რომ",
-    "en": "would"
+    "rank": 42,
+    "ge": "მოწონება",
+    "en": "to like"
   },
   {
-    "rank": 164,
-    "ge": "როგორიცაა",
-    "en": "like"
+    "rank": 43,
+    "ge": "სიყვარული",
+    "en": "to love/like"
   },
   {
-    "rank": 165,
-    "ge": "ასე რომ,",
-    "en": "so"
+    "rank": 44,
+    "ge": "მის",
+    "en": "him/her/it"
   },
   {
-    "rank": 166,
-    "ge": "ამ",
-    "en": "these"
+    "rank": 45,
+    "ge": "გრძელი",
+    "en": "long (in length i.e. hair ect)"
   },
   {
-    "rank": 167,
-    "ge": "მისი",
-    "en": "her"
+    "rank": 46,
+    "ge": "შექმნა",
+    "en": "to make/create"
   },
   {
-    "rank": 168,
-    "ge": "ხანგრძლივი",
-    "en": "long"
-  },
-  {
-    "rank": 169,
-    "ge": "რათა",
-    "en": "make"
-  },
-  {
-    "rank": 170,
-    "ge": "რამ",
+    "rank": 47,
+    "ge": "რამე",
     "en": "thing"
   },
   {
-    "rank": 171,
-    "ge": "იხილეთ",
-    "en": "see"
+    "rank": 48,
+    "ge": "დანახვა",
+    "en": "to see"
   },
   {
-    "rank": 172,
-    "ge": "მას",
-    "en": "him"
-  },
-  {
-    "rank": 173,
-    "ge": "ორ",
+    "rank": 49,
+    "ge": "ორი",
     "en": "two"
   },
   {
-    "rank": 174,
-    "ge": "აქვს",
-    "en": "has"
+    "rank": 50,
+    "ge": "ყურება",
+    "en": "to look / to watch"
   },
   {
-    "rank": 175,
-    "ge": "გამოიყურება",
-    "en": "look"
-  },
-  {
-    "rank": 176,
-    "ge": "მეტი",
+    "rank": 51,
+    "ge": "უფრო / მეტი",
     "en": "more"
   },
   {
-    "rank": 177,
-    "ge": "დღეს",
+    "rank": 52,
+    "ge": "დღე",
     "en": "day"
   },
   {
-    "rank": 178,
-    "ge": "იქნებოდა",
-    "en": "could"
+    "rank": 53,
+    "ge": "წასვლა",
+    "en": "to go"
   },
   {
-    "rank": 179,
-    "ge": "გადასვლა",
-    "en": "go"
+    "rank": 54,
+    "ge": "მოსვლა",
+    "en": "to come"
   },
   {
-    "rank": 180,
-    "ge": "მოდის",
-    "en": "come"
-  },
-  {
-    "rank": 181,
-    "ge": "გააკეთა",
-    "en": "did"
-  },
-  {
-    "rank": 182,
-    "ge": "ნომერი",
+    "rank": 55,
+    "ge": "ნომერი / რიცხვი",
     "en": "number"
   },
   {
-    "rank": 183,
-    "ge": "ხმის",
+    "rank": 56,
+    "ge": "ხმა",
     "en": "sound"
   },
   {
-    "rank": 184,
+    "rank": 57,
     "ge": "არა",
     "en": "no"
   },
   {
-    "rank": 185,
-    "ge": "ყველაზე",
-    "en": "most"
-  },
-  {
-    "rank": 186,
+    "rank": 58,
     "ge": "ხალხი",
     "en": "people"
   },
   {
-    "rank": 187,
+    "rank": 59,
     "ge": "ჩემი",
     "en": "my"
   },
   {
-    "rank": 188,
-    "ge": "მეტი",
-    "en": "over"
+    "rank": 60,
+    "ge": "ცოდნა",
+    "en": "to know"
   },
   {
-    "rank": 189,
-    "ge": "ვიცი",
-    "en": "know"
-  },
-  {
-    "rank": 190,
-    "ge": "წყლის",
+    "rank": 61,
+    "ge": "წყალი",
     "en": "water"
   },
   {
-    "rank": 191,
-    "ge": "მეტი",
-    "en": "than"
+    "rank": 62,
+    "ge": "დაძანება",
+    "en": "to call (sb to for eg go sw)"
   },
   {
-    "rank": 192,
-    "ge": "დარეკეთ",
-    "en": "call"
+    "rank": 63,
+    "ge": "რქმევა",
+    "en": "to be called / named"
   },
   {
-    "rank": 193,
+    "rank": 64,
     "ge": "პირველი",
     "en": "first"
   },
   {
-    "rank": 194,
-    "ge": "ვინც",
+    "rank": 65,
+    "ge": "ვინ",
     "en": "who"
   },
   {
-    "rank": 195,
-    "ge": "შეიძლება",
-    "en": "may"
-  },
-  {
-    "rank": 196,
-    "ge": "ქვემოთ",
+    "rank": 66,
+    "ge": "ქვეშ",
     "en": "down"
   },
   {
-    "rank": 197,
-    "ge": "მხარე",
-    "en": "side"
-  },
-  {
-    "rank": 198,
-    "ge": "უკვე",
-    "en": "been"
-  },
-  {
-    "rank": 199,
+    "rank": 67,
     "ge": "ახლა",
     "en": "now"
   },
   {
-    "rank": 200,
-    "ge": "მოვძებნოთ",
-    "en": "find"
+    "rank": 68,
+    "ge": "პოვნა",
+    "en": "to find"
   },
   {
-    "rank": 201,
-    "ge": "უფროსი",
-    "en": "head"
+    "rank": 69,
+    "ge": "ნებისმიერი",
+    "en": "any"
   },
   {
-    "rank": 202,
-    "ge": "დავდგეთ",
-    "en": "stand"
+    "rank": 70,
+    "ge": "ახალი",
+    "en": "new"
   },
   {
-    "rank": 203,
-    "ge": "საკუთარი",
-    "en": "own"
+    "rank": 71,
+    "ge": "მუშაობა",
+    "en": "to work"
   },
   {
-    "rank": 204,
-    "ge": "გვერდი",
-    "en": "page"
+    "rank": 72,
+    "ge": "ნაწილი",
+    "en": "part / piece"
   },
   {
-    "rank": 205,
-    "ge": "უნდა",
-    "en": "should"
+    "rank": 73,
+    "ge": "აღება",
+    "en": "to take / get"
   },
   {
-    "rank": 206,
-    "ge": "ქვეყანაში",
-    "en": "country"
+    "rank": 74,
+    "ge": "ადგილი",
+    "en": "place / area"
   },
   {
-    "rank": 207,
-    "ge": "ი",
-    "en": "found"
-  },
-  {
-    "rank": 208,
-    "ge": "პასუხი",
-    "en": "answer"
-  },
-  {
-    "rank": 209,
-    "ge": "სკოლა",
-    "en": "school"
-  },
-  {
-    "rank": 210,
-    "ge": "იზრდება",
-    "en": "grow"
-  },
-  {
-    "rank": 211,
-    "ge": "სასწავლო",
-    "en": "study"
-  },
-  {
-    "rank": 212,
-    "ge": "ჯერ კიდევ",
-    "en": "still"
-  },
-  {
-    "rank": 213,
-    "ge": "ვისწავლოთ",
-    "en": "learn"
-  },
-  {
-    "rank": 214,
-    "ge": "ქარხანა",
-    "en": "plant"
-  },
-  {
-    "rank": 215,
-    "ge": "საფარი",
-    "en": "cover"
-  },
-  {
-    "rank": 216,
-    "ge": "საკვები",
-    "en": "food"
-  },
-  {
-    "rank": 217,
-    "ge": "მზე",
-    "en": "sun"
-  },
-  {
-    "rank": 218,
-    "ge": "ოთხ",
-    "en": "four"
-  },
-  {
-    "rank": 219,
-    "ge": "შორის",
-    "en": "between"
-  },
-  {
-    "rank": 220,
-    "ge": "სახელმწიფო",
-    "en": "state"
-  },
-  {
-    "rank": 221,
-    "ge": "შენარჩუნება",
-    "en": "keep"
-  },
-  {
-    "rank": 222,
-    "ge": "თვალის",
-    "en": "eye"
-  },
-  {
-    "rank": 223,
-    "ge": "არასოდეს",
-    "en": "never"
-  },
-  {
-    "rank": 224,
-    "ge": "ბოლო",
-    "en": "last"
-  },
-  {
-    "rank": 225,
-    "ge": "მიადევნე",
-    "en": "let"
-  },
-  {
-    "rank": 226,
-    "ge": "ეგონა",
-    "en": "thought"
-  },
-  {
-    "rank": 227,
-    "ge": "ქალაქი",
-    "en": "city"
-  },
-  {
-    "rank": 228,
-    "ge": "ხე",
-    "en": "tree"
-  },
-  {
-    "rank": 229,
-    "ge": "გადაკვეთა",
-    "en": "cross"
-  },
-  {
-    "rank": 230,
-    "ge": "ფერმა",
-    "en": "farm"
-  },
-  {
-    "rank": 231,
-    "ge": "მძიმე",
-    "en": "hard"
-  },
-  {
-    "rank": 232,
-    "ge": "დაწყება",
-    "en": "start"
-  },
-  {
-    "rank": 233,
-    "ge": "შესაძლოა",
-    "en": "might"
-  },
-  {
-    "rank": 234,
-    "ge": "ისტორია",
-    "en": "story"
-  },
-  {
-    "rank": 235,
-    "ge": "ხერხი",
-    "en": "saw"
-  },
-  {
-    "rank": 236,
-    "ge": "შორს",
-    "en": "far"
-  },
-  {
-    "rank": 237,
-    "ge": "ზღვის",
-    "en": "sea"
-  },
-  {
-    "rank": 238,
-    "ge": "მიაპყროს",
-    "en": "draw"
-  },
-  {
-    "rank": 239,
-    "ge": "მარცხენა",
-    "en": "left"
-  },
-  {
-    "rank": 240,
-    "ge": "ბოლოს",
-    "en": "late"
-  },
-  {
-    "rank": 241,
-    "ge": "აწარმოებს",
-    "en": "run"
-  },
-  {
-    "rank": 242,
-    "ge": "არა",
-    "en": "don’t"
-  },
-  {
-    "rank": 243,
-    "ge": "ხოლო",
-    "en": "while"
-  },
-  {
-    "rank": 244,
-    "ge": "პრეს",
-    "en": "press"
-  },
-  {
-    "rank": 245,
-    "ge": "ახლოს",
-    "en": "close"
-  },
-  {
-    "rank": 246,
-    "ge": "ღამის",
-    "en": "night"
-  },
-  {
-    "rank": 247,
-    "ge": "რეალური",
-    "en": "real"
-  },
-  {
-    "rank": 248,
-    "ge": "ცხოვრება",
+    "rank": 75,
+    "ge": "სიცოცხლე",
     "en": "life"
   },
   {
-    "rank": 249,
-    "ge": "რამდენიმე",
-    "en": "few"
+    "rank": 76,
+    "ge": "ცხოვრება",
+    "en": "to live"
   },
   {
-    "rank": 250,
-    "ge": "ჩრდილოეთ",
-    "en": "north"
+    "rank": 77,
+    "ge": "სად",
+    "en": "where"
   },
   {
-    "rank": 251,
-    "ge": "წიგნაკი",
-    "en": "book"
+    "rank": 78,
+    "ge": "შემდეგ",
+    "en": "after"
   },
   {
-    "rank": 252,
-    "ge": "განახორციელოს",
-    "en": "carry"
+    "rank": 79,
+    "ge": "უკან",
+    "en": "back"
   },
   {
-    "rank": 253,
-    "ge": "აიღო",
-    "en": "took"
+    "rank": 80,
+    "ge": "ცოტა",
+    "en": "little"
   },
   {
-    "rank": 254,
-    "ge": "მეცნიერება",
-    "en": "science"
+    "rank": 81,
+    "ge": "მხოლოდ",
+    "en": "only"
   },
   {
-    "rank": 255,
-    "ge": "ჭამა",
-    "en": "eat"
+    "rank": 82,
+    "ge": "მრგვალი",
+    "en": "round (in shape)"
   },
   {
-    "rank": 256,
-    "ge": "ოთახი",
-    "en": "room"
+    "rank": 83,
+    "ge": "კაცი",
+    "en": "man"
   },
   {
-    "rank": 257,
-    "ge": "მეგობარს",
-    "en": "friend"
+    "rank": 84,
+    "ge": "წელი",
+    "en": "year"
   },
   {
-    "rank": 258,
-    "ge": "დაიწყო",
-    "en": "began"
+    "rank": 85,
+    "ge": "ჩვენება",
+    "en": "to show"
   },
   {
-    "rank": 259,
-    "ge": "იდეა",
-    "en": "idea"
+    "rank": 86,
+    "ge": "ყოველი",
+    "en": "every"
   },
   {
-    "rank": 260,
-    "ge": "თევზი",
-    "en": "fish"
+    "rank": 87,
+    "ge": "კარგი",
+    "en": "good"
   },
   {
-    "rank": 261,
-    "ge": "მთის",
-    "en": "mountain"
+    "rank": 88,
+    "ge": "მე",
+    "en": "me"
   },
   {
-    "rank": 262,
-    "ge": "შეჩერება",
-    "en": "stop"
+    "rank": 89,
+    "ge": "მიცემა",
+    "en": "to give"
   },
   {
-    "rank": 263,
-    "ge": "ერთხელ",
-    "en": "once"
+    "rank": 90,
+    "ge": "ჩვენი",
+    "en": "our"
   },
   {
-    "rank": 264,
-    "ge": "ბაზა",
-    "en": "base"
+    "rank": 91,
+    "ge": "სახელი",
+    "en": "name"
   },
   {
-    "rank": 265,
-    "ge": "მოვისმინოთ",
-    "en": "hear"
+    "rank": 92,
+    "ge": "ძალიან",
+    "en": "very"
   },
   {
-    "rank": 266,
-    "ge": "ცხენი",
-    "en": "horse"
+    "rank": 93,
+    "ge": "მეშვეობით",
+    "en": "through"
   },
   {
-    "rank": 267,
-    "ge": "დაჭრილი",
-    "en": "cut"
+    "rank": 94,
+    "ge": "უბრალოდ",
+    "en": "just"
   },
   {
-    "rank": 268,
-    "ge": "დარწმუნებული ვარ,",
-    "en": "sure"
+    "rank": 95,
+    "ge": "ფორმა",
+    "en": "shape, form"
   },
   {
-    "rank": 269,
-    "ge": "დაათვალიერეს",
-    "en": "watch"
+    "rank": 96,
+    "ge": "წინადადება",
+    "en": "sentence"
   },
   {
-    "rank": 270,
-    "ge": "ფერი",
-    "en": "color"
+    "rank": 97,
+    "ge": "ფიქრი",
+    "en": "to think"
   },
   {
-    "rank": 271,
-    "ge": "სახე",
-    "en": "face"
+    "rank": 98,
+    "ge": "დახმარება",
+    "en": "to help"
   },
   {
-    "rank": 272,
-    "ge": "ხის",
-    "en": "wood"
+    "rank": 99,
+    "ge": "დაბალი",
+    "en": "low (as in height)"
   },
   {
-    "rank": 273,
-    "ge": "მთავარი",
-    "en": "main"
+    "rank": 100,
+    "ge": "ხაზი",
+    "en": "line (shape)"
   },
   {
-    "rank": 274,
-    "ge": "ღია",
-    "en": "open"
+    "rank": 101,
+    "ge": "განსხვავება",
+    "en": "to differ"
   },
   {
-    "rank": 275,
-    "ge": "როგორც ჩანს,",
-    "en": "seem"
+    "rank": 102,
+    "ge": "განსხვავებული",
+    "en": "different"
   },
   {
-    "rank": 276,
-    "ge": "ერთად",
-    "en": "together"
+    "rank": 103,
+    "ge": "მიზეზი",
+    "en": "reason / cause"
   },
   {
-    "rank": 277,
-    "ge": "შემდეგი",
-    "en": "next"
+    "rank": 104,
+    "ge": "ნიშვნა",
+    "en": "to mean"
   },
   {
-    "rank": 278,
-    "ge": "თეთრი",
-    "en": "white"
+    "rank": 105,
+    "ge": "ადრე",
+    "en": "before"
   },
   {
-    "rank": 279,
-    "ge": "ბავშვები",
-    "en": "children"
+    "rank": 106,
+    "ge": "მოძრაობა",
+    "en": "to move (as in physically)"
   },
   {
-    "rank": 280,
-    "ge": "დაიწყოს",
-    "en": "begin"
+    "rank": 107,
+    "ge": "მარჯვნივ",
+    "en": "right (direction)"
   },
   {
-    "rank": 281,
-    "ge": "მივიღე",
-    "en": "got"
+    "rank": 108,
+    "ge": "ბიჭი",
+    "en": "boy"
   },
   {
-    "rank": 282,
-    "ge": "ფეხით",
-    "en": "walk"
+    "rank": 109,
+    "ge": "ძველი",
+    "en": "old"
   },
   {
-    "rank": 283,
-    "ge": "მაგალითად",
-    "en": "example"
+    "rank": 110,
+    "ge": "იგივე",
+    "en": "same"
   },
   {
-    "rank": 284,
-    "ge": "განმუხტვის",
-    "en": "ease"
+    "rank": 111,
+    "ge": "ჯდომა",
+    "en": "to sit"
   },
   {
-    "rank": 284,
-    "ge": "მხედველობა",
-    "en": "sight"
+    "rank": 112,
+    "ge": "სამი",
+    "en": "three"
   },
   {
-    "rank": 285,
-    "ge": "ქაღალდის",
-    "en": "paper"
+    "rank": 113,
+    "ge": "ნდომა",
+    "en": "to want"
   },
   {
-    "rank": 286,
-    "ge": "ჯგუფი",
-    "en": "group"
+    "rank": 114,
+    "ge": "ჰაერი",
+    "en": "air"
   },
   {
-    "rank": 287,
-    "ge": "ყოველთვის",
-    "en": "always"
+    "rank": 115,
+    "ge": "კარგად",
+    "en": "well"
   },
   {
-    "rank": 288,
-    "ge": "მუსიკა",
-    "en": "music"
+    "rank": 116,
+    "ge": "ასევე",
+    "en": "also"
   },
   {
-    "rank": 289,
-    "ge": "იმ",
-    "en": "those"
+    "rank": 117,
+    "ge": "თამაში",
+    "en": "to play"
   },
   {
-    "rank": 290,
-    "ge": "ორივე",
-    "en": "both"
+    "rank": 118,
+    "ge": "პატარა",
+    "en": "small"
   },
   {
-    "rank": 291,
-    "ge": "mark",
-    "en": "mark"
+    "rank": 119,
+    "ge": "დასასრული",
+    "en": "end / finish"
   },
   {
-    "rank": 292,
-    "ge": "ხშირად",
-    "en": "often"
+    "rank": 120,
+    "ge": "დადება",
+    "en": "to put"
   },
   {
-    "rank": 293,
-    "ge": "წერილი",
-    "en": "letter"
+    "rank": 121,
+    "ge": "სახლი",
+    "en": "house / home"
   },
   {
-    "rank": 294,
-    "ge": "სანამ",
-    "en": "until"
+    "rank": 122,
+    "ge": "წაკითხვა",
+    "en": "to read"
   },
   {
-    "rank": 295,
-    "ge": "მილი",
-    "en": "mile"
+    "rank": 123,
+    "ge": "ხელი",
+    "en": "hand"
   },
   {
-    "rank": 296,
-    "ge": "მდინარე",
-    "en": "river"
+    "rank": 124,
+    "ge": "ნავსადგური",
+    "en": "port (as in harbor)"
   },
   {
-    "rank": 297,
-    "ge": "მანქანის",
-    "en": "car"
+    "rank": 125,
+    "ge": "დიდი",
+    "en": "big / large / great"
   },
   {
-    "rank": 298,
-    "ge": "ფეხები",
-    "en": "feet"
+    "rank": 126,
+    "ge": "დამატება",
+    "en": "to add (sth to sth)"
   },
   {
-    "rank": 299,
-    "ge": "ჰიგიენის",
-    "en": "care"
+    "rank": 127,
+    "ge": "თუნდაც",
+    "en": "even if"
   },
   {
-    "rank": 300,
-    "ge": "მეორე",
-    "en": "second"
+    "rank": 128,
+    "ge": "მიწა",
+    "en": "ground / floor /  land"
   },
   {
-    "rank": 301,
-    "ge": "საკმარისი",
-    "en": "enough"
+    "rank": 129,
+    "ge": "აქ",
+    "en": "here"
   },
   {
-    "rank": 302,
-    "ge": "ბარის",
-    "en": "plain"
+    "rank": 130,
+    "ge": "უნდა",
+    "en": "must / should / better to"
   },
   {
-    "rank": 303,
-    "ge": "გოგონა",
-    "en": "girl"
+    "rank": 131,
+    "ge": "მაღალი",
+    "en": "high"
   },
   {
-    "rank": 304,
-    "ge": "ჩვეულებრივი",
-    "en": "usual"
+    "rank": 132,
+    "ge": "მიყოლა",
+    "en": "to follow (sb to sw)"
   },
   {
-    "rank": 305,
-    "ge": "ახალგაზრდა",
-    "en": "young"
+    "rank": 133,
+    "ge": "მოქცევა",
+    "en": "to behave / act"
   },
   {
-    "rank": 306,
-    "ge": "მზად",
-    "en": "ready"
+    "rank": 134,
+    "ge": "რატომ",
+    "en": "why"
   },
   {
-    "rank": 307,
-    "ge": "ზემოთ",
-    "en": "above"
-  },
-  {
-    "rank": 308,
-    "ge": "ოდესმე",
-    "en": "ever"
-  },
-  {
-    "rank": 309,
-    "ge": "წითელი",
-    "en": "red"
-  },
-  {
-    "rank": 310,
-    "ge": "სია",
-    "en": "list"
-  },
-  {
-    "rank": 311,
-    "ge": "თუმცა",
-    "en": "though"
-  },
-  {
-    "rank": 312,
-    "ge": "ვგრძნობ",
-    "en": "feel"
-  },
-  {
-    "rank": 313,
-    "ge": "განხილვა",
-    "en": "talk"
-  },
-  {
-    "rank": 314,
-    "ge": "ფრინველი",
-    "en": "bird"
-  },
-  {
-    "rank": 315,
-    "ge": "მალე",
-    "en": "soon"
-  },
-  {
-    "rank": 316,
-    "ge": "სხეულის",
-    "en": "body"
-  },
-  {
-    "rank": 317,
-    "ge": "ძაღლი",
-    "en": "dog"
-  },
-  {
-    "rank": 318,
-    "ge": "ოჯახის",
-    "en": "family"
-  },
-  {
-    "rank": 319,
-    "ge": "პირდაპირი",
-    "en": "direct"
-  },
-  {
-    "rank": 320,
-    "ge": "უქმნის",
-    "en": "pose"
-  },
-  {
-    "rank": 321,
-    "ge": "დატოვეთ",
-    "en": "leave"
-  },
-  {
-    "rank": 322,
-    "ge": "სიმღერას",
-    "en": "song"
-  },
-  {
-    "rank": 323,
-    "ge": "გავზომოთ",
-    "en": "measure"
-  },
-  {
-    "rank": 324,
-    "ge": "კარი",
-    "en": "door"
-  },
-  {
-    "rank": 325,
-    "ge": "პროდუქტი",
-    "en": "product"
-  },
-  {
-    "rank": 326,
-    "ge": "შავი",
-    "en": "black"
-  },
-  {
-    "rank": 327,
-    "ge": "მოკლე",
-    "en": "short"
-  },
-  {
-    "rank": 328,
-    "ge": "ციფრების",
-    "en": "numeral"
-  },
-  {
-    "rank": 329,
-    "ge": "კლასი",
-    "en": "class"
-  },
-  {
-    "rank": 330,
-    "ge": "ქარი",
-    "en": "wind"
-  },
-  {
-    "rank": 331,
+    "rank": 135,
     "ge": "კითხვა",
     "en": "question"
   },
   {
-    "rank": 332,
-    "ge": "მოხდება",
-    "en": "happen"
+    "rank": 136,
+    "ge": "ადამიანი",
+    "en": "person"
   },
   {
-    "rank": 333,
-    "ge": "სრული",
-    "en": "complete"
+    "rank": 137,
+    "ge": "შეცვლა",
+    "en": "to change"
   },
   {
-    "rank": 334,
-    "ge": "გემი",
-    "en": "ship"
+    "rank": 138,
+    "ge": "სინათლე",
+    "en": "light (as in the brightness)"
   },
   {
-    "rank": 335,
-    "ge": "ფართი",
-    "en": "area"
+    "rank": 139,
+    "ge": "კეთილი",
+    "en": "kind (as in polite)"
   },
   {
-    "rank": 336,
-    "ge": "ნახევარი",
-    "en": "half"
+    "rank": 140,
+    "ge": "საჭიროება",
+    "en": "to need"
   },
   {
-    "rank": 337,
-    "ge": "როკი",
-    "en": "rock"
+    "rank": 141,
+    "ge": "სურათი",
+    "en": "picture"
   },
   {
-    "rank": 338,
-    "ge": "იმისათვის,",
-    "en": "order"
+    "rank": 142,
+    "ge": "ცდა",
+    "en": "to try / to try out"
   },
   {
-    "rank": 339,
-    "ge": "ცეცხლის",
-    "en": "fire"
+    "rank": 143,
+    "ge": "ცხოველი",
+    "en": "animal"
   },
   {
-    "rank": 340,
-    "ge": "სამხრეთ",
-    "en": "south"
+    "rank": 144,
+    "ge": "ქულა",
+    "en": "point (as in score)"
   },
   {
-    "rank": 341,
-    "ge": "პრობლემა",
-    "en": "problem"
+    "rank": 145,
+    "ge": "დედა",
+    "en": "mother"
   },
   {
-    "rank": 342,
-    "ge": "ცალი",
-    "en": "piece"
+    "rank": 146,
+    "ge": "სამყარო",
+    "en": "world"
   },
   {
-    "rank": 343,
-    "ge": "განუცხადა",
-    "en": "told"
+    "rank": 147,
+    "ge": "ახლოს",
+    "en": "near"
   },
   {
-    "rank": 344,
-    "ge": "იცოდა",
-    "en": "knew"
+    "rank": 148,
+    "ge": "აშენება / აგება",
+    "en": "to build / construct"
   },
   {
-    "rank": 345,
-    "ge": "გაივლის",
-    "en": "pass"
+    "rank": 149,
+    "ge": "დედამიწა",
+    "en": "earth (planet)"
   },
   {
-    "rank": 346,
-    "ge": "მას შემდეგ, რაც",
-    "en": "since"
+    "rank": 150,
+    "ge": "მამა",
+    "en": "father"
   },
   {
-    "rank": 347,
-    "ge": "დაბრუნება",
-    "en": "top"
+    "rank": 151,
+    "ge": "თავი",
+    "en": "head"
   },
   {
-    "rank": 348,
-    "ge": "მთელი",
-    "en": "whole"
+    "rank": 152,
+    "ge": "დგომა",
+    "en": "to stand (up) / to loiter"
   },
   {
-    "rank": 349,
-    "ge": "მეფე",
-    "en": "king"
+    "rank": 153,
+    "ge": "ფლობა",
+    "en": "to own / possess"
   },
   {
-    "rank": 350,
-    "ge": "ქუჩის",
-    "en": "street"
+    "rank": 154,
+    "ge": "გვერდი",
+    "en": "page"
   },
   {
-    "rank": 351,
-    "ge": "დუიმიანი",
-    "en": "inch"
+    "rank": 155,
+    "ge": "ქვეყანა",
+    "en": "country"
   },
   {
-    "rank": 352,
-    "ge": "გამრავლების",
-    "en": "multiply"
+    "rank": 156,
+    "ge": "პასუხება",
+    "en": "to answer / to respond"
   },
   {
-    "rank": 353,
-    "ge": "არაფერი",
-    "en": "nothing"
+    "rank": 157,
+    "ge": "სკოლა",
+    "en": "school"
   },
   {
-    "rank": 354,
-    "ge": "რა თქმა უნდა,",
-    "en": "course"
+    "rank": 158,
+    "ge": "ზრდა",
+    "en": "to grow / to raise"
   },
   {
-    "rank": 355,
-    "ge": "დარჩება",
-    "en": "stay"
+    "rank": 159,
+    "ge": "სწავლა",
+    "en": "to learn / to study"
   },
   {
-    "rank": 356,
-    "ge": "წინა",
-    "en": "wheel"
+    "rank": 160,
+    "ge": "მცენარე",
+    "en": "plant"
   },
   {
-    "rank": 357,
-    "ge": "სრული",
-    "en": "full"
+    "rank": 161,
+    "ge": "საჭმელი",
+    "en": "food"
   },
   {
-    "rank": 358,
-    "ge": "ძალა",
-    "en": "force"
+    "rank": 162,
+    "ge": "მზე",
+    "en": "sun"
   },
   {
-    "rank": 359,
-    "ge": "ლურჯი",
-    "en": "blue"
+    "rank": 163,
+    "ge": "ორხი",
+    "en": "four"
   },
   {
-    "rank": 360,
-    "ge": "ობიექტი",
-    "en": "object"
+    "rank": 164,
+    "ge": "ირგვლივ",
+    "en": "around (sth)"
   },
   {
-    "rank": 361,
-    "ge": "გადაწყვიტოს",
-    "en": "decide"
+    "rank": 165,
+    "ge": "მდომარეობა",
+    "en": "state / situation"
   },
   {
-    "rank": 362,
-    "ge": "ზედაპირზე",
-    "en": "surface"
+    "rank": 166,
+    "ge": "შენახვა",
+    "en": "to keep"
   },
   {
-    "rank": 363,
-    "ge": "deep",
-    "en": "deep"
+    "rank": 167,
+    "ge": "თვალი",
+    "en": "eye"
   },
   {
-    "rank": 364,
-    "ge": "მთვარის",
-    "en": "moon"
+    "rank": 168,
+    "ge": "არასოდეს / არასდროს",
+    "en": "never"
   },
   {
-    "rank": 365,
-    "ge": "კუნძული",
-    "en": "island"
+    "rank": 169,
+    "ge": "ბოლო",
+    "en": "last"
   },
   {
-    "rank": 366,
-    "ge": "ფეხით",
-    "en": "foot"
+    "rank": 170,
+    "ge": "გაშვება",
+    "en": "to let / allow"
   },
   {
-    "rank": 367,
-    "ge": "სისტემა",
-    "en": "system"
+    "rank": 171,
+    "ge": "აზრი",
+    "en": "opinion / thought / sense"
   },
   {
-    "rank": 368,
-    "ge": "დაკავებული",
-    "en": "busy"
-  },
-  {
-    "rank": 369,
-    "ge": "ტესტი",
-    "en": "test"
-  },
-  {
-    "rank": 370,
-    "ge": "ჩანაწერი",
-    "en": "record"
-  },
-  {
-    "rank": 371,
-    "ge": "ნავი",
-    "en": "boat"
-  },
-  {
-    "rank": 372,
-    "ge": "საერთო",
-    "en": "common"
-  },
-  {
-    "rank": 373,
-    "ge": "ოქროს",
-    "en": "gold"
-  },
-  {
-    "rank": 374,
-    "ge": "შესაძლებელია",
-    "en": "possible"
-  },
-  {
-    "rank": 375,
-    "ge": "თვითმფრინავი",
-    "en": "plane"
-  },
-  {
-    "rank": 376,
-    "ge": "ნაცვლად",
-    "en": "stead"
-  },
-  {
-    "rank": 377,
-    "ge": "მშრალი",
-    "en": "dry"
-  },
-  {
-    "rank": 378,
-    "ge": "გასაკვირი არ არის",
-    "en": "wonder"
-  },
-  {
-    "rank": 379,
-    "ge": "სიცილი",
-    "en": "laugh"
-  },
-  {
-    "rank": 380,
-    "ge": "ათასი",
-    "en": "thousand"
-  },
-  {
-    "rank": 381,
-    "ge": "ჯერ",
-    "en": "ago"
-  },
-  {
-    "rank": 382,
-    "ge": "ran",
-    "en": "ran"
-  },
-  {
-    "rank": 383,
-    "ge": "შეამოწმეთ",
-    "en": "check"
-  },
-  {
-    "rank": 384,
-    "ge": "თამაში",
-    "en": "game"
-  },
-  {
-    "rank": 385,
-    "ge": "ფორმა",
-    "en": "shape"
-  },
-  {
-    "rank": 386,
-    "ge": "აიგივებს",
-    "en": "equate"
-  },
-  {
-    "rank": 387,
-    "ge": "ცხელი",
-    "en": "hot"
-  },
-  {
-    "rank": 388,
-    "ge": "მენატრება",
-    "en": "miss"
-  },
-  {
-    "rank": 389,
-    "ge": "მოუტანა",
-    "en": "brought"
-  },
-  {
-    "rank": 390,
-    "ge": "სითბოს",
-    "en": "heat"
-  },
-  {
-    "rank": 391,
-    "ge": "თოვლი",
-    "en": "snow"
-  },
-  {
-    "rank": 392,
-    "ge": "საბურავი",
-    "en": "tire"
-  },
-  {
-    "rank": 393,
-    "ge": "მოუტანს",
-    "en": "bring"
-  },
-  {
-    "rank": 394,
-    "ge": "დიახ",
-    "en": "yes"
-  },
-  {
-    "rank": 395,
-    "ge": "შორეული",
-    "en": "distant"
-  },
-  {
-    "rank": 396,
-    "ge": "შევსება",
-    "en": "fill"
-  },
-  {
-    "rank": 397,
-    "ge": "აღმოსავლეთით",
-    "en": "east"
-  },
-  {
-    "rank": 398,
-    "ge": "ხატავს",
-    "en": "paint"
-  },
-  {
-    "rank": 399,
-    "ge": "ენის",
-    "en": "language"
-  },
-  {
-    "rank": 400,
-    "ge": "შორის",
-    "en": "among"
-  },
-  {
-    "rank": 401,
-    "ge": "ერთეული",
-    "en": "unit"
-  },
-  {
-    "rank": 402,
-    "ge": "ძალა",
-    "en": "power"
-  },
-  {
-    "rank": 403,
+    "rank": 172,
     "ge": "ქალაქი",
-    "en": "town"
+    "en": "city / town"
   },
   {
-    "rank": 404,
-    "ge": "ჯარიმა",
-    "en": "fine"
+    "rank": 173,
+    "ge": "ხელი",
+    "en": "tree"
   },
   {
-    "rank": 405,
-    "ge": "გარკვეული",
-    "en": "certain"
+    "rank": 174,
+    "ge": "ჯვარი",
+    "en": "cross"
   },
   {
-    "rank": 406,
-    "ge": "ფრენა",
-    "en": "fly"
+    "rank": 175,
+    "ge": "ფერმა",
+    "en": "farm"
   },
   {
-    "rank": 407,
-    "ge": "დაეცემა",
-    "en": "fall"
+    "rank": 176,
+    "ge": "რთული / ძნელი",
+    "en": "difficult"
   },
   {
-    "rank": 408,
-    "ge": "გამოიწვევს",
-    "en": "lead"
+    "rank": 177,
+    "ge": "დაწყება",
+    "en": "to start"
   },
   {
-    "rank": 409,
-    "ge": "ტირილი",
-    "en": "cry"
+    "rank": 178,
+    "ge": "ამბავი",
+    "en": "story"
   },
   {
-    "rank": 410,
-    "ge": "მუქი",
-    "en": "dark"
+    "rank": 179,
+    "ge": "შორს",
+    "en": "far"
   },
   {
-    "rank": 411,
+    "rank": 180,
+    "ge": "ღრმა",
+    "en": "sea"
+  },
+  {
+    "rank": 181,
+    "ge": "ხატვა",
+    "en": "to draw"
+  },
+  {
+    "rank": 182,
+    "ge": "მარცხვინ",
+    "en": "left"
+  },
+  {
+    "rank": 183,
+    "ge": "დაგვიანება",
+    "en": "to be running late to sth"
+  },
+  {
+    "rank": 184,
+    "ge": "რბენა",
+    "en": "to run"
+  },
+  {
+    "rank": 185,
+    "ge": "ნუ",
+    "en": "don't"
+  },
+  {
+    "rank": 186,
+    "ge": "დაჭერა",
+    "en": "to press (i.e. a button)"
+  },
+  {
+    "rank": 187,
+    "ge": "დახურვა",
+    "en": "to close"
+  },
+  {
+    "rank": 188,
+    "ge": "ღამე",
+    "en": "night"
+  },
+  {
+    "rank": 189,
+    "ge": "ნამდვილი",
+    "en": "real"
+  },
+  {
+    "rank": 190,
+    "ge": "რამდენიმე",
+    "en": "a few"
+  },
+  {
+    "rank": 191,
+    "ge": "ჩრდილოეთი",
+    "en": "north (direction)"
+  },
+  {
+    "rank": 192,
+    "ge": "გახსნა",
+    "en": "to open"
+  },
+  {
+    "rank": 193,
+    "ge": "ჩვენება",
+    "en": "idea"
+  },
+  {
+    "rank": 194,
+    "ge": "შემდეგი",
+    "en": "next of sth i.e. episode"
+  },
+  {
+    "rank": 195,
+    "ge": "თეთრი",
+    "en": "white"
+  },
+  {
+    "rank": 196,
+    "ge": "ბავშვი",
+    "en": "child, baby"
+  },
+  {
+    "rank": 197,
+    "ge": "დასაწყისი",
+    "en": "beginning"
+  },
+  {
+    "rank": 198,
+    "ge": "სიარული",
+    "en": "to walk"
+  },
+  {
+    "rank": 199,
+    "ge": "მაგალითი",
+    "en": "example"
+  },
+  {
+    "rank": 200,
+    "ge": "ადვილი",
+    "en": "easy"
+  },
+  {
+    "rank": 201,
+    "ge": "ქაღალდი",
+    "en": "(piece of) paper"
+  },
+  {
+    "rank": 202,
+    "ge": "ჯგუფი",
+    "en": "group"
+  },
+  {
+    "rank": 203,
+    "ge": "ყოველთვის",
+    "en": "always"
+  },
+  {
+    "rank": 204,
+    "ge": "მუსიკა",
+    "en": "music"
+  },
+  {
+    "rank": 205,
+    "ge": "ორივე",
+    "en": "both"
+  },
+  {
+    "rank": 206,
+    "ge": "ნიშანი",
+    "en": "sign (on the road), mark"
+  },
+  {
+    "rank": 207,
+    "ge": "ხშირად",
+    "en": "often"
+  },
+  {
+    "rank": 208,
+    "ge": "ასო",
+    "en": "letter"
+  },
+  {
+    "rank": 209,
+    "ge": "მდინარე",
+    "en": "river"
+  },
+  {
+    "rank": 210,
     "ge": "მანქანა",
-    "en": "machine"
+    "en": "car"
   },
   {
-    "rank": 412,
-    "ge": "შენიშვნა",
-    "en": "note"
+    "rank": 211,
+    "ge": "ფეხი",
+    "en": "foot, leg"
   },
   {
-    "rank": 413,
-    "ge": "დაველოდოთ",
-    "en": "wait"
+    "rank": 212,
+    "ge": "ზრუნვა",
+    "en": "to take care of sb/sth"
   },
   {
-    "rank": 414,
-    "ge": "გეგმა",
-    "en": "plan"
+    "rank": 213,
+    "ge": "მეორე",
+    "en": "second"
   },
   {
-    "rank": 415,
-    "ge": "ფიგურა",
-    "en": "figure"
+    "rank": 214,
+    "ge": "წიგნი",
+    "en": "book"
   },
   {
-    "rank": 416,
-    "ge": "ვარსკვლავი",
-    "en": "star"
+    "rank": 215,
+    "ge": "მეცნიერება",
+    "en": "science"
   },
   {
-    "rank": 417,
-    "ge": "ყუთი",
-    "en": "box"
+    "rank": 216,
+    "ge": "ჭამა",
+    "en": "to eat"
   },
   {
-    "rank": 418,
-    "ge": "არსებითი სახელი",
-    "en": "noun"
+    "rank": 217,
+    "ge": "ოთახი",
+    "en": "room"
   },
   {
-    "rank": 419,
-    "ge": "სფეროში",
-    "en": "field"
+    "rank": 218,
+    "ge": "მეგობარი",
+    "en": "friend"
   },
   {
-    "rank": 420,
-    "ge": "დანარჩენი",
-    "en": "rest"
+    "rank": 219,
+    "ge": "იდეა",
+    "en": "idea"
   },
   {
-    "rank": 421,
-    "ge": "სწორი",
-    "en": "correct"
+    "rank": 220,
+    "ge": "თევზი",
+    "en": "fish"
   },
   {
-    "rank": 422,
-    "ge": "შეუძლია",
-    "en": "able"
+    "rank": 221,
+    "ge": "მთე",
+    "en": "mountain"
   },
   {
-    "rank": 423,
-    "ge": "ფუნტი",
-    "en": "pound"
+    "rank": 222,
+    "ge": "გაჩერება",
+    "en": "to stop"
   },
   {
-    "rank": 424,
-    "ge": "გაკეთდა",
-    "en": "done"
+    "rank": 223,
+    "ge": "ძირითადი",
+    "en": "basic / fundamental / basis"
   },
   {
-    "rank": 425,
-    "ge": "სილამაზის",
-    "en": "beauty"
+    "rank": 224,
+    "ge": "მოსმენა",
+    "en": "to hear"
   },
   {
-    "rank": 426,
-    "ge": "თვლები",
-    "en": "drive"
+    "rank": 225,
+    "ge": "ცხენი",
+    "en": "horse"
   },
   {
-    "rank": 427,
-    "ge": "იდგა",
-    "en": "stood"
+    "rank": 226,
+    "ge": "გაჭრა",
+    "en": "to cut (sth i.e. scissors)"
   },
   {
-    "rank": 428,
-    "ge": "შეიცავს",
-    "en": "contain"
+    "rank": 227,
+    "ge": "ფერი",
+    "en": "color"
   },
   {
-    "rank": 429,
-    "ge": "წინა",
-    "en": "front"
+    "rank": 228,
+    "ge": "სახე",
+    "en": "face"
   },
   {
-    "rank": 430,
-    "ge": "ასწავლოს",
-    "en": "teach"
+    "rank": 229,
+    "ge": "მთავარი",
+    "en": "main"
   },
   {
-    "rank": 431,
-    "ge": "კვირის",
-    "en": "week"
+    "rank": 230,
+    "ge": "საკმარისი",
+    "en": "enough"
   },
   {
-    "rank": 432,
-    "ge": "საბოლოო",
-    "en": "final"
-  },
-  {
-    "rank": 433,
-    "ge": "მისცა",
-    "en": "gave"
-  },
-  {
-    "rank": 434,
-    "ge": "მწვანე",
-    "en": "green"
-  },
-  {
-    "rank": 435,
-    "ge": "მე",
-    "en": "oh"
-  },
-  {
-    "rank": 436,
-    "ge": "სწრაფი",
-    "en": "quick"
-  },
-  {
-    "rank": 437,
-    "ge": "განვითარება",
-    "en": "develop"
-  },
-  {
-    "rank": 438,
-    "ge": "ოკეანეში",
-    "en": "ocean"
-  },
-  {
-    "rank": 439,
-    "ge": "თბილი",
-    "en": "warm"
-  },
-  {
-    "rank": 440,
-    "ge": "უფასო",
-    "en": "free"
-  },
-  {
-    "rank": 441,
-    "ge": "წუთი",
-    "en": "minute"
-  },
-  {
-    "rank": 442,
-    "ge": "ძლიერი",
-    "en": "strong"
-  },
-  {
-    "rank": 443,
-    "ge": "სპეციალური",
-    "en": "special"
-  },
-  {
-    "rank": 444,
-    "ge": "გონება",
-    "en": "mind"
-  },
-  {
-    "rank": 445,
-    "ge": "უკან",
-    "en": "behind"
-  },
-  {
-    "rank": 446,
-    "ge": "ნათელი",
-    "en": "clear"
-  },
-  {
-    "rank": 447,
-    "ge": "კუდი",
-    "en": "tail"
-  },
-  {
-    "rank": 448,
-    "ge": "წარმოების",
-    "en": "produce"
-  },
-  {
-    "rank": 449,
-    "ge": "ის ფაქტი,",
-    "en": "fact"
-  },
-  {
-    "rank": 450,
-    "ge": "ფართი",
-    "en": "space"
-  },
-  {
-    "rank": 451,
-    "ge": "ისმის",
-    "en": "heard"
-  },
-  {
-    "rank": 452,
-    "ge": "საუკეთესო",
-    "en": "best"
-  },
-  {
-    "rank": 453,
-    "ge": "საათი",
-    "en": "hour"
-  },
-  {
-    "rank": 454,
-    "ge": "უკეთესი",
-    "en": "better"
-  },
-  {
-    "rank": 455,
-    "ge": "დიახ",
-    "en": "true"
-  },
-  {
-    "rank": 456,
-    "ge": "დროს",
-    "en": "during"
-  },
-  {
-    "rank": 457,
-    "ge": "ასი",
-    "en": "hundred"
-  },
-  {
-    "rank": 458,
-    "ge": "ხუთ",
-    "en": "five"
-  },
-  {
-    "rank": 459,
-    "ge": "მახსოვს",
-    "en": "remember"
-  },
-  {
-    "rank": 460,
-    "ge": "ნაბიჯი",
-    "en": "step"
-  },
-  {
-    "rank": 461,
-    "ge": "დასაწყისში",
-    "en": "early"
-  },
-  {
-    "rank": 462,
-    "ge": "გამართავს",
-    "en": "hold"
-  },
-  {
-    "rank": 463,
-    "ge": "დასავლეთ",
-    "en": "west"
-  },
-  {
-    "rank": 464,
-    "ge": "ადგილზე",
-    "en": "ground"
-  },
-  {
-    "rank": 465,
-    "ge": "ინტერესი",
-    "en": "interest"
-  },
-  {
-    "rank": 466,
-    "ge": "მიღწევა",
-    "en": "reach"
-  },
-  {
-    "rank": 467,
-    "ge": "სწრაფი",
-    "en": "fast"
-  },
-  {
-    "rank": 468,
-    "ge": "ზმნის",
-    "en": "verb"
-  },
-  {
-    "rank": 469,
-    "ge": "მღერიან",
-    "en": "sing"
-  },
-  {
-    "rank": 470,
-    "ge": "მოუსმინოს",
-    "en": "listen"
-  },
-  {
-    "rank": 471,
-    "ge": "ექვს",
-    "en": "six"
-  },
-  {
-    "rank": 472,
-    "ge": "მაგიდა",
-    "en": "table"
-  },
-  {
-    "rank": 473,
-    "ge": "მოგზაურობა",
-    "en": "travel"
-  },
-  {
-    "rank": 474,
-    "ge": "ნაკლებია,",
-    "en": "less"
-  },
-  {
-    "rank": 475,
-    "ge": "დილით",
-    "en": "morning"
-  },
-  {
-    "rank": 476,
-    "ge": "ათი",
-    "en": "ten"
-  },
-  {
-    "rank": 477,
+    "rank": 231,
     "ge": "მარტივი",
     "en": "simple"
   },
   {
-    "rank": 478,
-    "ge": "რამდენიმე",
-    "en": "several"
+    "rank": 232,
+    "ge": "გოგო",
+    "en": "girl"
   },
   {
-    "rank": 479,
-    "ge": "ხმოვანთა",
+    "rank": 233,
+    "ge": "ჩვეულებრივი",
+    "en": "usual"
+  },
+  {
+    "rank": 234,
+    "ge": "ახალგაზრდა",
+    "en": "young"
+  },
+  {
+    "rank": 235,
+    "ge": "მზად",
+    "en": "sb ready"
+  },
+  {
+    "rank": 236,
+    "ge": "წითელი",
+    "en": "red"
+  },
+  {
+    "rank": 237,
+    "ge": "სია",
+    "en": "list"
+  },
+  {
+    "rank": 238,
+    "ge": "ფიქრი",
+    "en": "though"
+  },
+  {
+    "rank": 239,
+    "ge": "გრძნობა",
+    "en": "to feel"
+  },
+  {
+    "rank": 240,
+    "ge": "ჩიტი",
+    "en": "bird"
+  },
+  {
+    "rank": 241,
+    "ge": "მალე",
+    "en": "soon"
+  },
+  {
+    "rank": 242,
+    "ge": "სხეული / ტანი",
+    "en": "body"
+  },
+  {
+    "rank": 243,
+    "ge": "ძაღლი",
+    "en": "dog"
+  },
+  {
+    "rank": 244,
+    "ge": "ოჯახი",
+    "en": "family"
+  },
+  {
+    "rank": 245,
+    "ge": "პირდაპირი",
+    "en": "direct"
+  },
+  {
+    "rank": 246,
+    "ge": "პოზა",
+    "en": "pose"
+  },
+  {
+    "rank": 247,
+    "ge": "დატოვება",
+    "en": "to leave"
+  },
+  {
+    "rank": 248,
+    "ge": "სიმღერა",
+    "en": "song"
+  },
+  {
+    "rank": 249,
+    "ge": "კარი",
+    "en": "door"
+  },
+  {
+    "rank": 250,
+    "ge": "პროდუქტი",
+    "en": "product"
+  },
+  {
+    "rank": 251,
+    "ge": "შავი",
+    "en": "black"
+  },
+  {
+    "rank": 252,
+    "ge": "მოკლე",
+    "en": "short"
+  },
+  {
+    "rank": 253,
+    "ge": "კლასი",
+    "en": "class"
+  },
+  {
+    "rank": 254,
+    "ge": "ქარი",
+    "en": "wind"
+  },
+  {
+    "rank": 255,
+    "ge": "მოხდომა",
+    "en": "to happen"
+  },
+  {
+    "rank": 256,
+    "ge": "სრული",
+    "en": "complete"
+  },
+  {
+    "rank": 257,
+    "ge": "გემი",
+    "en": "ship"
+  },
+  {
+    "rank": 258,
+    "ge": "ნახევარი",
+    "en": "half"
+  },
+  {
+    "rank": 259,
+    "ge": "კლდე",
+    "en": "(large) rock"
+  },
+  {
+    "rank": 260,
+    "ge": "ცეცხლი",
+    "en": "fire"
+  },
+  {
+    "rank": 261,
+    "ge": "სამხრეთი",
+    "en": "south"
+  },
+  {
+    "rank": 262,
+    "ge": "პრობლემა",
+    "en": "problem, trouble"
+  },
+  {
+    "rank": 263,
+    "ge": "ნაჭერი",
+    "en": "piece / cut (of i.e. cake)"
+  },
+  {
+    "rank": 264,
+    "ge": "მწვერვალი",
+    "en": "peak / top (of a mountain)"
+  },
+  {
+    "rank": 265,
+    "ge": "მთლიანი",
+    "en": "whole"
+  },
+  {
+    "rank": 266,
+    "ge": "მეფე",
+    "en": "king"
+  },
+  {
+    "rank": 267,
+    "ge": "ქოსმოსი",
+    "en": "space"
+  },
+  {
+    "rank": 268,
+    "ge": "საუკეთესო",
+    "en": "best"
+  },
+  {
+    "rank": 269,
+    "ge": "საათი",
+    "en": "hour"
+  },
+  {
+    "rank": 270,
+    "ge": "უკეთესი",
+    "en": "better"
+  },
+  {
+    "rank": 271,
+    "ge": "მართალი",
+    "en": "True"
+  },
+  {
+    "rank": 272,
+    "ge": "ასი",
+    "en": "hundred"
+  },
+  {
+    "rank": 273,
+    "ge": "ხუთი",
+    "en": "five"
+  },
+  {
+    "rank": 274,
+    "ge": "დამახსოვრება",
+    "en": "to remember"
+  },
+  {
+    "rank": 275,
+    "ge": "ბამიჯი",
+    "en": "step"
+  },
+  {
+    "rank": 276,
+    "ge": "ჭერა",
+    "en": "to hold (sth on ur hand)"
+  },
+  {
+    "rank": 277,
+    "ge": "დასავლეთი",
+    "en": "west"
+  },
+  {
+    "rank": 278,
+    "ge": "ინტერესი",
+    "en": "interest"
+  },
+  {
+    "rank": 279,
+    "ge": "სწრაფი",
+    "en": "fast"
+  },
+  {
+    "rank": 280,
+    "ge": "ზმნა",
+    "en": "verb"
+  },
+  {
+    "rank": 281,
+    "ge": "მღერა",
+    "en": "to sing"
+  },
+  {
+    "rank": 282,
+    "ge": "ექვსი",
+    "en": "six"
+  },
+  {
+    "rank": 283,
+    "ge": "მაგიდა",
+    "en": "table"
+  },
+  {
+    "rank": 284,
+    "ge": "მოგზაურობა",
+    "en": "to travel"
+  },
+  {
+    "rank": 285,
+    "ge": "ნაკლები",
+    "en": "less"
+  },
+  {
+    "rank": 286,
+    "ge": "დილა",
+    "en": "morning"
+  },
+  {
+    "rank": 287,
+    "ge": "ათი",
+    "en": "ten"
+  },
+  {
+    "rank": 288,
+    "ge": "ხმოვანი",
     "en": "vowel"
   },
   {
-    "rank": 480,
-    "ge": "მიმართ",
-    "en": "toward"
-  },
-  {
-    "rank": 481,
+    "rank": 289,
     "ge": "ომი",
     "en": "war"
   },
   {
-    "rank": 482,
-    "ge": "ქმნის",
-    "en": "lay"
+    "rank": 290,
+    "ge": "წოლა",
+    "en": "to lay (down i.e. in bed)"
   },
   {
-    "rank": 483,
+    "rank": 291,
     "ge": "წინააღმდეგ",
-    "en": "against"
+    "en": "against, in contradiction to"
   },
   {
-    "rank": 484,
-    "ge": "ნიმუში",
-    "en": "pattern"
-  },
-  {
-    "rank": 485,
+    "rank": 292,
     "ge": "ნელი",
     "en": "slow"
   },
   {
-    "rank": 486,
+    "rank": 293,
     "ge": "ცენტრი",
     "en": "center"
   },
   {
-    "rank": 487,
-    "ge": "მიყვარს",
+    "rank": 294,
+    "ge": "სიყვარული",
     "en": "love"
   },
   {
-    "rank": 488,
-    "ge": "პირი",
-    "en": "person"
-  },
-  {
-    "rank": 489,
+    "rank": 295,
     "ge": "ფული",
     "en": "money"
   },
   {
-    "rank": 490,
-    "ge": "ემსახურება",
-    "en": "serve"
+    "rank": 296,
+    "ge": "გამოჩენა",
+    "en": "to appear"
   },
   {
-    "rank": 491,
-    "ge": "როგორც ჩანს,",
-    "en": "appear"
-  },
-  {
-    "rank": 492,
-    "ge": "გზის",
-    "en": "road"
-  },
-  {
-    "rank": 493,
+    "rank": 297,
     "ge": "რუკა",
     "en": "map"
   },
   {
-    "rank": 494,
+    "rank": 298,
     "ge": "წვიმა",
     "en": "rain"
   },
   {
-    "rank": 495,
+    "rank": 299,
     "ge": "წესი",
     "en": "rule"
   },
   {
-    "rank": 496,
-    "ge": "არეგულირებს",
-    "en": "govern"
+    "rank": 300,
+    "ge": "მთავრობა",
+    "en": "government"
   },
   {
-    "rank": 497,
-    "ge": "გაიყვანოს",
-    "en": "pull"
-  },
-  {
-    "rank": 498,
+    "rank": 301,
     "ge": "ცივი",
-    "en": "cold"
+    "en": "cold (temperature)"
   },
   {
-    "rank": 499,
-    "ge": "ცნობა",
-    "en": "notice"
+    "rank": 302,
+    "ge": "ძალა",
+    "en": "power"
   },
   {
-    "rank": 500,
-    "ge": "ხმა",
-    "en": "voice"
+    "rank": 303,
+    "ge": "ფრენა",
+    "en": "to fly"
   },
   {
-    "rank": 501,
-    "ge": "ენერგიის",
-    "en": "energy"
+    "rank": 304,
+    "ge": "ტირილი",
+    "en": "to cry"
   },
   {
-    "rank": 502,
-    "ge": "hunt",
-    "en": "hunt"
+    "rank": 305,
+    "ge": "ბნელი",
+    "en": "dark"
   },
   {
-    "rank": 503,
-    "ge": "სავარაუდოა,",
-    "en": "probable"
+    "rank": 306,
+    "ge": "მანქანა",
+    "en": "machine"
   },
   {
-    "rank": 504,
-    "ge": "საწოლის",
-    "en": "bed"
+    "rank": 307,
+    "ge": "დალოდება",
+    "en": "to wait / to expect (sth)"
   },
   {
-    "rank": 505,
-    "ge": "ძმა",
-    "en": "brother"
+    "rank": 308,
+    "ge": "დამეგმვა",
+    "en": "plan"
   },
   {
-    "rank": 506,
-    "ge": "კვერცხი",
-    "en": "egg"
+    "rank": 309,
+    "ge": "ფიგურა",
+    "en": "figure"
   },
   {
-    "rank": 507,
-    "ge": "ride",
-    "en": "ride"
+    "rank": 310,
+    "ge": "ვარსკვლავი",
+    "en": "star"
   },
   {
-    "rank": 508,
-    "ge": "საკანში",
-    "en": "cell"
+    "rank": 311,
+    "ge": "ყუთი",
+    "en": "box"
   },
   {
-    "rank": 509,
-    "ge": "მჯერა,",
-    "en": "believe"
+    "rank": 312,
+    "ge": "დასვენება",
+    "en": "to rest"
   },
   {
-    "rank": 510,
-    "ge": "ალბათ,",
-    "en": "perhaps"
+    "rank": 313,
+    "ge": "სწორი",
+    "en": "correct"
   },
   {
-    "rank": 511,
-    "ge": "აირჩიოთ",
-    "en": "pick"
+    "rank": 314,
+    "ge": "სილამაზე",
+    "en": "beauty"
   },
   {
-    "rank": 512,
-    "ge": "მოულოდნელი",
-    "en": "sudden"
+    "rank": 315,
+    "ge": "კონტეინერი",
+    "en": "container"
   },
   {
-    "rank": 513,
-    "ge": "იმედი",
-    "en": "count"
+    "rank": 316,
+    "ge": "მასწავლებელი",
+    "en": "teach"
   },
   {
-    "rank": 514,
-    "ge": "კვ",
-    "en": "square"
+    "rank": 317,
+    "ge": "კვირა",
+    "en": "week"
   },
   {
-    "rank": 515,
-    "ge": "მიზეზი",
-    "en": "reason"
+    "rank": 318,
+    "ge": "საბოლოო",
+    "en": "final"
   },
   {
-    "rank": 516,
-    "ge": "ხანგრძლივობა",
-    "en": "length"
+    "rank": 319,
+    "ge": "მწვანე",
+    "en": "green"
   },
   {
-    "rank": 517,
-    "ge": "წარმოადგენს",
-    "en": "represent"
+    "rank": 320,
+    "ge": "ჩქარი",
+    "en": "quick"
   },
   {
-    "rank": 518,
-    "ge": "არტ",
-    "en": "art"
+    "rank": 321,
+    "ge": "განვითარება",
+    "en": "to develop"
   },
   {
-    "rank": 519,
-    "ge": "სათაური",
-    "en": "subject"
+    "rank": 322,
+    "ge": "ოკენაე",
+    "en": "ocean"
   },
   {
-    "rank": 520,
-    "ge": "რეგიონში",
-    "en": "region"
+    "rank": 323,
+    "ge": "თბილი",
+    "en": "warm"
   },
   {
-    "rank": 521,
-    "ge": "ზომა",
-    "en": "size"
+    "rank": 324,
+    "ge": "თავისუფალი",
+    "en": "free"
   },
   {
-    "rank": 522,
-    "ge": "იცვლება",
-    "en": "vary"
+    "rank": 325,
+    "ge": "წუთი",
+    "en": "minute"
   },
   {
-    "rank": 523,
-    "ge": "დასახლდნენ",
-    "en": "settle"
+    "rank": 326,
+    "ge": "ძლიერი",
+    "en": "strong"
   },
   {
-    "rank": 524,
-    "ge": "საუბარი",
-    "en": "speak"
+    "rank": 327,
+    "ge": "განსაკუთრებელი",
+    "en": "special"
   },
   {
-    "rank": 525,
-    "ge": "წონა",
-    "en": "weight"
+    "rank": 328,
+    "ge": "გონება",
+    "en": "mind"
   },
   {
-    "rank": 526,
-    "ge": "ზოგადი",
-    "en": "general"
-  },
-  {
-    "rank": 527,
-    "ge": "ყინულზე",
-    "en": "ice"
-  },
-  {
-    "rank": 528,
-    "ge": "მიუხედავად იმისა,",
-    "en": "matter"
-  },
-  {
-    "rank": 529,
-    "ge": "წრე",
-    "en": "circle"
-  },
-  {
-    "rank": 530,
-    "ge": "წყვილი",
-    "en": "pair"
-  },
-  {
-    "rank": 531,
-    "ge": "მოიცავს",
-    "en": "include"
-  },
-  {
-    "rank": 532,
-    "ge": "გათიშე",
-    "en": "divide"
-  },
-  {
-    "rank": 533,
-    "ge": "syllable",
-    "en": "syllable"
-  },
-  {
-    "rank": 534,
-    "ge": "ვიგრძენი",
-    "en": "felt"
-  },
-  {
-    "rank": 535,
-    "ge": "გრანდიოზული",
-    "en": "grand"
-  },
-  {
-    "rank": 536,
-    "ge": "ბურთი",
-    "en": "ball"
-  },
-  {
-    "rank": 537,
-    "ge": "ამჟამად",
-    "en": "yet"
-  },
-  {
-    "rank": 538,
-    "ge": "ტალღა",
-    "en": "wave"
-  },
-  {
-    "rank": 539,
-    "ge": "ვარდნა",
-    "en": "drop"
-  },
-  {
-    "rank": 540,
-    "ge": "გულის",
-    "en": "heart"
-  },
-  {
-    "rank": 541,
-    "ge": "საათიდან",
-    "en": "am"
-  },
-  {
-    "rank": 542,
-    "ge": "წინამდებარე",
-    "en": "present"
-  },
-  {
-    "rank": 543,
-    "ge": "მძიმე",
-    "en": "heavy"
-  },
-  {
-    "rank": 544,
-    "ge": "ცეკვა",
-    "en": "dance"
-  },
-  {
-    "rank": 545,
-    "ge": "ძრავა",
-    "en": "engine"
-  },
-  {
-    "rank": 546,
-    "ge": "პოზიცია",
-    "en": "position"
-  },
-  {
-    "rank": 547,
-    "ge": "ხელის",
-    "en": "arm"
-  },
-  {
-    "rank": 548,
-    "ge": "ფართო",
-    "en": "wide"
-  },
-  {
-    "rank": 549,
-    "ge": "მოტორიანი",
-    "en": "sail"
-  },
-  {
-    "rank": 550,
-    "ge": "მასალა",
-    "en": "material"
-  },
-  {
-    "rank": 551,
-    "ge": "ფრაქცია",
-    "en": "fraction"
-  },
-  {
-    "rank": 552,
-    "ge": "ტყის",
-    "en": "forest"
-  },
-  {
-    "rank": 553,
-    "ge": "იჯდეს",
-    "en": "sit"
-  },
-  {
-    "rank": 554,
-    "ge": "რასის",
-    "en": "race"
-  },
-  {
-    "rank": 555,
-    "ge": "ფანჯარა",
-    "en": "window"
-  },
-  {
-    "rank": 556,
-    "ge": "მაღაზია",
-    "en": "store"
-  },
-  {
-    "rank": 557,
-    "ge": "ზაფხულში",
-    "en": "summer"
-  },
-  {
-    "rank": 558,
-    "ge": "მატარებელი",
-    "en": "train"
-  },
-  {
-    "rank": 559,
-    "ge": "ძილის",
-    "en": "sleep"
-  },
-  {
-    "rank": 560,
-    "ge": "დაამტკიცოს",
-    "en": "prove"
-  },
-  {
-    "rank": 561,
-    "ge": "მარტოხელა",
-    "en": "lone"
-  },
-  {
-    "rank": 562,
-    "ge": "ფეხი",
-    "en": "leg"
-  },
-  {
-    "rank": 563,
-    "ge": "სწავლება",
-    "en": "exercise"
-  },
-  {
-    "rank": 564,
-    "ge": "კედლის",
-    "en": "wall"
-  },
-  {
-    "rank": 565,
-    "ge": "დაჭერა",
-    "en": "catch"
-  },
-  {
-    "rank": 566,
-    "ge": "მთა",
-    "en": "mount"
-  },
-  {
-    "rank": 567,
-    "ge": "სურვილი",
-    "en": "wish"
-  },
-  {
-    "rank": 568,
-    "ge": "ცის",
-    "en": "sky"
-  },
-  {
-    "rank": 569,
-    "ge": "ფორუმში",
-    "en": "board"
-  },
-  {
-    "rank": 570,
-    "ge": "სიხარული",
-    "en": "joy"
-  },
-  {
-    "rank": 571,
-    "ge": "ზამთრის",
-    "en": "winter"
-  },
-  {
-    "rank": 572,
-    "ge": "იჯდა",
-    "en": "sat"
-  },
-  {
-    "rank": 573,
-    "ge": "წერილობითი",
-    "en": "written"
-  },
-  {
-    "rank": 574,
-    "ge": "ველური",
-    "en": "wild"
-  },
-  {
-    "rank": 575,
-    "ge": "ინსტრუმენტი",
-    "en": "instrument"
-  },
-  {
-    "rank": 576,
-    "ge": "ინახება",
-    "en": "kept"
-  },
-  {
-    "rank": 577,
-    "ge": "მინა",
-    "en": "glass"
-  },
-  {
-    "rank": 578,
-    "ge": "ბალახის",
-    "en": "grass"
-  },
-  {
-    "rank": 579,
-    "ge": "ძროხის",
-    "en": "cow"
-  },
-  {
-    "rank": 580,
-    "ge": "სამუშაო",
-    "en": "job"
-  },
-  {
-    "rank": 581,
-    "ge": "ზღვარზე",
-    "en": "edge"
-  },
-  {
-    "rank": 582,
-    "ge": "ნიშანი",
-    "en": "sign"
-  },
-  {
-    "rank": 583,
-    "ge": "შესვლა",
-    "en": "visit"
-  },
-  {
-    "rank": 584,
-    "ge": "ბოლო",
-    "en": "past"
-  },
-  {
-    "rank": 585,
-    "ge": "რბილი",
-    "en": "soft"
-  },
-  {
-    "rank": 586,
-    "ge": "გართობა",
-    "en": "fun"
-  },
-  {
-    "rank": 587,
-    "ge": "ნათელი",
-    "en": "bright"
-  },
-  {
-    "rank": 588,
-    "ge": "გაზის",
-    "en": "gas"
-  },
-  {
-    "rank": 589,
-    "ge": "ამინდი",
-    "en": "weather"
-  },
-  {
-    "rank": 590,
-    "ge": "თვის",
-    "en": "month"
-  },
-  {
-    "rank": 591,
-    "ge": "მილიონი",
-    "en": "million"
-  },
-  {
-    "rank": 592,
-    "ge": "დათვი",
-    "en": "bear"
-  },
-  {
-    "rank": 593,
-    "ge": "ფერი",
-    "en": "finish"
-  },
-  {
-    "rank": 594,
-    "ge": "ბედნიერი",
-    "en": "happy"
-  },
-  {
-    "rank": 595,
-    "ge": "იმედი მაქვს,",
-    "en": "hope"
-  },
-  {
-    "rank": 596,
-    "ge": "ყვავილი",
-    "en": "flower"
-  },
-  {
-    "rank": 597,
-    "ge": "შეკერილ",
-    "en": "clothe"
-  },
-  {
-    "rank": 598,
-    "ge": "უცნაური",
-    "en": "strange"
-  },
-  {
-    "rank": 599,
-    "ge": "წასული",
-    "en": "gone"
-  },
-  {
-    "rank": 600,
-    "ge": "სავაჭრო",
-    "en": "trade"
-  },
-  {
-    "rank": 601,
-    "ge": "მელოდიას",
-    "en": "melody"
-  },
-  {
-    "rank": 602,
-    "ge": "მოგზაურობა",
-    "en": "trip"
-  },
-  {
-    "rank": 603,
-    "ge": "ოფისი",
-    "en": "office"
-  },
-  {
-    "rank": 604,
-    "ge": "მიიღეთ",
-    "en": "receive"
-  },
-  {
-    "rank": 605,
-    "ge": "რიგის",
-    "en": "row"
-  },
-  {
-    "rank": 606,
-    "ge": "პირში",
-    "en": "mouth"
-  },
-  {
-    "rank": 607,
-    "ge": "ზუსტი",
-    "en": "exact"
-  },
-  {
-    "rank": 608,
-    "ge": "სიმბოლო",
-    "en": "symbol"
-  },
-  {
-    "rank": 609,
-    "ge": "იღუპება",
-    "en": "die"
-  },
-  {
-    "rank": 610,
-    "ge": "მინიმუმ",
-    "en": "least"
-  },
-  {
-    "rank": 611,
-    "ge": "პრობლემები",
-    "en": "trouble"
-  },
-  {
-    "rank": 612,
-    "ge": "შეძახილი",
-    "en": "shout"
-  },
-  {
-    "rank": 613,
-    "ge": "გარდა",
-    "en": "except"
-  },
-  {
-    "rank": 614,
-    "ge": "წერდა",
-    "en": "wrote"
-  },
-  {
-    "rank": 615,
-    "ge": "თესლი",
-    "en": "seed"
-  },
-  {
-    "rank": 616,
-    "ge": "ტონი",
-    "en": "tone"
-  },
-  {
-    "rank": 617,
-    "ge": "შეუერთდება",
-    "en": "join"
-  },
-  {
-    "rank": 618,
-    "ge": "ვარაუდობენ,",
-    "en": "suggest"
-  },
-  {
-    "rank": 619,
+    "rank": 329,
     "ge": "სუფთა",
     "en": "clean"
   },
   {
-    "rank": 620,
-    "ge": "შესვენების",
-    "en": "break"
+    "rank": 330,
+    "ge": "კუდი",
+    "en": "tail"
   },
   {
-    "rank": 621,
-    "ge": "ქალბატონს",
-    "en": "lady"
+    "rank": 331,
+    "ge": "ფაქტი",
+    "en": "fact"
   },
   {
-    "rank": 622,
-    "ge": "ეზოში",
-    "en": "yard"
+    "rank": 332,
+    "ge": "ქუჩა",
+    "en": "street"
   },
   {
-    "rank": 623,
-    "ge": "მოიმატებს",
-    "en": "rise"
+    "rank": 333,
+    "ge": "არაფერი",
+    "en": "nothing"
   },
   {
-    "rank": 624,
-    "ge": "ცუდი",
-    "en": "bad"
+    "rank": 334,
+    "ge": "კურსი",
+    "en": "course"
   },
   {
-    "rank": 625,
-    "ge": "დარტყმა",
-    "en": "blow"
+    "rank": 335,
+    "ge": "დარჩენა",
+    "en": "to stay"
   },
   {
-    "rank": 626,
-    "ge": "ზეთი",
-    "en": "oil"
+    "rank": 336,
+    "ge": "ბორბალი",
+    "en": "wheel"
   },
   {
-    "rank": 627,
-    "ge": "სისხლის",
-    "en": "blood"
+    "rank": 337,
+    "ge": "სავსე",
+    "en": "full"
   },
   {
-    "rank": 628,
-    "ge": "შეეხოთ",
-    "en": "touch"
+    "rank": 338,
+    "ge": "ლურჯი",
+    "en": "blue"
   },
   {
-    "rank": 629,
-    "ge": "გაიზარდა",
-    "en": "grew"
+    "rank": 339,
+    "ge": "ობიექტი",
+    "en": "object"
   },
   {
-    "rank": 630,
-    "ge": "შეადგინა",
-    "en": "cent"
+    "rank": 340,
+    "ge": "გადაწყვეტა",
+    "en": "to decide"
   },
   {
-    "rank": 631,
-    "ge": "აურიეთ",
-    "en": "mix"
+    "rank": 341,
+    "ge": "ზედაპირი",
+    "en": "surface"
   },
   {
-    "rank": 632,
-    "ge": "გუნდი",
-    "en": "team"
+    "rank": 342,
+    "ge": "ღრმა",
+    "en": "deep"
   },
   {
-    "rank": 633,
-    "ge": "მავთულის",
-    "en": "wire"
+    "rank": 343,
+    "ge": "მთვარე",
+    "en": "moon"
   },
   {
-    "rank": 634,
-    "ge": "ღირებულება",
-    "en": "cost"
+    "rank": 344,
+    "ge": "კუნძული",
+    "en": "island"
   },
   {
-    "rank": 635,
-    "ge": "დაკარგა",
-    "en": "lost"
+    "rank": 345,
+    "ge": "სისტემა",
+    "en": "system"
   },
   {
-    "rank": 636,
-    "ge": "ყავისფერი",
-    "en": "brown"
+    "rank": 346,
+    "ge": "დაკავებული",
+    "en": "busy"
   },
   {
-    "rank": 637,
-    "ge": "აცვიათ",
-    "en": "wear"
+    "rank": 347,
+    "ge": "გამოცდა",
+    "en": "test"
   },
   {
-    "rank": 638,
-    "ge": "ბაღში",
-    "en": "garden"
+    "rank": 348,
+    "ge": "ნავი",
+    "en": "boat"
   },
   {
-    "rank": 639,
-    "ge": "თანაბარი",
-    "en": "equal"
+    "rank": 349,
+    "ge": "საერო",
+    "en": "common"
   },
   {
-    "rank": 640,
-    "ge": "გაიგზავნა",
-    "en": "sent"
+    "rank": 350,
+    "ge": "ოქრო",
+    "en": "gold"
   },
   {
-    "rank": 641,
-    "ge": "აირჩიეთ",
-    "en": "choose"
+    "rank": 351,
+    "ge": "შესაძლებელი",
+    "en": "possible"
   },
   {
-    "rank": 642,
-    "ge": "დაეცა",
-    "en": "fell"
+    "rank": 352,
+    "ge": "თვითმფრინავი",
+    "en": "plane"
   },
   {
-    "rank": 643,
-    "ge": "ჯდება",
-    "en": "fit"
+    "rank": 353,
+    "ge": "მშრალი",
+    "en": "dry"
   },
   {
-    "rank": 644,
-    "ge": "შემოვა",
-    "en": "flow"
+    "rank": 354,
+    "ge": "დაინტერესება",
+    "en": "to be interested in"
   },
   {
-    "rank": 645,
-    "ge": "სამართლიანი",
-    "en": "fair"
+    "rank": 355,
+    "ge": "გაცინება",
+    "en": "to laugh"
   },
   {
-    "rank": 646,
-    "ge": "ბანკი",
-    "en": "bank"
+    "rank": 356,
+    "ge": "ათასი",
+    "en": "thousand"
   },
   {
-    "rank": 647,
-    "ge": "შეაგროვოს",
-    "en": "collect"
+    "rank": 357,
+    "ge": "თამაში",
+    "en": "game"
   },
   {
-    "rank": 648,
-    "ge": "გადარჩენა",
-    "en": "save"
+    "rank": 358,
+    "ge": "ცხელი",
+    "en": "hot"
   },
   {
-    "rank": 649,
-    "ge": "კონტროლის",
-    "en": "control"
+    "rank": 359,
+    "ge": "მონატრება",
+    "en": "to miss (sb)"
   },
   {
-    "rank": 650,
-    "ge": "ათობითი",
-    "en": "decimal"
+    "rank": 360,
+    "ge": "მოტანა",
+    "en": "to bring"
   },
   {
-    "rank": 651,
-    "ge": "ყურის",
-    "en": "ear"
+    "rank": 361,
+    "ge": "სითბო",
+    "en": "heat"
   },
   {
-    "rank": 652,
-    "ge": "სხვა",
-    "en": "else"
+    "rank": 362,
+    "ge": "თოვლი",
+    "en": "snow"
   },
   {
-    "rank": 653,
-    "ge": "საკმაოდ",
-    "en": "quite"
+    "rank": 363,
+    "ge": "საბურავი",
+    "en": "tire"
   },
   {
-    "rank": 654,
-    "ge": "მა",
-    "en": "broke"
+    "rank": 364,
+    "ge": "დიახ / ხო / კი",
+    "en": "yes"
   },
   {
-    "rank": 655,
-    "ge": "საქმე",
-    "en": "case"
+    "rank": 365,
+    "ge": "შორეული",
+    "en": "distant"
   },
   {
-    "rank": 656,
-    "ge": "შუა",
-    "en": "middle"
+    "rank": 366,
+    "ge": "ასვება",
+    "en": "to fill (up sth)"
   },
   {
-    "rank": 657,
-    "ge": "მოკვლა",
-    "en": "kill"
+    "rank": 367,
+    "ge": "აღმოსავლეთი",
+    "en": "east"
   },
   {
-    "rank": 658,
-    "ge": "შვილი",
-    "en": "son"
+    "rank": 368,
+    "ge": "საღებავი",
+    "en": "paint"
   },
   {
-    "rank": 659,
-    "ge": "ტბა",
-    "en": "lake"
+    "rank": 369,
+    "ge": "ენა",
+    "en": "language"
   },
   {
-    "rank": 660,
-    "ge": "მომენტი",
-    "en": "moment"
+    "rank": 370,
+    "ge": "გრანდიოზული",
+    "en": "grand"
   },
   {
-    "rank": 661,
-    "ge": "მასშტაბის",
-    "en": "scale"
+    "rank": 371,
+    "ge": "ბურთი",
+    "en": "ball"
   },
   {
-    "rank": 662,
-    "ge": "ხმამაღალი",
-    "en": "loud"
+    "rank": 372,
+    "ge": "თუმცა",
+    "en": "however"
   },
   {
-    "rank": 663,
-    "ge": "გაზაფხულზე",
-    "en": "spring"
+    "rank": 373,
+    "ge": "ტალღა",
+    "en": "wave (of sea or sound)"
   },
   {
-    "rank": 664,
-    "ge": "დაიცვან",
-    "en": "observe"
+    "rank": 374,
+    "ge": "გული",
+    "en": "heart"
   },
   {
-    "rank": 665,
-    "ge": "ბავშვი",
-    "en": "child"
+    "rank": 375,
+    "ge": "მძიმე",
+    "en": "heavy"
   },
   {
-    "rank": 666,
-    "ge": "სწორი",
-    "en": "straight"
+    "rank": 376,
+    "ge": "ცეკვა",
+    "en": "to dance"
   },
   {
-    "rank": 667,
-    "ge": "კონსონანტური",
-    "en": "consonant"
+    "rank": 377,
+    "ge": "ძრავა",
+    "en": "engine"
   },
   {
-    "rank": 668,
-    "ge": "ერის",
-    "en": "nation"
+    "rank": 378,
+    "ge": "პოზიცია",
+    "en": "position"
   },
   {
-    "rank": 669,
-    "ge": "ლექსიკონი",
-    "en": "dictionary"
+    "rank": 379,
+    "ge": "მკლავი",
+    "en": "arm"
   },
   {
-    "rank": 670,
-    "ge": "რძე",
-    "en": "milk"
+    "rank": 380,
+    "ge": "ფართო",
+    "en": "wide"
   },
   {
-    "rank": 671,
-    "ge": "სიჩქარე",
-    "en": "speed"
+    "rank": 381,
+    "ge": "მასალა",
+    "en": "material"
   },
   {
-    "rank": 672,
-    "ge": "მეთოდი",
-    "en": "method"
+    "rank": 382,
+    "ge": "ზომა",
+    "en": "size"
   },
   {
-    "rank": 673,
-    "ge": "ორგანოს",
-    "en": "organ"
+    "rank": 383,
+    "ge": "ლაპარაკი",
+    "en": "to speak"
   },
   {
-    "rank": 674,
-    "ge": "გადახდა",
-    "en": "pay"
+    "rank": 384,
+    "ge": "წომა",
+    "en": "weight"
   },
   {
-    "rank": 675,
-    "ge": "ასაკი",
-    "en": "age"
+    "rank": 385,
+    "ge": "ყინული",
+    "en": "ice"
   },
   {
-    "rank": 676,
-    "ge": "განყოფილების",
-    "en": "section"
+    "rank": 386,
+    "ge": "მატერიალ",
+    "en": "matter"
   },
   {
-    "rank": 677,
-    "ge": "კაბა",
-    "en": "dress"
+    "rank": 387,
+    "ge": "წრე",
+    "en": "circle"
   },
   {
-    "rank": 678,
-    "ge": "ღრუბელი",
-    "en": "cloud"
+    "rank": 388,
+    "ge": "გაყოფა",
+    "en": "to divide / split"
   },
   {
-    "rank": 679,
-    "ge": "სიურპრიზი",
-    "en": "surprise"
+    "rank": 389,
+    "ge": "მარცვალი",
+    "en": "syllable"
   },
   {
-    "rank": 680,
-    "ge": "მშვიდი",
-    "en": "quiet"
+    "rank": 390,
+    "ge": "ალბათ",
+    "en": "probably"
   },
   {
-    "rank": 681,
-    "ge": "ქვის",
-    "en": "stone"
+    "rank": 391,
+    "ge": "მოულოდნელი",
+    "en": "sudden"
   },
   {
-    "rank": 682,
-    "ge": "პატარა",
-    "en": "tiny"
+    "rank": 392,
+    "ge": "თვლა",
+    "en": "to count"
   },
   {
-    "rank": 683,
-    "ge": "ასვლა",
-    "en": "climb"
+    "rank": 393,
+    "ge": "კვადრატი",
+    "en": "square"
   },
   {
-    "rank": 684,
-    "ge": "ზემოთ",
-    "en": "cool"
+    "rank": 394,
+    "ge": "სიგრძე",
+    "en": "length"
   },
   {
-    "rank": 685,
-    "ge": "დიზაინი",
-    "en": "design"
+    "rank": 395,
+    "ge": "წარმოდგენა",
+    "en": "to represent / imagine"
   },
   {
-    "rank": 686,
-    "ge": "ცუდი",
-    "en": "poor"
+    "rank": 396,
+    "ge": "ხელოვნება",
+    "en": "art"
   },
   {
-    "rank": 687,
-    "ge": "ბევრი",
-    "en": "lot"
+    "rank": 397,
+    "ge": "თემა",
+    "en": "subject (of discussion)"
   },
   {
-    "rank": 688,
-    "ge": "ექსპერიმენტი",
-    "en": "experiment"
+    "rank": 398,
+    "ge": "რეგიონი",
+    "en": "region"
   },
   {
-    "rank": 689,
-    "ge": "ბოლოში",
-    "en": "bottom"
+    "rank": 399,
+    "ge": "ენერგია",
+    "en": "energy"
   },
   {
-    "rank": 690,
-    "ge": "მთავარი",
-    "en": "key"
+    "rank": 400,
+    "ge": "ტკენა",
+    "en": "to hurt"
   },
   {
-    "rank": 691,
-    "ge": "რკინის",
-    "en": "iron"
+    "rank": 401,
+    "ge": "გათვალისწინება",
+    "en": "to consider / take into accout"
   },
   {
-    "rank": 692,
-    "ge": "ერთი",
-    "en": "single"
+    "rank": 402,
+    "ge": "საწოლი",
+    "en": "bed"
   },
   {
-    "rank": 693,
-    "ge": "ჯოხი",
-    "en": "stick"
+    "rank": 403,
+    "ge": "ძმა",
+    "en": "brother"
   },
   {
-    "rank": 694,
-    "ge": "ბინა",
-    "en": "flat"
+    "rank": 404,
+    "ge": "კვერცხი",
+    "en": "egg"
   },
   {
-    "rank": 695,
-    "ge": "ოცი",
-    "en": "twenty"
+    "rank": 405,
+    "ge": "უჯრედი",
+    "en": "cell (of the body)"
   },
   {
-    "rank": 696,
-    "ge": "კანის",
-    "en": "skin"
+    "rank": 406,
+    "ge": "დაჯერება",
+    "en": "to believe"
   },
   {
-    "rank": 697,
-    "ge": "ღიმილი",
-    "en": "smile"
+    "rank": 407,
+    "ge": "ტყე",
+    "en": "forest"
   },
   {
-    "rank": 698,
-    "ge": "ცხიმ",
-    "en": "crease"
+    "rank": 408,
+    "ge": "ფანჯარა",
+    "en": "window"
   },
   {
-    "rank": 699,
-    "ge": "ხვრელი",
-    "en": "hole"
+    "rank": 409,
+    "ge": "მაღაზია",
+    "en": "shop / store"
   },
   {
-    "rank": 700,
-    "ge": "გადასვლა",
-    "en": "jump"
+    "rank": 410,
+    "ge": "ზაფხული",
+    "en": "summer"
   },
   {
-    "rank": 701,
-    "ge": "ბავშვი",
-    "en": "baby"
+    "rank": 411,
+    "ge": "მატარებელი",
+    "en": "train"
   },
   {
-    "rank": 702,
+    "rank": 412,
+    "ge": "ძილი",
+    "en": "sleep"
+  },
+  {
+    "rank": 413,
+    "ge": "დამტკიცება",
+    "en": "to prove"
+  },
+  {
+    "rank": 414,
+    "ge": "ვარჯიში",
+    "en": "exercise"
+  },
+  {
+    "rank": 415,
+    "ge": "კედელი",
+    "en": "wall"
+  },
+  {
+    "rank": 416,
+    "ge": "დაჭერა",
+    "en": "catch"
+  },
+  {
+    "rank": 417,
+    "ge": "სურვილი",
+    "en": "wish"
+  },
+  {
+    "rank": 418,
+    "ge": "ცა",
+    "en": "sky"
+  },
+  {
+    "rank": 419,
+    "ge": "დაფა",
+    "en": "board (for writing)"
+  },
+  {
+    "rank": 420,
+    "ge": "სიხარული",
+    "en": "joy"
+  },
+  {
+    "rank": 421,
+    "ge": "ზამთარი",
+    "en": "winter"
+  },
+  {
+    "rank": 422,
+    "ge": "დაწერილი",
+    "en": "written"
+  },
+  {
+    "rank": 423,
+    "ge": "გარეული",
+    "en": "wild (animal)"
+  },
+  {
+    "rank": 424,
+    "ge": "ინსტრუმენტი",
+    "en": "instrument"
+  },
+  {
+    "rank": 425,
+    "ge": "ჭიქა",
+    "en": "glass"
+  },
+  {
+    "rank": 426,
+    "ge": "ბალახი",
+    "en": "grass"
+  },
+  {
+    "rank": 427,
+    "ge": "ძროხა",
+    "en": "cow"
+  },
+  {
+    "rank": 428,
+    "ge": "სამუშაო",
+    "en": "job"
+  },
+  {
+    "rank": 429,
+    "ge": "წარსული",
+    "en": "past"
+  },
+  {
+    "rank": 430,
+    "ge": "რბილი",
+    "en": "soft"
+  },
+  {
+    "rank": 431,
+    "ge": "გართობა",
+    "en": "fun"
+  },
+  {
+    "rank": 432,
+    "ge": "ნათელი",
+    "en": "bright (light)"
+  },
+  {
+    "rank": 433,
+    "ge": "საწვავი",
+    "en": "fuel, gas"
+  },
+  {
+    "rank": 434,
+    "ge": "ამინდი",
+    "en": "weather"
+  },
+  {
+    "rank": 435,
+    "ge": "თვე",
+    "en": "month"
+  },
+  {
+    "rank": 436,
+    "ge": "მილიონი",
+    "en": "million"
+  },
+  {
+    "rank": 437,
+    "ge": "დათვი",
+    "en": "bear"
+  },
+  {
+    "rank": 438,
+    "ge": "ბედნიერი",
+    "en": "happy"
+  },
+  {
+    "rank": 439,
+    "ge": "იმედი",
+    "en": "hope"
+  },
+  {
+    "rank": 440,
+    "ge": "ყვავილი",
+    "en": "flower"
+  },
+  {
+    "rank": 441,
+    "ge": "ტანსაცმელი",
+    "en": "clothe(s)"
+  },
+  {
+    "rank": 442,
+    "ge": "უცნაური",
+    "en": "strange"
+  },
+  {
+    "rank": 443,
+    "ge": "ხტომა",
+    "en": "to jump"
+  },
+  {
+    "rank": 444,
     "ge": "რვა",
     "en": "eight"
   },
   {
-    "rank": 703,
-    "ge": "სოფელ",
+    "rank": 445,
+    "ge": "სოფელი",
     "en": "village"
   },
   {
-    "rank": 704,
-    "ge": "შეხვდება",
-    "en": "meet"
+    "rank": 446,
+    "ge": "შეხვედრა",
+    "en": "to meet (sb)"
   },
   {
-    "rank": 705,
-    "ge": "ძირეული",
+    "rank": 447,
+    "ge": "ფესვი",
     "en": "root"
   },
   {
-    "rank": 706,
+    "rank": 448,
     "ge": "ყიდვა",
-    "en": "buy"
+    "en": "to buy"
   },
   {
-    "rank": 707,
-    "ge": "ამაღლება",
-    "en": "raise"
-  },
-  {
-    "rank": 708,
-    "ge": "გადაჭრით",
-    "en": "solve"
-  },
-  {
-    "rank": 709,
-    "ge": "რკინის",
+    "rank": 449,
+    "ge": "ლითონი",
     "en": "metal"
   },
   {
-    "rank": 710,
-    "ge": "არა",
-    "en": "whether"
-  },
-  {
-    "rank": 711,
-    "ge": "დააყენებს",
-    "en": "push"
-  },
-  {
-    "rank": 712,
+    "rank": 450,
     "ge": "შვიდი",
     "en": "seven"
   },
   {
-    "rank": 713,
-    "ge": "პირველი პუნქტის",
+    "rank": 451,
+    "ge": "აბზაცი",
     "en": "paragraph"
   },
   {
-    "rank": 714,
+    "rank": 452,
     "ge": "მესამე",
     "en": "third"
   },
   {
-    "rank": 715,
-    "ge": "უნდა",
-    "en": "shall"
-  },
-  {
-    "rank": 716,
-    "ge": "წირვა",
-    "en": "held"
-  },
-  {
-    "rank": 717,
-    "ge": "თმის",
+    "rank": 453,
+    "ge": "თმა",
     "en": "hair"
   },
   {
-    "rank": 718,
-    "ge": "აღწერს",
-    "en": "describe"
+    "rank": 454,
+    "ge": "აღწერა",
+    "en": "to describe"
   },
   {
-    "rank": 719,
+    "rank": 455,
     "ge": "მზარეული",
-    "en": "cook"
+    "en": "cook (profession)"
   },
   {
-    "rank": 720,
-    "ge": "სართული",
+    "rank": 456,
+    "ge": "იატაკი",
     "en": "floor"
   },
   {
-    "rank": 721,
-    "ge": "ან",
-    "en": "either"
+    "rank": 457,
+    "ge": "დაწვა",
+    "en": "to burn"
   },
   {
-    "rank": 722,
-    "ge": "შედეგი",
-    "en": "result"
-  },
-  {
-    "rank": 723,
-    "ge": "დამწვრობა",
-    "en": "burn"
-  },
-  {
-    "rank": 724,
-    "ge": "გორაკზე",
+    "rank": 458,
+    "ge": "ბორცვი",
     "en": "hill"
   },
   {
-    "rank": 725,
+    "rank": 459,
     "ge": "უსაფრთხო",
-    "en": "safe"
+    "en": "safe (place)"
   },
   {
-    "rank": 726,
-    "ge": "ცატ",
+    "rank": 460,
+    "ge": "კატა",
     "en": "cat"
   },
   {
-    "rank": 727,
-    "ge": "საუკუნის",
+    "rank": 461,
+    "ge": "საუკუნე",
     "en": "century"
   },
   {
-    "rank": 728,
-    "ge": "განიხილოს",
-    "en": "consider"
-  },
-  {
-    "rank": 729,
+    "rank": 462,
     "ge": "ტიპი",
     "en": "type"
   },
   {
-    "rank": 730,
+    "rank": 463,
     "ge": "კანონი",
     "en": "law"
   },
   {
-    "rank": 731,
-    "ge": "ბიტიანი",
-    "en": "bit"
+    "rank": 464,
+    "ge": "სანაპირო",
+    "en": "beach"
   },
   {
-    "rank": 732,
-    "ge": "სანაპიროზე",
-    "en": "coast"
+    "rank": 465,
+    "ge": "კოპირება",
+    "en": "copy (computer phrase)"
   },
   {
-    "rank": 733,
-    "ge": "ასლი",
-    "en": "copy"
-  },
-  {
-    "rank": 734,
+    "rank": 466,
     "ge": "ფრაზა",
     "en": "phrase"
   },
   {
-    "rank": 735,
-    "ge": "ჩუმად",
+    "rank": 467,
+    "ge": "ჩუმი",
     "en": "silent"
   },
   {
-    "rank": 736,
+    "rank": 468,
     "ge": "მაღალი",
     "en": "tall"
   },
   {
-    "rank": 737,
-    "ge": "ქვიშის",
+    "rank": 469,
+    "ge": "ქვიშა",
     "en": "sand"
   },
   {
-    "rank": 738,
-    "ge": "ნიადაგის",
+    "rank": 470,
+    "ge": "ნიადაგი",
     "en": "soil"
   },
   {
-    "rank": 739,
-    "ge": "გააფართოვოს",
-    "en": "roll"
-  },
-  {
-    "rank": 740,
+    "rank": 471,
     "ge": "ტემპერატურა",
     "en": "temperature"
   },
   {
-    "rank": 741,
+    "rank": 472,
     "ge": "თითი",
     "en": "finger"
   },
   {
-    "rank": 742,
-    "ge": "მრეწველობა",
+    "rank": 473,
+    "ge": "ინდუსტრია",
     "en": "industry"
   },
   {
-    "rank": 743,
-    "ge": "არც",
+    "rank": 474,
+    "ge": "ღირებულება",
     "en": "value"
   },
   {
-    "rank": 744,
+    "rank": 475,
     "ge": "ბრძოლა",
-    "en": "fight"
+    "en": "fight, struggle, combat"
   },
   {
-    "rank": 745,
+    "rank": 476,
     "ge": "ტყუილი",
     "en": "lie"
   },
   {
-    "rank": 746,
-    "ge": "სცემეს",
-    "en": "beat"
+    "rank": 477,
+    "ge": "ცემა",
+    "en": "beat (of a heart, drums)"
   },
   {
-    "rank": 747,
-    "ge": "აღუძრავენ",
-    "en": "excite"
+    "rank": 478,
+    "ge": "აღფრთოვანებული",
+    "en": "excited"
   },
   {
-    "rank": 748,
+    "rank": 479,
     "ge": "ბუნებრივი",
     "en": "natural"
   },
   {
-    "rank": 749,
-    "ge": "კალენდარი",
+    "rank": 480,
+    "ge": "ხედი",
     "en": "view"
   },
   {
-    "rank": 750,
-    "ge": "აზრი",
-    "en": "sense"
+    "rank": 481,
+    "ge": "ყური",
+    "en": "ear"
   },
   {
-    "rank": 751,
-    "ge": "კაპიტალი",
-    "en": "capital"
+    "rank": 482,
+    "ge": "მოტეხვა",
+    "en": "to break"
   },
   {
-    "rank": 752,
-    "ge": "არ",
-    "en": "won’t"
+    "rank": 483,
+    "ge": "ბრუნვა",
+    "en": "(grammatical) case"
   },
   {
-    "rank": 753,
-    "ge": "თავმჯდომარე",
-    "en": "chair"
+    "rank": 484,
+    "ge": "შუა",
+    "en": "middle (of sth)"
   },
   {
-    "rank": 754,
-    "ge": "საფრთხე",
-    "en": "danger"
+    "rank": 485,
+    "ge": "მოკვლა",
+    "en": "to kill"
   },
   {
-    "rank": 755,
-    "ge": "ხილი",
-    "en": "fruit"
+    "rank": 486,
+    "ge": "შვილი",
+    "en": "son"
   },
   {
-    "rank": 756,
-    "ge": "მდიდარი",
-    "en": "rich"
+    "rank": 487,
+    "ge": "ტბა",
+    "en": "lake"
   },
   {
-    "rank": 757,
-    "ge": "სქელი",
-    "en": "thick"
+    "rank": 488,
+    "ge": "მომენტი",
+    "en": "moment"
   },
   {
-    "rank": 758,
-    "ge": "ჯარისკაცი",
-    "en": "soldier"
+    "rank": 489,
+    "ge": "მასშტაბი",
+    "en": "scale"
   },
   {
-    "rank": 759,
-    "ge": "პროცესი",
-    "en": "process"
+    "rank": 490,
+    "ge": "ხმამაღალი",
+    "en": "loud"
   },
   {
-    "rank": 760,
-    "ge": "მოქმედებენ",
-    "en": "operate"
+    "rank": 491,
+    "ge": "გაზაფხული",
+    "en": "spring"
   },
   {
-    "rank": 761,
-    "ge": "პრაქტიკა",
-    "en": "practice"
+    "rank": 492,
+    "ge": "დაკვირვება",
+    "en": "to observe"
   },
   {
-    "rank": 762,
-    "ge": "ცალკე",
-    "en": "separate"
+    "rank": 493,
+    "ge": "სწორი",
+    "en": "straight"
   },
   {
-    "rank": 763,
-    "ge": "რთული",
-    "en": "difficult"
+    "rank": 494,
+    "ge": "თანხმოვანი",
+    "en": "consonant"
   },
   {
-    "rank": 764,
-    "ge": "ექიმი",
-    "en": "doctor"
+    "rank": 495,
+    "ge": "ერი",
+    "en": "nation"
   },
   {
-    "rank": 765,
-    "ge": "გთხოვთ,",
-    "en": "please"
+    "rank": 496,
+    "ge": "ლექსიკონი",
+    "en": "dictionary"
   },
   {
-    "rank": 766,
-    "ge": "დაცვა",
-    "en": "protect"
+    "rank": 497,
+    "ge": "რძე",
+    "en": "milk"
   },
   {
-    "rank": 767,
-    "ge": "შუადღისას",
-    "en": "noon"
+    "rank": 498,
+    "ge": "სისწრაფე",
+    "en": "speed"
   },
   {
-    "rank": 768,
-    "ge": "მოსავლის",
-    "en": "crop"
+    "rank": 499,
+    "ge": "მეთოდი",
+    "en": "method"
   },
   {
-    "rank": 769,
-    "ge": "თანამედროვე",
-    "en": "modern"
+    "rank": 500,
+    "ge": "ორგანი",
+    "en": "organ"
   },
   {
-    "rank": 770,
-    "ge": "ელემენტი",
-    "en": "element"
+    "rank": 501,
+    "ge": "გადახდა",
+    "en": "to pay"
   },
   {
-    "rank": 771,
-    "ge": "მოხვდა",
-    "en": "hit"
+    "rank": 502,
+    "ge": "ასაკი",
+    "en": "age"
   },
   {
-    "rank": 772,
-    "ge": "სტუდენტი",
-    "en": "student"
+    "rank": 503,
+    "ge": "კაბა",
+    "en": "dress"
   },
   {
-    "rank": 773,
-    "ge": "კუთხეში",
-    "en": "corner"
+    "rank": 504,
+    "ge": "ღრუბელი",
+    "en": "cloud, sponge"
   },
   {
-    "rank": 774,
-    "ge": "პარტია",
-    "en": "party"
+    "rank": 505,
+    "ge": "გაკვირვება",
+    "en": "surprise"
   },
   {
-    "rank": 775,
-    "ge": "ახალი",
-    "en": "supply"
+    "rank": 506,
+    "ge": "მშვიდი",
+    "en": "quiet"
   },
   {
-    "rank": 776,
-    "ge": "რომლის",
-    "en": "whose"
+    "rank": 507,
+    "ge": "ქვა",
+    "en": "stone"
   },
   {
-    "rank": 777,
-    "ge": "განთავსდება",
-    "en": "locate"
+    "rank": 508,
+    "ge": "ასვლა",
+    "en": "to climb, to go up"
   },
   {
-    "rank": 778,
-    "ge": "ბეჭედი",
-    "en": "ring"
+    "rank": 509,
+    "ge": "მაგარი",
+    "en": "cool"
   },
   {
-    "rank": 779,
-    "ge": "ხასიათი",
-    "en": "character"
+    "rank": 510,
+    "ge": "დიზაინი",
+    "en": "design"
   },
   {
-    "rank": 780,
-    "ge": "მწერის",
-    "en": "insect"
+    "rank": 511,
+    "ge": "ღარიბი",
+    "en": "poor (i.e. in wealth)"
   },
   {
-    "rank": 781,
-    "ge": "დაიჭირეს",
-    "en": "caught"
+    "rank": 512,
+    "ge": "ექსპერიმენტი",
+    "en": "experiment"
   },
   {
-    "rank": 782,
-    "ge": "პერიოდი",
-    "en": "period"
+    "rank": 513,
+    "ge": "ფსკერი",
+    "en": "seafloor, bottom"
   },
   {
-    "rank": 783,
-    "ge": "მიუთითოს",
-    "en": "indicate"
+    "rank": 514,
+    "ge": "გასაღები",
+    "en": "key"
   },
   {
-    "rank": 784,
-    "ge": "რადიო",
-    "en": "radio"
+    "rank": 515,
+    "ge": "რკინა",
+    "en": "iron"
   },
   {
-    "rank": 785,
-    "ge": "ისაუბრა",
-    "en": "spoke"
+    "rank": 516,
+    "ge": "მარტო",
+    "en": "alone"
   },
   {
-    "rank": 786,
-    "ge": "ატომის",
-    "en": "atom"
+    "rank": 517,
+    "ge": "ჯოხი",
+    "en": "stick (of wood)"
   },
   {
-    "rank": 787,
-    "ge": "ადამიანის",
-    "en": "human"
+    "rank": 518,
+    "ge": "ბინა",
+    "en": "flat, multi-floored building"
   },
   {
-    "rank": 788,
-    "ge": "ისტორია",
-    "en": "history"
+    "rank": 519,
+    "ge": "ოცი",
+    "en": "twenty"
   },
   {
-    "rank": 789,
-    "ge": "ეფექტი",
-    "en": "effect"
+    "rank": 520,
+    "ge": "კანი",
+    "en": "skin"
   },
   {
-    "rank": 790,
-    "ge": "ელექტრო",
-    "en": "electric"
+    "rank": 521,
+    "ge": "ღიმილი",
+    "en": "smile"
   },
   {
-    "rank": 791,
-    "ge": "ველით",
-    "en": "expect"
+    "rank": 522,
+    "ge": "ხვრელი",
+    "en": "hole"
   },
   {
-    "rank": 792,
-    "ge": "ძვლის",
-    "en": "bone"
+    "rank": 523,
+    "ge": "ვაჭრობა",
+    "en": "trade"
   },
   {
-    "rank": 793,
-    "ge": "სარკინიგზო",
-    "en": "rail"
+    "rank": 524,
+    "ge": "მელოდია",
+    "en": "melody"
   },
   {
-    "rank": 794,
-    "ge": "წარმოიდგინეთ",
-    "en": "imagine"
+    "rank": 525,
+    "ge": "მოგზაურობა",
+    "en": "trip"
   },
   {
-    "rank": 795,
-    "ge": "გთავაზობთ",
-    "en": "provide"
+    "rank": 526,
+    "ge": "ოფისი",
+    "en": "office"
   },
   {
-    "rank": 796,
-    "ge": "ვეთანხმები",
-    "en": "agree"
+    "rank": 527,
+    "ge": "რიგი",
+    "en": "row, line, queue"
   },
   {
-    "rank": 797,
-    "ge": "ამგვარად,",
-    "en": "thus"
+    "rank": 528,
+    "ge": "პირი",
+    "en": "mouth"
   },
   {
-    "rank": 798,
+    "rank": 529,
+    "ge": "ზუსტი",
+    "en": "exact"
+  },
+  {
+    "rank": 530,
+    "ge": "სიმბოლო",
+    "en": "symbol"
+  },
+  {
+    "rank": 531,
+    "ge": "სიკვდილი",
+    "en": "to die"
+  },
+  {
+    "rank": 532,
+    "ge": "ყვირილი",
+    "en": "to shout, to scream, to yell"
+  },
+  {
+    "rank": 533,
+    "ge": "თესლი",
+    "en": "seed"
+  },
+  {
+    "rank": 534,
+    "ge": "ტონი",
+    "en": "tone"
+  },
+  {
+    "rank": 535,
+    "ge": "რჩევა",
+    "en": "to suggest"
+  },
+  {
+    "rank": 536,
+    "ge": "გაწმენდა",
+    "en": "to clean"
+  },
+  {
+    "rank": 537,
+    "ge": "დანგრევა",
+    "en": "to destroy / to tear down"
+  },
+  {
+    "rank": 538,
+    "ge": "ეზო",
+    "en": "yard"
+  },
+  {
+    "rank": 539,
+    "ge": "ბრინჯი",
+    "en": "rice"
+  },
+  {
+    "rank": 540,
+    "ge": "ცუდი",
+    "en": "bad"
+  },
+  {
+    "rank": 541,
+    "ge": "შებერვა",
+    "en": "to blow (air)"
+  },
+  {
+    "rank": 542,
+    "ge": "ნავთი",
+    "en": "oil"
+  },
+  {
+    "rank": 543,
+    "ge": "ნავთი",
+    "en": "blood"
+  },
+  {
+    "rank": 544,
+    "ge": "შეხება",
+    "en": "to touch"
+  },
+  {
+    "rank": 545,
+    "ge": "გუნდი",
+    "en": "team"
+  },
+  {
+    "rank": 546,
+    "ge": "მავთული",
+    "en": "wire"
+  },
+  {
+    "rank": 547,
+    "ge": "დაკარგვა",
+    "en": "to lose (sth)"
+  },
+  {
+    "rank": 548,
+    "ge": "ყავისფერი",
+    "en": "brown"
+  },
+  {
+    "rank": 549,
+    "ge": "ჩაცმა",
+    "en": "to wear"
+  },
+  {
+    "rank": 550,
+    "ge": "ბაღი",
+    "en": "garden"
+  },
+  {
+    "rank": 551,
+    "ge": "თანასწორი",
+    "en": "equal"
+  },
+  {
+    "rank": 552,
+    "ge": "გაგზავნა",
+    "en": "to send"
+  },
+  {
+    "rank": 553,
+    "ge": "არჩევა",
+    "en": "to choose"
+  },
+  {
+    "rank": 554,
+    "ge": "დაცემა",
+    "en": "to fall"
+  },
+  {
+    "rank": 555,
+    "ge": "მორგება",
+    "en": "to fit (sb), to match"
+  },
+  {
+    "rank": 556,
+    "ge": "სასამართლო",
+    "en": "courthouse / court"
+  },
+  {
+    "rank": 557,
+    "ge": "ბანკი",
+    "en": "bank"
+  },
+  {
+    "rank": 558,
+    "ge": "შეგროვება",
+    "en": "to collect"
+  },
+  {
+    "rank": 559,
+    "ge": "გადარჩენა",
+    "en": "to save (sb)"
+  },
+  {
+    "rank": 560,
+    "ge": "კონტროლი",
+    "en": "control"
+  },
+  {
+    "rank": 561,
+    "ge": "ათობითი",
+    "en": "decimal"
+  },
+  {
+    "rank": 562,
     "ge": "ნაზი",
     "en": "gentle"
   },
   {
-    "rank": 799,
+    "rank": 563,
     "ge": "ქალი",
     "en": "woman"
   },
   {
-    "rank": 800,
+    "rank": 564,
     "ge": "კაპიტანი",
     "en": "captain"
   },
   {
-    "rank": 801,
-    "ge": "ვხვდები",
-    "en": "guess"
+    "rank": 565,
+    "ge": "პრაქტიკა",
+    "en": "practice"
   },
   {
-    "rank": 802,
-    "ge": "აუცილებელია",
+    "rank": 566,
+    "ge": "ექიმი",
+    "en": "doctor"
+  },
+  {
+    "rank": 567,
+    "ge": "გთხოვთ",
+    "en": "please"
+  },
+  {
+    "rank": 568,
+    "ge": "დაცვა",
+    "en": "to protect"
+  },
+  {
+    "rank": 569,
+    "ge": "შუადღე",
+    "en": "noon"
+  },
+  {
+    "rank": 570,
+    "ge": "ვისი",
+    "en": "whose"
+  },
+  {
+    "rank": 571,
+    "ge": "საავადმყოფო",
+    "en": "hospital"
+  },
+  {
+    "rank": 572,
+    "ge": "ბეჭედი",
+    "en": "ring"
+  },
+  {
+    "rank": 573,
+    "ge": "პერსონაჟი",
+    "en": "character"
+  },
+  {
+    "rank": 574,
+    "ge": "მწერი",
+    "en": "insect"
+  },
+  {
+    "rank": 575,
+    "ge": "პერიოდი",
+    "en": "period (of time)"
+  },
+  {
+    "rank": 576,
+    "ge": "რადიო",
+    "en": "radio"
+  },
+  {
+    "rank": 577,
+    "ge": "ატომი",
+    "en": "atom"
+  },
+  {
+    "rank": 578,
+    "ge": "ისტორია",
+    "en": "history"
+  },
+  {
+    "rank": 579,
+    "ge": "ეფექტი",
+    "en": "effect"
+  },
+  {
+    "rank": 580,
+    "ge": "ელექტროობა",
+    "en": "electricity"
+  },
+  {
+    "rank": 581,
+    "ge": "მოსავალი",
+    "en": "crop"
+  },
+  {
+    "rank": 582,
+    "ge": "თანამედროვე",
+    "en": "modern"
+  },
+  {
+    "rank": 583,
+    "ge": "ელემენტი",
+    "en": "element"
+  },
+  {
+    "rank": 584,
+    "ge": "დარტყმა",
+    "en": "to hit (sb)"
+  },
+  {
+    "rank": 585,
+    "ge": "სტუდენტი",
+    "en": "university student"
+  },
+  {
+    "rank": 586,
+    "ge": "კუთხე",
+    "en": "corner"
+  },
+  {
+    "rank": 587,
+    "ge": "წვეულება",
+    "en": "party"
+  },
+  {
+    "rank": 588,
+    "ge": "ძვალი",
+    "en": "bone"
+  },
+  {
+    "rank": 589,
+    "ge": "რკინიგზა",
+    "en": "railway"
+  },
+  {
+    "rank": 590,
+    "ge": "უზრუნველყოფა",
+    "en": "to provide"
+  },
+  {
+    "rank": 591,
+    "ge": "დათანხმება",
+    "en": "to agree"
+  },
+  {
+    "rank": 592,
+    "ge": "დედაქალაქი",
+    "en": "capital"
+  },
+  {
+    "rank": 593,
+    "ge": "სკამი",
+    "en": "chair"
+  },
+  {
+    "rank": 594,
+    "ge": "ფრთხილი",
+    "en": "danger"
+  },
+  {
+    "rank": 595,
+    "ge": "ხილი",
+    "en": "fruit"
+  },
+  {
+    "rank": 596,
+    "ge": "მდიდარი",
+    "en": "rich"
+  },
+  {
+    "rank": 597,
+    "ge": "ჯარისკაცი",
+    "en": "soldier"
+  },
+  {
+    "rank": 598,
+    "ge": "პროცესი",
+    "en": "process"
+  },
+  {
+    "rank": 599,
+    "ge": "საჭირო",
     "en": "necessary"
   },
   {
-    "rank": 803,
-    "ge": "მკვეთრი",
+    "rank": 600,
+    "ge": "მახვილი",
     "en": "sharp"
   },
   {
-    "rank": 804,
+    "rank": 601,
     "ge": "ფრთა",
     "en": "wing"
   },
   {
-    "rank": 805,
-    "ge": "შექმნა",
-    "en": "create"
-  },
-  {
-    "rank": 806,
+    "rank": 602,
     "ge": "მეზობელი",
     "en": "neighbor"
   },
   {
-    "rank": 807,
-    "ge": "სარეცხი",
-    "en": "wash"
+    "rank": 603,
+    "ge": "დაბანა",
+    "en": "to bathe / to wash"
   },
   {
-    "rank": 808,
-    "ge": "აღება",
-    "en": "bat"
+    "rank": 604,
+    "ge": "ღამურა",
+    "en": "bat (animal)"
   },
   {
-    "rank": 809,
-    "ge": "საკმაოდ",
-    "en": "rather"
-  },
-  {
-    "rank": 810,
-    "ge": "გულშემატკივარი",
+    "rank": 605,
+    "ge": "ბრბო",
     "en": "crowd"
   },
   {
-    "rank": 811,
-    "ge": "სიმინდის",
+    "rank": 606,
+    "ge": "სიმინდი",
     "en": "corn"
   },
   {
-    "rank": 812,
+    "rank": 607,
     "ge": "შედარება",
-    "en": "compare"
+    "en": "to compare"
   },
   {
-    "rank": 813,
-    "ge": "პოემა",
+    "rank": 608,
+    "ge": "ლექსი",
     "en": "poem"
   },
   {
-    "rank": 814,
-    "ge": "სტრიქონი",
-    "en": "string"
+    "rank": 609,
+    "ge": "ანკესი",
+    "en": "fishing rod"
   },
   {
-    "rank": 815,
-    "ge": "ბელი",
+    "rank": 610,
+    "ge": "ზარი",
     "en": "bell"
   },
   {
-    "rank": 816,
-    "ge": "დამოკიდებული",
-    "en": "depend"
-  },
-  {
-    "rank": 817,
-    "ge": "ხორცის",
+    "rank": 611,
+    "ge": "ხორცი",
     "en": "meat"
   },
   {
-    "rank": 818,
-    "ge": "რუბლს შეადგენს",
-    "en": "rub"
+    "rank": 612,
+    "ge": "საშლელი",
+    "en": "eraser"
   },
   {
-    "rank": 819,
-    "ge": "მილით",
-    "en": "tube"
+    "rank": 613,
+    "ge": "მილი",
+    "en": "pipe, tube"
   },
   {
-    "rank": 820,
+    "rank": 614,
     "ge": "ცნობილი",
-    "en": "famous"
+    "en": "famous, known"
   },
   {
-    "rank": 822,
-    "ge": "ნაკადი",
-    "en": "stream"
+    "rank": 615,
+    "ge": "ევრო",
+    "en": "euro"
   },
   {
-    "rank": 823,
+    "rank": 616,
+    "ge": "ორთქლი",
+    "en": "steam (vapour)"
+  },
+  {
+    "rank": 617,
     "ge": "შიში",
     "en": "fear"
   },
   {
-    "rank": 825,
-    "ge": "თხელი",
+    "rank": 618,
+    "ge": "მხედველობა",
+    "en": "sight"
+  },
+  {
+    "rank": 619,
+    "ge": "გამხდარი",
     "en": "thin"
   },
   {
-    "rank": 826,
-    "ge": "სამკუთხედის",
+    "rank": 620,
+    "ge": "სამკუთხედი",
     "en": "triangle"
   },
   {
-    "rank": 827,
-    "ge": "პლანეტის",
+    "rank": 621,
+    "ge": "პლანეტა",
     "en": "planet"
   },
   {
-    "rank": 828,
-    "ge": "იჩქარეთ",
-    "en": "hurry"
-  },
-  {
-    "rank": 829,
-    "ge": "მთავარი",
-    "en": "chief"
-  },
-  {
-    "rank": 830,
+    "rank": 622,
     "ge": "კოლონია",
     "en": "colony"
   },
   {
-    "rank": 831,
+    "rank": 623,
     "ge": "საათი",
     "en": "clock"
   },
   {
-    "rank": 832,
-    "ge": "ნაღმი",
-    "en": "mine"
+    "rank": 624,
+    "ge": "მეღარო",
+    "en": "mine (for oremining)"
   },
   {
-    "rank": 833,
+    "rank": 625,
     "ge": "ჰალსტუხი",
     "en": "tie"
   },
   {
-    "rank": 834,
-    "ge": "შევა",
-    "en": "enter"
+    "rank": 626,
+    "ge": "შესვლა",
+    "en": "to enter"
   },
   {
-    "rank": 835,
-    "ge": "მთავარი",
-    "en": "major"
+    "rank": 627,
+    "ge": "ძებნა",
+    "en": "to search"
   },
   {
-    "rank": 836,
-    "ge": "ახალი",
-    "en": "fresh"
-  },
-  {
-    "rank": 837,
-    "ge": "ძიების",
-    "en": "search"
-  },
-  {
-    "rank": 838,
-    "ge": "გაუგზავნე",
-    "en": "send"
-  },
-  {
-    "rank": 839,
+    "rank": 628,
     "ge": "ყვითელი",
     "en": "yellow"
   },
   {
-    "rank": 840,
-    "ge": "იარაღი",
+    "rank": 629,
+    "ge": "თოფი",
     "en": "gun"
   },
   {
-    "rank": 840,
-    "ge": "გაიზარდა",
-    "en": "rose"
-  },
-  {
-    "rank": 841,
-    "ge": "საშუალებას",
-    "en": "allow"
-  },
-  {
-    "rank": 842,
-    "ge": "ბეჭდვა",
-    "en": "print"
-  },
-  {
-    "rank": 843,
+    "rank": 630,
     "ge": "მკვდარი",
     "en": "dead"
   },
   {
-    "rank": 844,
-    "ge": "ადგილზე",
-    "en": "spot"
-  },
-  {
-    "rank": 845,
-    "ge": "უდაბნოში",
+    "rank": 631,
+    "ge": "უდაბნო",
     "en": "desert"
   },
   {
-    "rank": 846,
-    "ge": "სარჩელი",
+    "rank": 632,
+    "ge": "კოსტიუმი",
     "en": "suit"
   },
   {
-    "rank": 847,
+    "rank": 633,
     "ge": "მიმდინარე",
     "en": "current"
   },
   {
-    "rank": 848,
-    "ge": "ლიფტით",
-    "en": "lift"
+    "rank": 634,
+    "ge": "ლიფტი",
+    "en": "elevator, lift"
   },
   {
-    "rank": 850,
-    "ge": "ჩამოვა",
-    "en": "arrive"
+    "rank": 635,
+    "ge": "ვარდი",
+    "en": "rose"
   },
   {
-    "rank": 851,
-    "ge": "საძიებო",
-    "en": "master"
+    "rank": 636,
+    "ge": "გაგრძელება",
+    "en": "to continue"
   },
   {
-    "rank": 852,
-    "ge": "სიმღერა",
-    "en": "track"
-  },
-  {
-    "rank": 853,
-    "ge": "მშობელს",
-    "en": "parent"
-  },
-  {
-    "rank": 854,
-    "ge": "ნაპირზე",
-    "en": "shore"
-  },
-  {
-    "rank": 855,
-    "ge": "განყოფილება",
-    "en": "division"
-  },
-  {
-    "rank": 856,
-    "ge": "ფურცელი",
-    "en": "sheet"
-  },
-  {
-    "rank": 857,
-    "ge": "ნივთიერება",
-    "en": "substance"
-  },
-  {
-    "rank": 858,
-    "ge": "ემხრობა",
-    "en": "favor"
-  },
-  {
-    "rank": 859,
-    "ge": "დაკავშირება",
-    "en": "connect"
-  },
-  {
-    "rank": 860,
-    "ge": "ჩანაწერი",
-    "en": "post"
-  },
-  {
-    "rank": 861,
-    "ge": "დახარჯავს",
-    "en": "spend"
-  },
-  {
-    "rank": 862,
-    "ge": "აკორდი",
-    "en": "chord"
-  },
-  {
-    "rank": 863,
-    "ge": "ცხიმის",
-    "en": "fat"
-  },
-  {
-    "rank": 864,
-    "ge": "მოხარული ვარ,",
-    "en": "glad"
-  },
-  {
-    "rank": 865,
-    "ge": "ორიგინალური",
-    "en": "original"
-  },
-  {
-    "rank": 866,
-    "ge": "წილი",
-    "en": "share"
-  },
-  {
-    "rank": 867,
-    "ge": "სადგური",
-    "en": "station"
-  },
-  {
-    "rank": 868,
-    "ge": "მამა",
-    "en": "dad"
-  },
-  {
-    "rank": 869,
-    "ge": "პური",
-    "en": "bread"
-  },
-  {
-    "rank": 870,
-    "ge": "დააკისროს",
-    "en": "charge"
-  },
-  {
-    "rank": 871,
-    "ge": "შესაბამისი",
-    "en": "proper"
-  },
-  {
-    "rank": 872,
-    "ge": "ბარი",
-    "en": "bar"
-  },
-  {
-    "rank": 873,
-    "ge": "შეთავაზება",
-    "en": "offer"
-  },
-  {
-    "rank": 874,
-    "ge": "სეგმენტი",
-    "en": "segment"
-  },
-  {
-    "rank": 875,
-    "ge": "მონა",
-    "en": "slave"
-  },
-  {
-    "rank": 876,
-    "ge": "იხვი",
-    "en": "duck"
-  },
-  {
-    "rank": 877,
-    "ge": "მყისიერი",
-    "en": "instant"
-  },
-  {
-    "rank": 878,
-    "ge": "ბაზარზე",
-    "en": "market"
-  },
-  {
-    "rank": 879,
-    "ge": "ხარისხი",
-    "en": "degree"
-  },
-  {
-    "rank": 880,
-    "ge": "მოეყვანა",
-    "en": "populate"
-  },
-  {
-    "rank": 881,
-    "ge": "ქათმის",
-    "en": "chick"
-  },
-  {
-    "rank": 882,
-    "ge": "ძვირფასო",
-    "en": "dear"
-  },
-  {
-    "rank": 883,
-    "ge": "მტრის",
-    "en": "enemy"
-  },
-  {
-    "rank": 884,
-    "ge": "პასუხი",
-    "en": "reply"
-  },
-  {
-    "rank": 885,
-    "ge": "სასმელი",
-    "en": "drink"
-  },
-  {
-    "rank": 886,
-    "ge": "მოხდეს",
-    "en": "occur"
-  },
-  {
-    "rank": 887,
-    "ge": "მხარდაჭერა",
-    "en": "support"
-  },
-  {
-    "rank": 888,
-    "ge": "სიტყვის",
-    "en": "speech"
-  },
-  {
-    "rank": 889,
-    "ge": "ბუნება",
-    "en": "nature"
-  },
-  {
-    "rank": 890,
-    "ge": "სპექტრი",
-    "en": "range"
-  },
-  {
-    "rank": 891,
-    "ge": "ორთქლი",
-    "en": "steam"
-  },
-  {
-    "rank": 892,
-    "ge": "მოძრაობის",
-    "en": "motion"
-  },
-  {
-    "rank": 893,
-    "ge": "გზა",
-    "en": "path"
-  },
-  {
-    "rank": 894,
-    "ge": "თხევადი",
-    "en": "liquid"
-  },
-  {
-    "rank": 895,
-    "ge": "შედით",
-    "en": "log"
-  },
-  {
-    "rank": 896,
-    "ge": "ნიშნავდა",
-    "en": "meant"
-  },
-  {
-    "rank": 897,
-    "ge": "მაჩვენებელი",
-    "en": "quotient"
-  },
-  {
-    "rank": 898,
-    "ge": "კბილები",
-    "en": "teeth"
-  },
-  {
-    "rank": 899,
-    "ge": "გარსი",
-    "en": "shell"
-  },
-  {
-    "rank": 900,
-    "ge": "კისრის",
-    "en": "neck"
-  },
-  {
-    "rank": 901,
-    "ge": "ჟანგბადის",
-    "en": "oxygen"
-  },
-  {
-    "rank": 902,
-    "ge": "შაქარი",
-    "en": "sugar"
-  },
-  {
-    "rank": 903,
-    "ge": "სიკვდილი",
-    "en": "death"
-  },
-  {
-    "rank": 904,
-    "ge": "საკმაოდ",
-    "en": "pretty"
-  },
-  {
-    "rank": 905,
-    "ge": "უნარი",
-    "en": "skill"
-  },
-  {
-    "rank": 906,
-    "ge": "ქალები",
-    "en": "women"
-  },
-  {
-    "rank": 907,
-    "ge": "სეზონი",
-    "en": "season"
-  },
-  {
-    "rank": 908,
-    "ge": "გამოსავალი",
-    "en": "solution"
-  },
-  {
-    "rank": 909,
-    "ge": "მაგნიტივით",
-    "en": "magnet"
-  },
-  {
-    "rank": 910,
-    "ge": "ვერცხლის",
-    "en": "silver"
-  },
-  {
-    "rank": 911,
-    "ge": "მადლობა",
-    "en": "thank"
-  },
-  {
-    "rank": 912,
-    "ge": "ფილიალი",
-    "en": "branch"
-  },
-  {
-    "rank": 913,
-    "ge": "მატჩი",
-    "en": "match"
-  },
-  {
-    "rank": 914,
-    "ge": "სუფიქსი",
-    "en": "suffix"
-  },
-  {
-    "rank": 915,
-    "ge": "განსაკუთრებით",
-    "en": "especially"
-  },
-  {
-    "rank": 916,
-    "ge": "ლეღვის",
-    "en": "fig"
-  },
-  {
-    "rank": 917,
-    "ge": "ეშინია",
-    "en": "afraid"
-  },
-  {
-    "rank": 918,
-    "ge": "დიდი",
-    "en": "huge"
-  },
-  {
-    "rank": 919,
-    "ge": "დის",
-    "en": "sister"
-  },
-  {
-    "rank": 920,
-    "ge": "ფოლადის",
-    "en": "steel"
-  },
-  {
-    "rank": 921,
-    "ge": "დოლარი",
-    "en": "dollar"
-  },
-  {
-    "rank": 921,
-    "ge": "განხილვა",
-    "en": "discuss"
-  },
-  {
-    "rank": 922,
-    "ge": "წინ",
-    "en": "forward"
-  },
-  {
-    "rank": 923,
-    "ge": "მსგავსი",
-    "en": "similar"
-  },
-  {
-    "rank": 924,
-    "ge": "უხელმძღვანელებს",
-    "en": "guide"
-  },
-  {
-    "rank": 925,
-    "ge": "გამოცდილება",
-    "en": "experience"
-  },
-  {
-    "rank": 926,
-    "ge": "ანგარიში",
-    "en": "score"
-  },
-  {
-    "rank": 927,
-    "ge": "ვაშლის",
-    "en": "apple"
-  },
-  {
-    "rank": 928,
-    "ge": "შეიძინა",
-    "en": "bought"
-  },
-  {
-    "rank": 929,
-    "ge": "გამოიწვია",
-    "en": "led"
-  },
-  {
-    "rank": 930,
-    "ge": "მოედანზე",
-    "en": "pitch"
-  },
-  {
-    "rank": 931,
-    "ge": "ქურთუკი",
-    "en": "coat"
-  },
-  {
-    "rank": 932,
-    "ge": "მასობრივი",
-    "en": "mass"
-  },
-  {
-    "rank": 933,
-    "ge": "ანკეტა",
-    "en": "card"
-  },
-  {
-    "rank": 934,
-    "ge": "ბენდი",
-    "en": "band"
-  },
-  {
-    "rank": 935,
-    "ge": "საბაგირო",
-    "en": "rope"
-  },
-  {
-    "rank": 936,
-    "ge": "მუშავდება",
-    "en": "slip"
-  },
-  {
-    "rank": 937,
-    "ge": "გაიმარჯვებს",
-    "en": "win"
-  },
-  {
-    "rank": 938,
-    "ge": "ოცნება",
-    "en": "dream"
-  },
-  {
-    "rank": 939,
-    "ge": "საღამოს",
-    "en": "evening"
-  },
-  {
-    "rank": 940,
-    "ge": "მდგომარეობა",
-    "en": "condition"
-  },
-  {
-    "rank": 941,
-    "ge": "არხი",
-    "en": "feed"
-  },
-  {
-    "rank": 942,
-    "ge": "ინსტრუმენტი",
-    "en": "tool"
-  },
-  {
-    "rank": 943,
-    "ge": "სულ",
-    "en": "total"
-  },
-  {
-    "rank": 944,
-    "ge": "ძირითადი",
-    "en": "basic"
-  },
-  {
-    "rank": 945,
-    "ge": "სუნი",
-    "en": "smell"
-  },
-  {
-    "rank": 946,
-    "ge": "ხეობაში",
-    "en": "valley"
-  },
-  {
-    "rank": 947,
-    "ge": "არც",
-    "en": "nor"
-  },
-  {
-    "rank": 948,
-    "ge": "ორმაგი",
-    "en": "double"
-  },
-  {
-    "rank": 949,
-    "ge": "ადგილს",
-    "en": "seat"
-  },
-  {
-    "rank": 950,
-    "ge": "გაგრძელდება",
-    "en": "continue"
-  },
-  {
-    "rank": 951,
+    "rank": 637,
     "ge": "ბლოკი",
     "en": "block"
   },
   {
-    "rank": 952,
-    "ge": "გრაფიკი",
-    "en": "chart"
-  },
-  {
-    "rank": 953,
+    "rank": 638,
     "ge": "ქუდი",
     "en": "hat"
   },
   {
-    "rank": 954,
+    "rank": 639,
     "ge": "გაყიდვა",
-    "en": "sell"
+    "en": "to sell"
   },
   {
-    "rank": 955,
+    "rank": 640,
     "ge": "წარმატება",
     "en": "success"
   },
   {
-    "rank": 956,
+    "rank": 641,
     "ge": "კომპანია",
     "en": "company"
   },
   {
-    "rank": 957,
-    "ge": "სხვაობა",
-    "en": "subtract"
+    "rank": 642,
+    "ge": "კონკრეტული",
+    "en": "specific"
   },
   {
-    "rank": 958,
-    "ge": "ღონისძიება",
-    "en": "event"
+    "rank": 643,
+    "ge": "ცურვა",
+    "en": "to swim"
   },
   {
-    "rank": 959,
-    "ge": "კერძოდ",
-    "en": "particular"
-  },
-  {
-    "rank": 960,
-    "ge": "გარიგება",
-    "en": "deal"
-  },
-  {
-    "rank": 961,
-    "ge": "ბანაობენ",
-    "en": "swim"
-  },
-  {
-    "rank": 962,
-    "ge": "ვადა",
-    "en": "term"
-  },
-  {
-    "rank": 963,
-    "ge": "პირიქით",
+    "rank": 644,
+    "ge": "საპირისპირო",
     "en": "opposite"
   },
   {
-    "rank": 964,
+    "rank": 645,
     "ge": "ცოლი",
     "en": "wife"
   },
   {
-    "rank": 965,
-    "ge": "ფეხსაცმლის",
+    "rank": 646,
+    "ge": "ფეხსაცმელი",
     "en": "shoe"
   },
   {
-    "rank": 966,
-    "ge": "მხრის",
+    "rank": 647,
+    "ge": "ხმარი",
     "en": "shoulder"
   },
   {
-    "rank": 967,
-    "ge": "გავრცელება",
-    "en": "spread"
+    "rank": 648,
+    "ge": "კემპინგი",
+    "en": "camping"
   },
   {
-    "rank": 968,
-    "ge": "მოაწყოს",
-    "en": "arrange"
-  },
-  {
-    "rank": 969,
-    "ge": "ბანაკი",
-    "en": "camp"
-  },
-  {
-    "rank": 970,
+    "rank": 649,
     "ge": "გამოგონება",
-    "en": "invent"
+    "en": "to invent"
   },
   {
-    "rank": 971,
-    "ge": "ბამბა",
-    "en": "cotton"
+    "rank": 650,
+    "ge": "კანფეტი",
+    "en": "candy"
   },
   {
-    "rank": 972,
-    "ge": "დაიბადა",
-    "en": "born"
+    "rank": 651,
+    "ge": "დაბადება",
+    "en": "to be born"
   },
   {
-    "rank": 973,
-    "ge": "განსაზღვრავს",
-    "en": "determine"
+    "rank": 652,
+    "ge": "გაანალიზება",
+    "en": "to analyze"
   },
   {
-    "rank": 974,
-    "ge": "და",
-    "en": "quart"
-  },
-  {
-    "rank": 975,
+    "rank": 653,
     "ge": "ცხრა",
     "en": "nine"
   },
   {
-    "rank": 976,
+    "rank": 654,
     "ge": "სატვირთო",
     "en": "truck"
   },
   {
-    "rank": 977,
-    "ge": "ხმაური",
+    "rank": 655,
+    "ge": "ხმაურობა",
     "en": "noise"
   },
   {
-    "rank": 978,
+    "rank": 656,
     "ge": "დონე",
-    "en": "level"
+    "en": "level (like eg. in avideogame)"
   },
   {
-    "rank": 979,
+    "rank": 657,
     "ge": "შანსი",
     "en": "chance"
   },
   {
-    "rank": 980,
-    "ge": "შევიკრიბოთ",
-    "en": "gather"
-  },
-  {
-    "rank": 981,
+    "rank": 658,
     "ge": "მაღაზია",
     "en": "shop"
   },
   {
-    "rank": 982,
-    "ge": "მონაკვეთი",
-    "en": "stretch"
+    "rank": 659,
+    "ge": "გაჭიმვა",
+    "en": "to stretch"
   },
   {
-    "rank": 983,
-    "ge": "იმისათვის, რომ",
-    "en": "throw"
+    "rank": 660,
+    "ge": "ყრა",
+    "en": "to throw (sth at sth)"
   },
   {
-    "rank": 984,
-    "ge": "შაინი",
-    "en": "shine"
+    "rank": 661,
+    "ge": "ბრწყინვალე",
+    "en": "brilliant"
   },
   {
-    "rank": 985,
-    "ge": "ქონების",
-    "en": "property"
+    "rank": 662,
+    "ge": "ციხესიმაგრე",
+    "en": "castle"
   },
   {
-    "rank": 986,
-    "ge": "სვეტი",
-    "en": "column"
-  },
-  {
-    "rank": 987,
-    "ge": "მოლეკულის",
+    "rank": 663,
+    "ge": "მოლეკულა",
     "en": "molecule"
   },
   {
-    "rank": 988,
-    "ge": "აირჩიეთ",
-    "en": "select"
-  },
-  {
-    "rank": 989,
-    "ge": "არასწორი",
+    "rank": 664,
+    "ge": "მცდარი",
     "en": "wrong"
   },
   {
-    "rank": 990,
+    "rank": 665,
     "ge": "ნაცრისფერი",
-    "en": "gray"
+    "en": "gray / grey (colour)"
   },
   {
-    "rank": 991,
-    "ge": "განმეორებითი",
-    "en": "repeat"
+    "rank": 666,
+    "ge": "გამეორება",
+    "en": "to repeat / to revise"
   },
   {
-    "rank": 992,
-    "ge": "მოითხოვს",
-    "en": "require"
-  },
-  {
-    "rank": 993,
+    "rank": 667,
     "ge": "ფართო",
-    "en": "broad"
+    "en": "broad, wide"
   },
   {
-    "rank": 994,
+    "rank": 668,
     "ge": "მომზადება",
-    "en": "prepare"
+    "en": "to prepare"
   },
   {
-    "rank": 995,
+    "rank": 669,
     "ge": "მარილი",
     "en": "salt"
   },
   {
-    "rank": 996,
+    "rank": 670,
     "ge": "ცხვირი",
     "en": "nose"
   },
   {
-    "rank": 997,
+    "rank": 671,
     "ge": "მრავლობითი",
-    "en": "plural"
+    "en": "plural (grammar)"
   },
   {
-    "rank": 998,
-    "ge": "რისხვა",
+    "rank": 672,
+    "ge": "გაბრაზება",
     "en": "anger"
   },
   {
-    "rank": 999,
-    "ge": "სარჩელი",
-    "en": "claim"
+    "rank": 673,
+    "ge": "კონტინენტი",
+    "en": "continent"
   },
   {
-    "rank": 1000,
-    "ge": "კონტინენტზე",
-    "en": "continent"
+    "rank": 674,
+    "ge": "ჟანგბადი",
+    "en": "oxygen"
+  },
+  {
+    "rank": 675,
+    "ge": "შაქარი",
+    "en": "sugar"
+  },
+  {
+    "rank": 676,
+    "ge": "სიკვდილი",
+    "en": "death"
+  },
+  {
+    "rank": 677,
+    "ge": "ლამაზი",
+    "en": "pretty, beautiful"
+  },
+  {
+    "rank": 678,
+    "ge": "უნარი",
+    "en": "skill, ability"
+  },
+  {
+    "rank": 679,
+    "ge": "ნიჭიერი",
+    "en": "talented"
+  },
+  {
+    "rank": 680,
+    "ge": "სეზონი",
+    "en": "season"
+  },
+  {
+    "rank": 681,
+    "ge": "გამოსავალი",
+    "en": "solution"
+  },
+  {
+    "rank": 682,
+    "ge": "მაგნიტი",
+    "en": "magnet"
+  },
+  {
+    "rank": 683,
+    "ge": "ვერცხლი",
+    "en": "silver"
+  },
+  {
+    "rank": 684,
+    "ge": "გმადლობთ",
+    "en": "thank you (polite version)"
+  },
+  {
+    "rank": 685,
+    "ge": "ტოტი",
+    "en": "branch (of a tree)"
+  },
+  {
+    "rank": 686,
+    "ge": "მატჩი",
+    "en": "match"
+  },
+  {
+    "rank": 687,
+    "ge": "სუფიქსი",
+    "en": "suffix"
+  },
+  {
+    "rank": 688,
+    "ge": "განსაკუთრებით",
+    "en": "especially"
+  },
+  {
+    "rank": 689,
+    "ge": "ლეღვი",
+    "en": "fig"
+  },
+  {
+    "rank": 690,
+    "ge": "შეშინებული",
+    "en": "scared / afraid"
+  },
+  {
+    "rank": 691,
+    "ge": "უზარმაზარი",
+    "en": "huge, enormous"
+  },
+  {
+    "rank": 692,
+    "ge": "და",
+    "en": "sister"
+  },
+  {
+    "rank": 693,
+    "ge": "ფოლადი",
+    "en": "steel"
+  },
+  {
+    "rank": 694,
+    "ge": "განხილვა",
+    "en": "to discuss"
+  },
+  {
+    "rank": 695,
+    "ge": "წინ",
+    "en": "forward"
+  },
+  {
+    "rank": 696,
+    "ge": "მსგავსი",
+    "en": "similar"
+  },
+  {
+    "rank": 697,
+    "ge": "სახემძღვანელო",
+    "en": "guidebook / tutorial manual"
+  },
+  {
+    "rank": 698,
+    "ge": "გამოცდილება",
+    "en": "experience"
+  },
+  {
+    "rank": 699,
+    "ge": "ვაშლი",
+    "en": "apple"
+  },
+  {
+    "rank": 700,
+    "ge": "პალტო",
+    "en": "coat"
+  },
+  {
+    "rank": 701,
+    "ge": "მასა",
+    "en": "mass"
+  },
+  {
+    "rank": 702,
+    "ge": "ბარათი",
+    "en": "card (credit card ect)"
+  },
+  {
+    "rank": 703,
+    "ge": "თოკი",
+    "en": "rope"
+  },
+  {
+    "rank": 704,
+    "ge": "მოგება",
+    "en": "to win (at sth)"
+  },
+  {
+    "rank": 705,
+    "ge": "სიზმარი",
+    "en": "dream"
+  },
+  {
+    "rank": 706,
+    "ge": "საღამო",
+    "en": "evening"
+  },
+  {
+    "rank": 707,
+    "ge": "კვება",
+    "en": "to feed (sth)"
+  },
+  {
+    "rank": 708,
+    "ge": "ხელსაწყო",
+    "en": "tool"
+  },
+  {
+    "rank": 709,
+    "ge": "ყნოსვა",
+    "en": "to smell"
+  },
+  {
+    "rank": 710,
+    "ge": "ხეობა",
+    "en": "valley"
+  },
+  {
+    "rank": 711,
+    "ge": "არც",
+    "en": "nor / neither"
+  },
+  {
+    "rank": 712,
+    "ge": "ორმაგი",
+    "en": "double"
+  },
+  {
+    "rank": 713,
+    "ge": "ჩამოსვლა",
+    "en": "to arrive"
+  },
+  {
+    "rank": 714,
+    "ge": "მშობელი",
+    "en": "parent"
+  },
+  {
+    "rank": 715,
+    "ge": "ნაპირი",
+    "en": "shore"
+  },
+  {
+    "rank": 716,
+    "ge": "ნივთიერება",
+    "en": "substance"
+  },
+  {
+    "rank": 717,
+    "ge": "დაკავშირება",
+    "en": "to connect (i.e. to the internet)"
+  },
+  {
+    "rank": 718,
+    "ge": "პოსტი",
+    "en": "post (online"
+  },
+  {
+    "rank": 719,
+    "ge": "ხარჯვა",
+    "en": "to spend (money)"
+  },
+  {
+    "rank": 720,
+    "ge": "მსუქანი",
+    "en": "fat"
+  },
+  {
+    "rank": 721,
+    "ge": "თავდაპირველი",
+    "en": "original"
+  },
+  {
+    "rank": 722,
+    "ge": "სადგური",
+    "en": "station"
+  },
+  {
+    "rank": 723,
+    "ge": "მამა",
+    "en": "dad"
+  },
+  {
+    "rank": 724,
+    "ge": "პური",
+    "en": "bread"
+  },
+  {
+    "rank": 725,
+    "ge": "დამუხტვა",
+    "en": "to charge (i.e. a phone)"
+  },
+  {
+    "rank": 726,
+    "ge": "სათანადო",
+    "en": "proper, adequate at sth"
+  },
+  {
+    "rank": 727,
+    "ge": "ბარი",
+    "en": "bar (for drinking)"
+  },
+  {
+    "rank": 728,
+    "ge": "შეთავაზება",
+    "en": "offer"
+  },
+  {
+    "rank": 729,
+    "ge": "სეგმენტი",
+    "en": "segment"
+  },
+  {
+    "rank": 730,
+    "ge": "მონა",
+    "en": "slave"
+  },
+  {
+    "rank": 731,
+    "ge": "იხვი",
+    "en": "duck"
+  },
+  {
+    "rank": 732,
+    "ge": "ბაზარი",
+    "en": "market"
+  },
+  {
+    "rank": 733,
+    "ge": "ხარისხი",
+    "en": "quality"
+  },
+  {
+    "rank": 734,
+    "ge": "დათვი",
+    "en": "dear"
+  },
+  {
+    "rank": 735,
+    "ge": "მტერი",
+    "en": "enemy"
+  },
+  {
+    "rank": 736,
+    "ge": "პასუხი",
+    "en": "reply"
+  },
+  {
+    "rank": 737,
+    "ge": "სმა",
+    "en": "to drink"
+  },
+  {
+    "rank": 738,
+    "ge": "მხარდაჭერა",
+    "en": "support"
+  },
+  {
+    "rank": 739,
+    "ge": "მეტყველება",
+    "en": "speech"
+  },
+  {
+    "rank": 740,
+    "ge": "ბუნება",
+    "en": "nature"
+  },
+  {
+    "rank": 741,
+    "ge": "მოძრაობა",
+    "en": "to move"
+  },
+  {
+    "rank": 742,
+    "ge": "სითხე",
+    "en": "(a) liquid (material)"
+  },
+  {
+    "rank": 743,
+    "ge": "მორი",
+    "en": "log (of a tree)"
+  },
+  {
+    "rank": 744,
+    "ge": "კბილი",
+    "en": "tooth"
+  },
+  {
+    "rank": 745,
+    "ge": "კისერი",
+    "en": "neck"
+  },
+  {
+    "rank": 746,
+    "ge": "სასტუმრო",
+    "en": "hotel"
   }
 ]

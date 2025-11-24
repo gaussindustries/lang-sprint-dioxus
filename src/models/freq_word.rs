@@ -3,7 +3,7 @@ use serde::Deserialize;
 #[derive(Clone, Deserialize)]
 pub struct FrequencyWord {
     pub rank: u32,
-    pub ge: String,   // target language word (Georgian spelling)
+    pub xx: String,   // target language word (Georgian spelling)
     pub en: String,   // English gloss
 
     #[serde(default)]
