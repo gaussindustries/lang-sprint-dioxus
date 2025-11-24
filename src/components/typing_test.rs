@@ -7,7 +7,7 @@ use dioxus_primitives::slider::SliderValue;
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
-use crate::models::{freq_word::FrequencyWord, letter::Letter};
+use crate::models::{freq_word_ge::FrequencyWord, letter::Letter};
 
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
@@ -47,7 +47,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let idx = current_index().min(words.len() - 1);
     let current = words[idx].clone();
 
-    let target_word = current.xx.clone();
+    let target_word = current.ge.clone();
     let typed_now = typed();
 
     let target_chars: Vec<char> = target_word.chars().collect();
