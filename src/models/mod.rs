@@ -1,2 +1,2 @@
 pub mod letter;
-pub mod freq_word_ge;
+pub mod freq_word;
