@@ -14,7 +14,7 @@ use dioxus::prelude::*;
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 const MAIN_CSS: Asset = asset!("/assets/styling/main.css");
-const DIOXUS_CSS: Asset = asset!("/assets/styling/dx-components-theme.css");
+const DIOXUS_CSS: Asset = asset!("/assets/dx-components-theme.css");
 
 
 // ---------------------------------------------------------------------
