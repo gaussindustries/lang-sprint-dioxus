@@ -1,7 +1,10 @@
-// src/views/alphabet.rs
 use dioxus::prelude::*;
 use dioxus_primitives::slider::SliderValue;
-use crate::{audio, components::slider::{Slider,SliderRange, SliderThumb, SliderTrack}, models::letter::Letter};
+use crate::{
+    audio,
+    components::slider::{Slider, SliderRange, SliderThumb, SliderTrack},
+    models::letter::Letter,
+};
 use std::time::Duration;
 
 const FLASH_DURATION: Duration = Duration::from_millis(700);
@@ -12,12 +15,18 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     let mut flashing = use_signal(|| None::<String>);
     let mut volume = use_signal(|| 0.4);
 
+    // Derive language-specific title once per render
+    let alphabet_target_lang: &str = match lang.read().as_str() {
+        "georgian" => "ანბანი",
+        "russian"  => "Алфавит",
+        _          => "Alphabet",
+    };
+
     // Whenever `flashing` changes, start a 700ms timer to clear it
     use_resource(move || {
         let mut flashing_signal = flashing.clone();
 
         async move {
-            // Take a snapshot in a *separate scope* so the read borrow ends
             let maybe_path: Option<String> = {
                 let read_guard = flashing_signal.read();
                 read_guard.clone()
@@ -26,7 +35,6 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             if let Some(path) = maybe_path {
                 tokio::time::sleep(FLASH_DURATION).await;
 
-                // Now we can borrow mutably safely
                 flashing_signal.with_mut(|current| {
                     if current.as_ref() == Some(&path) {
                         *current = None;
@@ -55,15 +63,14 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             .map(|p| p == &path)
             .unwrap_or(false);
 
-        let base_classes = "group p-4 rounded-lg border-2 transition-all text-center hover:border-indigo-500 hover:cursor-pointer select-none text-white";
+        let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
+                            hover:border-indigo-500 hover:cursor-pointer select-none text-white";
 
         let ring_classes = if is_flashing {
             " border-indigo-400 ring-4 ring-indigo-400 !text-indigo-500"
         } else {
             " border-gray-600"
         };
-
-
 
         rsx! {
             button {
@@ -79,11 +86,9 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
                             file
                         );
 
-                        // Play audio
                         #[cfg(not(target_arch = "wasm32"))]
                         audio::play_audio(&play_path, volume());
 
-                        // Start 700ms flash
                         flashing_signal.set(Some(play_path));
                     }
                 },
@@ -94,38 +99,44 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
             }
         }
     });
-	let mut volume_pct = (volume() * 100.0).round() as i32;
+
+    let volume_pct = (volume() * 100.0).round() as i32;
 
     rsx! {
         section { class: "p-6",
-            h2 { class: "text-2xl font-semibold mb-4 text-center", "Alphabet - ანბანი" }
-			div{ class:"flex justify-center gap-3",
-				h4 { class:"text-center flex", "Volume"}
-				div { 
-					Slider {
-						default_value: SliderValue::Single(volume() as f64),
-						min: 0.0,
-						max: 1.0,
-						step: 0.05,
-						horizontal: true,
-						on_value_change: move |value: SliderValue| {
-							// Extract the f64 value from SliderValue::Single
-							let SliderValue::Single(v) = value;
-							volume.set(v as f32);
-						},
-					
-						SliderTrack {
-							SliderRange {}
-							SliderThumb {}
-					}
-				}
-			}
-			div { style: "margin-bottom: 15px; font-size: 16px; font-weight: bold;",
-				"{volume_pct}%" 
-			}
+            h2 { class: "text-2xl font-semibold mb-4 text-center",
+                "Alphabet – {alphabet_target_lang}"
+            }
 
-		}
-			div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
+            div { class:"flex justify-center gap-3",
+                h4 { class:"text-center flex", "Volume" }
+
+                div {
+                    Slider {
+                        default_value: SliderValue::Single(volume() as f64),
+                        min: 0.0,
+                        max: 1.0,
+                        step: 0.05,
+                        horizontal: true,
+                        on_value_change: move |value: SliderValue| {
+                            let SliderValue::Single(v) = value;
+                            volume.set(v as f32);
+                        },
+
+                        SliderTrack {
+                            SliderRange {}
+                            SliderThumb {}
+                        }
+                    }
+                }
+
+                div {
+                    style: "margin-bottom: 15px; font-size: 16px; font-weight: bold;",
+                    "{volume_pct}%"
+                }
+            }
+
+            div { class: "grid grid-cols-6 gap-4 max-w-3xl mx-auto",
                 {cards}
             }
         }
