@@ -215,3 +215,9 @@ if for some reason on linux it doesn't display anything:
  WEBKIT_DISABLE_DMABUF_RENDERER=1 dx serve
  ```
 
+### Sources
+
+https://www.hippocrenebooks.com/beginners-georgian-online-audio.html
+# Dodona Kiziria - Beginner’s Georgian - Hippocrene Books (2009) (Alphabet Pronunciation Audio)
+
+

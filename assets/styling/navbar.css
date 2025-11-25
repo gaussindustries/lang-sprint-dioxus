@@ -1,6 +1,7 @@
 #navbar {
   display: flex;
   flex-direction: row;
+  background-color: var(--color-indigo-800);
 }
 
 #navbar a {

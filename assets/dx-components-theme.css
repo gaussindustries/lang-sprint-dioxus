@@ -29,7 +29,7 @@ body {
 }
 
 :root {
-	/* Primary colors */
+  /* Primary colors */
   --primary-color: var(--dark, #000) var(--light, #fff);
   --primary-color-1: var(--dark, #0e0e0e) var(--light, #fbfbfb);
   --primary-color-2: var(--dark, #0a0a0a) var(--light, #fff);

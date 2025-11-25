@@ -1,0 +1,6002 @@
+[
+  {
+    "rank": 1,
+    "word": "и",
+    "en": "and, though",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 2,
+    "word": "в",
+    "en": "in, at",
+    "pos": "preposition"
+  },
+  {
+    "rank": 3,
+    "word": "не",
+    "en": "not",
+    "pos": "particle"
+  },
+  {
+    "rank": 4,
+    "word": "он",
+    "en": "he",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 5,
+    "word": "на",
+    "en": "on, it, at, to",
+    "pos": "preposition"
+  },
+  {
+    "rank": 6,
+    "word": "я",
+    "en": "I",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 7,
+    "word": "что",
+    "en": "what, that, why",
+    "pos": "сonjunction, pronoun"
+  },
+  {
+    "rank": 8,
+    "word": "тот",
+    "en": "that",
+    "pos": "adjective, pronoun"
+  },
+  {
+    "rank": 9,
+    "word": "быть",
+    "en": "to be",
+    "pos": "verb"
+  },
+  {
+    "rank": 10,
+    "word": "с",
+    "en": "with, and, from, of",
+    "pos": "preposition"
+  },
+  {
+    "rank": 11,
+    "word": "а",
+    "en": "while, and, but",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 12,
+    "word": "весь",
+    "en": "all, everything",
+    "pos": "pron, noun"
+  },
+  {
+    "rank": 13,
+    "word": "это",
+    "en": "that, this, it",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 14,
+    "word": "как",
+    "en": "how, what, as, like",
+    "pos": "adverb, conj"
+  },
+  {
+    "rank": 15,
+    "word": "она́",
+    "en": "she",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 16,
+    "word": "по",
+    "en": "on, along, by",
+    "pos": "preposition"
+  },
+  {
+    "rank": 17,
+    "word": "но",
+    "en": "but",
+    "pos": "conjunction, noun"
+  },
+  {
+    "rank": 18,
+    "word": "они́",
+    "en": "they",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 19,
+    "word": "к",
+    "en": "to, for, by",
+    "pos": "preposition"
+  },
+  {
+    "rank": 20,
+    "word": "у",
+    "en": "by, with, of",
+    "pos": "preposition"
+  },
+  {
+    "rank": 21,
+    "word": "ты",
+    "en": "you, thou",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 22,
+    "word": "из",
+    "en": "from, of, in",
+    "pos": "preposition"
+  },
+  {
+    "rank": 23,
+    "word": "мы",
+    "en": "we",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 24,
+    "word": "за",
+    "en": "behind, over, at, after",
+    "pos": "preposition"
+  },
+  {
+    "rank": 25,
+    "word": "вы",
+    "en": "you",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 26,
+    "word": "так",
+    "en": "so, thus, then",
+    "pos": "adverb"
+  },
+  {
+    "rank": 27,
+    "word": "же",
+    "en": "and, as for, but, same",
+    "pos": "conj, particle"
+  },
+  {
+    "rank": 28,
+    "word": "от",
+    "en": "from, of, for",
+    "pos": "preposition"
+  },
+  {
+    "rank": 29,
+    "word": "сказа́ть",
+    "en": "to say, to speak",
+    "pos": "verb"
+  },
+  {
+    "rank": 30,
+    "word": "э́тот",
+    "en": "this",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 31,
+    "word": "кото́рый",
+    "en": "which, who, that",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 32,
+    "word": "мочь",
+    "en": "be able",
+    "pos": "verb"
+  },
+  {
+    "rank": 33,
+    "word": "челове́к",
+    "en": "man, person",
+    "pos": "noun"
+  },
+  {
+    "rank": 34,
+    "word": "о",
+    "en": "of, about, against",
+    "pos": "preposition"
+  },
+  {
+    "rank": 35,
+    "word": "оди́н",
+    "en": "one, some, alone",
+    "pos": "cardinal number, pronoun"
+  },
+  {
+    "rank": 36,
+    "word": "ещё",
+    "en": "still, yet",
+    "pos": "adverb"
+  },
+  {
+    "rank": 37,
+    "word": "бы",
+    "en": "would",
+    "pos": "particle"
+  },
+  {
+    "rank": 38,
+    "word": "тако́й",
+    "en": "such, so, some",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 39,
+    "word": "то́лько",
+    "en": "only, merely, but",
+    "pos": "adverb, conj"
+  },
+  {
+    "rank": 40,
+    "word": "себя́",
+    "en": "myself, himself, herself",
+    "pos": "pron, particle"
+  },
+  {
+    "rank": 41,
+    "word": "своё",
+    "en": "one's own, my, our",
+    "pos": "pronoun, noun"
+  },
+  {
+    "rank": 42,
+    "word": "како́й",
+    "en": "what, which, how",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 43,
+    "word": "когда́",
+    "en": "when, while, as",
+    "pos": "adverb, conj"
+  },
+  {
+    "rank": 44,
+    "word": "уже́",
+    "en": "already, by now",
+    "pos": "adverb"
+  },
+  {
+    "rank": 45,
+    "word": "для",
+    "en": "for, to",
+    "pos": "preposition"
+  },
+  {
+    "rank": 46,
+    "word": "вот",
+    "en": "here, there, this is, that's",
+    "pos": "particle"
+  },
+  {
+    "rank": 47,
+    "word": "кто",
+    "en": "who, that, some",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 48,
+    "word": "да",
+    "en": "yes, but",
+    "pos": "conj, particle"
+  },
+  {
+    "rank": 49,
+    "word": "говори́ть",
+    "en": "to say, to tell, to speak",
+    "pos": "verb"
+  },
+  {
+    "rank": 50,
+    "word": "год",
+    "en": "year",
+    "pos": "noun"
+  },
+  {
+    "rank": 51,
+    "word": "знать",
+    "en": "to know, be aware",
+    "pos": "verb"
+  },
+  {
+    "rank": 52,
+    "word": "мой",
+    "en": "my, mine",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 53,
+    "word": "до",
+    "en": "to, up to, about, before",
+    "pos": "preposition"
+  },
+  {
+    "rank": 54,
+    "word": "и́ли",
+    "en": "or",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 55,
+    "word": "е́сли",
+    "en": "if",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 56,
+    "word": "вре́мя",
+    "en": "time, season",
+    "pos": "noun"
+  },
+  {
+    "rank": 57,
+    "word": "рука́",
+    "en": "hand, arm",
+    "pos": "noun"
+  },
+  {
+    "rank": 58,
+    "word": "нет",
+    "en": "no, not, but",
+    "pos": "negation"
+  },
+  {
+    "rank": 59,
+    "word": "са́мый",
+    "en": "most, the very, the same",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 60,
+    "word": "ни",
+    "en": "not a, not, neither… nor",
+    "pos": "conj, particle"
+  },
+  {
+    "rank": 61,
+    "word": "стать",
+    "en": "to become, begin, come",
+    "pos": "verb"
+  },
+  {
+    "rank": 62,
+    "word": "большо́й",
+    "en": "big, large, important",
+    "pos": "adjective"
+  },
+  {
+    "rank": 63,
+    "word": "да́же",
+    "en": "even",
+    "pos": "particle"
+  },
+  {
+    "rank": 64,
+    "word": "друго́й",
+    "en": "other, another, different",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 65,
+    "word": "наш",
+    "en": "our, ours",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 66,
+    "word": "свой",
+    "en": "my, our, your",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 67,
+    "word": "ну",
+    "en": "now, right, well, come on",
+    "pos": "interj, particle"
+  },
+  {
+    "rank": 68,
+    "word": "под",
+    "en": "under, for, towards, to",
+    "pos": "preposition"
+  },
+  {
+    "rank": 69,
+    "word": "где",
+    "en": "where",
+    "pos": "adverb"
+  },
+  {
+    "rank": 70,
+    "word": "де́ло",
+    "en": "business, affair, matter",
+    "pos": "noun"
+  },
+  {
+    "rank": 71,
+    "word": "есть",
+    "en": "to eat, to be",
+    "pos": "verb"
+  },
+  {
+    "rank": 72,
+    "word": "сам",
+    "en": "myself, yourself",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 73,
+    "word": "раз",
+    "en": "time, once, since",
+    "pos": "noun, adverb"
+  },
+  {
+    "rank": 74,
+    "word": "что́бы",
+    "en": "that, in order that",
+    "pos": "conjunction, particle"
+  },
+  {
+    "rank": 75,
+    "word": "два",
+    "en": "two",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 76,
+    "word": "там",
+    "en": "there, then",
+    "pos": "adverb"
+  },
+  {
+    "rank": 77,
+    "word": "чем",
+    "en": "than; instead of",
+    "pos": "conjunction, particle"
+  },
+  {
+    "rank": 78,
+    "word": "глаз",
+    "en": "eye; sight",
+    "pos": "noun"
+  },
+  {
+    "rank": 79,
+    "word": "жизнь",
+    "en": "life",
+    "pos": "noun"
+  },
+  {
+    "rank": 80,
+    "word": "пе́рвый",
+    "en": "first, front, former",
+    "pos": "adjective, number"
+  },
+  {
+    "rank": 81,
+    "word": "день",
+    "en": "day",
+    "pos": "noun"
+  },
+  {
+    "rank": 82,
+    "word": "тут",
+    "en": "here, now, then",
+    "pos": "adverb"
+  },
+  {
+    "rank": 83,
+    "word": "во",
+    "en": "in, at; super, exactly",
+    "pos": "preposition, particle"
+  },
+  {
+    "rank": 84,
+    "word": "ничто́",
+    "en": "nothing",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 85,
+    "word": "пото́м",
+    "en": "afterwards, then",
+    "pos": "adverb"
+  },
+  {
+    "rank": 86,
+    "word": "о́чень",
+    "en": "very",
+    "pos": "adverb"
+  },
+  {
+    "rank": 87,
+    "word": "со",
+    "en": "with",
+    "pos": "preposition"
+  },
+  {
+    "rank": 88,
+    "word": "хоте́ть",
+    "en": "to want, like",
+    "pos": "verb"
+  },
+  {
+    "rank": 89,
+    "word": "ли",
+    "en": "whether, if",
+    "pos": "conj, particle"
+  },
+  {
+    "rank": 90,
+    "word": "при",
+    "en": "attached to, in the presence of, by, about; masterrussian, dot com",
+    "pos": "preposition"
+  },
+  {
+    "rank": 91,
+    "word": "голова́",
+    "en": "head, mind, brains",
+    "pos": "noun"
+  },
+  {
+    "rank": 92,
+    "word": "на́до",
+    "en": "over, above, ought to",
+    "pos": "prep, verb"
+  },
+  {
+    "rank": 93,
+    "word": "без",
+    "en": "without",
+    "pos": "preposition"
+  },
+  {
+    "rank": 94,
+    "word": "ви́деть",
+    "en": "to see",
+    "pos": "verb"
+  },
+  {
+    "rank": 95,
+    "word": "идти́",
+    "en": "to go, come",
+    "pos": "verb"
+  },
+  {
+    "rank": 96,
+    "word": "тепе́рь",
+    "en": "now, nowadays",
+    "pos": "adverb"
+  },
+  {
+    "rank": 97,
+    "word": "то́же",
+    "en": "also, as well, too",
+    "pos": "adverb"
+  },
+  {
+    "rank": 98,
+    "word": "стоя́ть",
+    "en": "to stand, be, stand up",
+    "pos": "verb"
+  },
+  {
+    "rank": 99,
+    "word": "друг",
+    "en": "friend",
+    "pos": "noun"
+  },
+  {
+    "rank": 100,
+    "word": "дом",
+    "en": "house, home",
+    "pos": "noun"
+  },
+  {
+    "rank": 101,
+    "word": "сейча́с",
+    "en": "now, presently, soon",
+    "pos": "adverb"
+  },
+  {
+    "rank": 102,
+    "word": "мо́жно",
+    "en": "one can",
+    "pos": "predicate"
+  },
+  {
+    "rank": 103,
+    "word": "по́сле",
+    "en": "after, afterwards",
+    "pos": "preposition"
+  },
+  {
+    "rank": 104,
+    "word": "сло́во",
+    "en": "word",
+    "pos": "noun"
+  },
+  {
+    "rank": 105,
+    "word": "здесь",
+    "en": "here",
+    "pos": "adverb"
+  },
+  {
+    "rank": 106,
+    "word": "ду́мать",
+    "en": "to think; believe",
+    "pos": "verb"
+  },
+  {
+    "rank": 107,
+    "word": "ме́сто",
+    "en": "place; seat",
+    "pos": "noun"
+  },
+  {
+    "rank": 108,
+    "word": "спроси́ть",
+    "en": "to ask",
+    "pos": "verb"
+  },
+  {
+    "rank": 109,
+    "word": "че́рез",
+    "en": "through, across",
+    "pos": "preposition"
+  },
+  {
+    "rank": 110,
+    "word": "лицо́",
+    "en": "face; person",
+    "pos": "noun"
+  },
+  {
+    "rank": 111,
+    "word": "что",
+    "en": "what, which, that",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 112,
+    "word": "тогда́",
+    "en": "then",
+    "pos": "adverb"
+  },
+  {
+    "rank": 113,
+    "word": "ведь",
+    "en": "you see, you know",
+    "pos": "conj"
+  },
+  {
+    "rank": 114,
+    "word": "хоро́ший",
+    "en": "good, nice (see #152)",
+    "pos": "adjective"
+  },
+  {
+    "rank": 115,
+    "word": "ка́ждый",
+    "en": "each, every",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 116,
+    "word": "но́вый",
+    "en": "new; modern",
+    "pos": "adjective"
+  },
+  {
+    "rank": 117,
+    "word": "жить",
+    "en": "to live",
+    "pos": "verb"
+  },
+  {
+    "rank": 118,
+    "word": "до́лжный",
+    "en": "due, proper",
+    "pos": "adjective"
+  },
+  {
+    "rank": 119,
+    "word": "смотре́ть",
+    "en": "to look, watch",
+    "pos": "verb"
+  },
+  {
+    "rank": 120,
+    "word": "почему́",
+    "en": "why",
+    "pos": "adverb"
+  },
+  {
+    "rank": 121,
+    "word": "потому́́",
+    "en": "that's why",
+    "pos": "adverb"
+  },
+  {
+    "rank": 122,
+    "word": "сторона́",
+    "en": "side, party",
+    "pos": "noun"
+  },
+  {
+    "rank": 123,
+    "word": "про́сто",
+    "en": "simply",
+    "pos": "adverb"
+  },
+  {
+    "rank": 124,
+    "word": "нога́",
+    "en": "foot, leg",
+    "pos": "noun"
+  },
+  {
+    "rank": 125,
+    "word": "сиде́ть",
+    "en": "to sit",
+    "pos": "verb"
+  },
+  {
+    "rank": 126,
+    "word": "поня́ть",
+    "en": "to understand; realize",
+    "pos": "verb"
+  },
+  {
+    "rank": 127,
+    "word": "име́ть",
+    "en": "to have, own",
+    "pos": "verb"
+  },
+  {
+    "rank": 128,
+    "word": "коне́чный",
+    "en": "final, last",
+    "pos": "adjective"
+  },
+  {
+    "rank": 129,
+    "word": "де́лать",
+    "en": "to do, make",
+    "pos": "verb"
+  },
+  {
+    "rank": 130,
+    "word": "вдруг",
+    "en": "suddenly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 131,
+    "word": "над",
+    "en": "above, over",
+    "pos": "preposition"
+  },
+  {
+    "rank": 132,
+    "word": "взять",
+    "en": "to take",
+    "pos": "verb"
+  },
+  {
+    "rank": 133,
+    "word": "никто́",
+    "en": "nobody",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 134,
+    "word": "сде́лать",
+    "en": "to do, make, finish",
+    "pos": "verb"
+  },
+  {
+    "rank": 135,
+    "word": "дверь",
+    "en": "door",
+    "pos": "noun"
+  },
+  {
+    "rank": 136,
+    "word": "пе́ред",
+    "en": "before, in front of",
+    "pos": "preposition"
+  },
+  {
+    "rank": 137,
+    "word": "ну́жный",
+    "en": "necessary",
+    "pos": "adjective"
+  },
+  {
+    "rank": 138,
+    "word": "понима́ть",
+    "en": "to understand",
+    "pos": "verb"
+  },
+  {
+    "rank": 139,
+    "word": "каза́ться",
+    "en": "to seem, appear; masterrussian, dot com",
+    "pos": "verb"
+  },
+  {
+    "rank": 140,
+    "word": "рабо́та",
+    "en": "work, job",
+    "pos": "noun"
+  },
+  {
+    "rank": 141,
+    "word": "три",
+    "en": "three",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 142,
+    "word": "ваш",
+    "en": "yours",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 143,
+    "word": "уж",
+    "en": "really, already",
+    "pos": "adverb, particle"
+  },
+  {
+    "rank": 144,
+    "word": "земля́",
+    "en": "earth, land, soil",
+    "pos": "noun"
+  },
+  {
+    "rank": 145,
+    "word": "коне́ц",
+    "en": "end, distance",
+    "pos": "noun"
+  },
+  {
+    "rank": 146,
+    "word": "не́сколько",
+    "en": "several, some",
+    "pos": "adverb"
+  },
+  {
+    "rank": 147,
+    "word": "час",
+    "en": "hour, time",
+    "pos": "noun"
+  },
+  {
+    "rank": 148,
+    "word": "го́лос",
+    "en": "voice",
+    "pos": "noun"
+  },
+  {
+    "rank": 149,
+    "word": "го́род",
+    "en": "town, city",
+    "pos": "noun"
+  },
+  {
+    "rank": 150,
+    "word": "после́дний",
+    "en": "last, the latest, new",
+    "pos": "adjective"
+  },
+  {
+    "rank": 151,
+    "word": "пока",
+    "en": "for the present",
+    "pos": "adverb"
+  },
+  {
+    "rank": 152,
+    "word": "хорошо",
+    "en": "well (see #114)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 153,
+    "word": "давать",
+    "en": "to give; let, allow",
+    "pos": "verb"
+  },
+  {
+    "rank": 154,
+    "word": "вода",
+    "en": "water",
+    "pos": "noun"
+  },
+  {
+    "rank": 155,
+    "word": "более",
+    "en": "more",
+    "pos": "adverb"
+  },
+  {
+    "rank": 156,
+    "word": "хотя",
+    "en": "although",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 157,
+    "word": "всегда",
+    "en": "always",
+    "pos": "adverb"
+  },
+  {
+    "rank": 158,
+    "word": "второй",
+    "en": "second",
+    "pos": "ordinal number"
+  },
+  {
+    "rank": 159,
+    "word": "куда",
+    "en": "where, what for, much",
+    "pos": "adverb"
+  },
+  {
+    "rank": 160,
+    "word": "пойти",
+    "en": "to go",
+    "pos": "verb"
+  },
+  {
+    "rank": 161,
+    "word": "стол",
+    "en": "table, desk; board",
+    "pos": "noun"
+  },
+  {
+    "rank": 162,
+    "word": "ребёнок",
+    "en": "child, kid, infant",
+    "pos": "noun"
+  },
+  {
+    "rank": 163,
+    "word": "увидеть",
+    "en": "to see",
+    "pos": "verb"
+  },
+  {
+    "rank": 164,
+    "word": "сила",
+    "en": "strength, force",
+    "pos": "noun"
+  },
+  {
+    "rank": 165,
+    "word": "отец",
+    "en": "father (see #918)",
+    "pos": "noun"
+  },
+  {
+    "rank": 166,
+    "word": "женщина",
+    "en": "woman",
+    "pos": "noun"
+  },
+  {
+    "rank": 167,
+    "word": "машина",
+    "en": "car, machine, engine",
+    "pos": "noun"
+  },
+  {
+    "rank": 168,
+    "word": "случай",
+    "en": "case, occasion, incident",
+    "pos": "noun"
+  },
+  {
+    "rank": 169,
+    "word": "ночь",
+    "en": "night",
+    "pos": "noun"
+  },
+  {
+    "rank": 170,
+    "word": "сразу",
+    "en": "at once, right away, just",
+    "pos": "adverb"
+  },
+  {
+    "rank": 171,
+    "word": "мир",
+    "en": "world, peace",
+    "pos": "noun"
+  },
+  {
+    "rank": 172,
+    "word": "совсем",
+    "en": "quite, entirely, totally",
+    "pos": "adverb"
+  },
+  {
+    "rank": 173,
+    "word": "остаться",
+    "en": "to remain, stay (see #297)",
+    "pos": "verb"
+  },
+  {
+    "rank": 174,
+    "word": "об",
+    "en": "about, of (see #34)",
+    "pos": "preposition"
+  },
+  {
+    "rank": 175,
+    "word": "вид",
+    "en": "appearance, look, view",
+    "pos": "noun"
+  },
+  {
+    "rank": 176,
+    "word": "выйти",
+    "en": "to go out, come out, appear",
+    "pos": "verb"
+  },
+  {
+    "rank": 177,
+    "word": "дать",
+    "en": "to give; masterrussian, dot com",
+    "pos": "verb"
+  },
+  {
+    "rank": 178,
+    "word": "работать",
+    "en": "to work",
+    "pos": "verb"
+  },
+  {
+    "rank": 179,
+    "word": "любить",
+    "en": "to love",
+    "pos": "verb"
+  },
+  {
+    "rank": 180,
+    "word": "старый",
+    "en": "old",
+    "pos": "adjective"
+  },
+  {
+    "rank": 181,
+    "word": "почти",
+    "en": "almost",
+    "pos": "adverb"
+  },
+  {
+    "rank": 182,
+    "word": "ряд",
+    "en": "row, line",
+    "pos": "noun"
+  },
+  {
+    "rank": 183,
+    "word": "оказаться",
+    "en": "find oneself, turn out",
+    "pos": "verb"
+  },
+  {
+    "rank": 184,
+    "word": "начало",
+    "en": "beginning, origin, source",
+    "pos": "noun"
+  },
+  {
+    "rank": 185,
+    "word": "твой",
+    "en": "your, yours (informal)",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 186,
+    "word": "вопрос",
+    "en": "question, matter, problem",
+    "pos": "noun"
+  },
+  {
+    "rank": 187,
+    "word": "много",
+    "en": "many, much (see #799)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 188,
+    "word": "война",
+    "en": "war",
+    "pos": "noun"
+  },
+  {
+    "rank": 189,
+    "word": "снова",
+    "en": "again",
+    "pos": "adverb"
+  },
+  {
+    "rank": 190,
+    "word": "ответить",
+    "en": "to answer, reply (see #404)",
+    "pos": "verb"
+  },
+  {
+    "rank": 191,
+    "word": "между",
+    "en": "between, among",
+    "pos": "preposition"
+  },
+  {
+    "rank": 192,
+    "word": "подумать",
+    "en": "to think",
+    "pos": "verb"
+  },
+  {
+    "rank": 193,
+    "word": "опять",
+    "en": "again",
+    "pos": "adverb"
+  },
+  {
+    "rank": 194,
+    "word": "белый",
+    "en": "white",
+    "pos": "adjective"
+  },
+  {
+    "rank": 195,
+    "word": "деньги",
+    "en": "money",
+    "pos": "noun"
+  },
+  {
+    "rank": 196,
+    "word": "значить",
+    "en": "to mean, signify",
+    "pos": "verb"
+  },
+  {
+    "rank": 197,
+    "word": "про",
+    "en": "about, for",
+    "pos": "preposition"
+  },
+  {
+    "rank": 198,
+    "word": "лишь",
+    "en": "only, as soon as",
+    "pos": "adverb, conj"
+  },
+  {
+    "rank": 199,
+    "word": "минута",
+    "en": "minute, moment",
+    "pos": "noun"
+  },
+  {
+    "rank": 200,
+    "word": "жена",
+    "en": "wife",
+    "pos": "noun"
+  },
+  {
+    "rank": 201,
+    "word": "посмотреть",
+    "en": "to take a look, watch, inspect",
+    "pos": "verb"
+  },
+  {
+    "rank": 202,
+    "word": "правда",
+    "en": "truth",
+    "pos": "noun"
+  },
+  {
+    "rank": 203,
+    "word": "главный",
+    "en": "main, chief",
+    "pos": "adjective"
+  },
+  {
+    "rank": 204,
+    "word": "страна",
+    "en": "country",
+    "pos": "noun"
+  },
+  {
+    "rank": 205,
+    "word": "свет",
+    "en": "light;world",
+    "pos": "noun"
+  },
+  {
+    "rank": 206,
+    "word": "ждать",
+    "en": "to wait",
+    "pos": "verb"
+  },
+  {
+    "rank": 207,
+    "word": "мать",
+    "en": "mother",
+    "pos": "noun"
+  },
+  {
+    "rank": 208,
+    "word": "будто",
+    "en": "as if, as though",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 209,
+    "word": "никогда",
+    "en": "never",
+    "pos": "adverb"
+  },
+  {
+    "rank": 210,
+    "word": "товарищ",
+    "en": "comrade, friend",
+    "pos": "noun"
+  },
+  {
+    "rank": 211,
+    "word": "дорога",
+    "en": "road, way, journey",
+    "pos": "noun"
+  },
+  {
+    "rank": 212,
+    "word": "однако",
+    "en": "however, though",
+    "pos": "conj, misc"
+  },
+  {
+    "rank": 213,
+    "word": "лежать",
+    "en": "to lie, be situated",
+    "pos": "verb"
+  },
+  {
+    "rank": 214,
+    "word": "именно",
+    "en": "namely, just",
+    "pos": "misc"
+  },
+  {
+    "rank": 215,
+    "word": "окно",
+    "en": "window, windowsill",
+    "pos": "noun"
+  },
+  {
+    "rank": 216,
+    "word": "никакой",
+    "en": "no, none",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 217,
+    "word": "найти",
+    "en": "to find, discover, consider",
+    "pos": "verb"
+  },
+  {
+    "rank": 218,
+    "word": "писать",
+    "en": "to write",
+    "pos": "verb"
+  },
+  {
+    "rank": 219,
+    "word": "комната",
+    "en": "a room",
+    "pos": "noun"
+  },
+  {
+    "rank": 220,
+    "word": "Москва",
+    "en": "Moscow",
+    "pos": "noun"
+  },
+  {
+    "rank": 221,
+    "word": "часть",
+    "en": "part, share, department",
+    "pos": "noun"
+  },
+  {
+    "rank": 222,
+    "word": "вообще",
+    "en": "in general, altogether, on the whole",
+    "pos": "adverb"
+  },
+  {
+    "rank": 223,
+    "word": "книга",
+    "en": "a book",
+    "pos": "noun"
+  },
+  {
+    "rank": 224,
+    "word": "маленький",
+    "en": "small, little",
+    "pos": "adjective"
+  },
+  {
+    "rank": 225,
+    "word": "улица",
+    "en": "street; masterrussian, dot com",
+    "pos": "noun"
+  },
+  {
+    "rank": 226,
+    "word": "решить",
+    "en": "to decide, solve",
+    "pos": "verb"
+  },
+  {
+    "rank": 227,
+    "word": "далекий",
+    "en": "distant, remote",
+    "pos": "adjective"
+  },
+  {
+    "rank": 228,
+    "word": "душа",
+    "en": "soul, spirit",
+    "pos": "noun"
+  },
+  {
+    "rank": 229,
+    "word": "чуть",
+    "en": "hardly, slightly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 230,
+    "word": "вернуться",
+    "en": "to return",
+    "pos": "verb"
+  },
+  {
+    "rank": 231,
+    "word": "утро",
+    "en": "morning",
+    "pos": "noun"
+  },
+  {
+    "rank": 232,
+    "word": "некоторый",
+    "en": "some",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 233,
+    "word": "считать",
+    "en": "to count, consider",
+    "pos": "verb"
+  },
+  {
+    "rank": 234,
+    "word": "сколько",
+    "en": "how much, how many",
+    "pos": "cardinal"
+  },
+  {
+    "rank": 235,
+    "word": "помнить",
+    "en": "to remember",
+    "pos": "verb"
+  },
+  {
+    "rank": 236,
+    "word": "вечер",
+    "en": "evening",
+    "pos": "noun"
+  },
+  {
+    "rank": 237,
+    "word": "пол",
+    "en": "floor; sex",
+    "pos": "noun"
+  },
+  {
+    "rank": 238,
+    "word": "таки",
+    "en": "after all",
+    "pos": "particle"
+  },
+  {
+    "rank": 239,
+    "word": "получить",
+    "en": "to receive, get, obtain",
+    "pos": "verb"
+  },
+  {
+    "rank": 240,
+    "word": "народ",
+    "en": "people, nation",
+    "pos": "noun"
+  },
+  {
+    "rank": 241,
+    "word": "плечо",
+    "en": "shoulder, upper arm",
+    "pos": "noun"
+  },
+  {
+    "rank": 242,
+    "word": "хоть",
+    "en": "even, if you want, though",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 243,
+    "word": "сегодня",
+    "en": "today",
+    "pos": "adverb"
+  },
+  {
+    "rank": 244,
+    "word": "бог",
+    "en": "god",
+    "pos": "noun"
+  },
+  {
+    "rank": 245,
+    "word": "вместе",
+    "en": "together",
+    "pos": "adverb"
+  },
+  {
+    "rank": 246,
+    "word": "взгляд",
+    "en": "look, glance; view",
+    "pos": "noun"
+  },
+  {
+    "rank": 247,
+    "word": "ходить",
+    "en": "to go, walk",
+    "pos": "verb"
+  },
+  {
+    "rank": 248,
+    "word": "зачем",
+    "en": "what for, why",
+    "pos": "adverb"
+  },
+  {
+    "rank": 249,
+    "word": "советский",
+    "en": "Soviet",
+    "pos": "adjective"
+  },
+  {
+    "rank": 250,
+    "word": "русский",
+    "en": "Russian",
+    "pos": "adjective"
+  },
+  {
+    "rank": 251,
+    "word": "бывать",
+    "en": "be, visit, happen",
+    "pos": "verb"
+  },
+  {
+    "rank": 252,
+    "word": "полный",
+    "en": "full, complete",
+    "pos": "adj"
+  },
+  {
+    "rank": 253,
+    "word": "прийти",
+    "en": "to come, arrive (see #464)",
+    "pos": "verb"
+  },
+  {
+    "rank": 254,
+    "word": "палец",
+    "en": "finger, toe",
+    "pos": "noun"
+  },
+  {
+    "rank": 255,
+    "word": "Россия",
+    "en": "Russia",
+    "pos": "noun"
+  },
+  {
+    "rank": 256,
+    "word": "любой",
+    "en": "any, every",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 257,
+    "word": "история",
+    "en": "history, story, event",
+    "pos": "noun"
+  },
+  {
+    "rank": 258,
+    "word": "наконец",
+    "en": "at last, finally",
+    "pos": "adverb"
+  },
+  {
+    "rank": 259,
+    "word": "мысль",
+    "en": "thought, idea",
+    "pos": "noun"
+  },
+  {
+    "rank": 260,
+    "word": "узнать",
+    "en": "to know, learn, recognize",
+    "pos": "verb"
+  },
+  {
+    "rank": 261,
+    "word": "назад",
+    "en": "back, backwards",
+    "pos": "adverb"
+  },
+  {
+    "rank": 262,
+    "word": "общий",
+    "en": "general, common",
+    "pos": "adjective"
+  },
+  {
+    "rank": 263,
+    "word": "заметить",
+    "en": "to notice, observe",
+    "pos": "verb"
+  },
+  {
+    "rank": 264,
+    "word": "словно",
+    "en": "as if, like",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 265,
+    "word": "прошлый",
+    "en": "past",
+    "pos": "adjective"
+  },
+  {
+    "rank": 266,
+    "word": "уйти",
+    "en": "to leave, go away",
+    "pos": "verb"
+  },
+  {
+    "rank": 267,
+    "word": "известный",
+    "en": "well-known, famous",
+    "pos": "adjective"
+  },
+  {
+    "rank": 268,
+    "word": "давно",
+    "en": "long ago",
+    "pos": "adverb"
+  },
+  {
+    "rank": 269,
+    "word": "слышать",
+    "en": "to hear",
+    "pos": "verb"
+  },
+  {
+    "rank": 270,
+    "word": "слушать",
+    "en": "to listen, hear",
+    "pos": "verb"
+  },
+  {
+    "rank": 271,
+    "word": "бояться",
+    "en": "to be afraid, fear",
+    "pos": "verb"
+  },
+  {
+    "rank": 272,
+    "word": "сын",
+    "en": "son",
+    "pos": "noun"
+  },
+  {
+    "rank": 273,
+    "word": "нельзя",
+    "en": "it is impossible, can't",
+    "pos": "predicate"
+  },
+  {
+    "rank": 274,
+    "word": "прямо",
+    "en": "straight, frankly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 275,
+    "word": "долго",
+    "en": "for a long time",
+    "pos": "adverb"
+  },
+  {
+    "rank": 276,
+    "word": "быстро",
+    "en": "fast, quickly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 277,
+    "word": "лес",
+    "en": "forest",
+    "pos": "noun"
+  },
+  {
+    "rank": 278,
+    "word": "похожий",
+    "en": "similar, alike",
+    "pos": "adjective"
+  },
+  {
+    "rank": 279,
+    "word": "пора",
+    "en": "time; pore (see #1000)",
+    "pos": "noun"
+  },
+  {
+    "rank": 280,
+    "word": "пять",
+    "en": "five",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 281,
+    "word": "глядеть",
+    "en": "to look, gaze",
+    "pos": "verb"
+  },
+  {
+    "rank": 282,
+    "word": "оно",
+    "en": "it",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 283,
+    "word": "сесть",
+    "en": "to sit",
+    "pos": "verb"
+  },
+  {
+    "rank": 284,
+    "word": "имя",
+    "en": "name",
+    "pos": "noun"
+  },
+  {
+    "rank": 285,
+    "word": "ж",
+    "en": "and, as for, but (see #27)",
+    "pos": "misc"
+  },
+  {
+    "rank": 286,
+    "word": "разговор",
+    "en": "talk, conversation",
+    "pos": "noun"
+  },
+  {
+    "rank": 287,
+    "word": "тело",
+    "en": "body",
+    "pos": "noun"
+  },
+  {
+    "rank": 288,
+    "word": "молодой",
+    "en": "young (see #679); bridegroom (as a noun)",
+    "pos": "adjective"
+  },
+  {
+    "rank": 289,
+    "word": "стена",
+    "en": "wall",
+    "pos": "noun"
+  },
+  {
+    "rank": 290,
+    "word": "красный",
+    "en": "red",
+    "pos": "adjective"
+  },
+  {
+    "rank": 291,
+    "word": "читать",
+    "en": "to read",
+    "pos": "verb"
+  },
+  {
+    "rank": 292,
+    "word": "право",
+    "en": "right",
+    "pos": "noun"
+  },
+  {
+    "rank": 293,
+    "word": "старик",
+    "en": "old man",
+    "pos": "noun"
+  },
+  {
+    "rank": 294,
+    "word": "ранний",
+    "en": "early",
+    "pos": "adjective"
+  },
+  {
+    "rank": 295,
+    "word": "хотеться",
+    "en": "want, like",
+    "pos": "misc (impersonal)"
+  },
+  {
+    "rank": 296,
+    "word": "мама",
+    "en": "mummy, mum",
+    "pos": "noun"
+  },
+  {
+    "rank": 297,
+    "word": "оставаться",
+    "en": "to remain, stay (see #173)",
+    "pos": "verb"
+  },
+  {
+    "rank": 298,
+    "word": "высокий",
+    "en": "tall, high",
+    "pos": "adjective"
+  },
+  {
+    "rank": 299,
+    "word": "путь",
+    "en": "way, track, path",
+    "pos": "noun"
+  },
+  {
+    "rank": 300,
+    "word": "поэтому",
+    "en": "therefore",
+    "pos": "adverb"
+  },
+  {
+    "rank": 301,
+    "word": "совершенно",
+    "en": "absolutely, quite",
+    "pos": "adverb"
+  },
+  {
+    "rank": 302,
+    "word": "кроме",
+    "en": "except, besides",
+    "pos": "preposition"
+  },
+  {
+    "rank": 303,
+    "word": "тысяча",
+    "en": "a thousand",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 304,
+    "word": "месяц",
+    "en": "month",
+    "pos": "noun"
+  },
+  {
+    "rank": 305,
+    "word": "брать",
+    "en": "to take; hire",
+    "pos": "verb"
+  },
+  {
+    "rank": 306,
+    "word": "написать",
+    "en": "to write",
+    "pos": "verb"
+  },
+  {
+    "rank": 307,
+    "word": "целый",
+    "en": "intact, whole, entire",
+    "pos": "adjective"
+  },
+  {
+    "rank": 308,
+    "word": "огромный",
+    "en": "huge, enormous",
+    "pos": "adjective"
+  },
+  {
+    "rank": 309,
+    "word": "начинать",
+    "en": "to begin (see #413)",
+    "pos": "verb"
+  },
+  {
+    "rank": 310,
+    "word": "спина",
+    "en": "back",
+    "pos": "noun"
+  },
+  {
+    "rank": 311,
+    "word": "настоящий",
+    "en": "present;real, true",
+    "pos": "adjective"
+  },
+  {
+    "rank": 312,
+    "word": "пусть",
+    "en": "let's, though",
+    "pos": "conj, particle"
+  },
+  {
+    "rank": 313,
+    "word": "язык",
+    "en": "tongue, language",
+    "pos": "noun"
+  },
+  {
+    "rank": 314,
+    "word": "точно",
+    "en": "exactly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 315,
+    "word": "среди",
+    "en": "among",
+    "pos": "preposition"
+  },
+  {
+    "rank": 316,
+    "word": "чувствовать",
+    "en": "to feel",
+    "pos": "verb"
+  },
+  {
+    "rank": 317,
+    "word": "сердце",
+    "en": "heart",
+    "pos": "noun"
+  },
+  {
+    "rank": 318,
+    "word": "вести",
+    "en": "to lead",
+    "pos": "verb"
+  },
+  {
+    "rank": 319,
+    "word": "иногда",
+    "en": "sometimes",
+    "pos": "adverb"
+  },
+  {
+    "rank": 320,
+    "word": "мальчик",
+    "en": "boy",
+    "pos": "noun"
+  },
+  {
+    "rank": 321,
+    "word": "успеть",
+    "en": "to be in time, be successful",
+    "pos": "verb"
+  },
+  {
+    "rank": 322,
+    "word": "небо",
+    "en": "sky",
+    "pos": "noun"
+  },
+  {
+    "rank": 323,
+    "word": "живой",
+    "en": "living, live, lively",
+    "pos": "adjective"
+  },
+  {
+    "rank": 324,
+    "word": "смерть",
+    "en": "death",
+    "pos": "noun"
+  },
+  {
+    "rank": 325,
+    "word": "продолжать",
+    "en": "to continue",
+    "pos": "verb"
+  },
+  {
+    "rank": 326,
+    "word": "девушка",
+    "en": "girl, miss (see #524)",
+    "pos": "noun"
+  },
+  {
+    "rank": 327,
+    "word": "образ",
+    "en": "shape, form, image",
+    "pos": "noun"
+  },
+  {
+    "rank": 328,
+    "word": "ко",
+    "en": "to, towards, by (see #19)",
+    "pos": "preposition"
+  },
+  {
+    "rank": 329,
+    "word": "забыть",
+    "en": "to forget",
+    "pos": "verb"
+  },
+  {
+    "rank": 330,
+    "word": "вокруг",
+    "en": "around",
+    "pos": "preposition"
+  },
+  {
+    "rank": 331,
+    "word": "письмо",
+    "en": "letter",
+    "pos": "noun"
+  },
+  {
+    "rank": 332,
+    "word": "власть",
+    "en": "power",
+    "pos": "noun"
+  },
+  {
+    "rank": 333,
+    "word": "чёрный",
+    "en": "black (see #456)",
+    "pos": "adjective"
+  },
+  {
+    "rank": 334,
+    "word": "пройти",
+    "en": "to pass, go by, be over (see #543)",
+    "pos": "verb"
+  },
+  {
+    "rank": 335,
+    "word": "появиться",
+    "en": "to appear, show up (see #699)",
+    "pos": "verb"
+  },
+  {
+    "rank": 336,
+    "word": "воздух",
+    "en": "air",
+    "pos": "noun"
+  },
+  {
+    "rank": 337,
+    "word": "разный",
+    "en": "different",
+    "pos": "adjective"
+  },
+  {
+    "rank": 338,
+    "word": "выходить",
+    "en": "to go out; nurse (see #176)",
+    "pos": "verb"
+  },
+  {
+    "rank": 339,
+    "word": "просить",
+    "en": "to ask",
+    "pos": "verb"
+  },
+  {
+    "rank": 340,
+    "word": "брат",
+    "en": "brother",
+    "pos": "noun"
+  },
+  {
+    "rank": 341,
+    "word": "собственный",
+    "en": "one's own; masterrussian, dot com",
+    "pos": "adjective"
+  },
+  {
+    "rank": 342,
+    "word": "отношение",
+    "en": "relationship, attitude",
+    "pos": "noun"
+  },
+  {
+    "rank": 343,
+    "word": "затем",
+    "en": "then, after that",
+    "pos": "adverb"
+  },
+  {
+    "rank": 344,
+    "word": "пытаться",
+    "en": "to try",
+    "pos": "verb"
+  },
+  {
+    "rank": 345,
+    "word": "показать",
+    "en": "to show, display",
+    "pos": "verb"
+  },
+  {
+    "rank": 346,
+    "word": "вспомнить",
+    "en": "to remember, recall",
+    "pos": "verb"
+  },
+  {
+    "rank": 347,
+    "word": "система",
+    "en": "system",
+    "pos": "noun"
+  },
+  {
+    "rank": 348,
+    "word": "четыре",
+    "en": "four",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 349,
+    "word": "квартира",
+    "en": "flat, apartment",
+    "pos": "noun"
+  },
+  {
+    "rank": 350,
+    "word": "держать",
+    "en": "to hold, keep",
+    "pos": "verb"
+  },
+  {
+    "rank": 351,
+    "word": "также",
+    "en": "also, as well, too",
+    "pos": "misc"
+  },
+  {
+    "rank": 352,
+    "word": "любовь",
+    "en": "love",
+    "pos": "noun"
+  },
+  {
+    "rank": 353,
+    "word": "солдат",
+    "en": "soldier",
+    "pos": "noun"
+  },
+  {
+    "rank": 354,
+    "word": "откуда",
+    "en": "where… from",
+    "pos": "adverb"
+  },
+  {
+    "rank": 355,
+    "word": "чтоб",
+    "en": "that, in order that, (See #74)",
+    "pos": "misc"
+  },
+  {
+    "rank": 356,
+    "word": "называть",
+    "en": "to call, name, (See #597)",
+    "pos": "verb"
+  },
+  {
+    "rank": 357,
+    "word": "третий",
+    "en": "third",
+    "pos": "ordinal number"
+  },
+  {
+    "rank": 358,
+    "word": "хозяин",
+    "en": "master, boss, host",
+    "pos": "noun"
+  },
+  {
+    "rank": 359,
+    "word": "вроде",
+    "en": "like, not unlike",
+    "pos": "preposition, particle"
+  },
+  {
+    "rank": 360,
+    "word": "уходить",
+    "en": "to leave, go away",
+    "pos": "verb"
+  },
+  {
+    "rank": 361,
+    "word": "подойти",
+    "en": "to approach, come up(See #798)",
+    "pos": "verb"
+  },
+  {
+    "rank": 362,
+    "word": "поднять",
+    "en": "to lift, raise",
+    "pos": "verb"
+  },
+  {
+    "rank": 363,
+    "word": "особенно",
+    "en": "especially, particularly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 364,
+    "word": "спрашивать",
+    "en": "to ask, inquire",
+    "pos": "verb"
+  },
+  {
+    "rank": 365,
+    "word": "начальник",
+    "en": "chief, head, superior",
+    "pos": "noun"
+  },
+  {
+    "rank": 366,
+    "word": "оба",
+    "en": "both",
+    "pos": "numeral"
+  },
+  {
+    "rank": 367,
+    "word": "бросить",
+    "en": "to throw",
+    "pos": "verb"
+  },
+  {
+    "rank": 368,
+    "word": "школа",
+    "en": "school",
+    "pos": "noun"
+  },
+  {
+    "rank": 369,
+    "word": "парень",
+    "en": "boy, fellow, guy",
+    "pos": "noun"
+  },
+  {
+    "rank": 370,
+    "word": "кровь",
+    "en": "blood",
+    "pos": "noun"
+  },
+  {
+    "rank": 371,
+    "word": "двадцать",
+    "en": "twenty",
+    "pos": "cardinal numberinal number"
+  },
+  {
+    "rank": 372,
+    "word": "солнце",
+    "en": "sun",
+    "pos": "noun"
+  },
+  {
+    "rank": 373,
+    "word": "неделя",
+    "en": "week",
+    "pos": "noun"
+  },
+  {
+    "rank": 374,
+    "word": "послать",
+    "en": "to send, dispatch",
+    "pos": "verb"
+  },
+  {
+    "rank": 375,
+    "word": "находиться",
+    "en": "to be found, turn up",
+    "pos": "verb"
+  },
+  {
+    "rank": 376,
+    "word": "ребята",
+    "en": "guys, children",
+    "pos": "noun"
+  },
+  {
+    "rank": 377,
+    "word": "поставить",
+    "en": "to put, place, set",
+    "pos": "verb"
+  },
+  {
+    "rank": 378,
+    "word": "встать",
+    "en": "to get up, rise, stand up",
+    "pos": "verb"
+  },
+  {
+    "rank": 379,
+    "word": "например",
+    "en": "for example, for instance",
+    "pos": "misc"
+  },
+  {
+    "rank": 380,
+    "word": "шаг",
+    "en": "step",
+    "pos": "noun"
+  },
+  {
+    "rank": 381,
+    "word": "мужчина",
+    "en": "man, male",
+    "pos": "noun"
+  },
+  {
+    "rank": 382,
+    "word": "равно",
+    "en": "alike, in like manner",
+    "pos": "adverb"
+  },
+  {
+    "rank": 383,
+    "word": "нос",
+    "en": "nose",
+    "pos": "noun"
+  },
+  {
+    "rank": 384,
+    "word": "мало",
+    "en": "little, few, (See #630)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 385,
+    "word": "внимание",
+    "en": "attention",
+    "pos": "noun"
+  },
+  {
+    "rank": 386,
+    "word": "капитан",
+    "en": "captain, master",
+    "pos": "noun"
+  },
+  {
+    "rank": 387,
+    "word": "ухо",
+    "en": "ear",
+    "pos": "noun"
+  },
+  {
+    "rank": 388,
+    "word": "туда",
+    "en": "there",
+    "pos": "adverb"
+  },
+  {
+    "rank": 389,
+    "word": "сюда",
+    "en": "here",
+    "pos": "adverb"
+  },
+  {
+    "rank": 390,
+    "word": "играть",
+    "en": "to play",
+    "pos": "verb"
+  },
+  {
+    "rank": 391,
+    "word": "следовать",
+    "en": "to follow, come next",
+    "pos": "verb"
+  },
+  {
+    "rank": 392,
+    "word": "рассказать",
+    "en": "to tell, narrate(See #403)",
+    "pos": "verb"
+  },
+  {
+    "rank": 393,
+    "word": "великий",
+    "en": "great",
+    "pos": "adjective"
+  },
+  {
+    "rank": 394,
+    "word": "действительно",
+    "en": "indeed, really",
+    "pos": "adverb"
+  },
+  {
+    "rank": 395,
+    "word": "слишком",
+    "en": "too, too much",
+    "pos": "adverb"
+  },
+  {
+    "rank": 396,
+    "word": "тяжёлый",
+    "en": "heavy",
+    "pos": "adjective"
+  },
+  {
+    "rank": 397,
+    "word": "спать",
+    "en": "to sleep",
+    "pos": "verb"
+  },
+  {
+    "rank": 398,
+    "word": "оставить",
+    "en": "to leave, abandon",
+    "pos": "verb"
+  },
+  {
+    "rank": 399,
+    "word": "войти",
+    "en": "to enter, come in",
+    "pos": "verb"
+  },
+  {
+    "rank": 400,
+    "word": "длинный",
+    "en": "long",
+    "pos": "adjective"
+  },
+  {
+    "rank": 401,
+    "word": "чувство",
+    "en": "feeling",
+    "pos": "noun"
+  },
+  {
+    "rank": 402,
+    "word": "молчать",
+    "en": "to keep silence",
+    "pos": "verb"
+  },
+  {
+    "rank": 403,
+    "word": "рассказывать",
+    "en": "to tell, narrate, (See #392)",
+    "pos": "verb"
+  },
+  {
+    "rank": 404,
+    "word": "отвечать",
+    "en": "to answer, reply, (See #190)",
+    "pos": "verb"
+  },
+  {
+    "rank": 405,
+    "word": "становиться",
+    "en": "to stand; to become",
+    "pos": "verb"
+  },
+  {
+    "rank": 406,
+    "word": "остановиться",
+    "en": "to stop",
+    "pos": "verb"
+  },
+  {
+    "rank": 407,
+    "word": "берег",
+    "en": "bank, shore, coast",
+    "pos": "noun"
+  },
+  {
+    "rank": 408,
+    "word": "семья",
+    "en": "family",
+    "pos": "noun"
+  },
+  {
+    "rank": 409,
+    "word": "искать",
+    "en": "to search",
+    "pos": "verb"
+  },
+  {
+    "rank": 410,
+    "word": "генерал",
+    "en": "general",
+    "pos": "noun"
+  },
+  {
+    "rank": 411,
+    "word": "момент",
+    "en": "moment, instant",
+    "pos": "noun"
+  },
+  {
+    "rank": 412,
+    "word": "десять",
+    "en": "ten",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 413,
+    "word": "начать",
+    "en": "to begin(See #309)",
+    "pos": "verb"
+  },
+  {
+    "rank": 414,
+    "word": "следующий",
+    "en": "next, following",
+    "pos": "adjective"
+  },
+  {
+    "rank": 415,
+    "word": "личный",
+    "en": "personal",
+    "pos": "adjective"
+  },
+  {
+    "rank": 416,
+    "word": "труд",
+    "en": "labour, work",
+    "pos": "noun"
+  },
+  {
+    "rank": 417,
+    "word": "верить",
+    "en": "to believe; masterrussian, dot com",
+    "pos": "verb"
+  },
+  {
+    "rank": 418,
+    "word": "группа",
+    "en": "group",
+    "pos": "noun"
+  },
+  {
+    "rank": 419,
+    "word": "немного",
+    "en": "a little",
+    "pos": "adverb"
+  },
+  {
+    "rank": 420,
+    "word": "впрочем",
+    "en": "however, though",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 421,
+    "word": "видно",
+    "en": "evidently, obviously",
+    "pos": "misc"
+  },
+  {
+    "rank": 422,
+    "word": "являться",
+    "en": "to appear",
+    "pos": "verb"
+  },
+  {
+    "rank": 423,
+    "word": "муж",
+    "en": "husband",
+    "pos": "noun"
+  },
+  {
+    "rank": 424,
+    "word": "разве",
+    "en": "really?, perhaps",
+    "pos": "particle"
+  },
+  {
+    "rank": 425,
+    "word": "движение",
+    "en": "movement",
+    "pos": "noun"
+  },
+  {
+    "rank": 426,
+    "word": "порядок",
+    "en": "order",
+    "pos": "noun"
+  },
+  {
+    "rank": 427,
+    "word": "ответ",
+    "en": "answer, reply",
+    "pos": "noun"
+  },
+  {
+    "rank": 428,
+    "word": "тихо",
+    "en": "quietly, softly, slowly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 429,
+    "word": "знакомый",
+    "en": "familiar, acquainted",
+    "pos": "adjective"
+  },
+  {
+    "rank": 430,
+    "word": "газета",
+    "en": "newspaper",
+    "pos": "noun"
+  },
+  {
+    "rank": 431,
+    "word": "помощь",
+    "en": "help",
+    "pos": "noun"
+  },
+  {
+    "rank": 432,
+    "word": "сильный",
+    "en": "strong, powerful",
+    "pos": "adjective"
+  },
+  {
+    "rank": 433,
+    "word": "скорый",
+    "en": "quick, fast",
+    "pos": "adjective"
+  },
+  {
+    "rank": 434,
+    "word": "собака",
+    "en": "dog",
+    "pos": "noun"
+  },
+  {
+    "rank": 435,
+    "word": "дерево",
+    "en": "tree",
+    "pos": "noun"
+  },
+  {
+    "rank": 436,
+    "word": "снег",
+    "en": "snow",
+    "pos": "noun"
+  },
+  {
+    "rank": 437,
+    "word": "сон",
+    "en": "dream",
+    "pos": "noun"
+  },
+  {
+    "rank": 438,
+    "word": "смысл",
+    "en": "sense, meaning, purpose",
+    "pos": "noun"
+  },
+  {
+    "rank": 439,
+    "word": "смочь",
+    "en": "to be able",
+    "pos": "verb"
+  },
+  {
+    "rank": 440,
+    "word": "против",
+    "en": "against, opposite, contrary to",
+    "pos": "preposition"
+  },
+  {
+    "rank": 441,
+    "word": "бежать",
+    "en": "to run, hurry",
+    "pos": "verb"
+  },
+  {
+    "rank": 442,
+    "word": "двор",
+    "en": "yard, court",
+    "pos": "noun"
+  },
+  {
+    "rank": 443,
+    "word": "форма",
+    "en": "form, shape, uniform",
+    "pos": "noun"
+  },
+  {
+    "rank": 444,
+    "word": "простой",
+    "en": "simple, easy, plain",
+    "pos": "adjective"
+  },
+  {
+    "rank": 445,
+    "word": "приехать",
+    "en": "to arrive, come",
+    "pos": "verb"
+  },
+  {
+    "rank": 446,
+    "word": "иной",
+    "en": "different, other",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 447,
+    "word": "кричать",
+    "en": "to cry, shout(See #656)",
+    "pos": "verb"
+  },
+  {
+    "rank": 448,
+    "word": "возможность",
+    "en": "possibility, opportunity, chance",
+    "pos": "noun"
+  },
+  {
+    "rank": 449,
+    "word": "общество",
+    "en": "society",
+    "pos": "noun"
+  },
+  {
+    "rank": 450,
+    "word": "зелёный",
+    "en": "green",
+    "pos": "adjective"
+  },
+  {
+    "rank": 451,
+    "word": "грудь",
+    "en": "breast, chest",
+    "pos": "noun"
+  },
+  {
+    "rank": 452,
+    "word": "угол",
+    "en": "corner, angle",
+    "pos": "noun"
+  },
+  {
+    "rank": 453,
+    "word": "открыть",
+    "en": "to open",
+    "pos": "verb"
+  },
+  {
+    "rank": 454,
+    "word": "происходить",
+    "en": "to happen, occur, take place",
+    "pos": "verb"
+  },
+  {
+    "rank": 455,
+    "word": "ладно",
+    "en": "in harmony, well, all right",
+    "pos": "adverb"
+  },
+  {
+    "rank": 456,
+    "word": "чёрный",
+    "en": "black (as in \"she wears black\")(See #333)",
+    "pos": "noun"
+  },
+  {
+    "rank": 457,
+    "word": "век",
+    "en": "century, age",
+    "pos": "noun"
+  },
+  {
+    "rank": 458,
+    "word": "карман",
+    "en": "pocket",
+    "pos": "noun"
+  },
+  {
+    "rank": 459,
+    "word": "ехать",
+    "en": "to go, ride, drive, travel",
+    "pos": "verb of motion"
+  },
+  {
+    "rank": 460,
+    "word": "немец",
+    "en": "German",
+    "pos": "noun"
+  },
+  {
+    "rank": 461,
+    "word": "наверное",
+    "en": "probably, most likely(See #972)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 462,
+    "word": "губа",
+    "en": "lip",
+    "pos": "noun"
+  },
+  {
+    "rank": 463,
+    "word": "дядя",
+    "en": "uncle",
+    "pos": "noun"
+  },
+  {
+    "rank": 464,
+    "word": "приходить",
+    "en": "to come, arrive(See #253)",
+    "pos": "verb"
+  },
+  {
+    "rank": 465,
+    "word": "часто",
+    "en": "often",
+    "pos": "adverb"
+  },
+  {
+    "rank": 466,
+    "word": "домой",
+    "en": "home(as in \"she came home\")",
+    "pos": "adverb"
+  },
+  {
+    "rank": 467,
+    "word": "огонь",
+    "en": "fire",
+    "pos": "noun"
+  },
+  {
+    "rank": 468,
+    "word": "писатель",
+    "en": "writer",
+    "pos": "noun"
+  },
+  {
+    "rank": 469,
+    "word": "армия",
+    "en": "army",
+    "pos": "noun"
+  },
+  {
+    "rank": 470,
+    "word": "состояние",
+    "en": "state, condition; fortune",
+    "pos": "noun"
+  },
+  {
+    "rank": 471,
+    "word": "зуб",
+    "en": "tooth",
+    "pos": "noun"
+  },
+  {
+    "rank": 472,
+    "word": "очередь",
+    "en": "line, queue, turn",
+    "pos": "noun"
+  },
+  {
+    "rank": 473,
+    "word": "кой",
+    "en": "which (old-fashioned, literary); mostly found in set expressions: ни в ко́ем слу́чае, ни ко́им о́бразом, в кои ве́ки, на кой чёрт?",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 474,
+    "word": "подняться",
+    "en": "to rise, climb",
+    "pos": "verb"
+  },
+  {
+    "rank": 475,
+    "word": "камень",
+    "en": "stone",
+    "pos": "noun"
+  },
+  {
+    "rank": 476,
+    "word": "гость",
+    "en": "guest",
+    "pos": "noun"
+  },
+  {
+    "rank": 477,
+    "word": "показаться",
+    "en": "to appear, come in sight",
+    "pos": "verb"
+  },
+  {
+    "rank": 478,
+    "word": "ветер",
+    "en": "wind",
+    "pos": "noun"
+  },
+  {
+    "rank": 479,
+    "word": "собираться",
+    "en": "to gather together, assemble; intend(See #981)",
+    "pos": "verb"
+  },
+  {
+    "rank": 480,
+    "word": "попасть",
+    "en": "to hit; to find oneself",
+    "pos": "verb"
+  },
+  {
+    "rank": 481,
+    "word": "принять",
+    "en": "to take, admit, accept(See #643)",
+    "pos": "verb"
+  },
+  {
+    "rank": 482,
+    "word": "сначала",
+    "en": "at first, from the beginning",
+    "pos": "adverb"
+  },
+  {
+    "rank": 483,
+    "word": "либо",
+    "en": "or",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 484,
+    "word": "поехать",
+    "en": "to depart, set off",
+    "pos": "verb"
+  },
+  {
+    "rank": 485,
+    "word": "услышать",
+    "en": "to hear",
+    "pos": "verb"
+  },
+  {
+    "rank": 486,
+    "word": "уметь",
+    "en": "to be able, know, can",
+    "pos": "verb"
+  },
+  {
+    "rank": 487,
+    "word": "случиться",
+    "en": "to happen",
+    "pos": "verb"
+  },
+  {
+    "rank": 488,
+    "word": "странный",
+    "en": "strange",
+    "pos": "adjective"
+  },
+  {
+    "rank": 489,
+    "word": "единственный",
+    "en": "only, sole",
+    "pos": "adjective"
+  },
+  {
+    "rank": 490,
+    "word": "рота",
+    "en": "company (military)",
+    "pos": "noun"
+  },
+  {
+    "rank": 491,
+    "word": "закон",
+    "en": "law, act, statute",
+    "pos": "noun"
+  },
+  {
+    "rank": 492,
+    "word": "короткий",
+    "en": "short",
+    "pos": "adjective"
+  },
+  {
+    "rank": 493,
+    "word": "море",
+    "en": "sea",
+    "pos": "noun"
+  },
+  {
+    "rank": 494,
+    "word": "добрый",
+    "en": "kind",
+    "pos": "adjective"
+  },
+  {
+    "rank": 495,
+    "word": "тёмный",
+    "en": "dark",
+    "pos": "adjective"
+  },
+  {
+    "rank": 496,
+    "word": "гора",
+    "en": "mountain, hill",
+    "pos": "noun"
+  },
+  {
+    "rank": 497,
+    "word": "врач",
+    "en": "physician, doctor",
+    "pos": "noun"
+  },
+  {
+    "rank": 498,
+    "word": "край",
+    "en": "border, edge; land, country",
+    "pos": "noun"
+  },
+  {
+    "rank": 499,
+    "word": "стараться",
+    "en": "to try, endeavour",
+    "pos": "verb"
+  },
+  {
+    "rank": 500,
+    "word": "лучший",
+    "en": "better, best",
+    "pos": "adjective"
+  },
+  {
+    "rank": 501,
+    "word": "река",
+    "en": "river",
+    "pos": "noun"
+  },
+  {
+    "rank": 502,
+    "word": "военный",
+    "en": "military",
+    "pos": "adjective"
+  },
+  {
+    "rank": 503,
+    "word": "мера",
+    "en": "measure, step",
+    "pos": "noun"
+  },
+  {
+    "rank": 504,
+    "word": "страшный",
+    "en": "terrible, frightful",
+    "pos": "adjective"
+  },
+  {
+    "rank": 505,
+    "word": "вполне",
+    "en": "quite, fully",
+    "pos": "adverb"
+  },
+  {
+    "rank": 506,
+    "word": "звать",
+    "en": "to call",
+    "pos": "verb"
+  },
+  {
+    "rank": 507,
+    "word": "произойти",
+    "en": "to happen, occur, take place",
+    "pos": "verb"
+  },
+  {
+    "rank": 508,
+    "word": "вперед",
+    "en": "forward",
+    "pos": "preposition"
+  },
+  {
+    "rank": 509,
+    "word": "медленно",
+    "en": "slowly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 510,
+    "word": "возле",
+    "en": "by, near, close by",
+    "pos": "preposition"
+  },
+  {
+    "rank": 511,
+    "word": "никак",
+    "en": "in now way, by no means",
+    "pos": "adverb"
+  },
+  {
+    "rank": 512,
+    "word": "заниматься",
+    "en": "to be occupied, engage",
+    "pos": "verb"
+  },
+  {
+    "rank": 513,
+    "word": "действие",
+    "en": "action, effect",
+    "pos": "noun"
+  },
+  {
+    "rank": 514,
+    "word": "довольно",
+    "en": "enough; rather",
+    "pos": "adverb"
+  },
+  {
+    "rank": 515,
+    "word": "вещь",
+    "en": "thing",
+    "pos": "noun"
+  },
+  {
+    "rank": 516,
+    "word": "необходимый",
+    "en": "necessary",
+    "pos": "adjective"
+  },
+  {
+    "rank": 517,
+    "word": "ход",
+    "en": "move",
+    "pos": "noun"
+  },
+  {
+    "rank": 518,
+    "word": "боль",
+    "en": "pain",
+    "pos": "noun"
+  },
+  {
+    "rank": 519,
+    "word": "судьба",
+    "en": "fate, fortune, destiny",
+    "pos": "noun"
+  },
+  {
+    "rank": 520,
+    "word": "причина",
+    "en": "cause, reason, motive",
+    "pos": "noun"
+  },
+  {
+    "rank": 521,
+    "word": "положить",
+    "en": "to lay down, put down, place",
+    "pos": "verb"
+  },
+  {
+    "rank": 522,
+    "word": "едва",
+    "en": "hardly, just, barely",
+    "pos": "adverb"
+  },
+  {
+    "rank": 523,
+    "word": "черта",
+    "en": "line, boundary; trait",
+    "pos": "noun"
+  },
+  {
+    "rank": 524,
+    "word": "девочка",
+    "en": "girl, little girl(See #326)",
+    "pos": "noun"
+  },
+  {
+    "rank": 525,
+    "word": "лёгкий",
+    "en": "light, easy",
+    "pos": "adjective"
+  },
+  {
+    "rank": 526,
+    "word": "волос",
+    "en": "hair",
+    "pos": "noun"
+  },
+  {
+    "rank": 527,
+    "word": "купить",
+    "en": "to buy, purchase",
+    "pos": "verb"
+  },
+  {
+    "rank": 528,
+    "word": "номер",
+    "en": "number, size, room, issue",
+    "pos": "noun"
+  },
+  {
+    "rank": 529,
+    "word": "основной",
+    "en": "main",
+    "pos": "adjective"
+  },
+  {
+    "rank": 530,
+    "word": "широкий",
+    "en": "wide",
+    "pos": "adjective"
+  },
+  {
+    "rank": 531,
+    "word": "умереть",
+    "en": "to die",
+    "pos": "verb"
+  },
+  {
+    "rank": 532,
+    "word": "далеко",
+    "en": "far, far off",
+    "pos": "adverb"
+  },
+  {
+    "rank": 533,
+    "word": "плохо",
+    "en": "badly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 534,
+    "word": "глава",
+    "en": "head, chief",
+    "pos": "noun"
+  },
+  {
+    "rank": 535,
+    "word": "красивый",
+    "en": "beautiful; masterrussian, dot com",
+    "pos": "adjective"
+  },
+  {
+    "rank": 536,
+    "word": "серый",
+    "en": "grey; dull",
+    "pos": "adjective"
+  },
+  {
+    "rank": 537,
+    "word": "пить",
+    "en": "to drink",
+    "pos": "verb"
+  },
+  {
+    "rank": 538,
+    "word": "командир",
+    "en": "commander, commanding officer",
+    "pos": "noun"
+  },
+  {
+    "rank": 539,
+    "word": "обычно",
+    "en": "usually",
+    "pos": "adverb"
+  },
+  {
+    "rank": 540,
+    "word": "партия",
+    "en": "party",
+    "pos": "noun"
+  },
+  {
+    "rank": 541,
+    "word": "проблема",
+    "en": "problem, issue",
+    "pos": "noun"
+  },
+  {
+    "rank": 542,
+    "word": "страх",
+    "en": "fear",
+    "pos": "noun"
+  },
+  {
+    "rank": 543,
+    "word": "проходить",
+    "en": "to pass, go;study(See #334)",
+    "pos": "verb"
+  },
+  {
+    "rank": 544,
+    "word": "ясно",
+    "en": "clear, clearly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 545,
+    "word": "снять",
+    "en": "to take away, take off;photograph",
+    "pos": "verb"
+  },
+  {
+    "rank": 546,
+    "word": "бумага",
+    "en": "paper",
+    "pos": "noun"
+  },
+  {
+    "rank": 547,
+    "word": "герой",
+    "en": "hero",
+    "pos": "noun"
+  },
+  {
+    "rank": 548,
+    "word": "пара",
+    "en": "pair, couple",
+    "pos": "noun"
+  },
+  {
+    "rank": 549,
+    "word": "государство",
+    "en": "State",
+    "pos": "noun"
+  },
+  {
+    "rank": 550,
+    "word": "деревня",
+    "en": "village, country",
+    "pos": "noun"
+  },
+  {
+    "rank": 551,
+    "word": "речь",
+    "en": "speech",
+    "pos": "noun"
+  },
+  {
+    "rank": 552,
+    "word": "начаться",
+    "en": "to begin",
+    "pos": "verb"
+  },
+  {
+    "rank": 553,
+    "word": "средство",
+    "en": "means, remedy",
+    "pos": "noun"
+  },
+  {
+    "rank": 554,
+    "word": "положение",
+    "en": "position, posture, condition, state",
+    "pos": "noun"
+  },
+  {
+    "rank": 555,
+    "word": "связь",
+    "en": "tie, bond; connection, relation",
+    "pos": "noun"
+  },
+  {
+    "rank": 556,
+    "word": "скоро",
+    "en": "quickly, fast, soon",
+    "pos": "adverb"
+  },
+  {
+    "rank": 557,
+    "word": "небольшой",
+    "en": "small, not great",
+    "pos": "adjective"
+  },
+  {
+    "rank": 558,
+    "word": "представлять",
+    "en": "to present, introduce, imagine(See #586)",
+    "pos": "verb"
+  },
+  {
+    "rank": 559,
+    "word": "завтра",
+    "en": "tomorrow",
+    "pos": "adverb"
+  },
+  {
+    "rank": 560,
+    "word": "объяснить",
+    "en": "to explain",
+    "pos": "verb"
+  },
+  {
+    "rank": 561,
+    "word": "пустой",
+    "en": "empty, hollow; idle",
+    "pos": "adjective"
+  },
+  {
+    "rank": 562,
+    "word": "произнести",
+    "en": "to pronounce, say, utter",
+    "pos": "verb"
+  },
+  {
+    "rank": 563,
+    "word": "человеческий",
+    "en": "human",
+    "pos": "adjective"
+  },
+  {
+    "rank": 564,
+    "word": "нравиться",
+    "en": "to please, like",
+    "pos": "verb"
+  },
+  {
+    "rank": 565,
+    "word": "однажды",
+    "en": "once, one day",
+    "pos": "adverb"
+  },
+  {
+    "rank": 566,
+    "word": "мимо",
+    "en": "past, by",
+    "pos": "preposition"
+  },
+  {
+    "rank": 567,
+    "word": "иначе",
+    "en": "otherwise, differentlyl",
+    "pos": "adverb"
+  },
+  {
+    "rank": 568,
+    "word": "существовать",
+    "en": "to exist, to be",
+    "pos": "verb"
+  },
+  {
+    "rank": 569,
+    "word": "класс",
+    "en": "class",
+    "pos": "noun"
+  },
+  {
+    "rank": 570,
+    "word": "удаться",
+    "en": "turn out well, succeed, manage",
+    "pos": "verb"
+  },
+  {
+    "rank": 571,
+    "word": "толстый",
+    "en": "thick, heavy, fat",
+    "pos": "adjective"
+  },
+  {
+    "rank": 572,
+    "word": "цель",
+    "en": "goal, object, target",
+    "pos": "noun"
+  },
+  {
+    "rank": 573,
+    "word": "сквозь",
+    "en": "through",
+    "pos": "preposition"
+  },
+  {
+    "rank": 574,
+    "word": "прийтись",
+    "en": "to fit, fall; have to",
+    "pos": "verb"
+  },
+  {
+    "rank": 575,
+    "word": "чистый",
+    "en": "clean, pure",
+    "pos": "adjective"
+  },
+  {
+    "rank": 576,
+    "word": "знать",
+    "en": "to know(See #51)",
+    "pos": "noun"
+  },
+  {
+    "rank": 577,
+    "word": "прежний",
+    "en": "former",
+    "pos": "adjective"
+  },
+  {
+    "rank": 578,
+    "word": "профессор",
+    "en": "professor",
+    "pos": "noun"
+  },
+  {
+    "rank": 579,
+    "word": "господин",
+    "en": "gentleman, Mr.",
+    "pos": "noun"
+  },
+  {
+    "rank": 580,
+    "word": "счастье",
+    "en": "happiness, luck",
+    "pos": "noun"
+  },
+  {
+    "rank": 581,
+    "word": "худой",
+    "en": "thin, skinny; masterrussian.com",
+    "pos": "adjective"
+  },
+  {
+    "rank": 582,
+    "word": "дух",
+    "en": "spirit",
+    "pos": "noun"
+  },
+  {
+    "rank": 583,
+    "word": "план",
+    "en": "plan",
+    "pos": "noun"
+  },
+  {
+    "rank": 584,
+    "word": "чужой",
+    "en": "somebody else's;strange, foreign",
+    "pos": "adjective"
+  },
+  {
+    "rank": 585,
+    "word": "зал",
+    "en": "hall",
+    "pos": "noun"
+  },
+  {
+    "rank": 586,
+    "word": "представить",
+    "en": "to presetn, produce, introduce(See #558)",
+    "pos": "verb"
+  },
+  {
+    "rank": 587,
+    "word": "особый",
+    "en": "special",
+    "pos": "adjective"
+  },
+  {
+    "rank": 588,
+    "word": "директор",
+    "en": "director, manager",
+    "pos": "noun"
+  },
+  {
+    "rank": 589,
+    "word": "бывший",
+    "en": "former, ex-",
+    "pos": "adjective"
+  },
+  {
+    "rank": 590,
+    "word": "память",
+    "en": "memory",
+    "pos": "noun"
+  },
+  {
+    "rank": 591,
+    "word": "близкий",
+    "en": "near, similar; intimate",
+    "pos": "adjective"
+  },
+  {
+    "rank": 592,
+    "word": "сей",
+    "en": "this",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 593,
+    "word": "результат",
+    "en": "result, outcome",
+    "pos": "noun"
+  },
+  {
+    "rank": 594,
+    "word": "больной",
+    "en": "sick",
+    "pos": "adjective"
+  },
+  {
+    "rank": 595,
+    "word": "данный",
+    "en": "given, present",
+    "pos": "adjective"
+  },
+  {
+    "rank": 596,
+    "word": "кстати",
+    "en": "to the point, at the same time",
+    "pos": "adverb"
+  },
+  {
+    "rank": 597,
+    "word": "назвать",
+    "en": "to call, name(See #356)",
+    "pos": "verb"
+  },
+  {
+    "rank": 598,
+    "word": "след",
+    "en": "track, footprint",
+    "pos": "noun"
+  },
+  {
+    "rank": 599,
+    "word": "улыбаться",
+    "en": "to smile(See #605)",
+    "pos": "verb"
+  },
+  {
+    "rank": 600,
+    "word": "бутылка",
+    "en": "bottle",
+    "pos": "noun"
+  },
+  {
+    "rank": 601,
+    "word": "трудно",
+    "en": "with difficulty",
+    "pos": "adverb"
+  },
+  {
+    "rank": 602,
+    "word": "условие",
+    "en": "condition, term",
+    "pos": "noun"
+  },
+  {
+    "rank": 603,
+    "word": "прежде",
+    "en": "before",
+    "pos": "preposition"
+  },
+  {
+    "rank": 604,
+    "word": "ум",
+    "en": "mind, brains, intellect",
+    "pos": "noun"
+  },
+  {
+    "rank": 605,
+    "word": "улыбнуться",
+    "en": "to smile(See #599)",
+    "pos": "verb"
+  },
+  {
+    "rank": 606,
+    "word": "процесс",
+    "en": "process",
+    "pos": "noun"
+  },
+  {
+    "rank": 607,
+    "word": "картина",
+    "en": "picture, painting",
+    "pos": "noun"
+  },
+  {
+    "rank": 608,
+    "word": "вместо",
+    "en": "instead",
+    "pos": "preposition"
+  },
+  {
+    "rank": 609,
+    "word": "старший",
+    "en": "elder, senior",
+    "pos": "adjective"
+  },
+  {
+    "rank": 610,
+    "word": "легко",
+    "en": "easily, lightly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 611,
+    "word": "центр",
+    "en": "center",
+    "pos": "noun"
+  },
+  {
+    "rank": 612,
+    "word": "подобный",
+    "en": "similar, like",
+    "pos": "adjective"
+  },
+  {
+    "rank": 613,
+    "word": "возможно",
+    "en": "as… as possible(as in \"as soon as possible\")",
+    "pos": "adverb"
+  },
+  {
+    "rank": 614,
+    "word": "около",
+    "en": "by, near",
+    "pos": "preposition"
+  },
+  {
+    "rank": 615,
+    "word": "смеяться",
+    "en": "to laugh",
+    "pos": "verb"
+  },
+  {
+    "rank": 616,
+    "word": "сто",
+    "en": "hundred",
+    "pos": "cardinal numberinal number"
+  },
+  {
+    "rank": 617,
+    "word": "будущее",
+    "en": "future",
+    "pos": "noun"
+  },
+  {
+    "rank": 618,
+    "word": "хватать",
+    "en": "to snatch, seize; be sufficient(See #636)",
+    "pos": "verb"
+  },
+  {
+    "rank": 619,
+    "word": "число",
+    "en": "number",
+    "pos": "noun"
+  },
+  {
+    "rank": 620,
+    "word": "всякое",
+    "en": "any, every",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 621,
+    "word": "рубль",
+    "en": "ruble",
+    "pos": "noun"
+  },
+  {
+    "rank": 622,
+    "word": "почувствовать",
+    "en": "to feel",
+    "pos": "verb"
+  },
+  {
+    "rank": 623,
+    "word": "принести",
+    "en": "to bring; masterrussian",
+    "pos": "verb"
+  },
+  {
+    "rank": 624,
+    "word": "вера",
+    "en": "faith, belief",
+    "pos": "noun"
+  },
+  {
+    "rank": 625,
+    "word": "вовсе",
+    "en": "quiet; not … at all",
+    "pos": "adverb"
+  },
+  {
+    "rank": 626,
+    "word": "удар",
+    "en": "blow, stroke",
+    "pos": "noun"
+  },
+  {
+    "rank": 627,
+    "word": "телефон",
+    "en": "telephone",
+    "pos": "noun"
+  },
+  {
+    "rank": 628,
+    "word": "колено",
+    "en": "knee",
+    "pos": "noun"
+  },
+  {
+    "rank": 629,
+    "word": "согласиться",
+    "en": "to agree, consent",
+    "pos": "verb"
+  },
+  {
+    "rank": 630,
+    "word": "мало",
+    "en": "little, few, not enough(See #384)",
+    "pos": "cardinal numberinal number"
+  },
+  {
+    "rank": 631,
+    "word": "коридор",
+    "en": "corridor, passage",
+    "pos": "noun"
+  },
+  {
+    "rank": 632,
+    "word": "мужик",
+    "en": "muzhik, man",
+    "pos": "noun"
+  },
+  {
+    "rank": 633,
+    "word": "правый",
+    "en": "right",
+    "pos": "adjective"
+  },
+  {
+    "rank": 634,
+    "word": "автор",
+    "en": "author",
+    "pos": "noun"
+  },
+  {
+    "rank": 635,
+    "word": "холодный",
+    "en": "cold, cool",
+    "pos": "adjective"
+  },
+  {
+    "rank": 636,
+    "word": "хватить",
+    "en": "to snatch, seize, suffice(See #618)",
+    "pos": "verb"
+  },
+  {
+    "rank": 637,
+    "word": "многие",
+    "en": "many",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 638,
+    "word": "встреча",
+    "en": "meeting, reception",
+    "pos": "noun"
+  },
+  {
+    "rank": 639,
+    "word": "кабинет",
+    "en": "study, room, office suite",
+    "pos": "noun"
+  },
+  {
+    "rank": 640,
+    "word": "документ",
+    "en": "document",
+    "pos": "noun"
+  },
+  {
+    "rank": 641,
+    "word": "самолёт",
+    "en": "aircraft, aeroplane",
+    "pos": "noun"
+  },
+  {
+    "rank": 642,
+    "word": "вниз",
+    "en": "down, downwards",
+    "pos": "adverb"
+  },
+  {
+    "rank": 643,
+    "word": "принимать",
+    "en": "to take, admit, accept (See #481)",
+    "pos": "verb"
+  },
+  {
+    "rank": 644,
+    "word": "игра",
+    "en": "game, play",
+    "pos": "noun"
+  },
+  {
+    "rank": 645,
+    "word": "рассказ",
+    "en": "story",
+    "pos": "noun"
+  },
+  {
+    "rank": 646,
+    "word": "хлеб",
+    "en": "bread",
+    "pos": "noun"
+  },
+  {
+    "rank": 647,
+    "word": "развитие",
+    "en": "development",
+    "pos": "noun"
+  },
+  {
+    "rank": 648,
+    "word": "убить",
+    "en": "to kill",
+    "pos": "verb"
+  },
+  {
+    "rank": 649,
+    "word": "родной",
+    "en": "own, native, dear",
+    "pos": "adjective"
+  },
+  {
+    "rank": 650,
+    "word": "открытый",
+    "en": "open",
+    "pos": "adjective"
+  },
+  {
+    "rank": 651,
+    "word": "менее",
+    "en": "less",
+    "pos": "adverb"
+  },
+  {
+    "rank": 652,
+    "word": "предложить",
+    "en": "to offer, propose, suggest",
+    "pos": "verb"
+  },
+  {
+    "rank": 653,
+    "word": "жёлтый",
+    "en": "yellow",
+    "pos": "adjective"
+  },
+  {
+    "rank": 654,
+    "word": "приходиться",
+    "en": "to fit, fall; have to",
+    "pos": "verb"
+  },
+  {
+    "rank": 655,
+    "word": "выпить",
+    "en": "to drink",
+    "pos": "verb"
+  },
+  {
+    "rank": 656,
+    "word": "крикнуть",
+    "en": "to cry, shout(See #447)",
+    "pos": "verb"
+  },
+  {
+    "rank": 657,
+    "word": "трубка",
+    "en": "tube, roll, pipe",
+    "pos": "noun"
+  },
+  {
+    "rank": 658,
+    "word": "враг",
+    "en": "enemy",
+    "pos": "noun"
+  },
+  {
+    "rank": 659,
+    "word": "показывать",
+    "en": "to show, display",
+    "pos": "verb"
+  },
+  {
+    "rank": 660,
+    "word": "двое",
+    "en": "two",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 661,
+    "word": "доктор",
+    "en": "doctor",
+    "pos": "noun"
+  },
+  {
+    "rank": 662,
+    "word": "ладонь",
+    "en": "palm",
+    "pos": "noun"
+  },
+  {
+    "rank": 663,
+    "word": "вызвать",
+    "en": "to call, send(See #821)",
+    "pos": "verb"
+  },
+  {
+    "rank": 664,
+    "word": "спокойно",
+    "en": "quietly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 665,
+    "word": "попросить",
+    "en": "to ask",
+    "pos": "verb"
+  },
+  {
+    "rank": 666,
+    "word": "наука",
+    "en": "science",
+    "pos": "noun"
+  },
+  {
+    "rank": 667,
+    "word": "лейтенант",
+    "en": "lieutenant",
+    "pos": "noun"
+  },
+  {
+    "rank": 668,
+    "word": "служба",
+    "en": "service, work",
+    "pos": "noun"
+  },
+  {
+    "rank": 669,
+    "word": "оказываться",
+    "en": "to turn out, find oneself(See #183)",
+    "pos": "verb"
+  },
+  {
+    "rank": 670,
+    "word": "привести",
+    "en": "to bring",
+    "pos": "verb"
+  },
+  {
+    "rank": 671,
+    "word": "сорок",
+    "en": "forty",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 672,
+    "word": "счёт",
+    "en": "bill, account",
+    "pos": "noun"
+  },
+  {
+    "rank": 673,
+    "word": "возвращаться",
+    "en": "to return",
+    "pos": "verb"
+  },
+  {
+    "rank": 674,
+    "word": "золотой",
+    "en": "golden",
+    "pos": "adjective"
+  },
+  {
+    "rank": 675,
+    "word": "местный",
+    "en": "local",
+    "pos": "adjective"
+  },
+  {
+    "rank": 676,
+    "word": "кухня",
+    "en": "kitchen",
+    "pos": "noun"
+  },
+  {
+    "rank": 677,
+    "word": "крупный",
+    "en": "large, big, prominent",
+    "pos": "adjective"
+  },
+  {
+    "rank": 678,
+    "word": "решение",
+    "en": "decision, conclusion",
+    "pos": "noun"
+  },
+  {
+    "rank": 679,
+    "word": "молодая",
+    "en": "bride (See #288); young (as an adjective)",
+    "pos": "noun"
+  },
+  {
+    "rank": 680,
+    "word": "тридцать",
+    "en": "thirty",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 681,
+    "word": "роман",
+    "en": "novel, romance",
+    "pos": "noun"
+  },
+  {
+    "rank": 682,
+    "word": "требовать",
+    "en": "to demand",
+    "pos": "verb"
+  },
+  {
+    "rank": 683,
+    "word": "компания",
+    "en": "company",
+    "pos": "noun"
+  },
+  {
+    "rank": 684,
+    "word": "частый",
+    "en": "frequent",
+    "pos": "adjective"
+  },
+  {
+    "rank": 685,
+    "word": "российский",
+    "en": "Russian",
+    "pos": "adjective"
+  },
+  {
+    "rank": 686,
+    "word": "рабочий",
+    "en": "working",
+    "pos": "adjective"
+  },
+  {
+    "rank": 687,
+    "word": "потерять",
+    "en": "to lose",
+    "pos": "verb"
+  },
+  {
+    "rank": 688,
+    "word": "течение",
+    "en": "current",
+    "pos": "noun"
+  },
+  {
+    "rank": 689,
+    "word": "синий",
+    "en": "dark blue",
+    "pos": "adjective"
+  },
+  {
+    "rank": 690,
+    "word": "столько",
+    "en": "so much, so many",
+    "pos": "adverb"
+  },
+  {
+    "rank": 691,
+    "word": "тёплый",
+    "en": "warm",
+    "pos": "adjective"
+  },
+  {
+    "rank": 692,
+    "word": "метр",
+    "en": "meter, metre",
+    "pos": "noun"
+  },
+  {
+    "rank": 693,
+    "word": "достать",
+    "en": "to reach; get, obtain",
+    "pos": "verb"
+  },
+  {
+    "rank": 694,
+    "word": "железный",
+    "en": "ferreous, iron",
+    "pos": "adjective"
+  },
+  {
+    "rank": 695,
+    "word": "институт",
+    "en": "institute",
+    "pos": "noun"
+  },
+  {
+    "rank": 696,
+    "word": "сообщить",
+    "en": "to report, let know",
+    "pos": "verb"
+  },
+  {
+    "rank": 697,
+    "word": "интерес",
+    "en": "interes",
+    "pos": "noun"
+  },
+  {
+    "rank": 698,
+    "word": "обычный",
+    "en": "usual, ordinary",
+    "pos": "adjective"
+  },
+  {
+    "rank": 699,
+    "word": "появляться",
+    "en": "to appear, show up(See #335)",
+    "pos": "verb"
+  },
+  {
+    "rank": 700,
+    "word": "упасть",
+    "en": "to fall",
+    "pos": "verb"
+  },
+  {
+    "rank": 701,
+    "word": "остальной",
+    "en": "remaining, the rest of",
+    "pos": "adjective"
+  },
+  {
+    "rank": 702,
+    "word": "половина",
+    "en": "half",
+    "pos": "noun"
+  },
+  {
+    "rank": 703,
+    "word": "московский",
+    "en": "Moscow",
+    "pos": "adjective"
+  },
+  {
+    "rank": 704,
+    "word": "шесть",
+    "en": "six",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 705,
+    "word": "получиться",
+    "en": "to come, arrive, turn out",
+    "pos": "verb"
+  },
+  {
+    "rank": 706,
+    "word": "качество",
+    "en": "quality",
+    "pos": "noun"
+  },
+  {
+    "rank": 707,
+    "word": "бой",
+    "en": "battle, fight, combat",
+    "pos": "noun"
+  },
+  {
+    "rank": 708,
+    "word": "шея",
+    "en": "neck",
+    "pos": "noun"
+  },
+  {
+    "rank": 709,
+    "word": "вон",
+    "en": "out",
+    "pos": "adverb"
+  },
+  {
+    "rank": 710,
+    "word": "идея",
+    "en": "idea",
+    "pos": "noun"
+  },
+  {
+    "rank": 711,
+    "word": "видимо",
+    "en": "apparently, seemingly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 712,
+    "word": "достаточно",
+    "en": "enough, sufficiently",
+    "pos": "adverb"
+  },
+  {
+    "rank": 713,
+    "word": "провести",
+    "en": "to accompany, set off; conduct; spend (See #973)",
+    "pos": "verb"
+  },
+  {
+    "rank": 714,
+    "word": "важный",
+    "en": "important",
+    "pos": "adjective"
+  },
+  {
+    "rank": 715,
+    "word": "трава",
+    "en": "grass",
+    "pos": "noun"
+  },
+  {
+    "rank": 716,
+    "word": "дед",
+    "en": "grandfather, old man",
+    "pos": "noun"
+  },
+  {
+    "rank": 717,
+    "word": "сознание",
+    "en": "consciousness",
+    "pos": "noun"
+  },
+  {
+    "rank": 718,
+    "word": "родитель",
+    "en": "parent; masterrussian, dot, com",
+    "pos": "noun"
+  },
+  {
+    "rank": 719,
+    "word": "простить",
+    "en": "to forgive",
+    "pos": "verb"
+  },
+  {
+    "rank": 720,
+    "word": "бить",
+    "en": "to beat, hit",
+    "pos": "verb"
+  },
+  {
+    "rank": 721,
+    "word": "чай",
+    "en": "tea",
+    "pos": "noun"
+  },
+  {
+    "rank": 722,
+    "word": "поздний",
+    "en": "late",
+    "pos": "adjective"
+  },
+  {
+    "rank": 723,
+    "word": "кивнуть",
+    "en": "to nod",
+    "pos": "verb"
+  },
+  {
+    "rank": 724,
+    "word": "род",
+    "en": "family, clan, generation",
+    "pos": "noun"
+  },
+  {
+    "rank": 725,
+    "word": "исчезнуть",
+    "en": "to disappear",
+    "pos": "verb"
+  },
+  {
+    "rank": 726,
+    "word": "тонкий",
+    "en": "thin",
+    "pos": "adjective"
+  },
+  {
+    "rank": 727,
+    "word": "немецкий",
+    "en": "German",
+    "pos": "adjective"
+  },
+  {
+    "rank": 728,
+    "word": "звук",
+    "en": "sound",
+    "pos": "noun"
+  },
+  {
+    "rank": 729,
+    "word": "отдать",
+    "en": "to return, give back",
+    "pos": "verb"
+  },
+  {
+    "rank": 730,
+    "word": "магазин",
+    "en": "shop, store",
+    "pos": "noun"
+  },
+  {
+    "rank": 731,
+    "word": "президент",
+    "en": "president; director",
+    "pos": "noun"
+  },
+  {
+    "rank": 732,
+    "word": "поэт",
+    "en": "poet",
+    "pos": "noun"
+  },
+  {
+    "rank": 733,
+    "word": "спасибо",
+    "en": "gratitude, thanks",
+    "pos": "noun"
+  },
+  {
+    "rank": 734,
+    "word": "болезнь",
+    "en": "illness, sickness, disease",
+    "pos": "noun"
+  },
+  {
+    "rank": 735,
+    "word": "событие",
+    "en": "event",
+    "pos": "noun"
+  },
+  {
+    "rank": 736,
+    "word": "помочь",
+    "en": "to help (See #857)",
+    "pos": "verb"
+  },
+  {
+    "rank": 737,
+    "word": "кожа",
+    "en": "skin",
+    "pos": "noun"
+  },
+  {
+    "rank": 738,
+    "word": "лист",
+    "en": "leaf, sheet",
+    "pos": "noun"
+  },
+  {
+    "rank": 739,
+    "word": "слать",
+    "en": "to send",
+    "pos": "verb"
+  },
+  {
+    "rank": 740,
+    "word": "вспоминать",
+    "en": "to remember, recall",
+    "pos": "verb"
+  },
+  {
+    "rank": 741,
+    "word": "прекрасный",
+    "en": "beautiful, fine",
+    "pos": "adjective"
+  },
+  {
+    "rank": 742,
+    "word": "слеза",
+    "en": "tear",
+    "pos": "noun"
+  },
+  {
+    "rank": 743,
+    "word": "надежда",
+    "en": "hope",
+    "pos": "noun"
+  },
+  {
+    "rank": 744,
+    "word": "молча",
+    "en": "silently, without a word",
+    "pos": "adverb"
+  },
+  {
+    "rank": 745,
+    "word": "сильно",
+    "en": "strongly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 746,
+    "word": "верный",
+    "en": "correct; faithful; reliable",
+    "pos": "adjective"
+  },
+  {
+    "rank": 747,
+    "word": "литература",
+    "en": "literature",
+    "pos": "noun"
+  },
+  {
+    "rank": 748,
+    "word": "оружие",
+    "en": "weapon",
+    "pos": "noun"
+  },
+  {
+    "rank": 749,
+    "word": "готовый",
+    "en": "ready",
+    "pos": "adjective"
+  },
+  {
+    "rank": 750,
+    "word": "запах",
+    "en": "smell, odour, scent",
+    "pos": "noun"
+  },
+  {
+    "rank": 751,
+    "word": "неожиданно",
+    "en": "unexpectedly, suddenly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 752,
+    "word": "вчера",
+    "en": "yesterday",
+    "pos": "adverb"
+  },
+  {
+    "rank": 753,
+    "word": "вздохнуть",
+    "en": "to take breath, to sigh",
+    "pos": "verb"
+  },
+  {
+    "rank": 754,
+    "word": "роль",
+    "en": "role",
+    "pos": "noun"
+  },
+  {
+    "rank": 755,
+    "word": "рост",
+    "en": "growth, increase; height",
+    "pos": "noun"
+  },
+  {
+    "rank": 756,
+    "word": "природа",
+    "en": "nature",
+    "pos": "noun"
+  },
+  {
+    "rank": 757,
+    "word": "политический",
+    "en": "political",
+    "pos": "adjective"
+  },
+  {
+    "rank": 758,
+    "word": "точка",
+    "en": "dot, point",
+    "pos": "noun"
+  },
+  {
+    "rank": 759,
+    "word": "звезда",
+    "en": "star",
+    "pos": "noun"
+  },
+  {
+    "rank": 760,
+    "word": "петь",
+    "en": "to sing",
+    "pos": "verb"
+  },
+  {
+    "rank": 761,
+    "word": "садиться",
+    "en": "to sit down",
+    "pos": "verb"
+  },
+  {
+    "rank": 762,
+    "word": "фамилия",
+    "en": "surname",
+    "pos": "noun"
+  },
+  {
+    "rank": 763,
+    "word": "характер",
+    "en": "character, disposition, temper",
+    "pos": "noun"
+  },
+  {
+    "rank": 764,
+    "word": "пожалуйста",
+    "en": "please",
+    "pos": "misc"
+  },
+  {
+    "rank": 765,
+    "word": "выше",
+    "en": "higher",
+    "pos": "adverb"
+  },
+  {
+    "rank": 766,
+    "word": "офицер",
+    "en": "officer",
+    "pos": "noun"
+  },
+  {
+    "rank": 767,
+    "word": "толпа",
+    "en": "crowd",
+    "pos": "noun"
+  },
+  {
+    "rank": 768,
+    "word": "перестать",
+    "en": "to stop, cease",
+    "pos": "verb"
+  },
+  {
+    "rank": 769,
+    "word": "придтись",
+    "en": "to fit, fall; have to",
+    "pos": "verb"
+  },
+  {
+    "rank": 770,
+    "word": "уровень",
+    "en": "level",
+    "pos": "noun"
+  },
+  {
+    "rank": 771,
+    "word": "неизвестный",
+    "en": "unknown",
+    "pos": "adjective"
+  },
+  {
+    "rank": 772,
+    "word": "кресло",
+    "en": "armchair",
+    "pos": "noun"
+  },
+  {
+    "rank": 773,
+    "word": "баба",
+    "en": "woman, wife, old woman, (See #911)",
+    "pos": "noun"
+  },
+  {
+    "rank": 774,
+    "word": "секунда",
+    "en": "a second",
+    "pos": "noun"
+  },
+  {
+    "rank": 775,
+    "word": "пожаловать",
+    "en": "to grant, bestow",
+    "pos": "verb"
+  },
+  {
+    "rank": 776,
+    "word": "банк",
+    "en": "bank",
+    "pos": "noun"
+  },
+  {
+    "rank": 777,
+    "word": "опыт",
+    "en": "experience",
+    "pos": "noun"
+  },
+  {
+    "rank": 778,
+    "word": "тихий",
+    "en": "quiet, low, scelent",
+    "pos": "adjective"
+  },
+  {
+    "rank": 779,
+    "word": "поскольку",
+    "en": "so far as, since",
+    "pos": "misc"
+  },
+  {
+    "rank": 780,
+    "word": "сапог",
+    "en": "(high) boot",
+    "pos": "noun"
+  },
+  {
+    "rank": 781,
+    "word": "правило",
+    "en": "rule",
+    "pos": "noun"
+  },
+  {
+    "rank": 782,
+    "word": "стекло",
+    "en": "glass",
+    "pos": "noun"
+  },
+  {
+    "rank": 783,
+    "word": "получать",
+    "en": "to receive, get (See #239)",
+    "pos": "verb"
+  },
+  {
+    "rank": 784,
+    "word": "внутренний",
+    "en": "inside, internal",
+    "pos": "adjective"
+  },
+  {
+    "rank": 785,
+    "word": "дочь",
+    "en": "daughter",
+    "pos": "noun"
+  },
+  {
+    "rank": 786,
+    "word": "называться",
+    "en": "to call oneself",
+    "pos": "verb"
+  },
+  {
+    "rank": 787,
+    "word": "надеяться",
+    "en": "to hope",
+    "pos": "verb"
+  },
+  {
+    "rank": 788,
+    "word": "член",
+    "en": "member, limb",
+    "pos": "noun"
+  },
+  {
+    "rank": 789,
+    "word": "протянуть",
+    "en": "to stretch, extend",
+    "pos": "verb"
+  },
+  {
+    "rank": 790,
+    "word": "государственный",
+    "en": "State",
+    "pos": "adjective"
+  },
+  {
+    "rank": 791,
+    "word": "десяток",
+    "en": "ten, dozens",
+    "pos": "noun"
+  },
+  {
+    "rank": 792,
+    "word": "глубокий",
+    "en": "deep",
+    "pos": "adjective"
+  },
+  {
+    "rank": 793,
+    "word": "цветок",
+    "en": "flower",
+    "pos": "noun"
+  },
+  {
+    "rank": 794,
+    "word": "ах",
+    "en": "ah!, oh!",
+    "pos": "misc"
+  },
+  {
+    "rank": 795,
+    "word": "желание",
+    "en": "wish",
+    "pos": "noun"
+  },
+  {
+    "rank": 796,
+    "word": "дождь",
+    "en": "rain",
+    "pos": "noun"
+  },
+  {
+    "rank": 797,
+    "word": "впереди",
+    "en": "before, in front of",
+    "pos": "preposition"
+  },
+  {
+    "rank": 798,
+    "word": "подходить",
+    "en": "to come up, approach;to fit(See #361)",
+    "pos": "verb"
+  },
+  {
+    "rank": 799,
+    "word": "много",
+    "en": "many, much, a lot of(See #187)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 800,
+    "word": "лоб",
+    "en": "forehead",
+    "pos": "noun"
+  },
+  {
+    "rank": 801,
+    "word": "улыбка",
+    "en": "smile",
+    "pos": "noun"
+  },
+  {
+    "rank": 802,
+    "word": "борьба",
+    "en": "fight, struggle",
+    "pos": "noun"
+  },
+  {
+    "rank": 803,
+    "word": "ворот",
+    "en": "collar",
+    "pos": "noun"
+  },
+  {
+    "rank": 804,
+    "word": "ящик",
+    "en": "box, case",
+    "pos": "noun"
+  },
+  {
+    "rank": 805,
+    "word": "этаж",
+    "en": "floor, storey",
+    "pos": "noun"
+  },
+  {
+    "rank": 806,
+    "word": "служить",
+    "en": "to serve",
+    "pos": "verb"
+  },
+  {
+    "rank": 807,
+    "word": "вновь",
+    "en": "again, once more",
+    "pos": "adverb"
+  },
+  {
+    "rank": 808,
+    "word": "голубой",
+    "en": "blue, sky-blue",
+    "pos": "adjective"
+  },
+  {
+    "rank": 809,
+    "word": "нечего",
+    "en": "there is nothing, there is no need",
+    "pos": "misc"
+  },
+  {
+    "rank": 810,
+    "word": "революция",
+    "en": "revolution",
+    "pos": "noun"
+  },
+  {
+    "rank": 811,
+    "word": "впервые",
+    "en": "for the first time",
+    "pos": "adverb"
+  },
+  {
+    "rank": 812,
+    "word": "сосед",
+    "en": "neighbour",
+    "pos": "noun"
+  },
+  {
+    "rank": 813,
+    "word": "сестра",
+    "en": "sister",
+    "pos": "noun"
+  },
+  {
+    "rank": 814,
+    "word": "долгий",
+    "en": "long",
+    "pos": "adjective"
+  },
+  {
+    "rank": 815,
+    "word": "чей",
+    "en": "whose",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 816,
+    "word": "поверить",
+    "en": "to believe",
+    "pos": "verb"
+  },
+  {
+    "rank": 817,
+    "word": "ситуация",
+    "en": "situation",
+    "pos": "noun"
+  },
+  {
+    "rank": 818,
+    "word": "взглянуть",
+    "en": "to look, give a glance",
+    "pos": "verb"
+  },
+  {
+    "rank": 819,
+    "word": "слабый",
+    "en": "weak",
+    "pos": "adjective"
+  },
+  {
+    "rank": 820,
+    "word": "количество",
+    "en": "quantity",
+    "pos": "noun"
+  },
+  {
+    "rank": 821,
+    "word": "вызывать (See #663)",
+    "en": "to call, send",
+    "pos": "verb"
+  },
+  {
+    "rank": 822,
+    "word": "уверенный",
+    "en": "confident, sure",
+    "pos": "adjective"
+  },
+  {
+    "rank": 823,
+    "word": "выход",
+    "en": "exit",
+    "pos": "noun"
+  },
+  {
+    "rank": 824,
+    "word": "совет",
+    "en": "advice; masterrussian, dot com",
+    "pos": "noun"
+  },
+  {
+    "rank": 825,
+    "word": "дурак",
+    "en": "fool, idiot",
+    "pos": "noun"
+  },
+  {
+    "rank": 826,
+    "word": "любимый",
+    "en": "dear, loved",
+    "pos": "adjective"
+  },
+  {
+    "rank": 827,
+    "word": "союз",
+    "en": "union, alliance; conjunction",
+    "pos": "noun"
+  },
+  {
+    "rank": 828,
+    "word": "лето",
+    "en": "summer",
+    "pos": "noun"
+  },
+  {
+    "rank": 829,
+    "word": "ожидать",
+    "en": "to expect",
+    "pos": "verb"
+  },
+  {
+    "rank": 830,
+    "word": "пришлый",
+    "en": "alien, strange",
+    "pos": "adjective"
+  },
+  {
+    "rank": 831,
+    "word": "висеть",
+    "en": "to hang",
+    "pos": "verb"
+  },
+  {
+    "rank": 832,
+    "word": "граница",
+    "en": "border",
+    "pos": "noun"
+  },
+  {
+    "rank": 833,
+    "word": "цвет",
+    "en": "colour, color",
+    "pos": "noun"
+  },
+  {
+    "rank": 834,
+    "word": "серьёзный",
+    "en": "serious",
+    "pos": "adjective"
+  },
+  {
+    "rank": 835,
+    "word": "создать",
+    "en": "to create, establish",
+    "pos": "verb"
+  },
+  {
+    "rank": 836,
+    "word": "интересно",
+    "en": "interestingly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 837,
+    "word": "свобода",
+    "en": "freedom",
+    "pos": "noun"
+  },
+  {
+    "rank": 838,
+    "word": "зато",
+    "en": "but, but then",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 839,
+    "word": "стул",
+    "en": "chair",
+    "pos": "noun"
+  },
+  {
+    "rank": 840,
+    "word": "уехать",
+    "en": "to leave, depart",
+    "pos": "verb"
+  },
+  {
+    "rank": 841,
+    "word": "поезд",
+    "en": "train",
+    "pos": "noun"
+  },
+  {
+    "rank": 842,
+    "word": "музыка",
+    "en": "music",
+    "pos": "noun"
+  },
+  {
+    "rank": 843,
+    "word": "быстрый",
+    "en": "quick, fast",
+    "pos": "adjective"
+  },
+  {
+    "rank": 844,
+    "word": "тень",
+    "en": "shadow",
+    "pos": "noun"
+  },
+  {
+    "rank": 845,
+    "word": "лошадь",
+    "en": "horse",
+    "pos": "noun"
+  },
+  {
+    "rank": 846,
+    "word": "поле",
+    "en": "field",
+    "pos": "noun"
+  },
+  {
+    "rank": 847,
+    "word": "выглядеть",
+    "en": "to look",
+    "pos": "verb"
+  },
+  {
+    "rank": 848,
+    "word": "учиться",
+    "en": "to study, learn",
+    "pos": "verb"
+  },
+  {
+    "rank": 849,
+    "word": "левый",
+    "en": "left",
+    "pos": "adjective"
+  },
+  {
+    "rank": 850,
+    "word": "разговаривать",
+    "en": "to talk, speak",
+    "pos": "verb"
+  },
+  {
+    "rank": 851,
+    "word": "детский",
+    "en": "child's, children's",
+    "pos": "adjective"
+  },
+  {
+    "rank": 852,
+    "word": "тип",
+    "en": "type, model",
+    "pos": "noun"
+  },
+  {
+    "rank": 853,
+    "word": "суд",
+    "en": "court, law-court",
+    "pos": "noun"
+  },
+  {
+    "rank": 854,
+    "word": "связанный",
+    "en": "related, connected, tied-up",
+    "pos": "adjective"
+  },
+  {
+    "rank": 855,
+    "word": "горячий",
+    "en": "hot",
+    "pos": "adjective"
+  },
+  {
+    "rank": 856,
+    "word": "площадь",
+    "en": "square, area",
+    "pos": "noun"
+  },
+  {
+    "rank": 857,
+    "word": "помогать",
+    "en": "to help, assist(See #736)",
+    "pos": "verb"
+  },
+  {
+    "rank": 858,
+    "word": "счастливый",
+    "en": "happy",
+    "pos": "adjective"
+  },
+  {
+    "rank": 859,
+    "word": "повернуться",
+    "en": "to turn",
+    "pos": "verb"
+  },
+  {
+    "rank": 860,
+    "word": "позволить",
+    "en": "to allow, permit",
+    "pos": "verb"
+  },
+  {
+    "rank": 861,
+    "word": "встретить",
+    "en": "to meet",
+    "pos": "verb"
+  },
+  {
+    "rank": 862,
+    "word": "радость",
+    "en": "gladness, joy",
+    "pos": "noun"
+  },
+  {
+    "rank": 863,
+    "word": "острый",
+    "en": "sharp; spicy",
+    "pos": "adjective"
+  },
+  {
+    "rank": 864,
+    "word": "возраст",
+    "en": "age",
+    "pos": "noun"
+  },
+  {
+    "rank": 865,
+    "word": "орган",
+    "en": "organ, body",
+    "pos": "noun"
+  },
+  {
+    "rank": 866,
+    "word": "карта",
+    "en": "map",
+    "pos": "noun"
+  },
+  {
+    "rank": 867,
+    "word": "входить",
+    "en": "to enter, come in",
+    "pos": "verb"
+  },
+  {
+    "rank": 868,
+    "word": "обнаружить",
+    "en": "to discover, find out",
+    "pos": "verb"
+  },
+  {
+    "rank": 869,
+    "word": "король",
+    "en": "king",
+    "pos": "noun"
+  },
+  {
+    "rank": 870,
+    "word": "слава",
+    "en": "glory, fame",
+    "pos": "noun"
+  },
+  {
+    "rank": 871,
+    "word": "полковник",
+    "en": "colonel",
+    "pos": "noun"
+  },
+  {
+    "rank": 872,
+    "word": "мелкий",
+    "en": "shallow, small",
+    "pos": "adjective"
+  },
+  {
+    "rank": 873,
+    "word": "бок",
+    "en": "side, flank",
+    "pos": "noun"
+  },
+  {
+    "rank": 874,
+    "word": "цена",
+    "en": "price",
+    "pos": "noun"
+  },
+  {
+    "rank": 875,
+    "word": "информация",
+    "en": "information",
+    "pos": "noun"
+  },
+  {
+    "rank": 876,
+    "word": "мозг",
+    "en": "brain",
+    "pos": "noun"
+  },
+  {
+    "rank": 877,
+    "word": "удовольствие",
+    "en": "pleasure",
+    "pos": "noun"
+  },
+  {
+    "rank": 878,
+    "word": "воля",
+    "en": "will",
+    "pos": "noun"
+  },
+  {
+    "rank": 879,
+    "word": "область",
+    "en": "oblast, province; field",
+    "pos": "noun"
+  },
+  {
+    "rank": 880,
+    "word": "крыша",
+    "en": "roof",
+    "pos": "noun"
+  },
+  {
+    "rank": 881,
+    "word": "нести",
+    "en": "to carry",
+    "pos": "verb"
+  },
+  {
+    "rank": 882,
+    "word": "обратно",
+    "en": "back, backwards",
+    "pos": "adverb"
+  },
+  {
+    "rank": 883,
+    "word": "современный",
+    "en": "contemporary, modern, up-to-date",
+    "pos": "adjective"
+  },
+  {
+    "rank": 884,
+    "word": "дама",
+    "en": "lady, partner, queen",
+    "pos": "noun"
+  },
+  {
+    "rank": 885,
+    "word": "семь",
+    "en": "seven",
+    "pos": "cardinal number"
+  },
+  {
+    "rank": 886,
+    "word": "весёлый",
+    "en": "cheerful, merry",
+    "pos": "adjective"
+  },
+  {
+    "rank": 887,
+    "word": "прислать",
+    "en": "to send",
+    "pos": "verb"
+  },
+  {
+    "rank": 888,
+    "word": "сад",
+    "en": "garden, yard",
+    "pos": "noun"
+  },
+  {
+    "rank": 889,
+    "word": "правительство",
+    "en": "government",
+    "pos": "noun"
+  },
+  {
+    "rank": 890,
+    "word": "милый",
+    "en": "nice, sweet, dear",
+    "pos": "adjective"
+  },
+  {
+    "rank": 891,
+    "word": "относиться",
+    "en": "to treat, regard, relate",
+    "pos": "verb"
+  },
+  {
+    "rank": 892,
+    "word": "возникать",
+    "en": "to arise, appear(See #951)",
+    "pos": "verb"
+  },
+  {
+    "rank": 893,
+    "word": "мол",
+    "en": "he says, they say, etc.",
+    "pos": "misc"
+  },
+  {
+    "rank": 894,
+    "word": "повторить",
+    "en": "to repeat",
+    "pos": "verb"
+  },
+  {
+    "rank": 895,
+    "word": "название",
+    "en": "name, title",
+    "pos": "noun"
+  },
+  {
+    "rank": 896,
+    "word": "средний",
+    "en": "average, middle",
+    "pos": "adjective"
+  },
+  {
+    "rank": 897,
+    "word": "пример",
+    "en": "example",
+    "pos": "noun"
+  },
+  {
+    "rank": 898,
+    "word": "невозможно",
+    "en": "impossible",
+    "pos": "adverb"
+  },
+  {
+    "rank": 899,
+    "word": "зеркало",
+    "en": "mirror",
+    "pos": "noun"
+  },
+  {
+    "rank": 900,
+    "word": "погибнуть",
+    "en": "to perish, be killed",
+    "pos": "verb"
+  },
+  {
+    "rank": 901,
+    "word": "американский",
+    "en": "American",
+    "pos": "adjective"
+  },
+  {
+    "rank": 902,
+    "word": "дым",
+    "en": "smoke",
+    "pos": "noun"
+  },
+  {
+    "rank": 903,
+    "word": "гореть",
+    "en": "to burn",
+    "pos": "verb"
+  },
+  {
+    "rank": 904,
+    "word": "плакать",
+    "en": "to cry",
+    "pos": "verb"
+  },
+  {
+    "rank": 905,
+    "word": "весьма",
+    "en": "very, highly, greatly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 906,
+    "word": "факт",
+    "en": "fact",
+    "pos": "noun"
+  },
+  {
+    "rank": 907,
+    "word": "двигаться",
+    "en": "to move",
+    "pos": "verb"
+  },
+  {
+    "rank": 908,
+    "word": "рыба",
+    "en": "fish",
+    "pos": "noun"
+  },
+  {
+    "rank": 909,
+    "word": "добавить",
+    "en": "to add",
+    "pos": "verb"
+  },
+  {
+    "rank": 910,
+    "word": "удивиться",
+    "en": "to wonder, be surprised",
+    "pos": "verb"
+  },
+  {
+    "rank": 911,
+    "word": "бабушка",
+    "en": "grandmother(See #773)",
+    "pos": "noun"
+  },
+  {
+    "rank": 912,
+    "word": "вино",
+    "en": "wine",
+    "pos": "noun"
+  },
+  {
+    "rank": 913,
+    "word": "ибо",
+    "en": "for",
+    "pos": "conjunction"
+  },
+  {
+    "rank": 914,
+    "word": "учитель",
+    "en": "teacher, instructor",
+    "pos": "noun"
+  },
+  {
+    "rank": 915,
+    "word": "действовать",
+    "en": "to act",
+    "pos": "verb"
+  },
+  {
+    "rank": 916,
+    "word": "осторожно",
+    "en": "carefully, cautiously",
+    "pos": "adverb"
+  },
+  {
+    "rank": 917,
+    "word": "круг",
+    "en": "circle; masterrussian, dot com",
+    "pos": "noun"
+  },
+  {
+    "rank": 918,
+    "word": "папа",
+    "en": "dad, daddy(See #165)",
+    "pos": "noun"
+  },
+  {
+    "rank": 919,
+    "word": "правильно",
+    "en": "correctly, properly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 920,
+    "word": "недавно",
+    "en": "recently, lately",
+    "pos": "adverb"
+  },
+  {
+    "rank": 921,
+    "word": "держаться",
+    "en": "to hold on, behave",
+    "pos": "verb"
+  },
+  {
+    "rank": 922,
+    "word": "причём",
+    "en": "moreover, and what's more",
+    "pos": "adverb"
+  },
+  {
+    "rank": 923,
+    "word": "лететь",
+    "en": "to fly",
+    "pos": "verb"
+  },
+  {
+    "rank": 924,
+    "word": "носить",
+    "en": "to wear",
+    "pos": "verb"
+  },
+  {
+    "rank": 925,
+    "word": "повод",
+    "en": "occasion, reason; bridle",
+    "pos": "noun"
+  },
+  {
+    "rank": 926,
+    "word": "лагерь",
+    "en": "camp",
+    "pos": "noun"
+  },
+  {
+    "rank": 927,
+    "word": "птица",
+    "en": "bird",
+    "pos": "noun"
+  },
+  {
+    "rank": 928,
+    "word": "корабль",
+    "en": "ship",
+    "pos": "noun"
+  },
+  {
+    "rank": 929,
+    "word": "мнение",
+    "en": "opinion",
+    "pos": "noun"
+  },
+  {
+    "rank": 930,
+    "word": "ночной",
+    "en": "night",
+    "pos": "adjective"
+  },
+  {
+    "rank": 931,
+    "word": "здоровый",
+    "en": "healthy",
+    "pos": "adjective"
+  },
+  {
+    "rank": 932,
+    "word": "зима",
+    "en": "winter",
+    "pos": "noun"
+  },
+  {
+    "rank": 933,
+    "word": "сухой",
+    "en": "dry",
+    "pos": "adjective"
+  },
+  {
+    "rank": 934,
+    "word": "километр",
+    "en": "kilometre, kilometer",
+    "pos": "noun"
+  },
+  {
+    "rank": 935,
+    "word": "кровать",
+    "en": "bed",
+    "pos": "noun"
+  },
+  {
+    "rank": 936,
+    "word": "привыкнуть",
+    "en": "to get used to, to grow accustomed to",
+    "pos": "verb"
+  },
+  {
+    "rank": 937,
+    "word": "прочее",
+    "en": "et cetera, other",
+    "pos": "pronoun"
+  },
+  {
+    "rank": 938,
+    "word": "свободный",
+    "en": "free",
+    "pos": "adjective"
+  },
+  {
+    "rank": 939,
+    "word": "лестница",
+    "en": "staircase",
+    "pos": "noun"
+  },
+  {
+    "rank": 940,
+    "word": "неужели",
+    "en": "really, surely",
+    "pos": "particle"
+  },
+  {
+    "rank": 941,
+    "word": "обязательно",
+    "en": "without fail, be sure",
+    "pos": "adverb"
+  },
+  {
+    "rank": 942,
+    "word": "вверх",
+    "en": "up, upwards",
+    "pos": "adverb"
+  },
+  {
+    "rank": 943,
+    "word": "детство",
+    "en": "childhood",
+    "pos": "noun"
+  },
+  {
+    "rank": 944,
+    "word": "остров",
+    "en": "island",
+    "pos": "noun"
+  },
+  {
+    "rank": 945,
+    "word": "статья",
+    "en": "article",
+    "pos": "noun"
+  },
+  {
+    "rank": 946,
+    "word": "позвонить",
+    "en": "to call, to telephone",
+    "pos": "verb"
+  },
+  {
+    "rank": 947,
+    "word": "столь",
+    "en": "so",
+    "pos": "adverb"
+  },
+  {
+    "rank": 948,
+    "word": "мешать",
+    "en": "to interfere, prevent; mix",
+    "pos": "verb"
+  },
+  {
+    "rank": 949,
+    "word": "водка",
+    "en": "vodka",
+    "pos": "noun"
+  },
+  {
+    "rank": 950,
+    "word": "темнота",
+    "en": "darkness",
+    "pos": "noun"
+  },
+  {
+    "rank": 951,
+    "word": "возникнуть",
+    "en": "to arise, spring up(See #892)",
+    "pos": "verb"
+  },
+  {
+    "rank": 952,
+    "word": "способный",
+    "en": "capable (of)",
+    "pos": "adjective"
+  },
+  {
+    "rank": 953,
+    "word": "станция",
+    "en": "station",
+    "pos": "noun"
+  },
+  {
+    "rank": 954,
+    "word": "желать",
+    "en": "to wish",
+    "pos": "verb"
+  },
+  {
+    "rank": 955,
+    "word": "попробовать",
+    "en": "to try, test",
+    "pos": "verb"
+  },
+  {
+    "rank": 956,
+    "word": "получаться",
+    "en": "to come out",
+    "pos": "verb"
+  },
+  {
+    "rank": 957,
+    "word": "гражданин",
+    "en": "citizen",
+    "pos": "noun"
+  },
+  {
+    "rank": 958,
+    "word": "странно",
+    "en": "strangely",
+    "pos": "adverb"
+  },
+  {
+    "rank": 959,
+    "word": "вскоре",
+    "en": "soon, shortly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 960,
+    "word": "интересный",
+    "en": "interesting",
+    "pos": "adjective"
+  },
+  {
+    "rank": 961,
+    "word": "команда",
+    "en": "team; command",
+    "pos": "noun"
+  },
+  {
+    "rank": 962,
+    "word": "заболевание",
+    "en": "disease, illness",
+    "pos": "noun"
+  },
+  {
+    "rank": 963,
+    "word": "живот",
+    "en": "stomach, belly",
+    "pos": "noun"
+  },
+  {
+    "rank": 964,
+    "word": "ставить",
+    "en": "to put, place, set",
+    "pos": "verb"
+  },
+  {
+    "rank": 965,
+    "word": "ради",
+    "en": "for the sake of",
+    "pos": "preposition"
+  },
+  {
+    "rank": 966,
+    "word": "тишина",
+    "en": "silence, stillness",
+    "pos": "noun"
+  },
+  {
+    "rank": 967,
+    "word": "понятно",
+    "en": "clearly, plainly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 968,
+    "word": "фронт",
+    "en": "front",
+    "pos": "noun"
+  },
+  {
+    "rank": 969,
+    "word": "щека",
+    "en": "cheek",
+    "pos": "noun"
+  },
+  {
+    "rank": 970,
+    "word": "страшно",
+    "en": "terribly, awfully",
+    "pos": "adverb"
+  },
+  {
+    "rank": 971,
+    "word": "район",
+    "en": "area, region",
+    "pos": "noun"
+  },
+  {
+    "rank": 972,
+    "word": "наверно",
+    "en": "probably(See #461)",
+    "pos": "adverb"
+  },
+  {
+    "rank": 973,
+    "word": "проводить",
+    "en": "to lead, escort; accompany(See #713)",
+    "pos": "verb"
+  },
+  {
+    "rank": 974,
+    "word": "выражение",
+    "en": "expression",
+    "pos": "noun"
+  },
+  {
+    "rank": 975,
+    "word": "слегка",
+    "en": "slightly",
+    "pos": "adverb"
+  },
+  {
+    "rank": 976,
+    "word": "мешок",
+    "en": "bag, sack",
+    "pos": "noun"
+  },
+  {
+    "rank": 977,
+    "word": "обещать",
+    "en": "to promise",
+    "pos": "verb"
+  },
+  {
+    "rank": 978,
+    "word": "дорогой",
+    "en": "on the way",
+    "pos": "adjective"
+  },
+  {
+    "rank": 979,
+    "word": "судить",
+    "en": "to judge, try",
+    "pos": "verb"
+  },
+  {
+    "rank": 980,
+    "word": "большинство",
+    "en": "majority",
+    "pos": "noun"
+  },
+  {
+    "rank": 981,
+    "word": "собраться",
+    "en": "to gather, collect(See #479)",
+    "pos": "verb"
+  },
+  {
+    "rank": 982,
+    "word": "управление",
+    "en": "operation, control",
+    "pos": "noun"
+  },
+  {
+    "rank": 983,
+    "word": "колоть",
+    "en": "to prick",
+    "pos": "verb"
+  },
+  {
+    "rank": 984,
+    "word": "мокрый",
+    "en": "wet",
+    "pos": "adjective"
+  },
+  {
+    "rank": 985,
+    "word": "приказ",
+    "en": "order",
+    "pos": "noun"
+  },
+  {
+    "rank": 986,
+    "word": "прямой",
+    "en": "straight",
+    "pos": "adjective"
+  },
+  {
+    "rank": 987,
+    "word": "закричать",
+    "en": "to shout, cry out",
+    "pos": "verb"
+  },
+  {
+    "rank": 988,
+    "word": "кончиться",
+    "en": "to end",
+    "pos": "verb"
+  },
+  {
+    "rank": 989,
+    "word": "куст",
+    "en": "bush",
+    "pos": "noun"
+  },
+  {
+    "rank": 990,
+    "word": "стрелять",
+    "en": "to shoot",
+    "pos": "verb"
+  },
+  {
+    "rank": 991,
+    "word": "художник",
+    "en": "painter, artist",
+    "pos": "noun"
+  },
+  {
+    "rank": 992,
+    "word": "знак",
+    "en": "sign",
+    "pos": "noun"
+  },
+  {
+    "rank": 993,
+    "word": "завод",
+    "en": "factory",
+    "pos": "noun"
+  },
+  {
+    "rank": 994,
+    "word": "кулак",
+    "en": "fist",
+    "pos": "noun"
+  },
+  {
+    "rank": 995,
+    "word": "использовать",
+    "en": "to use, utilize, make use of",
+    "pos": "verb"
+  },
+  {
+    "rank": 996,
+    "word": "стакан",
+    "en": "glass",
+    "pos": "noun"
+  },
+  {
+    "rank": 997,
+    "word": "пахнуть",
+    "en": "to smell",
+    "pos": "verb"
+  },
+  {
+    "rank": 998,
+    "word": "отсюда",
+    "en": "from here",
+    "pos": "adverb"
+  },
+  {
+    "rank": 999,
+    "word": "рот",
+    "en": "mouth",
+    "pos": "noun"
+  },
+  {
+    "rank": 1000,
+    "word": "пора",
+    "en": "it's time;at times, now and then(See #279)",
+    "pos": "misc"
+  }
+]

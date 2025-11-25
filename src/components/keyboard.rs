@@ -1,17 +1,25 @@
 use dioxus::{events::KeyboardEvent, html::div};
 use dioxus::prelude::*;
-use std::collections::{HashMap,HashSet};
-use dioxus_primitives::{ContentSide, ContentAlign};
-use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
+use std::collections::{HashMap, HashSet};
 use crate::models::letter::Letter;
 
-
 // QWERTY rows: physical keys
-const ROW1: [&str; 10] = ["KeyQ","KeyW","KeyE","KeyR","KeyT","KeyY","KeyU","KeyI","KeyO","KeyP"];
-const ROW2: [&str; 9]  = ["KeyA","KeyS","KeyD","KeyF","KeyG","KeyH","KeyJ","KeyK","KeyL"];
-const ROW3: [&str; 9]  = ["KeyLShift","KeyZ","KeyX","KeyC","KeyV","KeyB","KeyN","KeyM", "KeyRShift"];
+const ROW1: [&str; 12] = [
+    "KeyQ", "KeyW", "KeyE", "KeyR", "KeyT", "KeyY",
+    "KeyU", "KeyI", "KeyO", "KeyP", "BracketLeft", "BracketRight",
+];
 
-#[derive(Clone,PartialEq)]
+const ROW2: [&str; 11] = [
+    "KeyA", "KeyS", "KeyD", "KeyF", "KeyG", "KeyH",
+    "KeyJ", "KeyK", "KeyL", "Semicolon", "Quote",
+];
+
+const ROW3: [&str; 11] = [
+    "ShiftLeft", "KeyZ", "KeyX", "KeyC", "KeyV", "KeyB",
+    "KeyN", "KeyM", "Comma", "Period", "Slash",
+];
+
+#[derive(Clone, PartialEq)]
 struct KeySlot {
     key_code: String,
     qwerty_label: String,
@@ -21,36 +29,31 @@ struct KeySlot {
 
 #[component]
 pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
-    // track currently pressed: (key_code, shift_down)
+    // track currently pressed key codes (e.g. "KeyA", "ShiftLeft", "Space")
     let mut pressed = use_signal(|| HashSet::<String>::new());
 
     // Build lookup: (key_code, shifted) -> Letter
     let mut map: HashMap<(String, bool), Letter> = HashMap::new();
-
-	for l in letters.into_iter() {
+    for l in letters.into_iter() {
         map.insert((l.key_code.clone(), l.shifted), l);
     }
 
-	let space_pressed = pressed().contains("Space");
+    let space_pressed = pressed().contains("Space");
 
-	let space_classes = if space_pressed {
-    "px-20 py-3 bg-blue-500 text-white rounded text-2xl font-bold \
-     transition ring-4 ring-white shadow-lg"
-	} else {
-		"px-20 py-3 bg-gray-300 rounded text-2xl font-bold text-gray-700 \
-		hover:bg-gray-400 transition ring-1"
-	};
+    let space_classes = if space_pressed {
+        "px-20 py-3 bg-blue-500 text-white rounded text-2xl font-bold \
+         transition ring-4 ring-white shadow-lg"
+    } else {
+        "px-20 py-3 bg-gray-300 rounded text-2xl font-bold text-gray-700 \
+         hover:bg-gray-400 transition ring-1"
+    };
 
     let make_row = |row_codes: &[&str]| -> Vec<KeySlot> {
         row_codes
             .iter()
             .map(|code| {
-                let base = map
-                    .get(&((*code).to_string(), false))
-                    .cloned();
-                let shifted = map
-                    .get(&((*code).to_string(), true))
-                    .cloned();
+                let base = map.get(&((*code).to_string(), false)).cloned();
+                let shifted = map.get(&((*code).to_string(), true)).cloned();
 
                 KeySlot {
                     key_code: (*code).to_string(),
@@ -65,10 +68,8 @@ pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
     let row1 = make_row(&ROW1);
     let row2 = make_row(&ROW2);
     let row3 = make_row(&ROW3);
-	
-	let lang_signal = use_signal(|| "georgian".to_string());
 
-	let mut show_legend = use_signal(||false);
+    let mut show_legend = use_signal(|| false);
 
     rsx! {
         // outer "global" listener: focusable container
@@ -77,23 +78,17 @@ pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
             tabindex: "0",
 
             onkeydown: move |evt: KeyboardEvent| {
-				let code = evt.code().to_string();
-
-				pressed.with_mut(|set| {
-					set.insert(code);
-				});
-			},
+                let code = evt.code().to_string();
+                pressed.with_mut(|set| { set.insert(code); });
+            },
 
             onkeyup: move |evt: KeyboardEvent| {
-				let code = evt.code().to_string();
+                let code = evt.code().to_string();
+                pressed.with_mut(|set| { set.remove(&code); });
+            },
 
-				pressed.with_mut(|set| {
-					set.remove(&code);
-				});
-			},
-
-			//the keyboard will always show below the children
-			{children}
+            // The keyboard will always show below the children
+            {children}
 
             // Row 1
             div { class: "flex justify-center gap-1 mb-1",
@@ -116,62 +111,68 @@ pub fn Keyboard(letters: Vec<Letter>, children: Element) -> Element {
                 })}
             }
 
+            // Space bar
             div { class: "flex justify-center mt-1",
-				div {
-					id: "space",
-					class: "{space_classes}",
-					"Space"
-				}
-			}
-			if(show_legend()){
-				div { class:"flex justify-center white",
-					div { class:"border-2 border-black rounded mt-6",
-						div { class:"text-center py-2 border-b-2 border-b-black", 
-							button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
-								show_legend.set(false);
-							},
-								b{"Hide Legend"}
-							}
-						}
-						div{ class:"flex",
-							section{h5{class:"text-center border-x border-x-black", "Left"}
-								img { 
-									src:asset!("assets/LeftHand.svg"), 
-									class: "w-[300px] h-auto select-none border-r border-r-black"
-								}
-							}
-							
-							section{h5{class:"text-center border-x border-x-black", "Right"}
-								img { 
-									src:asset!("assets/RightHand.svg"), 
-									class: "w-[300px] h-auto select-none border-l border-l-black"
-								}
-							}
-						}
-					}
-				}
-			} else {
-				div { class:"flex justify-center",
-					button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer  mt-3", onclick: move |_| {
-						show_legend.set(true);
-					},
-						b{"Show Legend"}
-					}
-				}
-			}
-    	}
-	}
+                div {
+                    id: "space",
+                    class: "{space_classes}",
+                    "Space"
+                }
+            }
+
+            // Legend toggle
+            if show_legend() {
+                div { class:"flex justify-center white",
+                    div { class:"border-2 border-black rounded mt-6",
+                        div { class:"text-center py-2 border-b-2 border-b-black",
+                            button{
+                                class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer",
+                                onclick: move |_| {
+                                    show_legend.set(false);
+                                },
+                                b{"Hide Legend"}
+                            }
+                        }
+                        div{ class:"flex",
+                            section{
+                                h5{class:"text-center border-x border-x-black", "Left"}
+                                img {
+                                    src:asset!("assets/LeftHand.svg"),
+                                    class: "w-[300px] h-auto select-none border-r border-r-black"
+                                }
+                            }
+
+                            section{
+                                h5{class:"text-center border-x border-x-black", "Right"}
+                                img {
+                                    src:asset!("assets/RightHand.svg"),
+                                    class: "w-[300px] h-auto select-none border-l border-l-black"
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                div { class:"flex justify-center",
+                    button{
+                        class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer  mt-3",
+                        onclick: move |_| {
+                            show_legend.set(true);
+                        },
+                        b{"Show Legend"}
+                    }
+                }
+            }
+        }
+    }
 }
 
-// Render one physical key (slot), handling base/shifted + pressed state
 #[component]
 fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
-
     let is_pressed = pressed.contains(&slot.key_code);
 
-	let shift_down =
-		pressed.contains("ShiftLeft") || pressed.contains("ShiftRight");
-
+    let shift_down =
+        pressed.contains("ShiftLeft") || pressed.contains("ShiftRight");
 
     // Which letter do we *show*? If Shift is down and we have a shifted letter, use that.
     let active_letter = if shift_down && slot.shifted.is_some() {
@@ -180,7 +181,7 @@ fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
         slot.base.as_ref()
     };
 
-    // No mapping at all for this key → gray placeholder with QWERTY label
+    // No mapping at all → gray placeholder with QWERTY label
     if active_letter.is_none() && slot.base.is_none() && slot.shifted.is_none() {
         return rsx! {
             div {
@@ -192,7 +193,7 @@ fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
     }
 
     // Fallback: if no active letter (e.g. only shift exists but shift not pressed),
-    // still show whatever we have so the key isn't "empty".
+    // still show whatever we have.
     let letter = active_letter
         .or(slot.base.as_ref())
         .or(slot.shifted.as_ref())
@@ -222,9 +223,7 @@ fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
                  font-bold transition {}",
                 classes
             ),
-            // Main glyph: Georgian (or whatever)
             span { class: "text-xl leading-none", "{letter.letter}" }
-            // Small QWERTY hint below
             span { class: "text-[0.6rem] text-gray-500 mt-1", "{slot.qwerty_label}" }
         }
     }
@@ -243,6 +242,9 @@ fn code_to_qwerty_label(code: &str) -> &'static str {
         "KeyI" => "I",
         "KeyO" => "O",
         "KeyP" => "P",
+        "BracketLeft"  => "[",
+        "BracketRight" => "]",
+
         "KeyA" => "A",
         "KeyS" => "S",
         "KeyD" => "D",
@@ -252,6 +254,9 @@ fn code_to_qwerty_label(code: &str) -> &'static str {
         "KeyJ" => "J",
         "KeyK" => "K",
         "KeyL" => "L",
+        "Semicolon" => ";",
+        "Quote"     => "'",
+
         "KeyZ" => "Z",
         "KeyX" => "X",
         "KeyC" => "C",
@@ -259,8 +264,13 @@ fn code_to_qwerty_label(code: &str) -> &'static str {
         "KeyB" => "B",
         "KeyN" => "N",
         "KeyM" => "M",
-		"KeyLShift" => "Shift",
-		"KeyRShift" => "Shift",
+        "Comma"  => ",",
+        "Period" => ".",
+        "Slash"  => "/",
+
+        "ShiftLeft"  => "Shift",
+        "ShiftRight" => "Shift",
+
         _ => "",
     }
 }
