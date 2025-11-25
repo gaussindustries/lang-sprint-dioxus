@@ -19,7 +19,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     let alphabet_target_lang: &str = match lang.read().as_str() {
         "georgian" => "ანბანი",
         "russian"  => "Алфавит",
-        _          => "Alphabet",
+        _          => "🟪⬛",
     };
 
     // Whenever `flashing` changes, start a 700ms timer to clear it

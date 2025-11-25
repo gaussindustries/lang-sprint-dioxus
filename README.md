@@ -216,8 +216,10 @@ if for some reason on linux it doesn't display anything:
  ```
 
 ### Sources
+## Georgian (Kartvelian)
+* # [ Dodona Kiziria - Beginner’s Georgian - Hippocrene Books (2009)](https://www.hippocrenebooks.com/beginners-georgian-online-audio.html)
+	* Alphabet Pronunciation Audio
 
-https://www.hippocrenebooks.com/beginners-georgian-online-audio.html
-# Dodona Kiziria - Beginner’s Georgian - Hippocrene Books (2009) (Alphabet Pronunciation Audio)
-
-
+## Russian
+* # [RUSSIAN ALPHABET (slow pronunciation) - Russian Level 1](https://www.youtube.com/watch?v=pbznlAfmkKc)
+	* Alphabet Pronunciation Audio
