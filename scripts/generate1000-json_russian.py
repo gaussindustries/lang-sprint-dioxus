@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 INPUT = Path("1000_russian.txt")
-OUTPUT = Path("langs/russian/1000.json")
+OUTPUT = Path("../assets/langs/russian/1000.json")
 
 entries = []
 

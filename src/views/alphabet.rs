@@ -4,15 +4,17 @@ use crate::{
     audio,
     components::slider::{Slider, SliderRange, SliderThumb, SliderTrack},
     models::letter::Letter,
+	assets::letter_audio_bytes,
 };
 use std::time::Duration;
+
 
 const FLASH_DURATION: Duration = Duration::from_millis(700);
 
 #[component]
 pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     // Which button should show the ring?
-    let mut flashing = use_signal(|| None::<String>);
+    let flashing = use_signal(|| None::<String>);
     let mut volume = use_signal(|| 0.4);
 
     // Derive language-specific title once per render
@@ -45,60 +47,64 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     });
 
     let cards = letters.into_iter().map(move |letter| {
-        let lang_signal = lang.clone();
-        let letter_for_click = letter.clone();
-        let mut flashing_signal = flashing.clone();
+		let lang_signal = lang.clone();
+		let letter_for_click = letter.clone();
+		let mut flashing_signal = flashing.clone();
 
-        let lang_name = lang_signal.read().clone();
-        let path = format!(
-            "langs/{}/pronunciation/alphabet/{}",
-            lang_name,
-            letter_for_click.audio.as_deref().unwrap_or("<missing>.wav")
-        );
+		let lang_name = lang_signal.read().clone();
 
-        // Does this letter match the current flashing path?
-        let is_flashing = flashing_signal
-            .read()
-            .as_ref()
-            .map(|p| p == &path)
-            .unwrap_or(false);
+		// 🔑 This is the *logical ID* we use for flashing equality
+		let audio_id = format!(
+			"{}/{}",
+			lang_name,
+			letter_for_click.audio.as_deref().unwrap_or("<missing>.wav")
+		);
 
-        let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
-                            hover:border-indigo-500 hover:cursor-pointer select-none text-white";
+		// Does this letter match the current flashing id?
+		let is_flashing = flashing_signal
+			.read()
+			.as_ref()
+			.map(|p| p == &audio_id)
+			.unwrap_or(false);
 
-        let ring_classes = if is_flashing {
-            " border-indigo-400 ring-4 ring-indigo-400 !text-indigo-500"
-        } else {
-            " border-gray-600"
-        };
+		let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
+							hover:border-indigo-500 hover:cursor-pointer select-none text-white";
 
-        rsx! {
-            button {
-                key: "{letter.letter}",
-                class: "{base_classes}{ring_classes}",
+		let ring_classes = if is_flashing {
+			" border-indigo-400 ring-4 ring-indigo-400 !text-indigo-500"
+		} else {
+			" border-gray-600"
+		};
 
-                onclick: move |_| {
-                    if let Some(file) = &letter_for_click.audio {
-                        let lang_name = lang_signal.read().clone();
-                        let play_path = format!(
-                            "langs/{}/pronunciation/alphabet/{}",
-                            lang_name,
-                            file
-                        );
+		rsx! {
+			button {
+				key: "{letter.letter}",
+				class: "{base_classes}{ring_classes}",
 
-                        #[cfg(not(target_arch = "wasm32"))]
-                        audio::play_audio(&play_path, volume());
+				onclick: move |_| {
+					if let Some(file) = &letter_for_click.audio {
+						let lang_name = lang_signal.read().clone();
+						let id = format!("{lang_name}/{file}");
 
-                        flashing_signal.set(Some(play_path));
-                    }
-                },
+						if let Some(bytes) = letter_audio_bytes(&lang_name, file) {
+							#[cfg(not(target_arch = "wasm32"))]
+							audio::play_audio_bytes(&id, bytes, volume());
 
-                div { class: "text-3xl font-bold", "{letter.letter}" }
-                div { class: "text-sm text-gray-400 italic", "{letter.name}" }
-                div { class: "text-xs text-gray-500", "{letter.pron}" }
-            }
-        }
-    });
+							// 🔑 store the SAME id we compare against above
+							flashing_signal.set(Some(id));
+						} else {
+							eprintln!("No embedded audio for {lang_name}/{file}");
+						}
+					}
+				},
+
+				div { class: "text-3xl font-bold", "{letter.letter}" }
+				div { class: "text-sm text-gray-400 italic", "{letter.name}" }
+				div { class: "text-xs text-gray-500", "{letter.pron}" }
+			}
+		}
+	});
+
 
     let volume_pct = (volume() * 100.0).round() as i32;
 

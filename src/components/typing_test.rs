@@ -8,6 +8,15 @@ use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::models::{freq_word::FrequencyWord, letter::Letter};
+use crate::assets::freq_json_for;
+
+
+fn freq_path_for(lang: &str) -> String {
+    match lang {
+        "russian" => "assets/langs/russian/1000.json".to_string(),
+        _         => "assets/langs/georgian/1000.json".to_string(),
+    }
+}
 
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
@@ -16,7 +25,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     // What the user has typed for the current word
     let mut typed = use_signal(|| String::new());
     // Whether to show the English definition on the card
-    let mut show_english = use_signal(|| true);
+    //let mut show_english = use_signal(|| true);
 
     // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
     let advance_progress = use_signal(|| None::<f32>);
@@ -24,12 +33,19 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
     // Load the 1000-word frequency list for the current language
+    let mut load_error = use_signal(|| None::<String>);
+
     let words_res = use_resource(move || {
         let lang_name = lang.read().clone();
+
         async move {
-            let path = format!("langs/{}/1000.json", lang_name);
-            let raw = fs::read_to_string(&path).unwrap_or_default();
-            serde_json::from_str::<Vec<FrequencyWord>>(&raw).unwrap_or_default()
+            let json = freq_json_for(&lang_name);
+
+            serde_json::from_str::<Vec<FrequencyWord>>(json)
+                .unwrap_or_else(|e| {
+                    eprintln!("Failed to parse 1000.json for {lang_name}: {e}");
+                    Vec::new()
+                })
         }
     });
 

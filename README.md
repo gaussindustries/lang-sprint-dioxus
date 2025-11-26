@@ -8,6 +8,7 @@ It currently includes full support for **Georgian**, with the system designed to
 The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful input**, blending typing practice with actual language understanding.
 
 ---
+![Alphabet Showcase](assets/readme_images/Alphabet_Showcase_V1.png)
 
 ## **Features**
 
@@ -22,6 +23,8 @@ The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful
   * Audio playback
   * Finger-position hints (touch-typing guidance)
 * Designed to map foreign alphabets onto your **physical QWERTY keyboard**, so you always know where to press.
+
+![Alphabet Showcase](assets/readme_images/Typing_Test_Showcase_V1.png)
 
 ### **✓ Fully Interactive Keyboard**
 
@@ -59,10 +62,12 @@ LangSprint is architected so you can add new languages simply by dropping files 
 /langs/<language>/pronunciation/...
 ```
 
+Of course in their respective formats, I invite you to inspect scripts folder 
+
 Planned expansions as you personally learn and study new languages:
 
-* **Georgian** (current)
-* **Russian**
+* **Georgian** (supported)
+* **Russian** (supported)
 * **Spanish**
 * **German**
 * **Dutch**
@@ -139,7 +144,7 @@ Pull requests, feature requests, and contributions are welcome—especially for 
 ---
 
 
-### Rust && Dioxus Required 
+### ( Rust && Dioxus ) || Visual Studio Required ( if == (((windows))) ) for Running Development Evironment for Contribution
 goes without saying, but if you need a guide:
 
 1:

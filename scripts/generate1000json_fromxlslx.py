@@ -3,7 +3,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 INPUT_XLSX = Path("746 most common words.xlsx")  # update if different
-OUTPUT_JSON = Path("langs/georgian/test.json")
+OUTPUT_JSON = Path("../assets/langs/georgian/test.json")
 
 def main():
     if not INPUT_XLSX.exists():
