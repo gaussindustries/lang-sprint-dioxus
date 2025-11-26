@@ -57,9 +57,9 @@ Useful for:
 LangSprint is architected so you can add new languages simply by dropping files into:
 
 ```
-/langs/<language>/alphabet.json
-/langs/<language>/words.json
-/langs/<language>/pronunciation/...
+assets/langs/<language>/alphabet.json
+assets/langs/<language>/words.json
+assets/langs/<language>/pronunciation/...
 ```
 
 Of course in their respective formats, I invite you to inspect scripts folder 
