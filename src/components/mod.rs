@@ -12,3 +12,6 @@ pub use typing_test::TypingTest;pub mod slider;
 pub mod tooltip;
 pub mod separator;
 pub mod select;
+pub mod button;
+pub mod avatar;
+pub mod toggle;

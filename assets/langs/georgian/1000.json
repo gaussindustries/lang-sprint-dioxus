@@ -7,7 +7,8 @@
   {
     "rank": 2,
     "en": "to be",
-    "word": "ყოფნა"
+    "word": "ყოფნა",
+	"pos" : "verb"
   },
   {
     "rank": 3,
@@ -42,12 +43,14 @@
   {
     "rank": 9,
     "en": "to have (living)",
-    "word": "ყოლა"
+    "word": "ყოლა",
+	"pos" : "verb"
   },
   {
     "rank": 10,
     "en": "to have (non-living)",
-    "word": "ქონა"
+    "word": "ქონა",
+	"pos" : "verb"
   },
   {
     "rank": 11,
@@ -87,7 +90,8 @@
   {
     "rank": 18,
     "en": "to be able to",
-    "word": "შეძლება"
+    "word": "შეძლება",
+	"pos" : "verb"
   },
   {
     "rank": 19,
@@ -122,7 +126,8 @@
   {
     "rank": 25,
     "en": "to use",
-    "word": "გამოყენება"
+    "word": "გამოყენება",
+	"pos" : "verb"
   },
   {
     "rank": 26,
@@ -137,7 +142,8 @@
   {
     "rank": 28,
     "en": "to say / to tell",
-    "word": "თქმა"
+    "word": "თქმა",
+	"pos" : "verb"
   },
   {
     "rank": 29,
@@ -157,7 +163,8 @@
   {
     "rank": 32,
     "en": "to do",
-    "word": "კეთება"
+    "word": "კეთება",
+	"pos" : "verb"
   },
   {
     "rank": 33,
@@ -202,17 +209,20 @@
   {
     "rank": 41,
     "en": "to write",
-    "word": "დაწერა"
+    "word": "დაწერა",
+	"pos" : "verb"
   },
   {
     "rank": 42,
     "en": "to like",
-    "word": "მოწონება"
+    "word": "მოწონება",
+	"pos" : "verb"
   },
   {
     "rank": 43,
     "en": "to love/like",
-    "word": "სიყვარული"
+    "word": "სიყვარული",
+	"pos" : "verb"
   },
   {
     "rank": 44,
@@ -227,7 +237,8 @@
   {
     "rank": 46,
     "en": "to make/create",
-    "word": "შექმნა"
+    "word": "შექმნა",
+	"pos" : "verb"
   },
   {
     "rank": 47,
@@ -247,7 +258,8 @@
   {
     "rank": 50,
     "en": "to look / to watch",
-    "word": "ყურება"
+    "word": "ყურება",
+	"pos" : "verb"
   },
   {
     "rank": 51,
@@ -262,12 +274,14 @@
   {
     "rank": 53,
     "en": "to go",
-    "word": "წასვლა"
+    "word": "წასვლა",
+	"pos" : "verb"
   },
   {
     "rank": 54,
     "en": "to come",
-    "word": "მოსვლა"
+    "word": "მოსვლა",
+	"pos" : "verb"
   },
   {
     "rank": 55,
@@ -297,7 +311,8 @@
   {
     "rank": 60,
     "en": "to know",
-    "word": "ცოდნა"
+    "word": "ცოდნა",
+	"pos" : "verb"
   },
   {
     "rank": 61,
@@ -307,12 +322,14 @@
   {
     "rank": 62,
     "en": "to call (sb to for eg go sw)",
-    "word": "დაძანება"
+    "word": "დაძანება",
+	"pos" : "verb"
   },
   {
     "rank": 63,
     "en": "to be called / named",
-    "word": "რქმევა"
+    "word": "რქმევა",
+	"pos" : "verb"
   },
   {
     "rank": 64,
@@ -337,7 +354,8 @@
   {
     "rank": 68,
     "en": "to find",
-    "word": "პოვნა"
+    "word": "პოვნა",
+	"pos" : "verb"
   },
   {
     "rank": 69,
@@ -352,7 +370,8 @@
   {
     "rank": 71,
     "en": "to work",
-    "word": "მუშაობა"
+    "word": "მუშაობა",
+	"pos" : "verb"
   },
   {
     "rank": 72,
@@ -362,7 +381,8 @@
   {
     "rank": 73,
     "en": "to take / get",
-    "word": "აღება"
+    "word": "აღება",
+	"pos" : "verb"
   },
   {
     "rank": 74,
@@ -377,7 +397,8 @@
   {
     "rank": 76,
     "en": "to live",
-    "word": "ცხოვრება"
+    "word": "ცხოვრება",
+	"pos" : "noun"
   },
   {
     "rank": 77,
@@ -822,7 +843,7 @@
   {
     "rank": 165,
     "en": "state / situation",
-    "word": "მდომარეობა"
+    "word": "მდგომარეობა"
   },
   {
     "rank": 166,
@@ -897,7 +918,7 @@
   {
     "rank": 180,
     "en": "sea",
-    "word": "ღრმა"
+    "word": "ზღვა"
   },
   {
     "rank": 181,
@@ -2001,7 +2022,7 @@
   },
   {
     "rank": 401,
-    "en": "to consider / take into accout",
+    "en": "to consider / take into account",
     "word": "გათვალისწინება"
   },
   {

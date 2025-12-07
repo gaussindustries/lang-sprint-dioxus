@@ -23,8 +23,8 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --dark: ;
-    --light: initial;
+    --dark: initial;
+    --light: ;
   }
 }
 

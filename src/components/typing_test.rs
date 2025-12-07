@@ -1,22 +1,15 @@
 use dioxus::events::FormEvent;
 use dioxus::prelude::*;
 use rand::Rng;
-use std::fs;
 use std::time::Duration;
 use dioxus_primitives::slider::SliderValue;
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
+use crate::components::toggle::Toggle;
 use crate::models::{freq_word::FrequencyWord, letter::Letter};
 use crate::assets::freq_json_for;
-
-
-fn freq_path_for(lang: &str) -> String {
-    match lang {
-        "russian" => "assets/langs/russian/1000.json".to_string(),
-        _         => "assets/langs/georgian/1000.json".to_string(),
-    }
-}
+use std::collections::BTreeSet;
 
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
@@ -24,17 +17,16 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let current_index = use_signal(|| 0usize);
     // What the user has typed for the current word
     let mut typed = use_signal(|| String::new());
-    // Whether to show the English definition on the card
-    //let mut show_english = use_signal(|| true);
 
     // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
     let advance_progress = use_signal(|| None::<f32>);
-    // How long to wait before auto-advance
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
-    // Load the 1000-word frequency list for the current language
-    let mut load_error = use_signal(|| None::<String>);
+    // POS filter: which parts of speech are enabled
+    // Empty = treat as "all enabled"
+    let mut active_pos = use_signal(|| Vec::<String>::new());
 
+    // Load the 1000-word frequency list for the current language
     let words_res = use_resource(move || {
         let lang_name = lang.read().clone();
 
@@ -51,20 +43,62 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 
     let words = words_res.read().clone().unwrap_or_default();
 
-    if words.is_empty() {
+    // ── Derive distinct POS tags from words ────────────────────────────────
+    let mut pos_set = BTreeSet::new();
+    for w in &words {
+        if let Some(pos) = &w.pos {
+            pos_set.insert(pos.clone());
+        }
+    }
+    let all_pos: Vec<String> = pos_set.into_iter().collect();
+
+	// If no filters selected, treat as "no filter" → all words
+	let active_now = active_pos();
+
+	// How many distinct POS values exist in this language
+	let all_pos_count = all_pos.len();
+
+	let filtered_words: Vec<FrequencyWord> = if active_now.is_empty() {
+		// No filter → everything
+		words.clone()
+	} else {
+		words
+			.iter()
+			.cloned()
+			.filter(|w| match &w.pos {
+				// Word has a POS → keep it if that POS is enabled
+				Some(p) => active_now.contains(p),
+
+				// Word has NO pos:
+				// - include it only if *all* POS are enabled (active_now == all_pos)
+				//   so "everything on" behaves like no filter.
+				None => active_now.len() == all_pos_count,
+			})
+			.collect()
+	};
+
+
+    if filtered_words.is_empty() {
         return rsx! {
             section { class: "p-6 flex justify-center",
-                div { class: "text-gray-300", "No frequency list loaded (1000.json)." }
+                div { class: "text-gray-300 text-center space-y-2",
+                    div { "No words match the current POS filters." }
+                    if !all_pos.is_empty() {
+                        div { class: "text-xs text-gray-500",
+                            "Try enabling more parts of speech."
+                        }
+                    }
+                }
             }
         };
     }
 
-    // Clamp index so we don't go out of bounds if file changes
-    let idx = current_index().min(words.len() - 1);
-    let current = words[idx].clone();
+    // Clamp index so we don't go out of bounds after filtering
+    let word_count = filtered_words.len();
+    let idx = current_index().min(word_count - 1);
+    let current = filtered_words[idx].clone();
 
     let target_word = current.word.clone();
-
     let typed_now = typed();
 
     let target_chars: Vec<char> = target_word.chars().collect();
@@ -78,25 +112,22 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
             .zip(target_chars.iter())
             .all(|(a, b)| a == b);
 
-    // === AUTO-ADVANCE EFFECT + COUNTDOWN ================================
-    let word_count = words.len();
+    // === AUTO-ADVANCE EFFECT + COUNTDOWN ==================================
     {
         let mut idx_sig      = current_index.clone();
         let mut typed_sig    = typed.clone();
         let mut progress_sig = advance_progress.clone();
         let delay_sig        = advance_delay.clone();
         let target_effect    = target_word.clone(); // captured immutably
+        let len_snapshot     = word_count;
 
         use_resource(move || {
-            // Register dependencies so resource restarts when these change
-            let typed_snapshot  = typed_sig.read().clone();
+            let typed_snapshot   = typed_sig.read().clone();
             let cur_idx_snapshot = idx_sig();          // current index
-            let target_snapshot = target_effect.clone();
-            let len_snapshot    = word_count;
-            let delay_snapshot  = delay_sig();        // Duration
+            let target_snapshot  = target_effect.clone();
+            let delay_snapshot   = delay_sig();        // Duration
 
             async move {
-                // Not exactly correct OR nothing to do
                 if typed_snapshot.is_empty()
                     || typed_snapshot != target_snapshot
                     || len_snapshot == 0
@@ -105,7 +136,6 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                     return;
                 }
 
-                // Split the delay into N steps for the countdown
                 let steps: u64 = 20;
                 let total_ms: u64 = delay_snapshot.as_millis() as u64;
                 let step_ms: u64 = (total_ms / steps).max(1);
@@ -119,11 +149,10 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                     }
                 }
 
-                // After the countdown, pick a new word
+                // After the countdown, pick a new word FROM THE FILTERED SET
                 let mut rng = rand::rng();
                 let mut next = rng.random_range(0..len_snapshot);
 
-                // avoid repeating the same word when possible
                 if len_snapshot > 1 && next == cur_idx_snapshot {
                     next = (next + 1) % len_snapshot;
                 }
@@ -135,7 +164,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         });
     }
 
-    // === CIRCLE PROGRESS VISUAL ========================================
+    // === CIRCLE PROGRESS VISUAL ===========================================
     let progress_opt = advance_progress();
     let (is_counting, circumference_str, offset_str) = if let Some(p) = progress_opt {
         let radius: f32 = 16.0;
@@ -150,18 +179,17 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     } else {
         (false, String::new(), String::new())
     };
-	let delay_ms = advance_delay().as_millis() as f32;
 
-	// Determine label:
-	let duration_display = if delay_ms >= 1000.0 {
-		// Show seconds with one decimal: 1500 → 1.5s
-		format!("{:.1} s", delay_ms / 1000.0)
-	} else {
-		// Show plain milliseconds
-		format!("{} ms", delay_ms.round() as i32)
-	};
+    let delay_ms = advance_delay().as_millis() as f32;
 
-	let mut show_set_delay = use_signal(|| false );
+    let duration_display = if delay_ms >= 1000.0 {
+        format!("{:.1} s", delay_ms / 1000.0)
+    } else {
+        format!("{} ms", delay_ms.round() as i32)
+    };
+
+    let mut show_set_delay = use_signal(|| false );
+
     rsx! {
         section { class: "flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
@@ -204,8 +232,6 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 
                     // Status + countdown indicator
                     div { class: "flex items-center justify-between text-sm",
-
-                        // Left: status text
                         if all_correct {
                             span { class: "text-green-400 font-semibold", "Correct! 🎉" }
                         } else {
@@ -214,7 +240,6 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                             }
                         }
 
-                        // Right: circular countdown (only visible while counting)
                         if is_counting {
                             div { class: "w-10 h-10",
                                 svg {
@@ -222,7 +247,6 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                     height: "40",
                                     view_box: "0 0 40 40",
 
-                                    // background circle
                                     circle {
                                         cx: "20",
                                         cy: "20",
@@ -232,12 +256,11 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                         fill: "none",
                                     }
 
-                                    // foreground arc
                                     circle {
                                         cx: "20",
                                         cy: "20",
                                         r: "16",
-                                        stroke: "rgb(129, 140, 248)", // indigo-ish
+                                        stroke: "rgb(129, 140, 248)",
                                         "stroke-width": "4",
                                         fill: "none",
                                         "stroke-linecap": "round",
@@ -251,58 +274,134 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                         }
                     }
 
-                    // Tiny meta info
-                    div { class: "text-xs text-gray-500 mt-1",
-                        "Rank #{current.rank} — {current.en}"
+                    // Tiny meta info (rank + EN + POS + example)
+                    div { class: "text-xs text-gray-500 mt-1 flex flex-col items-center gap-1",
+                        div { class: "flex items-center gap-2",
+                            span { "Rank #{current.rank} — {current.en}" }
+
+                            if let Some(pos) = current.pos.clone() {
+                                span {
+                                    class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
+                                            text-[0.65rem] uppercase tracking-wide",
+                                    "{pos}"
+                                }
+                            }
+                        }
+
+                        if let Some(ex) = current.example.clone() {
+                            div {
+                                class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
+                                "{ex}"
+                            }
+                        }
                     }
-					if show_set_delay() {
-						div { class:"flex gap-5 justify-center mb-3", 
-							Slider {
-								default_value: SliderValue::Single(advance_delay().as_millis() as f64),
-								min: 100.0,
-								max: 1500.0,
-								step: 50.0,
-								horizontal: true,
-								on_value_change: move |value: SliderValue| {
-									// Extract the f64 value from SliderValue::Single
-									let SliderValue::Single(v) = value;
-									advance_delay.set(Duration::from_millis(v as u64));
-								},
-							
-								SliderTrack {
-									SliderRange {}
-									SliderThumb {}
+
+                    if show_set_delay() {
+						div { class:"flex flex-col items-center gap-3 mb-3",
+
+							// ── Delay slider + label ─────────────────────────────
+							div { class: "flex items-center gap-5",
+								Slider {
+									default_value: SliderValue::Single(advance_delay().as_millis() as f64),
+									min: 100.0,
+									max: 1500.0,
+									step: 50.0,
+									horizontal: true,
+									on_value_change: move |value: SliderValue| {
+										let SliderValue::Single(v) = value;
+										advance_delay.set(Duration::from_millis(v as u64));
+									},
+
+									SliderTrack {
+										SliderRange {}
+										SliderThumb {}
+									}
+								}
+
+								div { style: "font-size: 16px; font-weight: bold;",
+									"{duration_display}"
 								}
 							}
-							div { style: "font-size: 16px; font-weight: bold;",
-								"{duration_display}" 
+
+							// ── POS FILTER TOGGLES (separate row) ─────────────────
+							if !all_pos.is_empty() {
+								// Outer: limited width, scrolls horizontally
+								div { class: "w-full max-w-md mx-auto overflow-x-auto",
+									// Inner: single line, horizontally scrollable
+									div { class: "inline-flex gap-2 text-xs whitespace-nowrap",
+										{all_pos.iter().map(|pos_label| {
+											let label_text        = pos_label.clone();          // display
+											let label_for_closure = label_text.clone();         // move into closure
+
+											let mut active_pos_sig = active_pos.clone();
+											let mut idx_sig        = current_index.clone();
+											let mut typed_sig      = typed.clone();
+											let all_pos_clone      = all_pos.clone();
+
+											let pressed_now = {
+												let act = active_pos_sig.read();
+												act.is_empty() || act.contains(&label_text)
+											};
+
+											rsx! {
+												Toggle {
+													pressed: pressed_now,
+													on_pressed_change: move |pressed: bool| {
+														active_pos_sig.with_mut(|vec| {
+															if vec.is_empty() {
+																*vec = all_pos_clone.clone();
+															}
+
+															let idx = vec.iter().position(|p| p == &label_for_closure);
+
+															match (pressed, idx) {
+																(true,  None)    => vec.push(label_for_closure.clone()),
+																(false, Some(i)) => { vec.remove(i); }
+																_ => {}
+															}
+														});
+
+														idx_sig.set(0);
+														typed_sig.set(String::new());
+													},
+													{label_text}
+												}
+											}
+										})}
+									}
+								}
 							}
-							button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+
+							// ── Hide button ──────────────────────────────────────
+							button {
+								class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 \
+									hover:scale-105 hover:cursor-pointer",
+								onclick: move |_| {
 									show_set_delay.set(false);
 								},
 								"Hide"
 							}
 						}
 					} else {
-						div {class:"flex justify-center mb-3",
-							Tooltip { 
-								TooltipTrigger { class:"flex justify-center",
-								button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
-										show_set_delay.set(true);
-									},
-									"Set Auto-Advance Delay"
-								}
-							}
-							TooltipContent {
-								side: ContentSide::Top,
-								align: ContentAlign::Center,
-								div{class:"w-[150px] text-center","Current Delay: {duration_display}"}
-								}
-							}
-						}
-					}
-				}
-			}
+                        div {class:"flex justify-center mb-3",
+                            Tooltip { 
+                                TooltipTrigger { class:"flex justify-center",
+                                    button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+                                            show_set_delay.set(true);
+                                        },
+                                        "Settings"
+                                    }
+                                }
+                                TooltipContent {
+                                    side: ContentSide::Top,
+                                    align: ContentAlign::Center,
+                                    div{class:"w-[150px] text-center","Current Delay: {duration_display}"}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -19,7 +19,8 @@
     box-sizing: border-box;
     flex-grow: 1;
     border-radius: 9999px;
-    background-color: var(--secondary-color-2);
+    background: var(--primary-color-5);
+
 }
 
 .slider[data-orientation="vertical"] .slider-track {
@@ -31,7 +32,7 @@
     position: absolute;
     height: 100%;
     border-radius: 9999px;
-    background: var(--primary-color-5);
+    background-color: var(--secondary-color-2);
 }
 
 .slider[data-orientation="vertical"] .slider-range {
