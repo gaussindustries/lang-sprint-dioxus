@@ -3,18 +3,47 @@ use dioxus::prelude::*;
 use rand::Rng;
 use std::time::Duration;
 use dioxus_primitives::slider::SliderValue;
+use crate::components::radio_group::{RadioGroup, RadioItem};
 use crate::components::slider::{Slider,SliderRange, SliderThumb, SliderTrack};
 use dioxus_primitives::{ContentSide, ContentAlign};
 use crate::components::tooltip::{Tooltip,TooltipTrigger,TooltipContent};
 use crate::components::toggle::Toggle;
+use crate::components::input::Input;
 use crate::models::{freq_word::FrequencyWord, letter::Letter};
 use crate::assets::freq_json_for;
 use std::collections::BTreeSet;
 
+
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum TestMode {
+    Sequential,
+    Random,
+    Bounded,
+}
+
+impl TestMode {
+    fn as_str(self) -> &'static str {
+        match self {
+            TestMode::Sequential => "sequential",
+            TestMode::Random     => "random",
+            TestMode::Bounded    => "bounded",
+        }
+    }
+
+    fn from_str(s: &str) -> Self {
+        match s {
+            "sequential" => TestMode::Sequential,
+            "bounded"    => TestMode::Bounded,
+            _            => TestMode::Random,
+        }
+    }
+}
+
+
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     // Which word index we are on
-    let current_index = use_signal(|| 0usize);
+    let mut current_index = use_signal(|| 0usize);
     // What the user has typed for the current word
     let mut typed = use_signal(|| String::new());
 
@@ -25,7 +54,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     // POS filter: which parts of speech are enabled
     // Empty = treat as "all enabled"
     let mut active_pos = use_signal(|| Vec::<String>::new());
-
+	let mut test_mode = use_signal(|| TestMode::Random);
+	let mut min_rank  = use_signal(|| 1u32);
+	let mut max_rank  = use_signal(|| 250u32);
     // Load the 1000-word frequency list for the current language
     let words_res = use_resource(move || {
         let lang_name = lang.read().clone();
@@ -42,6 +73,18 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     });
 
     let words = words_res.read().clone().unwrap_or_default();
+	if words.is_empty() {
+    return rsx! {
+        section { class: "p-6 flex justify-center",
+            div { class: "text-gray-300 text-center space-y-2",
+                div { "No frequency list loaded (1000.json)." }
+                div { class: "text-xs text-gray-500",
+                    "Check that your 1000.json exists and is valid."
+                }
+            }
+        }
+    };
+}
 
     // ── Derive distinct POS tags from words ────────────────────────────────
     let mut pos_set = BTreeSet::new();
@@ -56,42 +99,54 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 	let active_now = active_pos();
 
 	// How many distinct POS values exist in this language
+		// All distinct POS in this language
 	let all_pos_count = all_pos.len();
 
-	let filtered_words: Vec<FrequencyWord> = if active_now.is_empty() {
-		// No filter → everything
+	// Current POS filters
+	let active_now = active_pos();
+
+	// First: POS filtering
+	let words_pos_filtered: Vec<FrequencyWord> = if active_now.is_empty() {
+		// No POS filter → keep all
 		words.clone()
 	} else {
 		words
 			.iter()
 			.cloned()
 			.filter(|w| match &w.pos {
-				// Word has a POS → keep it if that POS is enabled
 				Some(p) => active_now.contains(p),
-
-				// Word has NO pos:
-				// - include it only if *all* POS are enabled (active_now == all_pos)
-				//   so "everything on" behaves like no filter.
+				// entries with no POS only survive if “all POS” are enabled
 				None => active_now.len() == all_pos_count,
 			})
 			.collect()
 	};
 
+	// Then: apply bounded mode (by rank), if selected
+	let mode_now = test_mode();          // TestMode enum
+	let lo = min_rank();
+	let hi = max_rank().max(lo);         // keep hi >= lo
 
-    if filtered_words.is_empty() {
-        return rsx! {
-            section { class: "p-6 flex justify-center",
-                div { class: "text-gray-300 text-center space-y-2",
-                    div { "No words match the current POS filters." }
-                    if !all_pos.is_empty() {
-                        div { class: "text-xs text-gray-500",
-                            "Try enabling more parts of speech."
-                        }
-                    }
-                }
-            }
-        };
-    }
+	let filtered_words: Vec<FrequencyWord> = match mode_now {
+			TestMode::Bounded => {
+				words_pos_filtered
+					.into_iter()
+					.filter(|w| w.rank >= lo && w.rank <= hi)
+					.collect()
+			}
+			_ => words_pos_filtered,
+		};
+		if filtered_words.is_empty() {
+		return rsx! {
+			section { class: "p-6 flex justify-center",
+				div { class: "text-gray-300 text-center space-y-2",
+					div { "No words match the current filters/rank range." }
+					div { class: "text-xs text-gray-500",
+						"Open Settings and adjust POS or rank bounds."
+					}
+				}
+			}
+		};
+	}
 
     // Clamp index so we don't go out of bounds after filtering
     let word_count = filtered_words.len();
@@ -113,56 +168,72 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
             .all(|(a, b)| a == b);
 
     // === AUTO-ADVANCE EFFECT + COUNTDOWN ==================================
-    {
-        let mut idx_sig      = current_index.clone();
-        let mut typed_sig    = typed.clone();
-        let mut progress_sig = advance_progress.clone();
-        let delay_sig        = advance_delay.clone();
-        let target_effect    = target_word.clone(); // captured immutably
-        let len_snapshot     = word_count;
+	{
+		let mut idx_sig      = current_index.clone();
+		let mut typed_sig    = typed.clone();
+		let mut progress_sig = advance_progress.clone();
+		let delay_sig        = advance_delay.clone();
+		let target_effect    = target_word.clone(); // captured immutably
+		let len_snapshot     = word_count;
+		let mode_sig         = test_mode.clone();   // <── NEW
 
-        use_resource(move || {
-            let typed_snapshot   = typed_sig.read().clone();
-            let cur_idx_snapshot = idx_sig();          // current index
-            let target_snapshot  = target_effect.clone();
-            let delay_snapshot   = delay_sig();        // Duration
+		use_resource(move || {
+			let typed_snapshot   = typed_sig.read().clone();
+			let cur_idx_snapshot = idx_sig();          // current index
+			let target_snapshot  = target_effect.clone();
+			let delay_snapshot   = delay_sig();        // Duration
+			let mode_snapshot    = mode_sig();         // TestMode
 
-            async move {
-                if typed_snapshot.is_empty()
-                    || typed_snapshot != target_snapshot
-                    || len_snapshot == 0
-                {
-                    progress_sig.set(None);
-                    return;
-                }
+			async move {
+				if typed_snapshot.is_empty()
+					|| typed_snapshot != target_snapshot
+					|| len_snapshot == 0
+				{
+					progress_sig.set(None);
+					return;
+				}
 
-                let steps: u64 = 20;
-                let total_ms: u64 = delay_snapshot.as_millis() as u64;
-                let step_ms: u64 = (total_ms / steps).max(1);
+				let steps: u64 = 20;
+				let total_ms: u64 = delay_snapshot.as_millis() as u64;
+				let step_ms: u64 = (total_ms / steps).max(1);
 
-                for step in 0..=steps {
-                    let fraction = 1.0 - (step as f32 / steps as f32);
-                    progress_sig.set(Some(fraction.clamp(0.0, 1.0)));
+				for step in 0..=steps {
+					let fraction = 1.0 - (step as f32 / steps as f32);
+					progress_sig.set(Some(fraction.clamp(0.0, 1.0)));
 
-                    if step < steps {
-                        tokio::time::sleep(Duration::from_millis(step_ms)).await;
-                    }
-                }
+					if step < steps {
+						tokio::time::sleep(Duration::from_millis(step_ms)).await;
+					}
+				}
 
-                // After the countdown, pick a new word FROM THE FILTERED SET
-                let mut rng = rand::rng();
-                let mut next = rng.random_range(0..len_snapshot);
+				// === pick next index according to mode ======================
+				let next = match mode_snapshot {
+					TestMode::Sequential => {
+						if len_snapshot == 0 {
+							0
+						} else {
+							(cur_idx_snapshot + 1) % len_snapshot
+						}
+					}
+					TestMode::Random | TestMode::Bounded => {
+						// Bounded already applied in `filtered_words`
+						let mut rng = rand::rng();
+						let mut n = rng.random_range(0..len_snapshot);
 
-                if len_snapshot > 1 && next == cur_idx_snapshot {
-                    next = (next + 1) % len_snapshot;
-                }
+						if len_snapshot > 1 && n == cur_idx_snapshot {
+							n = (n + 1) % len_snapshot;
+						}
+						n
+					}
+				};
 
-                idx_sig.set(next);
-                typed_sig.set(String::new());
-                progress_sig.set(None);
-            }
-        });
-    }
+				idx_sig.set(next);
+				typed_sig.set(String::new());
+				progress_sig.set(None);
+			}
+		});
+	}
+
 
     // === CIRCLE PROGRESS VISUAL ===========================================
     let progress_opt = advance_progress();
@@ -297,10 +368,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                     }
 
                     if show_set_delay() {
-						div { class:"flex flex-col items-center gap-3 mb-3",
+						div { class:"flex flex-col items-center gap-3 mb-3 border-b-1 rounded",
 
-							// ── Delay slider + label ─────────────────────────────
-							div { class: "flex items-center gap-5",
+							div { class:"grid gap-5 p-1 grid-rows-3 divide-y divide-solid divide-indigo-500",
+								// ── Delay slider + label ─────────────────────────────
+							h4 { class: "text-xs text-gray-400 text-center", "Auto Advance Delay" }
+							
+							div { class: "flex gap-5",
+							
 								Slider {
 									default_value: SliderValue::Single(advance_delay().as_millis() as f64),
 									min: 100.0,
@@ -326,6 +401,8 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 							// ── POS FILTER TOGGLES (separate row) ─────────────────
 							if !all_pos.is_empty() {
 								// Outer: limited width, scrolls horizontally
+								h4 { class: "text-xs text-gray-400 text-center", "Point of Speech Filtration" }
+
 								div { class: "w-full max-w-md mx-auto overflow-x-auto",
 									// Inner: single line, horizontally scrollable
 									div { class: "inline-flex gap-2 text-xs whitespace-nowrap",
@@ -371,6 +448,130 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 									}
 								}
 							}
+							div{
+								// ── TEST MODE RADIO GROUP ─────────────────────────────────
+								div { class: "w-full max-w-md mx-auto mb-2",
+									h4 { class: "text-xs text-gray-400 mb-1 text-center", "Test mode" }
+									div{ class:"flex justify-center",
+
+										RadioGroup {
+											// current selection
+											value: test_mode().as_str().to_string(),
+											horizontal: true,
+											on_value_change: move |value: String| {
+												test_mode.set(TestMode::from_str(&value));
+												// reset index & input when mode changes
+												current_index.set(0);
+												typed.set(String::new());
+											},
+
+												RadioItem {
+													value: "sequential".to_string(),
+													index: 0usize,
+													"Sequential"
+												}
+												RadioItem {
+													value: "random".to_string(),
+													index: 1usize,
+													"Random"
+												}
+												RadioItem {
+													value: "bounded".to_string(),
+													index: 2usize,
+													"Bounded (by rank)"
+												}
+											}
+										}
+										if matches!(test_mode(), TestMode::Bounded) {
+											{
+												let mut min_rank_sig = min_rank.clone();
+												let mut max_rank_sig = max_rank.clone();
+												let mut idx_sig      = current_index.clone();
+												let mut typed_sig    = typed.clone();
+
+												// optional: compute max rank actually present in the file
+												let max_rank_available = words.iter().map(|w| w.rank).max().unwrap_or(1);
+
+												rsx!{
+													div {
+														class: "flex items-center justify-center gap-2 text-xs text-gray-300 mt-2",
+
+														span { "Rank range:" }
+
+														// MIN RANK
+														Input {
+															r#type: "number",
+															min: "1",
+															max: max_rank_available.to_string(),
+															step: "1",
+															value: min_rank().to_string(),
+
+															oninput: move |evt:FormEvent| {
+																let raw = evt.value();
+																if let Ok(mut v) = raw.parse::<u32>() {
+																	// clamp to valid range
+																	if v < 1 {
+																		v = 1;
+																	}
+																	if v > max_rank_available {
+																		v = max_rank_available;
+																	}
+
+																	// ensure min ≤ current max
+																	let current_max = max_rank_sig();
+																	if v > current_max {
+																		// either bump max up or clamp min back, here we bump max
+																		max_rank_sig.set(v);
+																	}
+
+																	min_rank_sig.set(v);
+																	// reset word & typed whenever bounds change
+																	idx_sig.set(0);
+																	typed_sig.set(String::new());
+																}
+															}
+														}
+
+														span { "–" }
+
+														// MAX RANK
+														Input {
+															r#type: "number",
+															min: "1",
+															max: max_rank_available.to_string(),
+															step: "1",
+															value: max_rank().to_string(),
+
+															oninput: move |evt:FormEvent| {
+																let raw = evt.value();
+																if let Ok(mut mut_v) = raw.parse::<u32>() {
+																	if mut_v < 1 {
+																		mut_v = 1;
+																	}
+																	if mut_v > max_rank_available {
+																		mut_v = max_rank_available;
+																	}
+
+																	let current_min = min_rank_sig();
+																	// ensure max ≥ min
+																	if mut_v < current_min {
+																		mut_v = current_min;
+																	}
+
+																	max_rank_sig.set(mut_v);
+																	idx_sig.set(0);
+																	typed_sig.set(String::new());
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
 
 							// ── Hide button ──────────────────────────────────────
 							button {

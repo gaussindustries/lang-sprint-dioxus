@@ -9,8 +9,8 @@
   padding-left: 0.5rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: var(--secondary-success-color);
-  color: var(--primary-color-4);
+  background-color: var(--primary-color-7);
+  color: var(--secondary-color-1);
   font-size: 14px;
   outline: none;
 }
@@ -22,8 +22,8 @@
 }
 
 .toggle[data-state="on"] {
-  background-color: var(--primary-color-7);
-  color: var(--secondary-color-1);
+  background-color: var(--secondary-success-color);
+  color: var(--primary-color-4);
 }
 
 .toggle:active {
