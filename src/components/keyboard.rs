@@ -230,7 +230,7 @@ fn KeySlotView(slot: KeySlot, pressed: HashSet<String>) -> Element {
 }
 
 // QWERTY label for physical key codes
-fn code_to_qwerty_label(code: &str) -> &'static str {
+pub fn code_to_qwerty_label(code: &str) -> &'static str {
     match code {
         "KeyQ" => "Q",
         "KeyW" => "W",

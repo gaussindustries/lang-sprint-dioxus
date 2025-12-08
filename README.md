@@ -173,28 +173,23 @@ choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
 
 
 ### IMPORTANT!
-add this line at the top of ``src/main.rs``
+uncomment this line at the top of ``src/main.rs``
 ```rust
 #![windows_subsystem = "windows"]
 ```
 
-### Please keep in mind for development you must run tailwind in order for the UI to render properly!
+### Automatic Tailwind (Dioxus 0.7+)
 
-### Tailwind
-1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
-```bash
-npm install tailwindcss @tailwindcss/cli
-```
-3. Run the following command in the root of the project to start the Tailwind CSS compiler:
+As of Dioxus 0.7, there no longer is a need to manually install tailwind. Simply `dx serve` and you're good to go!
 
-```
-	linux:
-./tailwind.sh
-	(((windows))):
-	just the tailwind.sh command manually in a separate terminal
-```
+Automatic tailwind is supported by checking for a file called `tailwind.css` in your app's manifest directory (next to Cargo.toml). To customize the file, use the dioxus.toml:
 
+```toml
+[application]
+tailwind_input = "my.css"
+tailwind_output = "assets/out.css"
+```
+ 
 ### Serving Your App
 
 Run the following command in the root of your project to start developing with the default platform:
