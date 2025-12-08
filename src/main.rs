@@ -1,4 +1,4 @@
-//or the goys who have (((windows)))
+//for the goys who have (((windows)))
 //#![windows_subsystem = "windows"]
 mod components;
 use views::{Home, Navbar};
@@ -61,7 +61,7 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
         document::Link { rel: "stylesheet", href: DIOXUS_CSS }
-		document::Title{ "Lang Sprint V0.4.0"}
+		document::Title{ "Lang Sprint V0.4.1"}
         // The router component renders the route enum we defined above. It will handle synchronization of the URL and render
         // the layouts and components for the active route.
         Router::<Route> {}

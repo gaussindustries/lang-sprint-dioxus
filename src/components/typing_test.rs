@@ -1,3 +1,15 @@
+/**
+ * TODO:
+ * implementing user data{
+ * 	calibrations for each key (utilize right click menu)
+ * }
+ * make generalized functions where:
+ *  read json file, manipulate it in memory, save it once done, repeat
+ * 
+ * 	
+ * 
+ */
+
 use dioxus::events::FormEvent;
 use dioxus::prelude::*;
 use rand::Rng;
@@ -162,37 +174,35 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 			}
 			_ => words_pos_filtered,
 		};
-		if filtered_words.is_empty() {
-		return rsx! {
-			section { class: "p-6 flex justify-center",
-				div { class: "text-gray-300 text-center space-y-2",
-					div { "No words match the current filters/rank range." }
-					div { class: "text-xs text-gray-500",
-						"Open Settings and adjust POS or rank bounds."
-					}
-				}
-			}
-		};
-	}
+		
 
     // Clamp index so we don't go out of bounds after filtering
     let word_count = filtered_words.len();
+	let has_words = word_count > 0;
+
+	let (current_opt, target_word) = if has_words {
     let idx = current_index().min(word_count - 1);
     let current = filtered_words[idx].clone();
+    let target_word = current.word.clone();   // clone the String while you still own `current`
+    (Some(current), target_word)
+	} else {
+		(None, String::new())
+	};
 
-    let target_word = current.word.clone();
-    let typed_now = typed();
 
-    let target_chars: Vec<char> = target_word.chars().collect();
-    let typed_chars: Vec<char> = typed_now.chars().collect();
+	let typed_now = typed();
 
-    // Check if fully correct (for UI only)
-    let all_correct = !typed_chars.is_empty()
-        && typed_chars.len() == target_chars.len()
-        && typed_chars
-            .iter()
-            .zip(target_chars.iter())
-            .all(|(a, b)| a == b);
+	let target_chars: Vec<char> = target_word.chars().collect();
+	let typed_chars: Vec<char> = typed_now.chars().collect();
+
+	let all_correct = has_words
+		&& !typed_chars.is_empty()
+		&& typed_chars.len() == target_chars.len()
+		&& typed_chars
+			.iter()
+			.zip(target_chars.iter())
+			.all(|(a, b)| a == b);
+
 	
 	// Map Georgian char -> "J" or "⇧J" depending on whether it's shifted
 	let mut hint_map: HashMap<char, String> = HashMap::new();
@@ -342,37 +352,41 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 
                 div { class: "flex-1 flex flex-col gap-4",
 
-					// Per-letter display + subtle QWERTY hint
-               div { class: "flex justify-center gap-4 text-3xl",
-					{
-						let hint_map = hint_map.clone();
-						let typed_chars_for_display = typed_chars_for_display.clone();
+				div { class: "flex justify-center gap-4 text-3xl min-h-[4rem]",
+						if has_words {
+							{let hint_map = hint_map.clone();
+							let typed_chars_for_display = typed_chars_for_display.clone();
 
-						target_chars.iter().enumerate().map(move |(i, ch)| {
-							let class = if i < typed_chars_for_display.len() {
-								if typed_chars_for_display[i] == *ch {
-									"text-white"
+							target_chars.iter().enumerate().map(move |(i, ch)| {
+								let class = if i < typed_chars_for_display.len() {
+									if typed_chars_for_display[i] == *ch {
+										"text-white"
+									} else {
+										"text-red-400"
+									}
 								} else {
-									"text-red-400"
-								}
-							} else {
-								"text-gray-500"
-							};
+									"text-gray-500"
+								};
 
-							let hint = hint_map
-								.get(ch)
-								.map(|s| s.as_str())
-								.unwrap_or("");
+								let hint = hint_map
+									.get(ch)
+									.map(|s| s.as_str())
+									.unwrap_or("");
 
-							rsx! {
-								div { class: "flex flex-col items-center leading-tight",
-									span { class: "{class} font-bold", "{ch}" }
-									span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+								rsx! {
+									div { class: "flex flex-col items-center leading-tight",
+										span { class: "{class} font-bold", "{ch}" }
+										span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+									}
 								}
+							})}
+						} else {
+							div { class: "text-sm text-gray-400 text-center",
+								"No words match the current filters / rank range."
 							}
-						})
+						}
 					}
-				}
+
 
 
                     // Input field
@@ -432,26 +446,36 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                     }
 
                     // Tiny meta info (rank + EN + POS + example)
-                    div { class: "text-xs text-gray-500 mt-1 flex flex-col items-center gap-1",
-                        div { class: "flex items-center gap-2",
-                            span { "Rank #{current.rank} — {current.en}" }
+                   div { class: "text-xs text-gray-300 mt-1 flex flex-col items-center gap-1",
+						if let Some(current) = &current_opt {
+							div { class: "flex flex-col items-center gap-2",
+								span { "Rank: #" b{"{current.rank}"} }
+								span {
+									"Translation: {current.en} \u{00A0}"
+									if let Some(pos) = current.pos.clone() {
+										span {
+											class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
+													text-[0.65rem] uppercase tracking-wide",
+											"[{pos}]"
+										}
+									}
+								}
+							}
 
-                            if let Some(pos) = current.pos.clone() {
-                                span {
-                                    class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
-                                            text-[0.65rem] uppercase tracking-wide",
-                                    "{pos}"
-                                }
-                            }
-                        }
+							if let Some(ex) = current.example.clone() {
+								div {
+									class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
+									"{ex}"
+								}
+							}
+						} else {
+							div {
+								class: "text-[0.7rem] text-gray-500 italic text-center max-w-md",
+								"Adjust POS filters or rank range in Settings to see words here."
+							}
+						}
+					}
 
-                        if let Some(ex) = current.example.clone() {
-                            div {
-                                class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
-                                "{ex}"
-                            }
-                        }
-                    }
 
                     if show_set_delay() {
 						div { class:"flex flex-col items-center gap-3 mb-3 border-b-1 rounded",

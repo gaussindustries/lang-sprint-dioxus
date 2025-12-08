@@ -2618,7 +2618,7 @@ dependencies = [
 
 [[package]]
 name = "lang-sprint-dioxus"
-version = "0.4.0"
+version = "0.4.1"
 dependencies = [
  "dioxus",
  "dioxus-primitives",
