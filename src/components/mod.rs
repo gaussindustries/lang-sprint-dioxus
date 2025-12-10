@@ -17,3 +17,4 @@ pub mod avatar;
 pub mod toggle;
 pub mod radio_group;
 pub mod input;
+pub mod tabs;

@@ -25,6 +25,7 @@ use crate::models::{freq_word::FrequencyWord, letter::Letter};
 use crate::assets::freq_json_for;
 use std::collections::{BTreeSet, HashMap};
 use crate::components::keyboard::code_to_qwerty_label;
+use crate::components::tabs::{Tabs, TabList, TabTrigger, TabContent};
 
 
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -76,6 +77,105 @@ impl TestMode {
     }
 }
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum WpmState {
+    Idle,
+    Running,
+    Finished,
+}
+
+#[derive(Clone, Copy)]
+struct WpmResult {
+    wpm: u32,
+    correct_words: u32,
+    incorrect_words: u32,
+    correct_letters: u32,
+    incorrect_letters: u32,
+}
+
+fn clean_word(raw: &str) -> Option<String> {
+    // Take text before the first slash and trim
+    let first = raw.split('/')
+        .next()
+        .unwrap_or("")
+        .trim();
+
+    if first.is_empty() {
+        None
+    } else {
+        Some(first.to_string())
+    }
+}
+
+
+fn build_wpm_text(words: &[FrequencyWord], min_chars: usize) -> String {
+    if words.is_empty() {
+        return String::new();
+    }
+
+    let mut rng = rand::rng();
+    let mut out = String::new();
+
+    while out.len() < min_chars {
+        let idx = rng.random_range(0..words.len());
+        let raw = words[idx].word.as_str();
+
+        // sanitize: drop everything after "/", trim spaces
+        let Some(clean) = clean_word(raw) else {
+            continue; // skip empty / weird entries
+        };
+
+        if !out.is_empty() {
+            out.push(' ');
+        }
+        out.push_str(&clean);
+    }
+
+    out
+}
+
+
+fn compute_wpm_result(target: &str, typed: &str, duration_secs: u64) -> WpmResult {
+    let duration_secs = duration_secs.max(1);
+
+    let target_words: Vec<&str> = target.split_whitespace().collect();
+    let typed_words: Vec<&str> = typed.split_whitespace().collect();
+
+    let mut correct_words = 0u32;
+    let mut incorrect_words = 0u32;
+    let mut correct_letters = 0u32;
+    let mut incorrect_letters = 0u32;
+
+    for (i, tw) in typed_words.iter().enumerate() {
+        let typed_len = tw.chars().count() as u32;
+        if let Some(target_w) = target_words.get(i) {
+            if tw == target_w {
+                correct_words += 1;
+                correct_letters += typed_len;
+            } else {
+                incorrect_words += 1;
+                incorrect_letters += typed_len;
+            }
+        } else {
+            // extra word that target didn't have
+            incorrect_words += 1;
+            incorrect_letters += typed_len;
+        }
+    }
+
+    let total_typed_words = typed_words.len() as f32;
+    let wpm = ((total_typed_words * 60.0) / duration_secs as f32).round() as u32;
+
+    WpmResult {
+        wpm,
+        correct_words,
+        incorrect_words,
+        correct_letters,
+        incorrect_letters,
+    }
+}
+
+
 
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
@@ -85,8 +185,8 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let mut typed = use_signal(|| String::new());
 
     // Countdown progress for auto-advance: None = idle, Some(f) = remaining fraction
-    let advance_progress = use_signal(|| None::<f32>);
-    let mut advance_delay = use_signal(|| Duration::from_millis(1500));
+	
+	
 
     // POS filter: which parts of speech are enabled
     // Empty = treat as "all enabled"
@@ -225,6 +325,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 		}
 	}
 
+	// this is for the word drill tab
+    let advance_progress = use_signal(|| None::<f32>);
+    let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
     // === AUTO-ADVANCE EFFECT + COUNTDOWN ==================================
 	{
@@ -236,7 +339,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 		let len_snapshot     = word_count;
 		let mode_sig         = test_mode.clone();   // <── NEW
 		let bounded_order_sig = bounded_order.clone();
-
+		
+		
+		//this section is respect to real time 
 		use_resource(move || {
 			let typed_snapshot   = typed_sig.read().clone();
 			let cur_idx_snapshot = idx_sig();
@@ -340,188 +445,524 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         format!("{} ms", delay_ms.round() as i32)
     };
 
-    let mut show_set_delay = use_signal(|| false );
+    let mut show_settings = use_signal(|| false );
 
 	let typed_chars_for_display = typed_chars.clone();
 	let letters_typed_len = typed_chars.len();
 	let target_len = target_chars.len();
 	
 	let mut input_focused = use_signal(|| false);
+	let mut active_test_tab = use_signal(|| "drill".to_string());
+
+	// ── WPM-state signals ───────────────────────────────────────────────
+	let mut wpm_target_text = use_signal(|| String::new());
+	let mut wpm_typed       = use_signal(|| String::new());
+	let mut wpm_duration    = use_signal(|| 60u64);      // default 60s
+	let mut wpm_remaining   = use_signal(|| 60u64);
+	let mut wpm_state       = use_signal(|| WpmState::Idle);
+	let mut wpm_result      = use_signal(|| None::<WpmResult>);
+
+	// ── WPM timer effect ─────────────────────────────────────────────────-
+	{
+		let mut state_sig   = wpm_state.clone();
+		let mut rem_sig     = wpm_remaining.clone();
+		let duration_sig    = wpm_duration.clone();
+		let typed_sig       = wpm_typed.clone();
+		let target_sig      = wpm_target_text.clone();
+		let mut result_sig  = wpm_result.clone();
+
+		use_resource(move || {
+			let state_snapshot = state_sig();
+
+			async move {
+				if !matches!(state_snapshot, WpmState::Running) {
+					return;
+				}
+
+				let mut remaining = rem_sig();
+				while remaining > 0 {
+					tokio::time::sleep(Duration::from_secs(1)).await;
+					remaining -= 1;
+					rem_sig.set(remaining);
+				}
+
+				let duration   = duration_sig();
+				let typed_str  = typed_sig();
+				let target_str = target_sig();
+				let res        = compute_wpm_result(&target_str, &typed_str, duration);
+
+				result_sig.set(Some(res));
+				state_sig.set(WpmState::Finished);
+			}
+		});
+	}
+
+
+	 // ── WPM rendering convenience ─────────────────────────────────────────
+    let wpm_target_now = wpm_target_text();
+    let wpm_typed_now = wpm_typed();
+    let wpm_target_chars: Vec<char> = wpm_target_now.chars().collect();
+    let wpm_typed_chars: Vec<char> = wpm_typed_now.chars().collect();
+
+	// For word-based rendering in the WPM tab
+	let wpm_target_words: Vec<String> = wpm_target_now
+		.split_whitespace()
+		.map(|s| s.to_string())
+		.collect();
+
+	let wpm_typed_words: Vec<String> = wpm_typed_now
+		.split_whitespace()
+		.map(|s| s.to_string())
+		.collect();
+
+    let current_wpm_state = wpm_state();
+    let current_wpm_remaining = wpm_remaining();
+    let current_wpm_duration = wpm_duration();
+    let wpm_result_now = wpm_result();
+	{
+		// clone what we need into the effect
+		let lang              = lang.clone();
+
+		let mut current_index = current_index.clone();
+		let mut typed_sig     = typed.clone();
+		let mut active_pos_sig = active_pos.clone();
+		let mut test_mode_sig  = test_mode.clone();
+		let mut min_rank_sig   = min_rank.clone();
+		let mut max_rank_sig   = max_rank.clone();
+		let mut bounded_order_sig = bounded_order.clone();
+
+		let mut wpm_target_sig = wpm_target_text.clone();
+		let mut wpm_typed_sig  = wpm_typed.clone();
+		let mut wpm_state_sig  = wpm_state.clone();
+		let mut wpm_rem_sig    = wpm_remaining.clone();
+		let mut wpm_result_sig = wpm_result.clone();
+		let wpm_duration_sig   = wpm_duration.clone();
+
+		use_effect(move || {
+			// read lang so this effect re-runs whenever the language changes
+			let _ = lang();
+
+			// ── reset drill state ─────────────────────────────
+			current_index.set(0);
+			typed_sig.set(String::new());
+			active_pos_sig.set(Vec::new());          // “all POS” again
+			test_mode_sig.set(TestMode::Random);     // or whatever default you want
+			min_rank_sig.set(1);
+			max_rank_sig.set(250);
+			bounded_order_sig.set(BoundedOrder::Random);
+
+			// ── reset WPM state ───────────────────────────────
+			wpm_target_sig.set(String::new());       // dump old language text
+			wpm_typed_sig.set(String::new());
+			wpm_state_sig.set(WpmState::Idle);
+
+			let dur = wpm_duration_sig();
+			wpm_rem_sig.set(dur);
+			wpm_result_sig.set(None);
+		});
+	}
 
     rsx! {
         section { class: "flex justify-center",
             div { class: "w-full max-w-4xl flex gap-8",
 
                 div { class: "flex-1 flex flex-col gap-4",
+					Tabs {
+						class: "w-full".to_string(),
+						value: active_test_tab(),
+						default_value: "drill".to_string(),
+						on_value_change: move |v: String| {
+							active_test_tab.set(v);
 
-				// ── Input + per-letter display (Monkeytype-style) ────────────────
-				div { class: "relative flex justify-center min-h-[4rem]",
+							// reset drill state
+							typed.set(String::new());
+							current_index.set(0);
 
-					// Invisible input that captures keystrokes
-					input {
-						r#type: "text",
-						value: "{typed_now}",
-						oninput: move |evt: FormEvent| {
-							typed.set(evt.value());
+							// reset wpm state
+							wpm_typed.set(String::new());
+							wpm_state.set(WpmState::Idle);
+							wpm_remaining.set(wpm_duration());
+							wpm_result.set(None);
 						},
 
-						onfocus: move |_| {
-							input_focused.set(true);
-						},
-						onblur: move |_| {
-							input_focused.set(false);
-						},
 
-						// make it **actually** invisible, including UA outlines
-						class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
-						style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none; height: 55px; width: 50%;",
-						autocomplete: "off",
-						autocorrect: "off",
-						spellcheck: "false",
-						autofocus: "true",
-					}
+						TabList {
+							TabTrigger {
+								index: 0usize,
+								value: "drill".to_string(),
+								"Word drill"
+							}
+							TabTrigger {
+								index: 1usize,
+								value: "wpm".to_string(),
+								"WPM"
+							}
+							// you can add more TabTrigger here for other tests
+						}
 
-					// Visible per-letter render, driven by `typed`
-					{
-						let is_focused = input_focused();
-						let focus_class = if is_focused {
-							// tweak to taste
-							"bg-slate-800/40 ring-1 ring-indigo-500/60 rounded px-3"
-						} else {
-							""
-						};
+						TabContent {
+							index: 0usize,
+							value: "drill".to_string(),
 
-						rsx! {
-							div {
-								class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
-										rounded-md transition-all duration-150 {focus_class}",
+							// ⬇️ NO extra { } here – just children
+							div { class: "relative flex justify-center min-h-[4rem]",
 
-								if has_words {
-									{
-										let hint_map = hint_map.clone();
-										let typed_chars_for_display = typed_chars_for_display.clone();
+								input {
+									r#type: "text",
+									value: "{typed_now}",
+									oninput: move |evt: FormEvent| {
+										typed.set(evt.value());
+									},
+									onfocus: move |_| {
+										input_focused.set(true);
+									},
+									onblur: move |_| {
+										input_focused.set(false);
+									},
 
-										target_chars.iter().enumerate().map(move |(i, ch)| {
-											let base = if i < typed_chars_for_display.len() {
-												if typed_chars_for_display[i] == *ch {
-													"text-white"
-												} else {
-													"text-red-400"
+									class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
+									style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none; height: 55px; width: 33%;",
+									autocomplete: "off",
+									autocorrect: "off",
+									spellcheck: "false",
+									autofocus: "true",
+								}
+
+								{
+									let is_focused = input_focused();
+									let focus_class = if is_focused {
+										"bg-slate-800/40 ring-1 ring-indigo-500/60 rounded px-3"
+									} else {
+										""
+									};
+
+									rsx! {
+										div {
+											class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
+													rounded-md transition-all duration-150 {focus_class}",
+
+											if has_words {
+												{
+													let hint_map = hint_map.clone();
+													let typed_chars_for_display = typed_chars_for_display.clone();
+
+													target_chars.iter().enumerate().map(move |(i, ch)| {
+														let base = if i < typed_chars_for_display.len() {
+															if typed_chars_for_display[i] == *ch {
+																"text-white"
+															} else {
+																"text-red-400"
+															}
+														} else {
+															"text-gray-500"
+														};
+
+														let class = if is_focused {
+															format!("{base} drop-shadow-[0_0_6px_rgba(129,140,248,0.6)]")
+														} else {
+															base.to_string()
+														};
+
+														let hint = hint_map
+															.get(ch)
+															.map(|s| s.as_str())
+															.unwrap_or("");
+
+														rsx! {
+															div { class: "flex flex-col items-center leading-tight",
+																span { class: "{class} font-bold", "{ch}" }
+																span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+															}
+														}
+													})
 												}
 											} else {
-												"text-gray-500"
-											};
-
-											let class = if is_focused {
-												format!("{base} drop-shadow-[0_0_6px_rgba(129,140,248,0.6)]")
-											} else {
-												base.to_string()
-											};
-
-											let hint = hint_map
-												.get(ch)
-												.map(|s| s.as_str())
-												.unwrap_or("");
-
-											rsx! {
-												div { class: "flex flex-col items-center leading-tight",
-													span { class: "{class} font-bold", "{ch}" }
-													span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+												div { class: "text-sm text-gray-400 text-center",
+													"No words match the current filters / rank range."
 												}
 											}
-										})
-									}
-								} else {
-									div { class: "text-sm text-gray-400 text-center",
-										"No words match the current filters / rank range."
+										}
 									}
 								}
 							}
-						}
-					}
-				}
+							// Status + countdown indicator
+							div { class: "flex justify-center items-center gap-5 text-sm mt-6",
+								if all_correct {
+									span { class: "text-green-400 font-semibold", "Correct! 🎉" }
+								} else {
+									span { class: "text-gray-400",
+										"Letters: {typed_chars.len()} / {target_chars.len()}"
+									}
+								}
 
+								if is_counting {
+									div { class: "w-10 h-10",
+										svg {
+											width: "40",
+											height: "40",
+											view_box: "0 0 40 40",
 
+											circle {
+												cx: "20",
+												cy: "20",
+												r: "16",
+												stroke: "rgba(255,255,255,0.2)",
+												"stroke-width": "4",
+												fill: "none",
+											}
 
-
-
-                    // Status + countdown indicator
-                    div { class: "flex items-center justify-between text-sm",
-                        if all_correct {
-                            span { class: "text-green-400 font-semibold", "Correct! 🎉" }
-                        } else {
-                            span { class: "text-gray-400",
-                                "Letters: {typed_chars.len()} / {target_chars.len()}"
-                            }
-                        }
-
-                        if is_counting {
-                            div { class: "w-10 h-10",
-                                svg {
-                                    width: "40",
-                                    height: "40",
-                                    view_box: "0 0 40 40",
-
-                                    circle {
-                                        cx: "20",
-                                        cy: "20",
-                                        r: "16",
-                                        stroke: "rgba(255,255,255,0.2)",
-                                        "stroke-width": "4",
-                                        fill: "none",
-                                    }
-
-                                    circle {
-                                        cx: "20",
-                                        cy: "20",
-                                        r: "16",
-                                        stroke: "rgb(129, 140, 248)",
-                                        "stroke-width": "4",
-                                        fill: "none",
-                                        "stroke-linecap": "round",
-                                        "stroke-dasharray": "{circumference_str}",
-                                        "stroke-dashoffset": "{offset_str}",
-                                        transform: "rotate(-90 20 20)",
-                                        class: "transition-[stroke-dashoffset] duration-50 linear",
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    // Tiny meta info (rank + EN + POS + example)
-                   div { class: "text-xs text-gray-300 mt-1 flex flex-col items-center gap-1",
-						if let Some(current) = &current_opt {
-							div { class: "flex flex-col items-center gap-2",
-								span { "Rank: #" b{"{current.rank}"} }
-								span {
-									"Translation: {current.en} \u{00A0}"
-									if let Some(pos) = current.pos.clone() {
-										span {
-											class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
-													text-[0.65rem] uppercase tracking-wide",
-											"[{pos}]"
+											circle {
+												cx: "20",
+												cy: "20",
+												r: "16",
+												stroke: "rgb(129, 140, 248)",
+												"stroke-width": "4",
+												fill: "none",
+												"stroke-linecap": "round",
+												"stroke-dasharray": "{circumference_str}",
+												"stroke-dashoffset": "{offset_str}",
+												transform: "rotate(-90 20 20)",
+												class: "transition-[stroke-dashoffset] duration-50 linear",
+											}
 										}
 									}
 								}
 							}
 
-							if let Some(ex) = current.example.clone() {
-								div {
-									class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
-									"{ex}"
+							// Tiny meta info (rank + EN + POS + example)
+							div { class: "text-xs text-gray-300 mt-1 flex flex-col items-center gap-1",
+								if let Some(current) = &current_opt {
+									div { class: "flex flex-col items-center gap-2",
+										span { "Rank: #" b{"{current.rank}"} }
+										span {
+											"Translation: {current.en} \u{00A0}"
+											if let Some(pos) = current.pos.clone() {
+												span {
+													class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
+															text-[0.65rem] uppercase tracking-wide",
+													"[{pos}]"
+												}
+											}
+										}
+									}
+
+									if let Some(ex) = current.example.clone() {
+										div {
+											class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
+											"{ex}"
+										}
+									}
+								} else {
+									div {
+										class: "text-[0.7rem] text-gray-500 italic text-center max-w-md",
+										"Adjust POS filters or rank range in Settings to see words here."
+									}
 								}
 							}
-						} else {
-							div {
-								class: "text-[0.7rem] text-gray-500 italic text-center max-w-md",
-								"Adjust POS filters or rank range in Settings to see words here."
+						}
+						TabContent{
+							index: 1usize,
+							value: "wpm".to_string(),
+								div { class: "space-y-4 p-4",
+
+									// Top bar: duration + status + start button
+									div { class: "flex justify-between items-center text-xs text-gray-400",
+
+										// duration selector
+										div { class: "flex items-center gap-2",
+											span { "Length:" }
+											{
+												let mut wpm_state_sig  = wpm_state.clone();
+												let mut wpm_rem_sig    = wpm_remaining.clone();
+												let mut wpm_typed_sig  = wpm_typed.clone();
+												let mut wpm_target_sig = wpm_target_text.clone();
+												let duration_sig       = wpm_duration.clone();
+												let words_for_wpm      = filtered_words.clone();
+
+												let label = if matches!(current_wpm_state, WpmState::Running) {
+													"Restart"
+												} else {
+													"Start"
+												};
+
+												rsx! {
+													button {
+														class: "px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[0.75rem]",
+														onclick: move |_| {
+															// build new target text, sized to duration *and* grid
+															let dur = duration_sig();
+
+															// assume up to ~200 WPM, ~5 chars/word
+															let max_wpm            = 200usize;
+															let avg_chars_per_word = 5usize;
+
+															// duration-based estimate
+															let duration_chars =
+																max_wpm * avg_chars_per_word * (dur as usize) / 60;
+
+															// grid-based requirement: e.g. 6 cols x 6 rows = 36 words
+															let cols              = 6usize;
+															let rows              = 6usize;
+															let min_words_visible = cols * rows; // 36
+															let grid_chars        = min_words_visible * avg_chars_per_word;
+
+															// final char budget: enough for the grid AND the time AND not tiny
+															let min_chars = duration_chars
+																.max(grid_chars) // always enough to fill 6x6
+																.max(500);       // general safety floor
+
+															let text = build_wpm_text(&words_for_wpm, min_chars);
+															wpm_target_sig.set(text);
+
+															wpm_state_sig.set(WpmState::Running);
+														},
+														"{label}"
+													}
+												}
+											}
+										}
+
+										// status + start / restart
+										div { class: "flex items-center gap-3",
+											span {
+												match current_wpm_state {
+													WpmState::Idle => "Status: idle",
+													WpmState::Running => "Status: running",
+													WpmState::Finished => "Status: finished",
+												}
+											}
+											span { " Time left: {current_wpm_remaining}s" }
+
+											{
+												let mut wpm_state_sig = wpm_state.clone();
+												let mut wpm_rem_sig = wpm_remaining.clone();
+												let mut wpm_typed_sig = wpm_typed.clone();
+												let mut wpm_target_sig = wpm_target_text.clone();
+												let duration_sig = wpm_duration.clone();
+												let words_for_wpm = filtered_words.clone();
+
+												rsx!{
+													button {
+														class: "px-3 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[0.75rem]",
+														onclick: move |_| {
+															let dur = duration_sig();
+															wpm_rem_sig.set(dur);
+															wpm_typed_sig.set(String::new());
+															wpm_state_sig.set(WpmState::Idle);
+
+															// build new target text
+															// build new target text, sized to duration
+															let dur = duration_sig();
+
+															// assume up to ~200 WPM, ~5 chars/word
+															let max_wpm          = 200usize;
+															let avg_chars_per_word = 5usize;
+
+															// how many characters we want total
+															let min_chars =
+																max_wpm * avg_chars_per_word * (dur as usize) / 60;
+
+															// safety floor so it's never tiny
+															let min_chars = min_chars.max(500);
+
+															// now build that much text
+															let text = build_wpm_text(&words_for_wpm, min_chars);
+															wpm_target_sig.set(text);
+
+															
+															wpm_state_sig.set(WpmState::Running);
+														},
+														if matches!(current_wpm_state, WpmState::Running) {
+															"Restart"
+														} else {
+															"Start"
+														}
+													}
+												}
+											}
+										}
+									}
+
+									// Invisible textarea + visible WPM text
+									div { class: "flex justify-center ",
+
+										textarea {
+											value: "{wpm_typed_now}",
+											oninput: move |evt: FormEvent| {
+												wpm_typed.set(evt.value());
+											},
+											class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
+											style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none;",
+											autocomplete: "off",
+											autocorrect: "off",
+											spellcheck: "false",
+										}
+
+										div {
+											class: "w-full max-w-2xl mx-auto text-xl leading-relaxed pointer-events-none",
+											// Force a 4-column CSS grid regardless of Tailwind setup
+											style: "display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.75rem 1rem; justify-items: center;",
+
+											{
+												let target_words = wpm_target_words.clone();
+												let typed_words  = wpm_typed_words.clone();
+
+												target_words.into_iter().enumerate().map(move |(wi, word)| {
+													let typed_word = typed_words.get(wi).cloned().unwrap_or_default();
+
+													let target_chars: Vec<char> = word.chars().collect();
+													let typed_chars: Vec<char>  = typed_word.chars().collect();
+
+													rsx! {
+														// one grid cell per word
+														div {
+															class: "inline-flex gap-0.5",
+
+															{
+																let typed_chars = typed_chars.clone();
+
+																target_chars.into_iter().enumerate().map(move |(ci, ch)| {
+																	let class = if ci < typed_chars.len() {
+																		if typed_chars[ci] == ch {
+																			"text-green-300"
+																		} else {
+																			"text-red-400"
+																		}
+																	} else {
+																		"text-gray-500"
+																	};
+
+																	rsx! {
+																		span { class: "{class}", "{ch}" }
+																	}
+																})
+															}
+														}
+													}
+												})
+											}
+										}
+									}
+
+									// WPM results when finished
+									if let (WpmState::Finished, Some(res)) = (current_wpm_state, wpm_result_now) {
+										div { class: "mt-2 text-xs text-gray-300 flex flex-col items-center gap-1",
+											span { class: "text-sm font-semibold text-indigo-300",
+												"WPM: {res.wpm}"
+											}
+											span {
+												"Words – correct: {res.correct_words}, incorrect: {res.incorrect_words}"
+											}
+											span {
+												"Letters – correct: {res.correct_letters}, incorrect: {res.incorrect_letters}"
+											}
+										}
+									}
+								}
 							}
 						}
-					}
-
-
-                    if show_set_delay() {
+						//settings
+                    if show_settings() {
 						div { class:"flex flex-col items-center gap-3 mb-3 border-b-1 rounded",
 
 							div { class:"grid gap-5",
@@ -749,7 +1190,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 								class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 \
 									hover:scale-105 hover:cursor-pointer",
 								onclick: move |_| {
-									show_set_delay.set(false);
+									show_settings.set(false);
 								},
 								"Hide"
 							}
@@ -759,7 +1200,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                             Tooltip { 
                                 TooltipTrigger { class:"flex justify-center",
                                     button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
-                                            show_set_delay.set(true);
+                                            show_settings.set(true);
                                         },
                                         "Settings"
                                     }
@@ -776,8 +1217,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                             }
                         }
                     }
+					}
+					
+				}
+
+
+					
                 }
             }
         }
-    }
-}
+    
+

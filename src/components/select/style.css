@@ -84,6 +84,7 @@
   pointer-events: none;
   transform-origin: top;
   will-change: transform, opacity;
+  color:whitesmoke;
 }
 
 .select-list[data-state="closed"] {
