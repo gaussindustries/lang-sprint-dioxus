@@ -345,6 +345,8 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 	let typed_chars_for_display = typed_chars.clone();
 	let letters_typed_len = typed_chars.len();
 	let target_len = target_chars.len();
+	
+	let mut input_focused = use_signal(|| false);
 
     rsx! {
         section { class: "flex justify-center",
@@ -352,54 +354,96 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 
                 div { class: "flex-1 flex flex-col gap-4",
 
-				div { class: "flex justify-center gap-4 text-3xl min-h-[4rem]",
-						if has_words {
-							{let hint_map = hint_map.clone();
-							let typed_chars_for_display = typed_chars_for_display.clone();
+				// ── Input + per-letter display (Monkeytype-style) ────────────────
+				div { class: "relative flex justify-center min-h-[4rem]",
 
-							target_chars.iter().enumerate().map(move |(i, ch)| {
-								let class = if i < typed_chars_for_display.len() {
-									if typed_chars_for_display[i] == *ch {
-										"text-white"
-									} else {
-										"text-red-400"
+					// Invisible input that captures keystrokes
+					input {
+						r#type: "text",
+						value: "{typed_now}",
+						oninput: move |evt: FormEvent| {
+							typed.set(evt.value());
+						},
+
+						onfocus: move |_| {
+							input_focused.set(true);
+						},
+						onblur: move |_| {
+							input_focused.set(false);
+						},
+
+						// make it **actually** invisible, including UA outlines
+						class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
+						style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none; height: 55px; width: 50%;",
+						autocomplete: "off",
+						autocorrect: "off",
+						spellcheck: "false",
+						autofocus: "true",
+					}
+
+					// Visible per-letter render, driven by `typed`
+					{
+						let is_focused = input_focused();
+						let focus_class = if is_focused {
+							// tweak to taste
+							"bg-slate-800/40 ring-1 ring-indigo-500/60 rounded px-3"
+						} else {
+							""
+						};
+
+						rsx! {
+							div {
+								class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
+										rounded-md transition-all duration-150 {focus_class}",
+
+								if has_words {
+									{
+										let hint_map = hint_map.clone();
+										let typed_chars_for_display = typed_chars_for_display.clone();
+
+										target_chars.iter().enumerate().map(move |(i, ch)| {
+											let base = if i < typed_chars_for_display.len() {
+												if typed_chars_for_display[i] == *ch {
+													"text-white"
+												} else {
+													"text-red-400"
+												}
+											} else {
+												"text-gray-500"
+											};
+
+											let class = if is_focused {
+												format!("{base} drop-shadow-[0_0_6px_rgba(129,140,248,0.6)]")
+											} else {
+												base.to_string()
+											};
+
+											let hint = hint_map
+												.get(ch)
+												.map(|s| s.as_str())
+												.unwrap_or("");
+
+											rsx! {
+												div { class: "flex flex-col items-center leading-tight",
+													span { class: "{class} font-bold", "{ch}" }
+													span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+												}
+											}
+										})
 									}
 								} else {
-									"text-gray-500"
-								};
-
-								let hint = hint_map
-									.get(ch)
-									.map(|s| s.as_str())
-									.unwrap_or("");
-
-								rsx! {
-									div { class: "flex flex-col items-center leading-tight",
-										span { class: "{class} font-bold", "{ch}" }
-										span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+									div { class: "text-sm text-gray-400 text-center",
+										"No words match the current filters / rank range."
 									}
 								}
-							})}
-						} else {
-							div { class: "text-sm text-gray-400 text-center",
-								"No words match the current filters / rank range."
 							}
 						}
 					}
+				}
 
 
 
-                    // Input field
-                    div {
-                        input {
-                            class: "w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 \
-                                    text-white focus:border-indigo-500 focus:outline-none text-center",
-                            value: "{typed_now}",
-                            oninput: move |evt: FormEvent| {
-                                typed.set(evt.value());
-                            },
-                        }
-                    }
+
 
                     // Status + countdown indicator
                     div { class: "flex items-center justify-between text-sm",

@@ -1,0 +1,20 @@
+{
+	"wpm_history" : [
+		{
+			"time_created": "12-9-2025:1600",
+			"test_length" : 30,
+			"wpm": 80,
+			"meta" : {
+				"correct": {
+					"words" : 80,
+					"letters" : 200
+				},
+				"incorrect":{
+					"words" : 8,
+					"letters" : 20
+				}
+			}
+
+		}
+	]
+}
