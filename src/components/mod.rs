@@ -2,19 +2,21 @@
 //! They can be used to defined common UI elements like buttons, forms, and modals. In this template, we define a Hero
 //! component  to be used in our app.
 
-pub mod wordcard;
 pub mod keyboard;
 pub mod typing_test;
+pub mod wordcard;
+pub mod wpm_test;
 
 pub use keyboard::Keyboard;
+pub use typing_test::TypingTest;
 pub use wordcard::WordCard;
-pub use typing_test::TypingTest;pub mod slider;
-pub mod tooltip;
-pub mod separator;
-pub mod select;
-pub mod button;
 pub mod avatar;
-pub mod toggle;
-pub mod radio_group;
+pub mod button;
 pub mod input;
+pub mod radio_group;
+pub mod select;
+pub mod separator;
+pub mod slider;
 pub mod tabs;
+pub mod toggle;
+pub mod tooltip;
