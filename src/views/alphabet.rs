@@ -1,144 +1,127 @@
 use dioxus::prelude::*;
 use dioxus_primitives::slider::SliderValue;
-use crate::{
-    audio,
-    components::slider::{Slider, SliderRange, SliderThumb, SliderTrack},
-    models::letter::Letter,
-	assets::letter_audio_bytes,
-};
 use std::time::Duration;
 
+use crate::{
+    assets::letter_audio_bytes,
+    audio,
+    components::slider::{Slider, SliderRange, SliderThumb, SliderTrack},
+    models::letter::{Letter, LetterKind},
+};
 
 const FLASH_DURATION: Duration = Duration::from_millis(700);
 
 #[component]
 pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
-    // Which button should show the ring?
-    let flashing = use_signal(|| None::<String>);
+    // Logical id of the card currently flashing its ring (e.g. "georgian/a.wav").
+    let mut flashing = use_signal(|| None::<String>);
     let mut volume = use_signal(|| 0.4);
 
-    // Derive language-specific title once per render
-    let alphabet_target_lang: &str = match lang.read().as_str() {
+    let title = match lang.read().as_str() {
         "georgian" => "ანბანი",
-        "russian"  => "Алфавит",
-        _          => "🟪⬛",
+        "russian" => "Алфавит",
+        _ => "🟪⬛",
     };
 
-    // Whenever `flashing` changes, start a 700ms timer to clear it
-    use_resource(move || {
-        let mut flashing_signal = flashing.clone();
-
-        async move {
-            let maybe_path: Option<String> = {
-                let read_guard = flashing_signal.read();
-                read_guard.clone()
-            };
-
-            if let Some(path) = maybe_path {
-                tokio::time::sleep(FLASH_DURATION).await;
-
-                flashing_signal.with_mut(|current| {
-                    if current.as_ref() == Some(&path) {
-                        *current = None;
-                    }
-                });
-            }
+    // Clear the flash 700ms after it changes (only if it's still the same id).
+    use_resource(move || async move {
+        let current = flashing.read().clone(); // guard dropped at this semicolon
+        if let Some(id) = current {
+            tokio::time::sleep(FLASH_DURATION).await;
+            flashing.with_mut(|cur| {
+                if cur.as_ref() == Some(&id) {
+                    *cur = None;
+                }
+            });
         }
     });
 
     let cards = letters.into_iter().map(move |letter| {
-		let lang_signal = lang.clone();
-		let letter_for_click = letter.clone();
-		let mut flashing_signal = flashing.clone();
+        let lang_name = lang.read().clone();
+        let audio_file = letter.audio.clone();
 
-		let lang_name = lang_signal.read().clone();
+        // Must match the id we set on click, below.
+        let id = format!(
+            "{lang_name}/{}",
+            audio_file.as_deref().unwrap_or("<missing>.wav")
+        );
+        let is_flashing = flashing.read().as_ref() == Some(&id);
 
-		// 🔑 This is the *logical ID* we use for flashing equality
-		let audio_id = format!(
-			"{}/{}",
-			lang_name,
-			letter_for_click.audio.as_deref().unwrap_or("<missing>.wav")
-		);
+        // Resting border encodes vowel/consonant; flashing overrides it.
+        let border = if is_flashing {
+            "border-indigo-400 ring-4 ring-indigo-400 !text-indigo-500"
+        } else {
+            match letter.kind {
+                LetterKind::Vowel => "border-amber-400",
+                LetterKind::Consonant => "border-sky-500",
+                LetterKind::Other => "border-gray-600",
+            }
+        };
 
-		// Does this letter match the current flashing id?
-		let is_flashing = flashing_signal
-			.read()
-			.as_ref()
-			.map(|p| p == &audio_id)
-			.unwrap_or(false);
+        let base = "group p-4 rounded-lg border-2 transition-all text-center \
+                    hover:border-indigo-500 hover:cursor-pointer select-none text-white";
 
-		let base_classes = "group p-4 rounded-lg border-2 transition-all text-center \
-							hover:border-indigo-500 hover:cursor-pointer select-none text-white";
+        rsx! {
+            button {
+                key: "{letter.letter}",
+                class: "{base} {border}",
 
-		let ring_classes = if is_flashing {
-			" border-indigo-400 ring-4 ring-indigo-400 !text-indigo-500"
-		} else {
-			" border-gray-600"
-		};
+                onclick: move |_| {
+                    if let Some(file) = audio_file.as_deref() {
+                        let id = format!("{lang_name}/{file}");
+                        if let Some(bytes) = letter_audio_bytes(&lang_name, file) {
+                            #[cfg(not(target_arch = "wasm32"))]
+                            audio::play_audio_bytes(&id, bytes, volume());
+                            flashing.set(Some(id));
+                        } else {
+                            eprintln!("No embedded audio for {lang_name}/{file}");
+                        }
+                    }
+                },
 
-		rsx! {
-			button {
-				key: "{letter.letter}",
-				class: "{base_classes}{ring_classes}",
-
-				onclick: move |_| {
-					if let Some(file) = &letter_for_click.audio {
-						let lang_name = lang_signal.read().clone();
-						let id = format!("{lang_name}/{file}");
-
-						if let Some(bytes) = letter_audio_bytes(&lang_name, file) {
-							#[cfg(not(target_arch = "wasm32"))]
-							audio::play_audio_bytes(&id, bytes, volume());
-
-							// 🔑 store the SAME id we compare against above
-							flashing_signal.set(Some(id));
-						} else {
-							eprintln!("No embedded audio for {lang_name}/{file}");
-						}
-					}
-				},
-
-				div { class: "text-3xl font-bold", "{letter.letter}" }
-				div { class: "text-sm text-gray-400 italic", "{letter.name}" }
-				div { class: "text-xs text-gray-500", "{letter.pron}" }
-			}
-		}
-	});
-
+                div { class: "text-3xl font-bold", "{letter.letter}" }
+                div { class: "text-sm text-gray-400 italic", "{letter.name}" }
+                div { class: "text-xs text-gray-500", "{letter.pron}" }
+            }
+        }
+    });
 
     let volume_pct = (volume() * 100.0).round() as i32;
 
     rsx! {
         section { class: "p-6",
-            h2 { class: "text-2xl font-semibold mb-4 text-center",
-                "Alphabet – {alphabet_target_lang}"
-            }
+            h2 { class: "text-2xl font-semibold mb-4 text-center", "Alphabet – {title}" }
 
-            div { class:"flex justify-center gap-3",
-                h4 { class:"text-center flex", "Volume" }
-
-                div {
-                    Slider {
-                        default_value: SliderValue::Single(volume() as f64),
-                        min: 0.0,
-                        max: 1.0,
-                        step: 0.05,
-                        horizontal: true,
-                        on_value_change: move |value: SliderValue| {
-                            let SliderValue::Single(v) = value;
-                            volume.set(v as f32);
-                        },
-
-                        SliderTrack {
-                            SliderRange {}
-                            SliderThumb {}
-                        }
+            // volume
+            div { class: "flex justify-center gap-3 items-center",
+                h4 { "Volume" }
+                Slider {
+                    default_value: SliderValue::Single(volume() as f64),
+                    min: 0.0,
+                    max: 1.0,
+                    step: 0.05,
+                    horizontal: true,
+                    on_value_change: move |value: SliderValue| {
+                        let SliderValue::Single(v) = value;
+                        volume.set(v as f32);
+                    },
+                    SliderTrack {
+                        SliderRange {}
+                        SliderThumb {}
                     }
                 }
+                div { style: "font-size: 16px; font-weight: bold;", "{volume_pct}%" }
+            }
 
-                div {
-                    style: "margin-bottom: 15px; font-size: 16px; font-weight: bold;",
-                    "{volume_pct}%"
+            // legend
+            div { class: "flex justify-center gap-4 my-3 text-xs text-gray-400",
+                div { class: "flex items-center gap-1.5",
+                    span { class: "inline-block w-3 h-3 rounded-sm border-2 border-amber-400" }
+                    "vowel"
+                }
+                div { class: "flex items-center gap-1.5",
+                    span { class: "inline-block w-3 h-3 rounded-sm border-2 border-sky-500" }
+                    "consonant"
                 }
             }
 
