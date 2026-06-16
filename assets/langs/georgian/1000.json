@@ -2,3752 +2,4477 @@
   {
     "rank": 1,
     "en": "hello",
-    "word": "გამარჯობა"
+    "word": "გამარჯობა",
+    "pos": "interjection"
   },
   {
     "rank": 2,
     "en": "to be",
     "word": "ყოფნა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 3,
     "en": "you",
-    "word": "შენ"
+    "word": "შენ",
+    "pos": "pronoun"
   },
   {
     "rank": 4,
     "en": "he/she/it, that",
-    "word": "ის"
+    "word": "ის",
+    "pos": "pronoun"
   },
   {
     "rank": 5,
     "en": "I",
-    "word": "მე"
+    "word": "მე",
+    "pos": "pronoun"
   },
   {
     "rank": 6,
     "en": "his",
-    "word": "მისი"
+    "word": "მისი",
+    "pos": "pronoun"
   },
   {
     "rank": 7,
     "en": "they",
-    "word": "ისინი"
+    "word": "ისინი",
+    "pos": "pronoun"
   },
   {
     "rank": 8,
     "en": "one",
-    "word": "ერთი"
+    "word": "ერთი",
+    "pos": "numeral"
   },
   {
     "rank": 9,
     "en": "to have (living)",
     "word": "ყოლა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 10,
     "en": "to have (non-living)",
     "word": "ქონა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 11,
     "en": "this",
-    "word": "ეს"
+    "word": "ეს",
+    "pos": "pronoun"
   },
   {
     "rank": 12,
     "en": "or",
-    "word": "ან"
+    "word": "ან",
+    "pos": "conjunction"
   },
   {
     "rank": 13,
     "en": "not",
-    "word": "არ"
+    "word": "არ",
+    "pos": "particle"
   },
   {
     "rank": 14,
     "en": "word",
-    "word": "სიტყვა"
+    "word": "სიტყვა",
+    "pos": "noun"
   },
   {
     "rank": 15,
     "en": "but",
-    "word": "მაგრამ"
+    "word": "მაგრამ",
+    "pos": "conjunction"
   },
   {
     "rank": 16,
     "en": "what",
-    "word": "რა"
+    "word": "რა",
+    "pos": "pronoun"
   },
   {
     "rank": 17,
     "en": "we",
-    "word": "ჩვენ"
+    "word": "ჩვენ",
+    "pos": "pronoun"
   },
   {
     "rank": 18,
     "en": "to be able to",
     "word": "შეძლება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 19,
     "en": "other",
-    "word": "სხვა"
+    "word": "სხვა",
+    "pos": "determiner"
   },
   {
     "rank": 20,
     "en": "all",
-    "word": "ყველა"
+    "word": "ყველა",
+    "pos": "determiner"
   },
   {
     "rank": 21,
     "en": "everything",
-    "word": "ყველაფერი"
+    "word": "ყველაფერი",
+    "pos": "pronoun"
   },
   {
     "rank": 22,
     "en": "there",
-    "word": "იქ"
+    "word": "იქ",
+    "pos": "adverb"
   },
   {
     "rank": 23,
     "en": "when",
-    "word": "როდის"
+    "word": "როდის",
+    "pos": "adverb"
   },
   {
     "rank": 24,
     "en": "up",
-    "word": "ზევით"
+    "word": "ზევით",
+    "pos": "adverb"
   },
   {
     "rank": 25,
     "en": "to use",
     "word": "გამოყენება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 26,
     "en": "your",
-    "word": "შენი"
+    "word": "შენი",
+    "pos": "pronoun"
   },
   {
     "rank": 27,
     "en": "how",
-    "word": "როგორ"
+    "word": "როგორ",
+    "pos": "adverb"
   },
   {
     "rank": 28,
     "en": "to say / to tell",
     "word": "თქმა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 29,
     "en": "each",
-    "word": "თითოეული"
+    "word": "თითოეული",
+    "pos": "determiner"
   },
   {
     "rank": 30,
     "en": "which (one) ?",
-    "word": "რომელი"
+    "word": "რომელი",
+    "pos": "pronoun"
   },
   {
     "rank": 31,
     "en": "which (as in xx which xx)",
-    "word": "რომელიც"
+    "word": "რომელიც",
+    "pos": "pronoun"
   },
   {
     "rank": 32,
     "en": "to do",
     "word": "კეთება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 33,
     "en": "their",
-    "word": "მათი"
+    "word": "მათი",
+    "pos": "pronoun"
   },
   {
     "rank": 34,
     "en": "time",
-    "word": "დრო"
+    "word": "დრო",
+    "pos": "noun"
   },
   {
     "rank": 35,
     "en": "if",
-    "word": "თუ"
+    "word": "თუ",
+    "pos": "conjunction"
   },
   {
     "rank": 36,
     "en": "way / road / path",
-    "word": "გზა"
+    "word": "გზა",
+    "pos": "noun"
   },
   {
     "rank": 37,
     "en": "about",
-    "word": "შესახებ"
+    "word": "შესახებ",
+    "pos": "adposition"
   },
   {
     "rank": 38,
     "en": "many",
-    "word": "ბევრი"
+    "word": "ბევრი",
+    "pos": "determiner"
   },
   {
     "rank": 39,
     "en": "then",
-    "word": "მაშინ"
+    "word": "მაშინ",
+    "pos": "adverb"
   },
   {
     "rank": 40,
     "en": "them",
-    "word": "მათ"
+    "word": "მათ",
+    "pos": "pronoun"
   },
   {
     "rank": 41,
     "en": "to write",
     "word": "დაწერა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 42,
     "en": "to like",
     "word": "მოწონება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 43,
     "en": "to love/like",
     "word": "სიყვარული",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 44,
     "en": "him/her/it",
-    "word": "მის"
+    "word": "მის",
+    "pos": "pronoun"
   },
   {
     "rank": 45,
     "en": "long (in length i.e. hair ect)",
-    "word": "გრძელი"
+    "word": "გრძელი",
+    "pos": "adjective"
   },
   {
     "rank": 46,
     "en": "to make/create",
     "word": "შექმნა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 47,
     "en": "thing",
-    "word": "რამე"
+    "word": "რამე",
+    "pos": "noun"
   },
   {
     "rank": 48,
     "en": "to see",
-    "word": "დანახვა"
+    "word": "დანახვა",
+    "pos": "verb"
   },
   {
     "rank": 49,
     "en": "two",
-    "word": "ორი"
+    "word": "ორი",
+    "pos": "numeral"
   },
   {
     "rank": 50,
     "en": "to look / to watch",
     "word": "ყურება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 51,
     "en": "more",
-    "word": "უფრო / მეტი"
+    "word": "უფრო / მეტი",
+    "pos": "determiner"
   },
   {
     "rank": 52,
     "en": "day",
-    "word": "დღე"
+    "word": "დღე",
+    "pos": "noun"
   },
   {
     "rank": 53,
     "en": "to go",
     "word": "წასვლა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 54,
     "en": "to come",
     "word": "მოსვლა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 55,
     "en": "number",
-    "word": "ნომერი / რიცხვი"
+    "word": "ნომერი / რიცხვი",
+    "pos": "noun"
   },
   {
     "rank": 56,
     "en": "sound",
-    "word": "ხმა"
+    "word": "ხმა",
+    "pos": "noun"
   },
   {
     "rank": 57,
     "en": "no",
-    "word": "არა"
+    "word": "არა",
+    "pos": "particle"
   },
   {
     "rank": 58,
     "en": "people",
-    "word": "ხალხი"
+    "word": "ხალხი",
+    "pos": "noun"
   },
   {
     "rank": 59,
     "en": "my",
-    "word": "ჩემი"
+    "word": "ჩემი",
+    "pos": "pronoun"
   },
   {
     "rank": 60,
     "en": "to know",
     "word": "ცოდნა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 61,
     "en": "water",
-    "word": "წყალი"
+    "word": "წყალი",
+    "pos": "noun"
   },
   {
     "rank": 62,
     "en": "to call (sb to for eg go sw)",
-    "word": "დაძანება",
-	"pos" : "verb"
+    "word": "დაძახება",
+    "pos": "verb"
   },
   {
     "rank": 63,
     "en": "to be called / named",
     "word": "რქმევა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 64,
     "en": "first",
-    "word": "პირველი"
+    "word": "პირველი",
+    "pos": "numeral"
   },
   {
     "rank": 65,
     "en": "who",
-    "word": "ვინ"
+    "word": "ვინ",
+    "pos": "pronoun"
   },
   {
     "rank": 66,
     "en": "down",
-    "word": "ქვეშ"
+    "word": "ქვეშ",
+    "pos": "adverb"
   },
   {
     "rank": 67,
     "en": "now",
-    "word": "ახლა"
+    "word": "ახლა",
+    "pos": "adverb"
   },
   {
     "rank": 68,
     "en": "to find",
     "word": "პოვნა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 69,
     "en": "any",
-    "word": "ნებისმიერი"
+    "word": "ნებისმიერი",
+    "pos": "determiner"
   },
   {
     "rank": 70,
     "en": "new",
-    "word": "ახალი"
+    "word": "ახალი",
+    "pos": "adjective"
   },
   {
     "rank": 71,
     "en": "to work",
     "word": "მუშაობა",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 72,
     "en": "part / piece",
-    "word": "ნაწილი"
+    "word": "ნაწილი",
+    "pos": "noun"
   },
   {
     "rank": 73,
     "en": "to take / get",
     "word": "აღება",
-	"pos" : "verb"
+    "pos": "verb"
   },
   {
     "rank": 74,
     "en": "place / area",
-    "word": "ადგილი"
+    "word": "ადგილი",
+    "pos": "noun"
   },
   {
     "rank": 75,
     "en": "life",
-    "word": "სიცოცხლე"
+    "word": "სიცოცხლე",
+    "pos": "noun"
   },
   {
     "rank": 76,
     "en": "to live",
     "word": "ცხოვრება",
-	"pos" : "noun"
+    "pos": "verb"
   },
   {
     "rank": 77,
     "en": "where",
-    "word": "სად"
+    "word": "სად",
+    "pos": "adverb"
   },
   {
     "rank": 78,
     "en": "after",
-    "word": "შემდეგ"
+    "word": "შემდეგ",
+    "pos": "noun"
   },
   {
     "rank": 79,
     "en": "back",
-    "word": "უკან"
+    "word": "უკან",
+    "pos": "adverb"
   },
   {
     "rank": 80,
     "en": "little",
-    "word": "ცოტა"
+    "word": "ცოტა",
+    "pos": "determiner"
   },
   {
     "rank": 81,
     "en": "only",
-    "word": "მხოლოდ"
+    "word": "მხოლოდ",
+    "pos": "adverb"
   },
   {
     "rank": 82,
     "en": "round (in shape)",
-    "word": "მრგვალი"
+    "word": "მრგვალი",
+    "pos": "adjective"
   },
   {
     "rank": 83,
     "en": "man",
-    "word": "კაცი"
+    "word": "კაცი",
+    "pos": "noun"
   },
   {
     "rank": 84,
     "en": "year",
-    "word": "წელი"
+    "word": "წელი",
+    "pos": "noun"
   },
   {
     "rank": 85,
     "en": "to show",
-    "word": "ჩვენება"
+    "word": "ჩვენება",
+    "pos": "verb"
   },
   {
     "rank": 86,
     "en": "every",
-    "word": "ყოველი"
+    "word": "ყოველი",
+    "pos": "determiner"
   },
   {
     "rank": 87,
     "en": "good",
-    "word": "კარგი"
+    "word": "კარგი",
+    "pos": "adjective"
   },
   {
     "rank": 88,
     "en": "me",
-    "word": "მე"
+    "word": "მე",
+    "pos": "pronoun"
   },
   {
     "rank": 89,
     "en": "to give",
-    "word": "მიცემა"
+    "word": "მიცემა",
+    "pos": "verb"
   },
   {
     "rank": 90,
     "en": "our",
-    "word": "ჩვენი"
+    "word": "ჩვენი",
+    "pos": "pronoun"
   },
   {
     "rank": 91,
     "en": "name",
-    "word": "სახელი"
+    "word": "სახელი",
+    "pos": "noun"
   },
   {
     "rank": 92,
     "en": "very",
-    "word": "ძალიან"
+    "word": "ძალიან",
+    "pos": "adverb"
   },
   {
     "rank": 93,
     "en": "through",
-    "word": "მეშვეობით"
+    "word": "მეშვეობით",
+    "pos": "adposition"
   },
   {
     "rank": 94,
     "en": "just",
-    "word": "უბრალოდ"
+    "word": "უბრალოდ",
+    "pos": "adverb"
   },
   {
     "rank": 95,
     "en": "shape, form",
-    "word": "ფორმა"
+    "word": "ფორმა",
+    "pos": "noun"
   },
   {
     "rank": 96,
     "en": "sentence",
-    "word": "წინადადება"
+    "word": "წინადადება",
+    "pos": "noun"
   },
   {
     "rank": 97,
     "en": "to think",
-    "word": "ფიქრი"
+    "word": "ფიქრი",
+    "pos": "verb"
   },
   {
     "rank": 98,
     "en": "to help",
-    "word": "დახმარება"
+    "word": "დახმარება",
+    "pos": "verb"
   },
   {
     "rank": 99,
     "en": "low (as in height)",
-    "word": "დაბალი"
+    "word": "დაბალი",
+    "pos": "adjective"
   },
   {
     "rank": 100,
     "en": "line (shape)",
-    "word": "ხაზი"
+    "word": "ხაზი",
+    "pos": "noun"
   },
   {
     "rank": 101,
     "en": "to differ",
-    "word": "განსხვავება"
+    "word": "განსხვავება",
+    "pos": "verb"
   },
   {
     "rank": 102,
     "en": "different",
-    "word": "განსხვავებული"
+    "word": "განსხვავებული",
+    "pos": "adjective"
   },
   {
     "rank": 103,
     "en": "reason / cause",
-    "word": "მიზეზი"
+    "word": "მიზეზი",
+    "pos": "noun"
   },
   {
     "rank": 104,
     "en": "to mean",
-    "word": "ნიშვნა"
+    "word": "ნიშვნა",
+    "pos": "verb"
   },
   {
     "rank": 105,
     "en": "before",
-    "word": "ადრე"
+    "word": "ადრე",
+    "pos": "adverb"
   },
   {
     "rank": 106,
     "en": "to move (as in physically)",
-    "word": "მოძრაობა"
+    "word": "მოძრაობა",
+    "pos": "verb"
   },
   {
     "rank": 107,
     "en": "right (direction)",
-    "word": "მარჯვნივ"
+    "word": "მარჯვნივ",
+    "pos": "adverb"
   },
   {
     "rank": 108,
     "en": "boy",
-    "word": "ბიჭი"
+    "word": "ბიჭი",
+    "pos": "noun"
   },
   {
     "rank": 109,
     "en": "old",
-    "word": "ძველი"
+    "word": "ძველი",
+    "pos": "adjective"
   },
   {
     "rank": 110,
     "en": "same",
-    "word": "იგივე"
+    "word": "იგივე",
+    "pos": "determiner"
   },
   {
     "rank": 111,
     "en": "to sit",
-    "word": "ჯდომა"
+    "word": "ჯდომა",
+    "pos": "verb"
   },
   {
     "rank": 112,
     "en": "three",
-    "word": "სამი"
+    "word": "სამი",
+    "pos": "numeral"
   },
   {
     "rank": 113,
     "en": "to want",
-    "word": "ნდომა"
+    "word": "ნდომა",
+    "pos": "verb"
   },
   {
     "rank": 114,
     "en": "air",
-    "word": "ჰაერი"
+    "word": "ჰაერი",
+    "pos": "noun"
   },
   {
     "rank": 115,
     "en": "well",
-    "word": "კარგად"
+    "word": "კარგად",
+    "pos": "adverb"
   },
   {
     "rank": 116,
     "en": "also",
-    "word": "ასევე"
+    "word": "ასევე",
+    "pos": "adverb"
   },
   {
     "rank": 117,
     "en": "to play",
-    "word": "თამაში"
+    "word": "თამაში",
+    "pos": "verb"
   },
   {
     "rank": 118,
     "en": "small",
-    "word": "პატარა"
+    "word": "პატარა",
+    "pos": "adjective"
   },
   {
     "rank": 119,
     "en": "end / finish",
-    "word": "დასასრული"
+    "word": "დასასრული",
+    "pos": "noun"
   },
   {
     "rank": 120,
     "en": "to put",
-    "word": "დადება"
+    "word": "დადება",
+    "pos": "verb"
   },
   {
     "rank": 121,
     "en": "house / home",
-    "word": "სახლი"
+    "word": "სახლი",
+    "pos": "noun"
   },
   {
     "rank": 122,
     "en": "to read",
-    "word": "წაკითხვა"
+    "word": "წაკითხვა",
+    "pos": "verb"
   },
   {
     "rank": 123,
     "en": "hand",
-    "word": "ხელი"
+    "word": "ხელი",
+    "pos": "noun"
   },
   {
     "rank": 124,
     "en": "port (as in harbor)",
-    "word": "ნავსადგური"
+    "word": "ნავსადგური",
+    "pos": "noun"
   },
   {
     "rank": 125,
     "en": "big / large / great",
-    "word": "დიდი"
+    "word": "დიდი",
+    "pos": "adjective"
   },
   {
     "rank": 126,
     "en": "to add (sth to sth)",
-    "word": "დამატება"
+    "word": "დამატება",
+    "pos": "verb"
   },
   {
     "rank": 127,
     "en": "even if",
-    "word": "თუნდაც"
+    "word": "თუნდაც",
+    "pos": "conjunction"
   },
   {
     "rank": 128,
     "en": "ground / floor /  land",
-    "word": "მიწა"
+    "word": "მიწა",
+    "pos": "noun"
   },
   {
     "rank": 129,
     "en": "here",
-    "word": "აქ"
+    "word": "აქ",
+    "pos": "adverb"
   },
   {
     "rank": 130,
     "en": "must / should / better to",
-    "word": "უნდა"
+    "word": "უნდა",
+    "pos": "particle"
   },
   {
     "rank": 131,
     "en": "high",
-    "word": "მაღალი"
+    "word": "მაღალი",
+    "pos": "adjective"
   },
   {
     "rank": 132,
     "en": "to follow (sb to sw)",
-    "word": "მიყოლა"
+    "word": "მიყოლა",
+    "pos": "verb"
   },
   {
     "rank": 133,
     "en": "to behave / act",
-    "word": "მოქცევა"
+    "word": "მოქცევა",
+    "pos": "verb"
   },
   {
     "rank": 134,
     "en": "why",
-    "word": "რატომ"
+    "word": "რატომ",
+    "pos": "adverb"
   },
   {
     "rank": 135,
     "en": "question",
-    "word": "კითხვა"
+    "word": "კითხვა",
+    "pos": "noun"
   },
   {
     "rank": 136,
     "en": "person",
-    "word": "ადამიანი"
+    "word": "ადამიანი",
+    "pos": "noun"
   },
   {
     "rank": 137,
     "en": "to change",
-    "word": "შეცვლა"
+    "word": "შეცვლა",
+    "pos": "verb"
   },
   {
     "rank": 138,
     "en": "light (as in the brightness)",
-    "word": "სინათლე"
+    "word": "სინათლე",
+    "pos": "noun"
   },
   {
     "rank": 139,
     "en": "kind (as in polite)",
-    "word": "კეთილი"
+    "word": "კეთილი",
+    "pos": "adjective"
   },
   {
     "rank": 140,
     "en": "to need",
-    "word": "საჭიროება"
+    "word": "საჭიროება",
+    "pos": "verb"
   },
   {
     "rank": 141,
     "en": "picture",
-    "word": "სურათი"
+    "word": "სურათი",
+    "pos": "noun"
   },
   {
     "rank": 142,
     "en": "to try / to try out",
-    "word": "ცდა"
+    "word": "ცდა",
+    "pos": "verb"
   },
   {
     "rank": 143,
     "en": "animal",
-    "word": "ცხოველი"
+    "word": "ცხოველი",
+    "pos": "noun"
   },
   {
     "rank": 144,
     "en": "point (as in score)",
-    "word": "ქულა"
+    "word": "ქულა",
+    "pos": "noun"
   },
   {
     "rank": 145,
     "en": "mother",
-    "word": "დედა"
+    "word": "დედა",
+    "pos": "noun"
   },
   {
     "rank": 146,
     "en": "world",
-    "word": "სამყარო"
+    "word": "სამყარო",
+    "pos": "noun"
   },
   {
     "rank": 147,
     "en": "near",
-    "word": "ახლოს"
+    "word": "ახლოს",
+    "pos": "adverb"
   },
   {
     "rank": 148,
     "en": "to build / construct",
-    "word": "აშენება / აგება"
+    "word": "აშენება / აგება",
+    "pos": "verb"
   },
   {
     "rank": 149,
     "en": "earth (planet)",
-    "word": "დედამიწა"
+    "word": "დედამიწა",
+    "pos": "noun"
   },
   {
     "rank": 150,
     "en": "father",
-    "word": "მამა"
+    "word": "მამა",
+    "pos": "noun"
   },
   {
     "rank": 151,
     "en": "head",
-    "word": "თავი"
+    "word": "თავი",
+    "pos": "noun"
   },
   {
     "rank": 152,
     "en": "to stand (up) / to loiter",
-    "word": "დგომა"
+    "word": "დგომა",
+    "pos": "verb"
   },
   {
     "rank": 153,
     "en": "to own / possess",
-    "word": "ფლობა"
+    "word": "ფლობა",
+    "pos": "verb"
   },
   {
     "rank": 154,
     "en": "page",
-    "word": "გვერდი"
+    "word": "გვერდი",
+    "pos": "noun"
   },
   {
     "rank": 155,
     "en": "country",
-    "word": "ქვეყანა"
+    "word": "ქვეყანა",
+    "pos": "noun"
   },
   {
     "rank": 156,
     "en": "to answer / to respond",
-    "word": "პასუხება"
+    "word": "პასუხება",
+    "pos": "verb"
   },
   {
     "rank": 157,
     "en": "school",
-    "word": "სკოლა"
+    "word": "სკოლა",
+    "pos": "noun"
   },
   {
     "rank": 158,
     "en": "to grow / to raise",
-    "word": "ზრდა"
+    "word": "ზრდა",
+    "pos": "verb"
   },
   {
     "rank": 159,
     "en": "to learn / to study",
-    "word": "სწავლა"
+    "word": "სწავლა",
+    "pos": "verb"
   },
   {
     "rank": 160,
     "en": "plant",
-    "word": "მცენარე"
+    "word": "მცენარე",
+    "pos": "noun"
   },
   {
     "rank": 161,
     "en": "food",
-    "word": "საჭმელი"
+    "word": "საჭმელი",
+    "pos": "noun"
   },
   {
     "rank": 162,
     "en": "sun",
-    "word": "მზე"
+    "word": "მზე",
+    "pos": "noun"
   },
   {
     "rank": 163,
     "en": "four",
-    "word": "ორხი"
+    "word": "ოთხი",
+    "pos": "numeral"
   },
   {
     "rank": 164,
     "en": "around (sth)",
-    "word": "ირგვლივ"
+    "word": "ირგვლივ",
+    "pos": "adposition"
   },
   {
     "rank": 165,
     "en": "state / situation",
-    "word": "მდგომარეობა"
+    "word": "მდგომარეობა",
+    "pos": "noun"
   },
   {
     "rank": 166,
     "en": "to keep",
-    "word": "შენახვა"
+    "word": "შენახვა",
+    "pos": "verb"
   },
   {
     "rank": 167,
     "en": "eye",
-    "word": "თვალი"
+    "word": "თვალი",
+    "pos": "noun"
   },
   {
     "rank": 168,
     "en": "never",
-    "word": "არასოდეს / არასდროს"
+    "word": "არასოდეს / არასდროს",
+    "pos": "adverb"
   },
   {
     "rank": 169,
     "en": "last",
-    "word": "ბოლო"
+    "word": "ბოლო",
+    "pos": "adjective"
   },
   {
     "rank": 170,
     "en": "to let / allow",
-    "word": "გაშვება"
+    "word": "გაშვება",
+    "pos": "verb"
   },
   {
     "rank": 171,
     "en": "opinion / thought / sense",
-    "word": "აზრი"
+    "word": "აზრი",
+    "pos": "noun"
   },
   {
     "rank": 172,
     "en": "city / town",
-    "word": "ქალაქი"
+    "word": "ქალაქი",
+    "pos": "noun"
   },
   {
     "rank": 173,
     "en": "tree",
-    "word": "ხელი"
+    "word": "ხე",
+    "pos": "noun"
   },
   {
     "rank": 174,
     "en": "cross",
-    "word": "ჯვარი"
+    "word": "ჯვარი",
+    "pos": "noun"
   },
   {
     "rank": 175,
     "en": "farm",
-    "word": "ფერმა"
+    "word": "ფერმა",
+    "pos": "noun"
   },
   {
     "rank": 176,
     "en": "difficult",
-    "word": "რთული / ძნელი"
+    "word": "რთული / ძნელი",
+    "pos": "adjective"
   },
   {
     "rank": 177,
     "en": "to start",
-    "word": "დაწყება"
+    "word": "დაწყება",
+    "pos": "verb"
   },
   {
     "rank": 178,
     "en": "story",
-    "word": "ამბავი"
+    "word": "ამბავი",
+    "pos": "noun"
   },
   {
     "rank": 179,
     "en": "far",
-    "word": "შორს"
+    "word": "შორს",
+    "pos": "adverb"
   },
   {
     "rank": 180,
     "en": "sea",
-    "word": "ზღვა"
+    "word": "ზღვა",
+    "pos": "noun"
   },
   {
     "rank": 181,
     "en": "to draw",
-    "word": "ხატვა"
+    "word": "ხატვა",
+    "pos": "verb"
   },
   {
     "rank": 182,
     "en": "left",
-    "word": "მარცხვინ"
+    "word": "მარცხნივ",
+    "pos": "adverb"
   },
   {
     "rank": 183,
     "en": "to be running late to sth",
-    "word": "დაგვიანება"
+    "word": "დაგვიანება",
+    "pos": "verb"
   },
   {
     "rank": 184,
     "en": "to run",
-    "word": "რბენა"
+    "word": "რბენა",
+    "pos": "verb"
   },
   {
     "rank": 185,
     "en": "don't",
-    "word": "ნუ"
+    "word": "ნუ",
+    "pos": "particle"
   },
   {
     "rank": 186,
     "en": "to press (i.e. a button)",
-    "word": "დაჭერა"
+    "word": "დაჭერა",
+    "pos": "verb"
   },
   {
     "rank": 187,
     "en": "to close",
-    "word": "დახურვა"
+    "word": "დახურვა",
+    "pos": "verb"
   },
   {
     "rank": 188,
     "en": "night",
-    "word": "ღამე"
+    "word": "ღამე",
+    "pos": "noun"
   },
   {
     "rank": 189,
     "en": "real",
-    "word": "ნამდვილი"
+    "word": "ნამდვილი",
+    "pos": "adjective"
   },
   {
     "rank": 190,
     "en": "a few",
-    "word": "რამდენიმე"
+    "word": "რამდენიმე",
+    "pos": "determiner"
   },
   {
     "rank": 191,
     "en": "north (direction)",
-    "word": "ჩრდილოეთი"
+    "word": "ჩრდილოეთი",
+    "pos": "noun"
   },
   {
     "rank": 192,
     "en": "to open",
-    "word": "გახსნა"
+    "word": "გახსნა",
+    "pos": "verb"
   },
   {
     "rank": 193,
     "en": "idea",
-    "word": "ჩვენება"
+    "word": "ჩვენება",
+    "pos": "noun"
   },
   {
     "rank": 194,
     "en": "next of sth i.e. episode",
-    "word": "შემდეგი"
+    "word": "შემდეგი",
+    "pos": "noun"
   },
   {
     "rank": 195,
     "en": "white",
-    "word": "თეთრი"
+    "word": "თეთრი",
+    "pos": "adjective"
   },
   {
     "rank": 196,
     "en": "child, baby",
-    "word": "ბავშვი"
+    "word": "ბავშვი",
+    "pos": "noun"
   },
   {
     "rank": 197,
     "en": "beginning",
-    "word": "დასაწყისი"
+    "word": "დასაწყისი",
+    "pos": "noun"
   },
   {
     "rank": 198,
     "en": "to walk",
-    "word": "სიარული"
+    "word": "სიარული",
+    "pos": "verb"
   },
   {
     "rank": 199,
     "en": "example",
-    "word": "მაგალითი"
+    "word": "მაგალითი",
+    "pos": "noun"
   },
   {
     "rank": 200,
     "en": "easy",
-    "word": "ადვილი"
+    "word": "ადვილი",
+    "pos": "adjective"
   },
   {
     "rank": 201,
     "en": "(piece of) paper",
-    "word": "ქაღალდი"
+    "word": "ქაღალდი",
+    "pos": "noun"
   },
   {
     "rank": 202,
     "en": "group",
-    "word": "ჯგუფი"
+    "word": "ჯგუფი",
+    "pos": "noun"
   },
   {
     "rank": 203,
     "en": "always",
-    "word": "ყოველთვის"
+    "word": "ყოველთვის",
+    "pos": "adverb"
   },
   {
     "rank": 204,
     "en": "music",
-    "word": "მუსიკა"
+    "word": "მუსიკა",
+    "pos": "noun"
   },
   {
     "rank": 205,
     "en": "both",
-    "word": "ორივე"
+    "word": "ორივე",
+    "pos": "determiner"
   },
   {
     "rank": 206,
     "en": "sign (on the road), mark",
-    "word": "ნიშანი"
+    "word": "ნიშანი",
+    "pos": "noun"
   },
   {
     "rank": 207,
     "en": "often",
-    "word": "ხშირად"
+    "word": "ხშირად",
+    "pos": "adverb"
   },
   {
     "rank": 208,
     "en": "letter",
-    "word": "ასო"
+    "word": "ასო",
+    "pos": "noun"
   },
   {
     "rank": 209,
     "en": "river",
-    "word": "მდინარე"
+    "word": "მდინარე",
+    "pos": "noun"
   },
   {
     "rank": 210,
     "en": "car",
-    "word": "მანქანა"
+    "word": "მანქანა",
+    "pos": "noun"
   },
   {
     "rank": 211,
     "en": "foot, leg",
-    "word": "ფეხი"
+    "word": "ფეხი",
+    "pos": "noun"
   },
   {
     "rank": 212,
     "en": "to take care of sb/sth",
-    "word": "ზრუნვა"
+    "word": "ზრუნვა",
+    "pos": "verb"
   },
   {
     "rank": 213,
     "en": "second",
-    "word": "მეორე"
+    "word": "მეორე",
+    "pos": "numeral"
   },
   {
     "rank": 214,
     "en": "book",
-    "word": "წიგნი"
+    "word": "წიგნი",
+    "pos": "noun"
   },
   {
     "rank": 215,
     "en": "science",
-    "word": "მეცნიერება"
+    "word": "მეცნიერება",
+    "pos": "noun"
   },
   {
     "rank": 216,
     "en": "to eat",
-    "word": "ჭამა"
+    "word": "ჭამა",
+    "pos": "verb"
   },
   {
     "rank": 217,
     "en": "room",
-    "word": "ოთახი"
+    "word": "ოთახი",
+    "pos": "noun"
   },
   {
     "rank": 218,
     "en": "friend",
-    "word": "მეგობარი"
+    "word": "მეგობარი",
+    "pos": "noun"
   },
   {
     "rank": 219,
     "en": "idea",
-    "word": "იდეა"
+    "word": "იდეა",
+    "pos": "noun"
   },
   {
     "rank": 220,
     "en": "fish",
-    "word": "თევზი"
+    "word": "თევზი",
+    "pos": "noun"
   },
   {
     "rank": 221,
     "en": "mountain",
-    "word": "მთე"
+    "word": "მთა",
+    "pos": "noun"
   },
   {
     "rank": 222,
     "en": "to stop",
-    "word": "გაჩერება"
+    "word": "გაჩერება",
+    "pos": "verb"
   },
   {
     "rank": 223,
     "en": "basic / fundamental / basis",
-    "word": "ძირითადი"
+    "word": "ძირითადი",
+    "pos": "adjective"
   },
   {
     "rank": 224,
     "en": "to hear",
-    "word": "მოსმენა"
+    "word": "მოსმენა",
+    "pos": "verb"
   },
   {
     "rank": 225,
     "en": "horse",
-    "word": "ცხენი"
+    "word": "ცხენი",
+    "pos": "noun"
   },
   {
     "rank": 226,
     "en": "to cut (sth i.e. scissors)",
-    "word": "გაჭრა"
+    "word": "გაჭრა",
+    "pos": "verb"
   },
   {
     "rank": 227,
     "en": "color",
-    "word": "ფერი"
+    "word": "ფერი",
+    "pos": "noun"
   },
   {
     "rank": 228,
     "en": "face",
-    "word": "სახე"
+    "word": "სახე",
+    "pos": "noun"
   },
   {
     "rank": 229,
     "en": "main",
-    "word": "მთავარი"
+    "word": "მთავარი",
+    "pos": "adjective"
   },
   {
     "rank": 230,
     "en": "enough",
-    "word": "საკმარისი"
+    "word": "საკმარისი",
+    "pos": "determiner"
   },
   {
     "rank": 231,
     "en": "simple",
-    "word": "მარტივი"
+    "word": "მარტივი",
+    "pos": "adjective"
   },
   {
     "rank": 232,
     "en": "girl",
-    "word": "გოგო"
+    "word": "გოგო",
+    "pos": "noun"
   },
   {
     "rank": 233,
     "en": "usual",
-    "word": "ჩვეულებრივი"
+    "word": "ჩვეულებრივი",
+    "pos": "adjective"
   },
   {
     "rank": 234,
     "en": "young",
-    "word": "ახალგაზრდა"
+    "word": "ახალგაზრდა",
+    "pos": "adjective"
   },
   {
     "rank": 235,
     "en": "sb ready",
-    "word": "მზად"
+    "word": "მზად",
+    "pos": "adjective"
   },
   {
     "rank": 236,
     "en": "red",
-    "word": "წითელი"
+    "word": "წითელი",
+    "pos": "adjective"
   },
   {
     "rank": 237,
     "en": "list",
-    "word": "სია"
+    "word": "სია",
+    "pos": "noun"
   },
   {
     "rank": 238,
     "en": "though",
-    "word": "ფიქრი"
+    "word": "ფიქრი",
+    "pos": "noun"
   },
   {
     "rank": 239,
     "en": "to feel",
-    "word": "გრძნობა"
+    "word": "გრძნობა",
+    "pos": "verb"
   },
   {
     "rank": 240,
     "en": "bird",
-    "word": "ჩიტი"
+    "word": "ჩიტი",
+    "pos": "noun"
   },
   {
     "rank": 241,
     "en": "soon",
-    "word": "მალე"
+    "word": "მალე",
+    "pos": "adverb"
   },
   {
     "rank": 242,
     "en": "body",
-    "word": "სხეული / ტანი"
+    "word": "სხეული / ტანი",
+    "pos": "noun"
   },
   {
     "rank": 243,
     "en": "dog",
-    "word": "ძაღლი"
+    "word": "ძაღლი",
+    "pos": "noun"
   },
   {
     "rank": 244,
     "en": "family",
-    "word": "ოჯახი"
+    "word": "ოჯახი",
+    "pos": "noun"
   },
   {
     "rank": 245,
     "en": "direct",
-    "word": "პირდაპირი"
+    "word": "პირდაპირი",
+    "pos": "adjective"
   },
   {
     "rank": 246,
     "en": "pose",
-    "word": "პოზა"
+    "word": "პოზა",
+    "pos": "noun"
   },
   {
     "rank": 247,
     "en": "to leave",
-    "word": "დატოვება"
+    "word": "დატოვება",
+    "pos": "verb"
   },
   {
     "rank": 248,
     "en": "song",
-    "word": "სიმღერა"
+    "word": "სიმღერა",
+    "pos": "noun"
   },
   {
     "rank": 249,
     "en": "door",
-    "word": "კარი"
+    "word": "კარი",
+    "pos": "noun"
   },
   {
     "rank": 250,
     "en": "product",
-    "word": "პროდუქტი"
+    "word": "პროდუქტი",
+    "pos": "noun"
   },
   {
     "rank": 251,
     "en": "black",
-    "word": "შავი"
+    "word": "შავი",
+    "pos": "adjective"
   },
   {
     "rank": 252,
     "en": "short",
-    "word": "მოკლე"
+    "word": "მოკლე",
+    "pos": "adjective"
   },
   {
     "rank": 253,
     "en": "class",
-    "word": "კლასი"
+    "word": "კლასი",
+    "pos": "noun"
   },
   {
     "rank": 254,
     "en": "wind",
-    "word": "ქარი"
+    "word": "ქარი",
+    "pos": "noun"
   },
   {
     "rank": 255,
     "en": "to happen",
-    "word": "მოხდომა"
+    "word": "მოხდომა",
+    "pos": "verb"
   },
   {
     "rank": 256,
     "en": "complete",
-    "word": "სრული"
+    "word": "სრული",
+    "pos": "adjective"
   },
   {
     "rank": 257,
     "en": "ship",
-    "word": "გემი"
+    "word": "გემი",
+    "pos": "noun"
   },
   {
     "rank": 258,
     "en": "half",
-    "word": "ნახევარი"
+    "word": "ნახევარი",
+    "pos": "noun"
   },
   {
     "rank": 259,
     "en": "(large) rock",
-    "word": "კლდე"
+    "word": "კლდე",
+    "pos": "noun"
   },
   {
     "rank": 260,
     "en": "fire",
-    "word": "ცეცხლი"
+    "word": "ცეცხლი",
+    "pos": "noun"
   },
   {
     "rank": 261,
     "en": "south",
-    "word": "სამხრეთი"
+    "word": "სამხრეთი",
+    "pos": "noun"
   },
   {
     "rank": 262,
     "en": "problem, trouble",
-    "word": "პრობლემა"
+    "word": "პრობლემა",
+    "pos": "noun"
   },
   {
     "rank": 263,
     "en": "piece / cut (of i.e. cake)",
-    "word": "ნაჭერი"
+    "word": "ნაჭერი",
+    "pos": "noun"
   },
   {
     "rank": 264,
     "en": "peak / top (of a mountain)",
-    "word": "მწვერვალი"
+    "word": "მწვერვალი",
+    "pos": "noun"
   },
   {
     "rank": 265,
     "en": "whole",
-    "word": "მთლიანი"
+    "word": "მთლიანი",
+    "pos": "adjective"
   },
   {
     "rank": 266,
     "en": "king",
-    "word": "მეფე"
+    "word": "მეფე",
+    "pos": "noun"
   },
   {
     "rank": 267,
     "en": "space",
-    "word": "ქოსმოსი"
+    "word": "კოსმოსი",
+    "pos": "noun"
   },
   {
     "rank": 268,
     "en": "best",
-    "word": "საუკეთესო"
+    "word": "საუკეთესო",
+    "pos": "adjective"
   },
   {
     "rank": 269,
     "en": "hour",
-    "word": "საათი"
+    "word": "საათი",
+    "pos": "noun"
   },
   {
     "rank": 270,
     "en": "better",
-    "word": "უკეთესი"
+    "word": "უკეთესი",
+    "pos": "adjective"
   },
   {
     "rank": 271,
     "en": "True",
-    "word": "მართალი"
+    "word": "მართალი",
+    "pos": "adjective"
   },
   {
     "rank": 272,
     "en": "hundred",
-    "word": "ასი"
+    "word": "ასი",
+    "pos": "numeral"
   },
   {
     "rank": 273,
     "en": "five",
-    "word": "ხუთი"
+    "word": "ხუთი",
+    "pos": "numeral"
   },
   {
     "rank": 274,
     "en": "to remember",
-    "word": "დამახსოვრება"
+    "word": "დამახსოვრება",
+    "pos": "verb"
   },
   {
     "rank": 275,
     "en": "step",
-    "word": "ბამიჯი"
+    "word": "ნაბიჯი",
+    "pos": "noun"
   },
   {
     "rank": 276,
     "en": "to hold (sth on ur hand)",
-    "word": "ჭერა"
+    "word": "ჭერა",
+    "pos": "verb"
   },
   {
     "rank": 277,
     "en": "west",
-    "word": "დასავლეთი"
+    "word": "დასავლეთი",
+    "pos": "noun"
   },
   {
     "rank": 278,
     "en": "interest",
-    "word": "ინტერესი"
+    "word": "ინტერესი",
+    "pos": "noun"
   },
   {
     "rank": 279,
     "en": "fast",
-    "word": "სწრაფი"
+    "word": "სწრაფი",
+    "pos": "adjective"
   },
   {
     "rank": 280,
     "en": "verb",
-    "word": "ზმნა"
+    "word": "ზმნა",
+    "pos": "noun"
   },
   {
     "rank": 281,
     "en": "to sing",
-    "word": "მღერა"
+    "word": "მღერა",
+    "pos": "verb"
   },
   {
     "rank": 282,
     "en": "six",
-    "word": "ექვსი"
+    "word": "ექვსი",
+    "pos": "numeral"
   },
   {
     "rank": 283,
     "en": "table",
-    "word": "მაგიდა"
+    "word": "მაგიდა",
+    "pos": "noun"
   },
   {
     "rank": 284,
     "en": "to travel",
-    "word": "მოგზაურობა"
+    "word": "მოგზაურობა",
+    "pos": "verb"
   },
   {
     "rank": 285,
     "en": "less",
-    "word": "ნაკლები"
+    "word": "ნაკლები",
+    "pos": "determiner"
   },
   {
     "rank": 286,
     "en": "morning",
-    "word": "დილა"
+    "word": "დილა",
+    "pos": "noun"
   },
   {
     "rank": 287,
     "en": "ten",
-    "word": "ათი"
+    "word": "ათი",
+    "pos": "numeral"
   },
   {
     "rank": 288,
     "en": "vowel",
-    "word": "ხმოვანი"
+    "word": "ხმოვანი",
+    "pos": "noun"
   },
   {
     "rank": 289,
     "en": "war",
-    "word": "ომი"
+    "word": "ომი",
+    "pos": "noun"
   },
   {
     "rank": 290,
     "en": "to lay (down i.e. in bed)",
-    "word": "წოლა"
+    "word": "წოლა",
+    "pos": "verb"
   },
   {
     "rank": 291,
     "en": "against, in contradiction to",
-    "word": "წინააღმდეგ"
+    "word": "წინააღმდეგ",
+    "pos": "adposition"
   },
   {
     "rank": 292,
     "en": "slow",
-    "word": "ნელი"
+    "word": "ნელი",
+    "pos": "adjective"
   },
   {
     "rank": 293,
     "en": "center",
-    "word": "ცენტრი"
+    "word": "ცენტრი",
+    "pos": "noun"
   },
   {
     "rank": 294,
     "en": "love",
-    "word": "სიყვარული"
+    "word": "სიყვარული",
+    "pos": "noun"
   },
   {
     "rank": 295,
     "en": "money",
-    "word": "ფული"
+    "word": "ფული",
+    "pos": "noun"
   },
   {
     "rank": 296,
     "en": "to appear",
-    "word": "გამოჩენა"
+    "word": "გამოჩენა",
+    "pos": "verb"
   },
   {
     "rank": 297,
     "en": "map",
-    "word": "რუკა"
+    "word": "რუკა",
+    "pos": "noun"
   },
   {
     "rank": 298,
     "en": "rain",
-    "word": "წვიმა"
+    "word": "წვიმა",
+    "pos": "noun"
   },
   {
     "rank": 299,
     "en": "rule",
-    "word": "წესი"
+    "word": "წესი",
+    "pos": "noun"
   },
   {
     "rank": 300,
     "en": "government",
-    "word": "მთავრობა"
+    "word": "მთავრობა",
+    "pos": "noun"
   },
   {
     "rank": 301,
     "en": "cold (temperature)",
-    "word": "ცივი"
+    "word": "ცივი",
+    "pos": "adjective"
   },
   {
     "rank": 302,
     "en": "power",
-    "word": "ძალა"
+    "word": "ძალა",
+    "pos": "noun"
   },
   {
     "rank": 303,
     "en": "to fly",
-    "word": "ფრენა"
+    "word": "ფრენა",
+    "pos": "verb"
   },
   {
     "rank": 304,
     "en": "to cry",
-    "word": "ტირილი"
+    "word": "ტირილი",
+    "pos": "verb"
   },
   {
     "rank": 305,
     "en": "dark",
-    "word": "ბნელი"
+    "word": "ბნელი",
+    "pos": "adjective"
   },
   {
     "rank": 306,
     "en": "machine",
-    "word": "მანქანა"
+    "word": "მანქანა",
+    "pos": "noun"
   },
   {
     "rank": 307,
     "en": "to wait / to expect (sth)",
-    "word": "დალოდება"
+    "word": "დალოდება",
+    "pos": "verb"
   },
   {
     "rank": 308,
     "en": "plan",
-    "word": "დამეგმვა"
+    "word": "დაგეგმვა",
+    "pos": "noun"
   },
   {
     "rank": 309,
     "en": "figure",
-    "word": "ფიგურა"
+    "word": "ფიგურა",
+    "pos": "noun"
   },
   {
     "rank": 310,
     "en": "star",
-    "word": "ვარსკვლავი"
+    "word": "ვარსკვლავი",
+    "pos": "noun"
   },
   {
     "rank": 311,
     "en": "box",
-    "word": "ყუთი"
+    "word": "ყუთი",
+    "pos": "noun"
   },
   {
     "rank": 312,
     "en": "to rest",
-    "word": "დასვენება"
+    "word": "დასვენება",
+    "pos": "verb"
   },
   {
     "rank": 313,
     "en": "correct",
-    "word": "სწორი"
+    "word": "სწორი",
+    "pos": "adjective"
   },
   {
     "rank": 314,
     "en": "beauty",
-    "word": "სილამაზე"
+    "word": "სილამაზე",
+    "pos": "noun"
   },
   {
     "rank": 315,
     "en": "container",
-    "word": "კონტეინერი"
+    "word": "კონტეინერი",
+    "pos": "noun"
   },
   {
     "rank": 316,
     "en": "teach",
-    "word": "მასწავლებელი"
+    "word": "მასწავლებელი",
+    "pos": "noun"
   },
   {
     "rank": 317,
     "en": "week",
-    "word": "კვირა"
+    "word": "კვირა",
+    "pos": "noun"
   },
   {
     "rank": 318,
     "en": "final",
-    "word": "საბოლოო"
+    "word": "საბოლოო",
+    "pos": "adjective"
   },
   {
     "rank": 319,
     "en": "green",
-    "word": "მწვანე"
+    "word": "მწვანე",
+    "pos": "adjective"
   },
   {
     "rank": 320,
     "en": "quick",
-    "word": "ჩქარი"
+    "word": "ჩქარი",
+    "pos": "adjective"
   },
   {
     "rank": 321,
     "en": "to develop",
-    "word": "განვითარება"
+    "word": "განვითარება",
+    "pos": "verb"
   },
   {
     "rank": 322,
     "en": "ocean",
-    "word": "ოკენაე"
+    "word": "ოკეანე",
+    "pos": "noun"
   },
   {
     "rank": 323,
     "en": "warm",
-    "word": "თბილი"
+    "word": "თბილი",
+    "pos": "adjective"
   },
   {
     "rank": 324,
     "en": "free",
-    "word": "თავისუფალი"
+    "word": "თავისუფალი",
+    "pos": "adjective"
   },
   {
     "rank": 325,
     "en": "minute",
-    "word": "წუთი"
+    "word": "წუთი",
+    "pos": "noun"
   },
   {
     "rank": 326,
     "en": "strong",
-    "word": "ძლიერი"
+    "word": "ძლიერი",
+    "pos": "adjective"
   },
   {
     "rank": 327,
     "en": "special",
-    "word": "განსაკუთრებელი"
+    "word": "განსაკუთრებული",
+    "pos": "noun"
   },
   {
     "rank": 328,
     "en": "mind",
-    "word": "გონება"
+    "word": "გონება",
+    "pos": "noun"
   },
   {
     "rank": 329,
     "en": "clean",
-    "word": "სუფთა"
+    "word": "სუფთა",
+    "pos": "adjective"
   },
   {
     "rank": 330,
     "en": "tail",
-    "word": "კუდი"
+    "word": "კუდი",
+    "pos": "noun"
   },
   {
     "rank": 331,
     "en": "fact",
-    "word": "ფაქტი"
+    "word": "ფაქტი",
+    "pos": "noun"
   },
   {
     "rank": 332,
     "en": "street",
-    "word": "ქუჩა"
+    "word": "ქუჩა",
+    "pos": "noun"
   },
   {
     "rank": 333,
     "en": "nothing",
-    "word": "არაფერი"
+    "word": "არაფერი",
+    "pos": "pronoun"
   },
   {
     "rank": 334,
     "en": "course",
-    "word": "კურსი"
+    "word": "კურსი",
+    "pos": "noun"
   },
   {
     "rank": 335,
     "en": "to stay",
-    "word": "დარჩენა"
+    "word": "დარჩენა",
+    "pos": "verb"
   },
   {
     "rank": 336,
     "en": "wheel",
-    "word": "ბორბალი"
+    "word": "ბორბალი",
+    "pos": "noun"
   },
   {
     "rank": 337,
     "en": "full",
-    "word": "სავსე"
+    "word": "სავსე",
+    "pos": "adjective"
   },
   {
     "rank": 338,
     "en": "blue",
-    "word": "ლურჯი"
+    "word": "ლურჯი",
+    "pos": "adjective"
   },
   {
     "rank": 339,
     "en": "object",
-    "word": "ობიექტი"
+    "word": "ობიექტი",
+    "pos": "noun"
   },
   {
     "rank": 340,
     "en": "to decide",
-    "word": "გადაწყვეტა"
+    "word": "გადაწყვეტა",
+    "pos": "verb"
   },
   {
     "rank": 341,
     "en": "surface",
-    "word": "ზედაპირი"
+    "word": "ზედაპირი",
+    "pos": "noun"
   },
   {
     "rank": 342,
     "en": "deep",
-    "word": "ღრმა"
+    "word": "ღრმა",
+    "pos": "adjective"
   },
   {
     "rank": 343,
     "en": "moon",
-    "word": "მთვარე"
+    "word": "მთვარე",
+    "pos": "noun"
   },
   {
     "rank": 344,
     "en": "island",
-    "word": "კუნძული"
+    "word": "კუნძული",
+    "pos": "noun"
   },
   {
     "rank": 345,
     "en": "system",
-    "word": "სისტემა"
+    "word": "სისტემა",
+    "pos": "noun"
   },
   {
     "rank": 346,
     "en": "busy",
-    "word": "დაკავებული"
+    "word": "დაკავებული",
+    "pos": "adjective"
   },
   {
     "rank": 347,
     "en": "test",
-    "word": "გამოცდა"
+    "word": "გამოცდა",
+    "pos": "noun"
   },
   {
     "rank": 348,
     "en": "boat",
-    "word": "ნავი"
+    "word": "ნავი",
+    "pos": "noun"
   },
   {
     "rank": 349,
     "en": "common",
-    "word": "საერო"
+    "word": "საერო",
+    "pos": "adjective"
   },
   {
     "rank": 350,
     "en": "gold",
-    "word": "ოქრო"
+    "word": "ოქრო",
+    "pos": "noun"
   },
   {
     "rank": 351,
     "en": "possible",
-    "word": "შესაძლებელი"
+    "word": "შესაძლებელი",
+    "pos": "adjective"
   },
   {
     "rank": 352,
     "en": "plane",
-    "word": "თვითმფრინავი"
+    "word": "თვითმფრინავი",
+    "pos": "noun"
   },
   {
     "rank": 353,
     "en": "dry",
-    "word": "მშრალი"
+    "word": "მშრალი",
+    "pos": "adjective"
   },
   {
     "rank": 354,
     "en": "to be interested in",
-    "word": "დაინტერესება"
+    "word": "დაინტერესება",
+    "pos": "verb"
   },
   {
     "rank": 355,
     "en": "to laugh",
-    "word": "გაცინება"
+    "word": "გაცინება",
+    "pos": "verb"
   },
   {
     "rank": 356,
     "en": "thousand",
-    "word": "ათასი"
+    "word": "ათასი",
+    "pos": "numeral"
   },
   {
     "rank": 357,
     "en": "game",
-    "word": "თამაში"
+    "word": "თამაში",
+    "pos": "noun"
   },
   {
     "rank": 358,
     "en": "hot",
-    "word": "ცხელი"
+    "word": "ცხელი",
+    "pos": "adjective"
   },
   {
     "rank": 359,
     "en": "to miss (sb)",
-    "word": "მონატრება"
+    "word": "მონატრება",
+    "pos": "verb"
   },
   {
     "rank": 360,
     "en": "to bring",
-    "word": "მოტანა"
+    "word": "მოტანა",
+    "pos": "verb"
   },
   {
     "rank": 361,
     "en": "heat",
-    "word": "სითბო"
+    "word": "სითბო",
+    "pos": "noun"
   },
   {
     "rank": 362,
     "en": "snow",
-    "word": "თოვლი"
+    "word": "თოვლი",
+    "pos": "noun"
   },
   {
     "rank": 363,
     "en": "tire",
-    "word": "საბურავი"
+    "word": "საბურავი",
+    "pos": "noun"
   },
   {
     "rank": 364,
     "en": "yes",
-    "word": "დიახ / ხო / კი"
+    "word": "დიახ / ხო / კი",
+    "pos": "particle"
   },
   {
     "rank": 365,
     "en": "distant",
-    "word": "შორეული"
+    "word": "შორეული",
+    "pos": "adjective"
   },
   {
     "rank": 366,
     "en": "to fill (up sth)",
-    "word": "ასვება"
+    "word": "ავსება",
+    "pos": "verb"
   },
   {
     "rank": 367,
     "en": "east",
-    "word": "აღმოსავლეთი"
+    "word": "აღმოსავლეთი",
+    "pos": "noun"
   },
   {
     "rank": 368,
     "en": "paint",
-    "word": "საღებავი"
+    "word": "საღებავი",
+    "pos": "noun"
   },
   {
     "rank": 369,
     "en": "language",
-    "word": "ენა"
+    "word": "ენა",
+    "pos": "noun"
   },
   {
     "rank": 370,
     "en": "grand",
-    "word": "გრანდიოზული"
+    "word": "გრანდიოზული",
+    "pos": "noun"
   },
   {
     "rank": 371,
     "en": "ball",
-    "word": "ბურთი"
+    "word": "ბურთი",
+    "pos": "noun"
   },
   {
     "rank": 372,
     "en": "however",
-    "word": "თუმცა"
+    "word": "თუმცა",
+    "pos": "conjunction"
   },
   {
     "rank": 373,
     "en": "wave (of sea or sound)",
-    "word": "ტალღა"
+    "word": "ტალღა",
+    "pos": "noun"
   },
   {
     "rank": 374,
     "en": "heart",
-    "word": "გული"
+    "word": "გული",
+    "pos": "noun"
   },
   {
     "rank": 375,
     "en": "heavy",
-    "word": "მძიმე"
+    "word": "მძიმე",
+    "pos": "adjective"
   },
   {
     "rank": 376,
     "en": "to dance",
-    "word": "ცეკვა"
+    "word": "ცეკვა",
+    "pos": "verb"
   },
   {
     "rank": 377,
     "en": "engine",
-    "word": "ძრავა"
+    "word": "ძრავა",
+    "pos": "noun"
   },
   {
     "rank": 378,
     "en": "position",
-    "word": "პოზიცია"
+    "word": "პოზიცია",
+    "pos": "noun"
   },
   {
     "rank": 379,
     "en": "arm",
-    "word": "მკლავი"
+    "word": "მკლავი",
+    "pos": "noun"
   },
   {
     "rank": 380,
     "en": "wide",
-    "word": "ფართო"
+    "word": "ფართო",
+    "pos": "adjective"
   },
   {
     "rank": 381,
     "en": "material",
-    "word": "მასალა"
+    "word": "მასალა",
+    "pos": "noun"
   },
   {
     "rank": 382,
     "en": "size",
-    "word": "ზომა"
+    "word": "ზომა",
+    "pos": "noun"
   },
   {
     "rank": 383,
     "en": "to speak",
-    "word": "ლაპარაკი"
+    "word": "ლაპარაკი",
+    "pos": "verb"
   },
   {
     "rank": 384,
     "en": "weight",
-    "word": "წომა"
+    "word": "წონა",
+    "pos": "noun"
   },
   {
     "rank": 385,
     "en": "ice",
-    "word": "ყინული"
+    "word": "ყინული",
+    "pos": "noun"
   },
   {
     "rank": 386,
     "en": "matter",
-    "word": "მატერიალ"
+    "word": "მატერია",
+    "pos": "noun"
   },
   {
     "rank": 387,
     "en": "circle",
-    "word": "წრე"
+    "word": "წრე",
+    "pos": "noun"
   },
   {
     "rank": 388,
     "en": "to divide / split",
-    "word": "გაყოფა"
+    "word": "გაყოფა",
+    "pos": "verb"
   },
   {
     "rank": 389,
     "en": "syllable",
-    "word": "მარცვალი"
+    "word": "მარცვალი",
+    "pos": "noun"
   },
   {
     "rank": 390,
     "en": "probably",
-    "word": "ალბათ"
+    "word": "ალბათ",
+    "pos": "adverb"
   },
   {
     "rank": 391,
     "en": "sudden",
-    "word": "მოულოდნელი"
+    "word": "მოულოდნელი",
+    "pos": "noun"
   },
   {
     "rank": 392,
     "en": "to count",
-    "word": "თვლა"
+    "word": "თვლა",
+    "pos": "verb"
   },
   {
     "rank": 393,
     "en": "square",
-    "word": "კვადრატი"
+    "word": "კვადრატი",
+    "pos": "noun"
   },
   {
     "rank": 394,
     "en": "length",
-    "word": "სიგრძე"
+    "word": "სიგრძე",
+    "pos": "noun"
   },
   {
     "rank": 395,
     "en": "to represent / imagine",
-    "word": "წარმოდგენა"
+    "word": "წარმოდგენა",
+    "pos": "verb"
   },
   {
     "rank": 396,
     "en": "art",
-    "word": "ხელოვნება"
+    "word": "ხელოვნება",
+    "pos": "noun"
   },
   {
     "rank": 397,
     "en": "subject (of discussion)",
-    "word": "თემა"
+    "word": "თემა",
+    "pos": "noun"
   },
   {
     "rank": 398,
     "en": "region",
-    "word": "რეგიონი"
+    "word": "რეგიონი",
+    "pos": "noun"
   },
   {
     "rank": 399,
     "en": "energy",
-    "word": "ენერგია"
+    "word": "ენერგია",
+    "pos": "noun"
   },
   {
     "rank": 400,
     "en": "to hurt",
-    "word": "ტკენა"
+    "word": "ტკენა",
+    "pos": "verb"
   },
   {
     "rank": 401,
     "en": "to consider / take into account",
-    "word": "გათვალისწინება"
+    "word": "გათვალისწინება",
+    "pos": "verb"
   },
   {
     "rank": 402,
     "en": "bed",
-    "word": "საწოლი"
+    "word": "საწოლი",
+    "pos": "noun"
   },
   {
     "rank": 403,
     "en": "brother",
-    "word": "ძმა"
+    "word": "ძმა",
+    "pos": "noun"
   },
   {
     "rank": 404,
     "en": "egg",
-    "word": "კვერცხი"
+    "word": "კვერცხი",
+    "pos": "noun"
   },
   {
     "rank": 405,
     "en": "cell (of the body)",
-    "word": "უჯრედი"
+    "word": "უჯრედი",
+    "pos": "noun"
   },
   {
     "rank": 406,
     "en": "to believe",
-    "word": "დაჯერება"
+    "word": "დაჯერება",
+    "pos": "verb"
   },
   {
     "rank": 407,
     "en": "forest",
-    "word": "ტყე"
+    "word": "ტყე",
+    "pos": "noun"
   },
   {
     "rank": 408,
     "en": "window",
-    "word": "ფანჯარა"
+    "word": "ფანჯარა",
+    "pos": "noun"
   },
   {
     "rank": 409,
     "en": "shop / store",
-    "word": "მაღაზია"
+    "word": "მაღაზია",
+    "pos": "noun"
   },
   {
     "rank": 410,
     "en": "summer",
-    "word": "ზაფხული"
+    "word": "ზაფხული",
+    "pos": "noun"
   },
   {
     "rank": 411,
     "en": "train",
-    "word": "მატარებელი"
+    "word": "მატარებელი",
+    "pos": "noun"
   },
   {
     "rank": 412,
     "en": "sleep",
-    "word": "ძილი"
+    "word": "ძილი",
+    "pos": "noun"
   },
   {
     "rank": 413,
     "en": "to prove",
-    "word": "დამტკიცება"
+    "word": "დამტკიცება",
+    "pos": "verb"
   },
   {
     "rank": 414,
     "en": "exercise",
-    "word": "ვარჯიში"
+    "word": "ვარჯიში",
+    "pos": "noun"
   },
   {
     "rank": 415,
     "en": "wall",
-    "word": "კედელი"
+    "word": "კედელი",
+    "pos": "noun"
   },
   {
     "rank": 416,
     "en": "catch",
-    "word": "დაჭერა"
+    "word": "დაჭერა",
+    "pos": "noun"
   },
   {
     "rank": 417,
     "en": "wish",
-    "word": "სურვილი"
+    "word": "სურვილი",
+    "pos": "noun"
   },
   {
     "rank": 418,
     "en": "sky",
-    "word": "ცა"
+    "word": "ცა",
+    "pos": "noun"
   },
   {
     "rank": 419,
     "en": "board (for writing)",
-    "word": "დაფა"
+    "word": "დაფა",
+    "pos": "noun"
   },
   {
     "rank": 420,
     "en": "joy",
-    "word": "სიხარული"
+    "word": "სიხარული",
+    "pos": "noun"
   },
   {
     "rank": 421,
     "en": "winter",
-    "word": "ზამთარი"
+    "word": "ზამთარი",
+    "pos": "noun"
   },
   {
     "rank": 422,
     "en": "written",
-    "word": "დაწერილი"
+    "word": "დაწერილი",
+    "pos": "adjective"
   },
   {
     "rank": 423,
     "en": "wild (animal)",
-    "word": "გარეული"
+    "word": "გარეული",
+    "pos": "adjective"
   },
   {
     "rank": 424,
     "en": "instrument",
-    "word": "ინსტრუმენტი"
+    "word": "ინსტრუმენტი",
+    "pos": "noun"
   },
   {
     "rank": 425,
     "en": "glass",
-    "word": "ჭიქა"
+    "word": "ჭიქა",
+    "pos": "noun"
   },
   {
     "rank": 426,
     "en": "grass",
-    "word": "ბალახი"
+    "word": "ბალახი",
+    "pos": "noun"
   },
   {
     "rank": 427,
     "en": "cow",
-    "word": "ძროხა"
+    "word": "ძროხა",
+    "pos": "noun"
   },
   {
     "rank": 428,
     "en": "job",
-    "word": "სამუშაო"
+    "word": "სამუშაო",
+    "pos": "noun"
   },
   {
     "rank": 429,
     "en": "past",
-    "word": "წარსული"
+    "word": "წარსული",
+    "pos": "noun"
   },
   {
     "rank": 430,
     "en": "soft",
-    "word": "რბილი"
+    "word": "რბილი",
+    "pos": "adjective"
   },
   {
     "rank": 431,
     "en": "fun",
-    "word": "გართობა"
+    "word": "გართობა",
+    "pos": "noun"
   },
   {
     "rank": 432,
     "en": "bright (light)",
-    "word": "ნათელი"
+    "word": "ნათელი",
+    "pos": "adjective"
   },
   {
     "rank": 433,
     "en": "fuel, gas",
-    "word": "საწვავი"
+    "word": "საწვავი",
+    "pos": "noun"
   },
   {
     "rank": 434,
     "en": "weather",
-    "word": "ამინდი"
+    "word": "ამინდი",
+    "pos": "noun"
   },
   {
     "rank": 435,
     "en": "month",
-    "word": "თვე"
+    "word": "თვე",
+    "pos": "noun"
   },
   {
     "rank": 436,
     "en": "million",
-    "word": "მილიონი"
+    "word": "მილიონი",
+    "pos": "numeral"
   },
   {
     "rank": 437,
     "en": "bear",
-    "word": "დათვი"
+    "word": "დათვი",
+    "pos": "noun"
   },
   {
     "rank": 438,
     "en": "happy",
-    "word": "ბედნიერი"
+    "word": "ბედნიერი",
+    "pos": "adjective"
   },
   {
     "rank": 439,
     "en": "hope",
-    "word": "იმედი"
+    "word": "იმედი",
+    "pos": "noun"
   },
   {
     "rank": 440,
     "en": "flower",
-    "word": "ყვავილი"
+    "word": "ყვავილი",
+    "pos": "noun"
   },
   {
     "rank": 441,
     "en": "clothe(s)",
-    "word": "ტანსაცმელი"
+    "word": "ტანსაცმელი",
+    "pos": "noun"
   },
   {
     "rank": 442,
     "en": "strange",
-    "word": "უცნაური"
+    "word": "უცნაური",
+    "pos": "adjective"
   },
   {
     "rank": 443,
     "en": "to jump",
-    "word": "ხტომა"
+    "word": "ხტომა",
+    "pos": "verb"
   },
   {
     "rank": 444,
     "en": "eight",
-    "word": "რვა"
+    "word": "რვა",
+    "pos": "numeral"
   },
   {
     "rank": 445,
     "en": "village",
-    "word": "სოფელი"
+    "word": "სოფელი",
+    "pos": "noun"
   },
   {
     "rank": 446,
     "en": "to meet (sb)",
-    "word": "შეხვედრა"
+    "word": "შეხვედრა",
+    "pos": "verb"
   },
   {
     "rank": 447,
     "en": "root",
-    "word": "ფესვი"
+    "word": "ფესვი",
+    "pos": "noun"
   },
   {
     "rank": 448,
     "en": "to buy",
-    "word": "ყიდვა"
+    "word": "ყიდვა",
+    "pos": "verb"
   },
   {
     "rank": 449,
     "en": "metal",
-    "word": "ლითონი"
+    "word": "ლითონი",
+    "pos": "noun"
   },
   {
     "rank": 450,
     "en": "seven",
-    "word": "შვიდი"
+    "word": "შვიდი",
+    "pos": "numeral"
   },
   {
     "rank": 451,
     "en": "paragraph",
-    "word": "აბზაცი"
+    "word": "აბზაცი",
+    "pos": "noun"
   },
   {
     "rank": 452,
     "en": "third",
-    "word": "მესამე"
+    "word": "მესამე",
+    "pos": "numeral"
   },
   {
     "rank": 453,
     "en": "hair",
-    "word": "თმა"
+    "word": "თმა",
+    "pos": "noun"
   },
   {
     "rank": 454,
     "en": "to describe",
-    "word": "აღწერა"
+    "word": "აღწერა",
+    "pos": "verb"
   },
   {
     "rank": 455,
     "en": "cook (profession)",
-    "word": "მზარეული"
+    "word": "მზარეული",
+    "pos": "noun"
   },
   {
     "rank": 456,
     "en": "floor",
-    "word": "იატაკი"
+    "word": "იატაკი",
+    "pos": "noun"
   },
   {
     "rank": 457,
     "en": "to burn",
-    "word": "დაწვა"
+    "word": "დაწვა",
+    "pos": "verb"
   },
   {
     "rank": 458,
     "en": "hill",
-    "word": "ბორცვი"
+    "word": "ბორცვი",
+    "pos": "noun"
   },
   {
     "rank": 459,
     "en": "safe (place)",
-    "word": "უსაფრთხო"
+    "word": "უსაფრთხო",
+    "pos": "adjective"
   },
   {
     "rank": 460,
     "en": "cat",
-    "word": "კატა"
+    "word": "კატა",
+    "pos": "noun"
   },
   {
     "rank": 461,
     "en": "century",
-    "word": "საუკუნე"
+    "word": "საუკუნე",
+    "pos": "noun"
   },
   {
     "rank": 462,
     "en": "type",
-    "word": "ტიპი"
+    "word": "ტიპი",
+    "pos": "noun"
   },
   {
     "rank": 463,
     "en": "law",
-    "word": "კანონი"
+    "word": "კანონი",
+    "pos": "noun"
   },
   {
     "rank": 464,
     "en": "beach",
-    "word": "სანაპირო"
+    "word": "სანაპირო",
+    "pos": "noun"
   },
   {
     "rank": 465,
     "en": "copy (computer phrase)",
-    "word": "კოპირება"
+    "word": "კოპირება",
+    "pos": "noun"
   },
   {
     "rank": 466,
     "en": "phrase",
-    "word": "ფრაზა"
+    "word": "ფრაზა",
+    "pos": "noun"
   },
   {
     "rank": 467,
     "en": "silent",
-    "word": "ჩუმი"
+    "word": "ჩუმი",
+    "pos": "adjective"
   },
   {
     "rank": 468,
     "en": "tall",
-    "word": "მაღალი"
+    "word": "მაღალი",
+    "pos": "adjective"
   },
   {
     "rank": 469,
     "en": "sand",
-    "word": "ქვიშა"
+    "word": "ქვიშა",
+    "pos": "noun"
   },
   {
     "rank": 470,
     "en": "soil",
-    "word": "ნიადაგი"
+    "word": "ნიადაგი",
+    "pos": "noun"
   },
   {
     "rank": 471,
     "en": "temperature",
-    "word": "ტემპერატურა"
+    "word": "ტემპერატურა",
+    "pos": "noun"
   },
   {
     "rank": 472,
     "en": "finger",
-    "word": "თითი"
+    "word": "თითი",
+    "pos": "noun"
   },
   {
     "rank": 473,
     "en": "industry",
-    "word": "ინდუსტრია"
+    "word": "ინდუსტრია",
+    "pos": "noun"
   },
   {
     "rank": 474,
     "en": "value",
-    "word": "ღირებულება"
+    "word": "ღირებულება",
+    "pos": "noun"
   },
   {
     "rank": 475,
     "en": "fight, struggle, combat",
-    "word": "ბრძოლა"
+    "word": "ბრძოლა",
+    "pos": "noun"
   },
   {
     "rank": 476,
     "en": "lie",
-    "word": "ტყუილი"
+    "word": "ტყუილი",
+    "pos": "noun"
   },
   {
     "rank": 477,
     "en": "beat (of a heart, drums)",
-    "word": "ცემა"
+    "word": "ცემა",
+    "pos": "noun"
   },
   {
     "rank": 478,
     "en": "excited",
-    "word": "აღფრთოვანებული"
+    "word": "აღფრთოვანებული",
+    "pos": "adjective"
   },
   {
     "rank": 479,
     "en": "natural",
-    "word": "ბუნებრივი"
+    "word": "ბუნებრივი",
+    "pos": "adjective"
   },
   {
     "rank": 480,
     "en": "view",
-    "word": "ხედი"
+    "word": "ხედი",
+    "pos": "noun"
   },
   {
     "rank": 481,
     "en": "ear",
-    "word": "ყური"
+    "word": "ყური",
+    "pos": "noun"
   },
   {
     "rank": 482,
     "en": "to break",
-    "word": "მოტეხვა"
+    "word": "მოტეხვა",
+    "pos": "verb"
   },
   {
     "rank": 483,
     "en": "(grammatical) case",
-    "word": "ბრუნვა"
+    "word": "ბრუნვა",
+    "pos": "noun"
   },
   {
     "rank": 484,
     "en": "middle (of sth)",
-    "word": "შუა"
+    "word": "შუა",
+    "pos": "noun"
   },
   {
     "rank": 485,
     "en": "to kill",
-    "word": "მოკვლა"
+    "word": "მოკვლა",
+    "pos": "verb"
   },
   {
     "rank": 486,
     "en": "son",
-    "word": "შვილი"
+    "word": "შვილი",
+    "pos": "noun"
   },
   {
     "rank": 487,
     "en": "lake",
-    "word": "ტბა"
+    "word": "ტბა",
+    "pos": "noun"
   },
   {
     "rank": 488,
     "en": "moment",
-    "word": "მომენტი"
+    "word": "მომენტი",
+    "pos": "noun"
   },
   {
     "rank": 489,
     "en": "scale",
-    "word": "მასშტაბი"
+    "word": "მასშტაბი",
+    "pos": "noun"
   },
   {
     "rank": 490,
     "en": "loud",
-    "word": "ხმამაღალი"
+    "word": "ხმამაღალი",
+    "pos": "adjective"
   },
   {
     "rank": 491,
     "en": "spring",
-    "word": "გაზაფხული"
+    "word": "გაზაფხული",
+    "pos": "noun"
   },
   {
     "rank": 492,
     "en": "to observe",
-    "word": "დაკვირვება"
+    "word": "დაკვირვება",
+    "pos": "verb"
   },
   {
     "rank": 493,
     "en": "straight",
-    "word": "სწორი"
+    "word": "სწორი",
+    "pos": "adjective"
   },
   {
     "rank": 494,
     "en": "consonant",
-    "word": "თანხმოვანი"
+    "word": "თანხმოვანი",
+    "pos": "noun"
   },
   {
     "rank": 495,
     "en": "nation",
-    "word": "ერი"
+    "word": "ერი",
+    "pos": "noun"
   },
   {
     "rank": 496,
     "en": "dictionary",
-    "word": "ლექსიკონი"
+    "word": "ლექსიკონი",
+    "pos": "noun"
   },
   {
     "rank": 497,
     "en": "milk",
-    "word": "რძე"
+    "word": "რძე",
+    "pos": "noun"
   },
   {
     "rank": 498,
     "en": "speed",
-    "word": "სისწრაფე"
+    "word": "სისწრაფე",
+    "pos": "noun"
   },
   {
     "rank": 499,
     "en": "method",
-    "word": "მეთოდი"
+    "word": "მეთოდი",
+    "pos": "noun"
   },
   {
     "rank": 500,
     "en": "organ",
-    "word": "ორგანი"
+    "word": "ორგანო",
+    "pos": "noun"
   },
   {
     "rank": 501,
     "en": "to pay",
-    "word": "გადახდა"
+    "word": "გადახდა",
+    "pos": "verb"
   },
   {
     "rank": 502,
     "en": "age",
-    "word": "ასაკი"
+    "word": "ასაკი",
+    "pos": "noun"
   },
   {
     "rank": 503,
     "en": "dress",
-    "word": "კაბა"
+    "word": "კაბა",
+    "pos": "noun"
   },
   {
     "rank": 504,
     "en": "cloud, sponge",
-    "word": "ღრუბელი"
+    "word": "ღრუბელი",
+    "pos": "noun"
   },
   {
     "rank": 505,
     "en": "surprise",
-    "word": "გაკვირვება"
+    "word": "გაკვირვება",
+    "pos": "noun"
   },
   {
     "rank": 506,
     "en": "quiet",
-    "word": "მშვიდი"
+    "word": "მშვიდი",
+    "pos": "adjective"
   },
   {
     "rank": 507,
     "en": "stone",
-    "word": "ქვა"
+    "word": "ქვა",
+    "pos": "noun"
   },
   {
     "rank": 508,
     "en": "to climb, to go up",
-    "word": "ასვლა"
+    "word": "ასვლა",
+    "pos": "verb"
   },
   {
     "rank": 509,
     "en": "cool",
-    "word": "მაგარი"
+    "word": "მაგარი",
+    "pos": "adjective"
   },
   {
     "rank": 510,
     "en": "design",
-    "word": "დიზაინი"
+    "word": "დიზაინი",
+    "pos": "noun"
   },
   {
     "rank": 511,
     "en": "poor (i.e. in wealth)",
-    "word": "ღარიბი"
+    "word": "ღარიბი",
+    "pos": "adjective"
   },
   {
     "rank": 512,
     "en": "experiment",
-    "word": "ექსპერიმენტი"
+    "word": "ექსპერიმენტი",
+    "pos": "noun"
   },
   {
     "rank": 513,
     "en": "seafloor, bottom",
-    "word": "ფსკერი"
+    "word": "ფსკერი",
+    "pos": "noun"
   },
   {
     "rank": 514,
     "en": "key",
-    "word": "გასაღები"
+    "word": "გასაღები",
+    "pos": "noun"
   },
   {
     "rank": 515,
     "en": "iron",
-    "word": "რკინა"
+    "word": "რკინა",
+    "pos": "noun"
   },
   {
     "rank": 516,
     "en": "alone",
-    "word": "მარტო"
+    "word": "მარტო",
+    "pos": "adjective"
   },
   {
     "rank": 517,
     "en": "stick (of wood)",
-    "word": "ჯოხი"
+    "word": "ჯოხი",
+    "pos": "noun"
   },
   {
     "rank": 518,
     "en": "flat, multi-floored building",
-    "word": "ბინა"
+    "word": "ბინა",
+    "pos": "noun"
   },
   {
     "rank": 519,
     "en": "twenty",
-    "word": "ოცი"
+    "word": "ოცი",
+    "pos": "numeral"
   },
   {
     "rank": 520,
     "en": "skin",
-    "word": "კანი"
+    "word": "კანი",
+    "pos": "noun"
   },
   {
     "rank": 521,
     "en": "smile",
-    "word": "ღიმილი"
+    "word": "ღიმილი",
+    "pos": "noun"
   },
   {
     "rank": 522,
     "en": "hole",
-    "word": "ხვრელი"
+    "word": "ხვრელი",
+    "pos": "noun"
   },
   {
     "rank": 523,
     "en": "trade",
-    "word": "ვაჭრობა"
+    "word": "ვაჭრობა",
+    "pos": "noun"
   },
   {
     "rank": 524,
     "en": "melody",
-    "word": "მელოდია"
+    "word": "მელოდია",
+    "pos": "noun"
   },
   {
     "rank": 525,
     "en": "trip",
-    "word": "მოგზაურობა"
+    "word": "მოგზაურობა",
+    "pos": "noun"
   },
   {
     "rank": 526,
     "en": "office",
-    "word": "ოფისი"
+    "word": "ოფისი",
+    "pos": "noun"
   },
   {
     "rank": 527,
     "en": "row, line, queue",
-    "word": "რიგი"
+    "word": "რიგი",
+    "pos": "noun"
   },
   {
     "rank": 528,
     "en": "mouth",
-    "word": "პირი"
+    "word": "პირი",
+    "pos": "noun"
   },
   {
     "rank": 529,
     "en": "exact",
-    "word": "ზუსტი"
+    "word": "ზუსტი",
+    "pos": "adjective"
   },
   {
     "rank": 530,
     "en": "symbol",
-    "word": "სიმბოლო"
+    "word": "სიმბოლო",
+    "pos": "noun"
   },
   {
     "rank": 531,
     "en": "to die",
-    "word": "სიკვდილი"
+    "word": "სიკვდილი",
+    "pos": "verb"
   },
   {
     "rank": 532,
     "en": "to shout, to scream, to yell",
-    "word": "ყვირილი"
+    "word": "ყვირილი",
+    "pos": "verb"
   },
   {
     "rank": 533,
     "en": "seed",
-    "word": "თესლი"
+    "word": "თესლი",
+    "pos": "noun"
   },
   {
     "rank": 534,
     "en": "tone",
-    "word": "ტონი"
+    "word": "ტონი",
+    "pos": "noun"
   },
   {
     "rank": 535,
     "en": "to suggest",
-    "word": "რჩევა"
+    "word": "რჩევა",
+    "pos": "verb"
   },
   {
     "rank": 536,
     "en": "to clean",
-    "word": "გაწმენდა"
+    "word": "გაწმენდა",
+    "pos": "verb"
   },
   {
     "rank": 537,
     "en": "to destroy / to tear down",
-    "word": "დანგრევა"
+    "word": "დანგრევა",
+    "pos": "verb"
   },
   {
     "rank": 538,
     "en": "yard",
-    "word": "ეზო"
+    "word": "ეზო",
+    "pos": "noun"
   },
   {
     "rank": 539,
     "en": "rice",
-    "word": "ბრინჯი"
+    "word": "ბრინჯი",
+    "pos": "noun"
   },
   {
     "rank": 540,
     "en": "bad",
-    "word": "ცუდი"
+    "word": "ცუდი",
+    "pos": "adjective"
   },
   {
     "rank": 541,
     "en": "to blow (air)",
-    "word": "შებერვა"
+    "word": "შებერვა",
+    "pos": "verb"
   },
   {
     "rank": 542,
     "en": "oil",
-    "word": "ნავთი"
+    "word": "ნავთი",
+    "pos": "noun"
   },
   {
     "rank": 543,
     "en": "blood",
-    "word": "ნავთი"
+    "word": "სისხლი",
+    "pos": "noun"
   },
   {
     "rank": 544,
     "en": "to touch",
-    "word": "შეხება"
+    "word": "შეხება",
+    "pos": "verb"
   },
   {
     "rank": 545,
     "en": "team",
-    "word": "გუნდი"
+    "word": "გუნდი",
+    "pos": "noun"
   },
   {
     "rank": 546,
     "en": "wire",
-    "word": "მავთული"
+    "word": "მავთული",
+    "pos": "noun"
   },
   {
     "rank": 547,
     "en": "to lose (sth)",
-    "word": "დაკარგვა"
+    "word": "დაკარგვა",
+    "pos": "verb"
   },
   {
     "rank": 548,
     "en": "brown",
-    "word": "ყავისფერი"
+    "word": "ყავისფერი",
+    "pos": "adjective"
   },
   {
     "rank": 549,
     "en": "to wear",
-    "word": "ჩაცმა"
+    "word": "ჩაცმა",
+    "pos": "verb"
   },
   {
     "rank": 550,
     "en": "garden",
-    "word": "ბაღი"
+    "word": "ბაღი",
+    "pos": "noun"
   },
   {
     "rank": 551,
     "en": "equal",
-    "word": "თანასწორი"
+    "word": "თანასწორი",
+    "pos": "adjective"
   },
   {
     "rank": 552,
     "en": "to send",
-    "word": "გაგზავნა"
+    "word": "გაგზავნა",
+    "pos": "verb"
   },
   {
     "rank": 553,
     "en": "to choose",
-    "word": "არჩევა"
+    "word": "არჩევა",
+    "pos": "verb"
   },
   {
     "rank": 554,
     "en": "to fall",
-    "word": "დაცემა"
+    "word": "დაცემა",
+    "pos": "verb"
   },
   {
     "rank": 555,
     "en": "to fit (sb), to match",
-    "word": "მორგება"
+    "word": "მორგება",
+    "pos": "verb"
   },
   {
     "rank": 556,
     "en": "courthouse / court",
-    "word": "სასამართლო"
+    "word": "სასამართლო",
+    "pos": "noun"
   },
   {
     "rank": 557,
     "en": "bank",
-    "word": "ბანკი"
+    "word": "ბანკი",
+    "pos": "noun"
   },
   {
     "rank": 558,
     "en": "to collect",
-    "word": "შეგროვება"
+    "word": "შეგროვება",
+    "pos": "verb"
   },
   {
     "rank": 559,
     "en": "to save (sb)",
-    "word": "გადარჩენა"
+    "word": "გადარჩენა",
+    "pos": "verb"
   },
   {
     "rank": 560,
     "en": "control",
-    "word": "კონტროლი"
+    "word": "კონტროლი",
+    "pos": "noun"
   },
   {
     "rank": 561,
     "en": "decimal",
-    "word": "ათობითი"
+    "word": "ათობითი",
+    "pos": "adjective"
   },
   {
     "rank": 562,
     "en": "gentle",
-    "word": "ნაზი"
+    "word": "ნაზი",
+    "pos": "adjective"
   },
   {
     "rank": 563,
     "en": "woman",
-    "word": "ქალი"
+    "word": "ქალი",
+    "pos": "noun"
   },
   {
     "rank": 564,
     "en": "captain",
-    "word": "კაპიტანი"
+    "word": "კაპიტანი",
+    "pos": "noun"
   },
   {
     "rank": 565,
     "en": "practice",
-    "word": "პრაქტიკა"
+    "word": "პრაქტიკა",
+    "pos": "noun"
   },
   {
     "rank": 566,
     "en": "doctor",
-    "word": "ექიმი"
+    "word": "ექიმი",
+    "pos": "noun"
   },
   {
     "rank": 567,
     "en": "please",
-    "word": "გთხოვთ"
+    "word": "გთხოვთ",
+    "pos": "particle"
   },
   {
     "rank": 568,
     "en": "to protect",
-    "word": "დაცვა"
+    "word": "დაცვა",
+    "pos": "verb"
   },
   {
     "rank": 569,
     "en": "noon",
-    "word": "შუადღე"
+    "word": "შუადღე",
+    "pos": "noun"
   },
   {
     "rank": 570,
     "en": "whose",
-    "word": "ვისი"
+    "word": "ვისი",
+    "pos": "pronoun"
   },
   {
     "rank": 571,
     "en": "hospital",
-    "word": "საავადმყოფო"
+    "word": "საავადმყოფო",
+    "pos": "noun"
   },
   {
     "rank": 572,
     "en": "ring",
-    "word": "ბეჭედი"
+    "word": "ბეჭედი",
+    "pos": "noun"
   },
   {
     "rank": 573,
     "en": "character",
-    "word": "პერსონაჟი"
+    "word": "პერსონაჟი",
+    "pos": "noun"
   },
   {
     "rank": 574,
     "en": "insect",
-    "word": "მწერი"
+    "word": "მწერი",
+    "pos": "noun"
   },
   {
     "rank": 575,
     "en": "period (of time)",
-    "word": "პერიოდი"
+    "word": "პერიოდი",
+    "pos": "noun"
   },
   {
     "rank": 576,
     "en": "radio",
-    "word": "რადიო"
+    "word": "რადიო",
+    "pos": "noun"
   },
   {
     "rank": 577,
     "en": "atom",
-    "word": "ატომი"
+    "word": "ატომი",
+    "pos": "noun"
   },
   {
     "rank": 578,
     "en": "history",
-    "word": "ისტორია"
+    "word": "ისტორია",
+    "pos": "noun"
   },
   {
     "rank": 579,
     "en": "effect",
-    "word": "ეფექტი"
+    "word": "ეფექტი",
+    "pos": "noun"
   },
   {
     "rank": 580,
     "en": "electricity",
-    "word": "ელექტროობა"
+    "word": "ელექტროობა",
+    "pos": "noun"
   },
   {
     "rank": 581,
     "en": "crop",
-    "word": "მოსავალი"
+    "word": "მოსავალი",
+    "pos": "noun"
   },
   {
     "rank": 582,
     "en": "modern",
-    "word": "თანამედროვე"
+    "word": "თანამედროვე",
+    "pos": "adjective"
   },
   {
     "rank": 583,
     "en": "element",
-    "word": "ელემენტი"
+    "word": "ელემენტი",
+    "pos": "noun"
   },
   {
     "rank": 584,
     "en": "to hit (sb)",
-    "word": "დარტყმა"
+    "word": "დარტყმა",
+    "pos": "verb"
   },
   {
     "rank": 585,
     "en": "university student",
-    "word": "სტუდენტი"
+    "word": "სტუდენტი",
+    "pos": "noun"
   },
   {
     "rank": 586,
     "en": "corner",
-    "word": "კუთხე"
+    "word": "კუთხე",
+    "pos": "noun"
   },
   {
     "rank": 587,
     "en": "party",
-    "word": "წვეულება"
+    "word": "წვეულება",
+    "pos": "noun"
   },
   {
     "rank": 588,
     "en": "bone",
-    "word": "ძვალი"
+    "word": "ძვალი",
+    "pos": "noun"
   },
   {
     "rank": 589,
     "en": "railway",
-    "word": "რკინიგზა"
+    "word": "რკინიგზა",
+    "pos": "noun"
   },
   {
     "rank": 590,
     "en": "to provide",
-    "word": "უზრუნველყოფა"
+    "word": "უზრუნველყოფა",
+    "pos": "verb"
   },
   {
     "rank": 591,
     "en": "to agree",
-    "word": "დათანხმება"
+    "word": "დათანხმება",
+    "pos": "verb"
   },
   {
     "rank": 592,
     "en": "capital",
-    "word": "დედაქალაქი"
+    "word": "დედაქალაქი",
+    "pos": "noun"
   },
   {
     "rank": 593,
     "en": "chair",
-    "word": "სკამი"
+    "word": "სკამი",
+    "pos": "noun"
   },
   {
     "rank": 594,
     "en": "danger",
-    "word": "ფრთხილი"
+    "word": "საფრთხე",
+    "pos": "noun"
   },
   {
     "rank": 595,
     "en": "fruit",
-    "word": "ხილი"
+    "word": "ხილი",
+    "pos": "noun"
   },
   {
     "rank": 596,
     "en": "rich",
-    "word": "მდიდარი"
+    "word": "მდიდარი",
+    "pos": "adjective"
   },
   {
     "rank": 597,
     "en": "soldier",
-    "word": "ჯარისკაცი"
+    "word": "ჯარისკაცი",
+    "pos": "noun"
   },
   {
     "rank": 598,
     "en": "process",
-    "word": "პროცესი"
+    "word": "პროცესი",
+    "pos": "noun"
   },
   {
     "rank": 599,
     "en": "necessary",
-    "word": "საჭირო"
+    "word": "საჭირო",
+    "pos": "adjective"
   },
   {
     "rank": 600,
     "en": "sharp",
-    "word": "მახვილი"
+    "word": "მახვილი",
+    "pos": "adjective"
   },
   {
     "rank": 601,
     "en": "wing",
-    "word": "ფრთა"
+    "word": "ფრთა",
+    "pos": "noun"
   },
   {
     "rank": 602,
     "en": "neighbor",
-    "word": "მეზობელი"
+    "word": "მეზობელი",
+    "pos": "noun"
   },
   {
     "rank": 603,
     "en": "to bathe / to wash",
-    "word": "დაბანა"
+    "word": "დაბანა",
+    "pos": "verb"
   },
   {
     "rank": 604,
     "en": "bat (animal)",
-    "word": "ღამურა"
+    "word": "ღამურა",
+    "pos": "noun"
   },
   {
     "rank": 605,
     "en": "crowd",
-    "word": "ბრბო"
+    "word": "ბრბო",
+    "pos": "noun"
   },
   {
     "rank": 606,
     "en": "corn",
-    "word": "სიმინდი"
+    "word": "სიმინდი",
+    "pos": "noun"
   },
   {
     "rank": 607,
     "en": "to compare",
-    "word": "შედარება"
+    "word": "შედარება",
+    "pos": "verb"
   },
   {
     "rank": 608,
     "en": "poem",
-    "word": "ლექსი"
+    "word": "ლექსი",
+    "pos": "noun"
   },
   {
     "rank": 609,
     "en": "fishing rod",
-    "word": "ანკესი"
+    "word": "ანკესი",
+    "pos": "noun"
   },
   {
     "rank": 610,
     "en": "bell",
-    "word": "ზარი"
+    "word": "ზარი",
+    "pos": "noun"
   },
   {
     "rank": 611,
     "en": "meat",
-    "word": "ხორცი"
+    "word": "ხორცი",
+    "pos": "noun"
   },
   {
     "rank": 612,
     "en": "eraser",
-    "word": "საშლელი"
+    "word": "საშლელი",
+    "pos": "noun"
   },
   {
     "rank": 613,
     "en": "pipe, tube",
-    "word": "მილი"
+    "word": "მილი",
+    "pos": "noun"
   },
   {
     "rank": 614,
     "en": "famous, known",
-    "word": "ცნობილი"
+    "word": "ცნობილი",
+    "pos": "adjective"
   },
   {
     "rank": 615,
     "en": "euro",
-    "word": "ევრო"
+    "word": "ევრო",
+    "pos": "noun"
   },
   {
     "rank": 616,
     "en": "steam (vapour)",
-    "word": "ორთქლი"
+    "word": "ორთქლი",
+    "pos": "noun"
   },
   {
     "rank": 617,
     "en": "fear",
-    "word": "შიში"
+    "word": "შიში",
+    "pos": "noun"
   },
   {
     "rank": 618,
     "en": "sight",
-    "word": "მხედველობა"
+    "word": "მხედველობა",
+    "pos": "noun"
   },
   {
     "rank": 619,
     "en": "thin",
-    "word": "გამხდარი"
+    "word": "გამხდარი",
+    "pos": "adjective"
   },
   {
     "rank": 620,
     "en": "triangle",
-    "word": "სამკუთხედი"
+    "word": "სამკუთხედი",
+    "pos": "noun"
   },
   {
     "rank": 621,
     "en": "planet",
-    "word": "პლანეტა"
+    "word": "პლანეტა",
+    "pos": "noun"
   },
   {
     "rank": 622,
     "en": "colony",
-    "word": "კოლონია"
+    "word": "კოლონია",
+    "pos": "noun"
   },
   {
     "rank": 623,
     "en": "clock",
-    "word": "საათი"
+    "word": "საათი",
+    "pos": "noun"
   },
   {
     "rank": 624,
     "en": "mine (for oremining)",
-    "word": "მეღარო"
+    "word": "მაღარო",
+    "pos": "noun"
   },
   {
     "rank": 625,
     "en": "tie",
-    "word": "ჰალსტუხი"
+    "word": "ჰალსტუხი",
+    "pos": "noun"
   },
   {
     "rank": 626,
     "en": "to enter",
-    "word": "შესვლა"
+    "word": "შესვლა",
+    "pos": "verb"
   },
   {
     "rank": 627,
     "en": "to search",
-    "word": "ძებნა"
+    "word": "ძებნა",
+    "pos": "verb"
   },
   {
     "rank": 628,
     "en": "yellow",
-    "word": "ყვითელი"
+    "word": "ყვითელი",
+    "pos": "adjective"
   },
   {
     "rank": 629,
     "en": "gun",
-    "word": "თოფი"
+    "word": "თოფი",
+    "pos": "noun"
   },
   {
     "rank": 630,
     "en": "dead",
-    "word": "მკვდარი"
+    "word": "მკვდარი",
+    "pos": "adjective"
   },
   {
     "rank": 631,
     "en": "desert",
-    "word": "უდაბნო"
+    "word": "უდაბნო",
+    "pos": "noun"
   },
   {
     "rank": 632,
     "en": "suit",
-    "word": "კოსტიუმი"
+    "word": "კოსტიუმი",
+    "pos": "noun"
   },
   {
     "rank": 633,
     "en": "current",
-    "word": "მიმდინარე"
+    "word": "მიმდინარე",
+    "pos": "adjective"
   },
   {
     "rank": 634,
     "en": "elevator, lift",
-    "word": "ლიფტი"
+    "word": "ლიფტი",
+    "pos": "noun"
   },
   {
     "rank": 635,
     "en": "rose",
-    "word": "ვარდი"
+    "word": "ვარდი",
+    "pos": "noun"
   },
   {
     "rank": 636,
     "en": "to continue",
-    "word": "გაგრძელება"
+    "word": "გაგრძელება",
+    "pos": "verb"
   },
   {
     "rank": 637,
     "en": "block",
-    "word": "ბლოკი"
+    "word": "ბლოკი",
+    "pos": "noun"
   },
   {
     "rank": 638,
     "en": "hat",
-    "word": "ქუდი"
+    "word": "ქუდი",
+    "pos": "noun"
   },
   {
     "rank": 639,
     "en": "to sell",
-    "word": "გაყიდვა"
+    "word": "გაყიდვა",
+    "pos": "verb"
   },
   {
     "rank": 640,
     "en": "success",
-    "word": "წარმატება"
+    "word": "წარმატება",
+    "pos": "noun"
   },
   {
     "rank": 641,
     "en": "company",
-    "word": "კომპანია"
+    "word": "კომპანია",
+    "pos": "noun"
   },
   {
     "rank": 642,
     "en": "specific",
-    "word": "კონკრეტული"
+    "word": "კონკრეტული",
+    "pos": "adjective"
   },
   {
     "rank": 643,
     "en": "to swim",
-    "word": "ცურვა"
+    "word": "ცურვა",
+    "pos": "verb"
   },
   {
     "rank": 644,
     "en": "opposite",
-    "word": "საპირისპირო"
+    "word": "საპირისპირო",
+    "pos": "adjective"
   },
   {
     "rank": 645,
     "en": "wife",
-    "word": "ცოლი"
+    "word": "ცოლი",
+    "pos": "noun"
   },
   {
     "rank": 646,
     "en": "shoe",
-    "word": "ფეხსაცმელი"
+    "word": "ფეხსაცმელი",
+    "pos": "noun"
   },
   {
     "rank": 647,
     "en": "shoulder",
-    "word": "ხმარი"
+    "word": "მხარი",
+    "pos": "noun"
   },
   {
     "rank": 648,
     "en": "camping",
-    "word": "კემპინგი"
+    "word": "კემპინგი",
+    "pos": "noun"
   },
   {
     "rank": 649,
     "en": "to invent",
-    "word": "გამოგონება"
+    "word": "გამოგონება",
+    "pos": "verb"
   },
   {
     "rank": 650,
     "en": "candy",
-    "word": "კანფეტი"
+    "word": "კანფეტი",
+    "pos": "noun"
   },
   {
     "rank": 651,
     "en": "to be born",
-    "word": "დაბადება"
+    "word": "დაბადება",
+    "pos": "verb"
   },
   {
     "rank": 652,
     "en": "to analyze",
-    "word": "გაანალიზება"
+    "word": "გაანალიზება",
+    "pos": "verb"
   },
   {
     "rank": 653,
     "en": "nine",
-    "word": "ცხრა"
+    "word": "ცხრა",
+    "pos": "numeral"
   },
   {
     "rank": 654,
     "en": "truck",
-    "word": "სატვირთო"
+    "word": "სატვირთო",
+    "pos": "noun"
   },
   {
     "rank": 655,
     "en": "noise",
-    "word": "ხმაურობა"
+    "word": "ხმაურობა",
+    "pos": "noun"
   },
   {
     "rank": 656,
     "en": "level (like eg. in avideogame)",
-    "word": "დონე"
+    "word": "დონე",
+    "pos": "noun"
   },
   {
     "rank": 657,
     "en": "chance",
-    "word": "შანსი"
+    "word": "შანსი",
+    "pos": "noun"
   },
   {
     "rank": 658,
     "en": "shop",
-    "word": "მაღაზია"
+    "word": "მაღაზია",
+    "pos": "noun"
   },
   {
     "rank": 659,
     "en": "to stretch",
-    "word": "გაჭიმვა"
+    "word": "გაჭიმვა",
+    "pos": "verb"
   },
   {
     "rank": 660,
     "en": "to throw (sth at sth)",
-    "word": "ყრა"
+    "word": "ყრა",
+    "pos": "verb"
   },
   {
     "rank": 661,
     "en": "brilliant",
-    "word": "ბრწყინვალე"
+    "word": "ბრწყინვალე",
+    "pos": "adjective"
   },
   {
     "rank": 662,
     "en": "castle",
-    "word": "ციხესიმაგრე"
+    "word": "ციხესიმაგრე",
+    "pos": "noun"
   },
   {
     "rank": 663,
     "en": "molecule",
-    "word": "მოლეკულა"
+    "word": "მოლეკულა",
+    "pos": "noun"
   },
   {
     "rank": 664,
     "en": "wrong",
-    "word": "მცდარი"
+    "word": "მცდარი",
+    "pos": "adjective"
   },
   {
     "rank": 665,
     "en": "gray / grey (colour)",
-    "word": "ნაცრისფერი"
+    "word": "ნაცრისფერი",
+    "pos": "adjective"
   },
   {
     "rank": 666,
     "en": "to repeat / to revise",
-    "word": "გამეორება"
+    "word": "გამეორება",
+    "pos": "verb"
   },
   {
     "rank": 667,
     "en": "broad, wide",
-    "word": "ფართო"
+    "word": "ფართო",
+    "pos": "adjective"
   },
   {
     "rank": 668,
     "en": "to prepare",
-    "word": "მომზადება"
+    "word": "მომზადება",
+    "pos": "verb"
   },
   {
     "rank": 669,
     "en": "salt",
-    "word": "მარილი"
+    "word": "მარილი",
+    "pos": "noun"
   },
   {
     "rank": 670,
     "en": "nose",
-    "word": "ცხვირი"
+    "word": "ცხვირი",
+    "pos": "noun"
   },
   {
     "rank": 671,
     "en": "plural (grammar)",
-    "word": "მრავლობითი"
+    "word": "მრავლობითი",
+    "pos": "noun"
   },
   {
     "rank": 672,
     "en": "anger",
-    "word": "გაბრაზება"
+    "word": "გაბრაზება",
+    "pos": "noun"
   },
   {
     "rank": 673,
     "en": "continent",
-    "word": "კონტინენტი"
+    "word": "კონტინენტი",
+    "pos": "noun"
   },
   {
     "rank": 674,
     "en": "oxygen",
-    "word": "ჟანგბადი"
+    "word": "ჟანგბადი",
+    "pos": "noun"
   },
   {
     "rank": 675,
     "en": "sugar",
-    "word": "შაქარი"
+    "word": "შაქარი",
+    "pos": "noun"
   },
   {
     "rank": 676,
     "en": "death",
-    "word": "სიკვდილი"
+    "word": "სიკვდილი",
+    "pos": "noun"
   },
   {
     "rank": 677,
     "en": "pretty, beautiful",
-    "word": "ლამაზი"
+    "word": "ლამაზი",
+    "pos": "adjective"
   },
   {
     "rank": 678,
     "en": "skill, ability",
-    "word": "უნარი"
+    "word": "უნარი",
+    "pos": "noun"
   },
   {
     "rank": 679,
     "en": "talented",
-    "word": "ნიჭიერი"
+    "word": "ნიჭიერი",
+    "pos": "adjective"
   },
   {
     "rank": 680,
     "en": "season",
-    "word": "სეზონი"
+    "word": "სეზონი",
+    "pos": "noun"
   },
   {
     "rank": 681,
     "en": "solution",
-    "word": "გამოსავალი"
+    "word": "გამოსავალი",
+    "pos": "noun"
   },
   {
     "rank": 682,
     "en": "magnet",
-    "word": "მაგნიტი"
+    "word": "მაგნიტი",
+    "pos": "noun"
   },
   {
     "rank": 683,
     "en": "silver",
-    "word": "ვერცხლი"
+    "word": "ვერცხლი",
+    "pos": "noun"
   },
   {
     "rank": 684,
     "en": "thank you (polite version)",
-    "word": "გმადლობთ"
+    "word": "გმადლობთ",
+    "pos": "interjection"
   },
   {
     "rank": 685,
     "en": "branch (of a tree)",
-    "word": "ტოტი"
+    "word": "ტოტი",
+    "pos": "noun"
   },
   {
     "rank": 686,
     "en": "match",
-    "word": "მატჩი"
+    "word": "მატჩი",
+    "pos": "noun"
   },
   {
     "rank": 687,
     "en": "suffix",
-    "word": "სუფიქსი"
+    "word": "სუფიქსი",
+    "pos": "noun"
   },
   {
     "rank": 688,
     "en": "especially",
-    "word": "განსაკუთრებით"
+    "word": "განსაკუთრებით",
+    "pos": "adverb"
   },
   {
     "rank": 689,
     "en": "fig",
-    "word": "ლეღვი"
+    "word": "ლეღვი",
+    "pos": "noun"
   },
   {
     "rank": 690,
     "en": "scared / afraid",
-    "word": "შეშინებული"
+    "word": "შეშინებული",
+    "pos": "adjective"
   },
   {
     "rank": 691,
     "en": "huge, enormous",
-    "word": "უზარმაზარი"
+    "word": "უზარმაზარი",
+    "pos": "adjective"
   },
   {
     "rank": 692,
     "en": "sister",
-    "word": "და"
+    "word": "და",
+    "pos": "noun"
   },
   {
     "rank": 693,
     "en": "steel",
-    "word": "ფოლადი"
+    "word": "ფოლადი",
+    "pos": "noun"
   },
   {
     "rank": 694,
     "en": "to discuss",
-    "word": "განხილვა"
+    "word": "განხილვა",
+    "pos": "verb"
   },
   {
     "rank": 695,
     "en": "forward",
-    "word": "წინ"
+    "word": "წინ",
+    "pos": "adverb"
   },
   {
     "rank": 696,
     "en": "similar",
-    "word": "მსგავსი"
+    "word": "მსგავსი",
+    "pos": "adjective"
   },
   {
     "rank": 697,
     "en": "guidebook / tutorial manual",
-    "word": "სახემძღვანელო"
+    "word": "სახელმძღვანელო",
+    "pos": "noun"
   },
   {
     "rank": 698,
     "en": "experience",
-    "word": "გამოცდილება"
+    "word": "გამოცდილება",
+    "pos": "noun"
   },
   {
     "rank": 699,
     "en": "apple",
-    "word": "ვაშლი"
+    "word": "ვაშლი",
+    "pos": "noun"
   },
   {
     "rank": 700,
     "en": "coat",
-    "word": "პალტო"
+    "word": "პალტო",
+    "pos": "noun"
   },
   {
     "rank": 701,
     "en": "mass",
-    "word": "მასა"
+    "word": "მასა",
+    "pos": "noun"
   },
   {
     "rank": 702,
     "en": "card (credit card ect)",
-    "word": "ბარათი"
+    "word": "ბარათი",
+    "pos": "noun"
   },
   {
     "rank": 703,
     "en": "rope",
-    "word": "თოკი"
+    "word": "თოკი",
+    "pos": "noun"
   },
   {
     "rank": 704,
     "en": "to win (at sth)",
-    "word": "მოგება"
+    "word": "მოგება",
+    "pos": "verb"
   },
   {
     "rank": 705,
     "en": "dream",
-    "word": "სიზმარი"
+    "word": "სიზმარი",
+    "pos": "noun"
   },
   {
     "rank": 706,
     "en": "evening",
-    "word": "საღამო"
+    "word": "საღამო",
+    "pos": "noun"
   },
   {
     "rank": 707,
     "en": "to feed (sth)",
-    "word": "კვება"
+    "word": "კვება",
+    "pos": "verb"
   },
   {
     "rank": 708,
     "en": "tool",
-    "word": "ხელსაწყო"
+    "word": "ხელსაწყო",
+    "pos": "noun"
   },
   {
     "rank": 709,
     "en": "to smell",
-    "word": "ყნოსვა"
+    "word": "ყნოსვა",
+    "pos": "verb"
   },
   {
     "rank": 710,
     "en": "valley",
-    "word": "ხეობა"
+    "word": "ხეობა",
+    "pos": "noun"
   },
   {
     "rank": 711,
     "en": "nor / neither",
-    "word": "არც"
+    "word": "არც",
+    "pos": "conjunction"
   },
   {
     "rank": 712,
     "en": "double",
-    "word": "ორმაგი"
+    "word": "ორმაგი",
+    "pos": "noun"
   },
   {
     "rank": 713,
     "en": "to arrive",
-    "word": "ჩამოსვლა"
+    "word": "ჩამოსვლა",
+    "pos": "verb"
   },
   {
     "rank": 714,
     "en": "parent",
-    "word": "მშობელი"
+    "word": "მშობელი",
+    "pos": "noun"
   },
   {
     "rank": 715,
     "en": "shore",
-    "word": "ნაპირი"
+    "word": "ნაპირი",
+    "pos": "noun"
   },
   {
     "rank": 716,
     "en": "substance",
-    "word": "ნივთიერება"
+    "word": "ნივთიერება",
+    "pos": "noun"
   },
   {
     "rank": 717,
     "en": "to connect (i.e. to the internet)",
-    "word": "დაკავშირება"
+    "word": "დაკავშირება",
+    "pos": "verb"
   },
   {
     "rank": 718,
     "en": "post (online",
-    "word": "პოსტი"
+    "word": "პოსტი",
+    "pos": "noun"
   },
   {
     "rank": 719,
     "en": "to spend (money)",
-    "word": "ხარჯვა"
+    "word": "ხარჯვა",
+    "pos": "verb"
   },
   {
     "rank": 720,
     "en": "fat",
-    "word": "მსუქანი"
+    "word": "მსუქანი",
+    "pos": "adjective"
   },
   {
     "rank": 721,
     "en": "original",
-    "word": "თავდაპირველი"
+    "word": "თავდაპირველი",
+    "pos": "adjective"
   },
   {
     "rank": 722,
     "en": "station",
-    "word": "სადგური"
+    "word": "სადგური",
+    "pos": "noun"
   },
   {
     "rank": 723,
     "en": "dad",
-    "word": "მამა"
+    "word": "მამა",
+    "pos": "noun"
   },
   {
     "rank": 724,
     "en": "bread",
-    "word": "პური"
+    "word": "პური",
+    "pos": "noun"
   },
   {
     "rank": 725,
     "en": "to charge (i.e. a phone)",
-    "word": "დამუხტვა"
+    "word": "დამუხტვა",
+    "pos": "verb"
   },
   {
     "rank": 726,
     "en": "proper, adequate at sth",
-    "word": "სათანადო"
+    "word": "სათანადო",
+    "pos": "adjective"
   },
   {
     "rank": 727,
     "en": "bar (for drinking)",
-    "word": "ბარი"
+    "word": "ბარი",
+    "pos": "noun"
   },
   {
     "rank": 728,
     "en": "offer",
-    "word": "შეთავაზება"
+    "word": "შეთავაზება",
+    "pos": "noun"
   },
   {
     "rank": 729,
     "en": "segment",
-    "word": "სეგმენტი"
+    "word": "სეგმენტი",
+    "pos": "noun"
   },
   {
     "rank": 730,
     "en": "slave",
-    "word": "მონა"
+    "word": "მონა",
+    "pos": "noun"
   },
   {
     "rank": 731,
     "en": "duck",
-    "word": "იხვი"
+    "word": "იხვი",
+    "pos": "noun"
   },
   {
     "rank": 732,
     "en": "market",
-    "word": "ბაზარი"
+    "word": "ბაზარი",
+    "pos": "noun"
   },
   {
     "rank": 733,
     "en": "quality",
-    "word": "ხარისხი"
+    "word": "ხარისხი",
+    "pos": "noun"
   },
   {
     "rank": 734,
     "en": "dear",
-    "word": "დათვი"
+    "word": "დათვი",
+    "pos": "noun"
   },
   {
     "rank": 735,
     "en": "enemy",
-    "word": "მტერი"
+    "word": "მტერი",
+    "pos": "noun"
   },
   {
     "rank": 736,
     "en": "reply",
-    "word": "პასუხი"
+    "word": "პასუხი",
+    "pos": "noun"
   },
   {
     "rank": 737,
     "en": "to drink",
-    "word": "სმა"
+    "word": "სმა",
+    "pos": "verb"
   },
   {
     "rank": 738,
     "en": "support",
-    "word": "მხარდაჭერა"
+    "word": "მხარდაჭერა",
+    "pos": "noun"
   },
   {
     "rank": 739,
     "en": "speech",
-    "word": "მეტყველება"
+    "word": "მეტყველება",
+    "pos": "noun"
   },
   {
     "rank": 740,
     "en": "nature",
-    "word": "ბუნება"
+    "word": "ბუნება",
+    "pos": "noun"
   },
   {
     "rank": 741,
     "en": "to move",
-    "word": "მოძრაობა"
+    "word": "მოძრაობა",
+    "pos": "verb"
   },
   {
     "rank": 742,
     "en": "(a) liquid (material)",
-    "word": "სითხე"
+    "word": "სითხე",
+    "pos": "noun"
   },
   {
     "rank": 743,
     "en": "log (of a tree)",
-    "word": "მორი"
+    "word": "მორი",
+    "pos": "noun"
   },
   {
     "rank": 744,
     "en": "tooth",
-    "word": "კბილი"
+    "word": "კბილი",
+    "pos": "noun"
   },
   {
     "rank": 745,
     "en": "neck",
-    "word": "კისერი"
+    "word": "კისერი",
+    "pos": "noun"
   },
   {
     "rank": 746,
     "en": "hotel",
-    "word": "სასტუმრო"
+    "word": "სასტუმრო",
+    "pos": "noun"
   }
 ]
