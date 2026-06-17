@@ -267,13 +267,16 @@ fn results_graph(samples: &[Sample]) -> Element {
     let baseline_x2 = W - PAD_R;
     let bottom_y = H - 8.0;
 
+    // filled area under the net-wpm line (subtle indigo wash)
+    let area_pts = format!(
+        "{net_pts} {:.1},{:.1} {:.1},{:.1}",
+        baseline_x2, y0, PAD_L, y0
+    );
     rsx! {
-        div {
-            style: "position:relative; width:100%; padding-top:41.6667%;",
-            svg {
-                view_box: "0 0 480 200",
-                preserve_aspect_ratio: "xMidYMid meet",
-                style: "position:absolute; top:0; left:0; width:100%; height:100%;",
+        svg {
+            view_box: "0 0 480 200",
+            preserve_aspect_ratio: "xMidYMid meet",
+            style: "display:block; width:100%; height:15rem;",
             line { x1: "{PAD_L}", y1: "{y_top}", x2: "{baseline_x2}", y2: "{y_top}",
                 stroke: "rgba(255,255,255,0.07)", "stroke-width": "1" }
             line { x1: "{PAD_L}", y1: "{y_mid}", x2: "{baseline_x2}", y2: "{y_mid}",
@@ -302,6 +305,8 @@ fn results_graph(samples: &[Sample]) -> Element {
                 }
             }) }
 
+            polyline { points: "{area_pts}", fill: "rgba(129,140,248,0.16)", stroke: "none" }
+
             polyline { points: "{raw_pts}", fill: "none", stroke: "rgba(148,163,184,0.55)",
                 "stroke-width": "1.5", "stroke-linejoin": "round" }
             polyline { points: "{net_pts}", fill: "none", stroke: "rgb(129,140,248)",
@@ -315,7 +320,6 @@ fn results_graph(samples: &[Sample]) -> Element {
                 "font-size": "9", "text-anchor": "start", "0s" }
             text { x: "{baseline_x2}", y: "{bottom_y}", fill: "rgba(255,255,255,0.4)",
                 "font-size": "9", "text-anchor": "end", "{span_label}s" }
-            }
         }
     }
 }
@@ -338,7 +342,6 @@ pub fn WpmTest(
     let mut samples = use_signal(Vec::<Sample>::new);
 
     let mut run_id = use_signal(|| 0u32);
-    let mut regen = use_signal(|| 0u32);
 
     // Restart the SAME passage (Tab / Esc / Restart button).
     let restart = use_callback(move |_: ()| {
@@ -349,10 +352,21 @@ pub fn WpmTest(
         result.set(None);
         samples.set(Vec::new());
     });
-    // Brand-new random passage (New text button).
-    let new_text = use_callback(move |_: ()| {
-        regen.set(regen() + 1);
-    });
+    // Brand-new random passage (New text button). Resets state DIRECTLY (like
+    // restart) so the results panel clears immediately, then swaps in a fresh
+    // passage.
+    let new_text = {
+        let words = words.clone();
+        use_callback(move |_: ()| {
+            run_id.set(run_id() + 1);
+            target.set(build_wpm_text(&words, min_chars_for(duration())));
+            typed.set(String::new());
+            state.set(WpmState::Idle);
+            remaining.set(duration());
+            result.set(None);
+            samples.set(Vec::new());
+        })
+    };
 
     let mut hint_map: HashMap<char, String> = HashMap::new();
     for letter in &letters_vec {
@@ -373,7 +387,6 @@ pub fn WpmTest(
     {
         let words = words.clone();
         use_effect(move || {
-            let _ = regen();
             let _ = lang();
             let dur = duration();
 
@@ -589,31 +602,45 @@ pub fn WpmTest(
     let active_btn = "px-2.5 py-1 rounded bg-indigo-600 text-white cursor-pointer";
     let idle_btn = "px-2.5 py-1 rounded bg-gray-700 text-gray-300 hover:bg-gray-600 cursor-pointer";
 
-    let clip_style = format!(
-        "height:{clip_h}px; overflow:hidden; \
+    let finished = matches!(st, WpmState::Finished);
+    let panel_h = "35rem"; // results-card height (also the expanded backdrop height)
+
+    // The text layer doubles as the frosted backdrop once finished: it grows to
+    // fill the card and is blurred. We ALWAYS write `filter` (= `none` when not
+    // finished) plus a single `height`/`transform` value — never appending and
+    // never *removing* a property. Property removal does not repaint reliably in
+    // WebKitGTK (the blur lingered over the next live test after "New text");
+    // toggling the value instead is a plain change, which does apply.
+    let clip_h_css = if finished {
+        panel_h.to_string()
+    } else {
+        format!("{clip_h}px")
+    };
+    let blur_css = if finished { "blur(5px)" } else { "none" };
+    let clip_dyn_style = format!(
+        "height:{clip_h_css}; overflow:hidden; \
          -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); \
-         mask-image:linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);"
-    );
-    let inner_style = format!(
-        "transform: translateY(-{translate}px); transition: transform 0.25s ease; will-change: transform;"
+         mask-image:linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%); \
+         filter:{blur_css};"
     );
 
-    // finished-state presentation: dim+blur the text behind the results overlay
-    let finished = matches!(st, WpmState::Finished);
-    let surface_class = if finished {
-        "relative w-full"
+    // When finished, pin the expanded backdrop to the top of the card (show the
+    // passage from the start) instead of the last typing position.
+    let inner_translate = if finished { 0 } else { translate };
+    let inner_dyn_style = format!(
+        "transform: translateY(-{inner_translate}px); transition: transform 0.25s ease; will-change: transform;"
+    );
+
+    let surface_class = "relative w-full";
+    let surface_style = if finished {
+        format!("min-height: {panel_h};")
     } else {
-        "relative w-full"
+        "min-height: 0;".to_string()
     };
     let text_class = if help {
         "text-xl tracking-wide select-none px-1"
     } else {
         "text-2xl tracking-wide select-none px-1"
-    };
-    let clip_dyn_style = if finished {
-        format!("{clip_style} filter: blur(2px); opacity: 0.2;")
-    } else {
-        clip_style.clone()
     };
 
     rsx! {
@@ -623,65 +650,65 @@ pub fn WpmTest(
 
             // ── selectors: duration + hints ──────────────────────────────────
             if !finished {
-            div { class: "flex flex-col items-center gap-2",
-                div { class: "flex items-center justify-center gap-2 text-xs",
-                    span { class: "text-gray-400 mr-1", "Duration" }
-                    for d in [15u64, 30, 60, 120] {
+                div { class: "flex flex-col items-center gap-2",
+                    div { class: "flex items-center justify-center gap-2 text-xs",
+                        span { class: "text-gray-400 mr-1", "Duration" }
+                        for d in [15u64, 30, 60, 120] {
+                            button {
+                                key: "{d}",
+                                class: if d == dur { active_btn } else { idle_btn },
+                                onclick: move |_| { duration.set(d); },
+                                "{d}s"
+                            }
+                        }
+                    }
+
+                    div { class: "flex items-center justify-center gap-2 text-xs",
+                        span { class: "text-gray-400 mr-1", "Hints" }
                         button {
-                            key: "{d}",
-                            class: if d == dur { active_btn } else { idle_btn },
-                            onclick: move |_| { duration.set(d); },
-                            "{d}s"
+                            key: "help-on",
+                            class: if help { active_btn } else { idle_btn },
+                            onclick: move |_| { show_help.set(true); },
+                            "On"
+                        }
+                        button {
+                            key: "help-off",
+                            class: if !help { active_btn } else { idle_btn },
+                            onclick: move |_| { show_help.set(false); },
+                            "Off"
                         }
                     }
                 }
-
-                div { class: "flex items-center justify-center gap-2 text-xs",
-                    span { class: "text-gray-400 mr-1", "Hints" }
-                    button {
-                        key: "help-on",
-                        class: if help { active_btn } else { idle_btn },
-                        onclick: move |_| { show_help.set(true); },
-                        "On"
-                    }
-                    button {
-                        key: "help-off",
-                        class: if !help { active_btn } else { idle_btn },
-                        onclick: move |_| { show_help.set(false); },
-                        "Off"
-                    }
-                }
-            }
             }
 
             // ── live stat bar ────────────────────────────────────────────────
             if !finished {
-            div { class: "flex items-stretch justify-center gap-8 text-center",
-                div {
-                    div { class: "text-3xl font-bold tabular-nums text-white",
-                        if matches!(st, WpmState::Idle) { "{dur}" } else { "{rem}" }
+                div { class: "flex items-stretch justify-center gap-8 text-center",
+                    div {
+                        div { class: "text-3xl font-bold tabular-nums text-white",
+                            if matches!(st, WpmState::Idle) { "{dur}" } else { "{rem}" }
+                        }
+                        div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "seconds" }
                     }
-                    div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "seconds" }
-                }
-                div {
-                    div { class: "text-3xl font-bold tabular-nums text-indigo-300", "{shown.net_wpm}" }
-                    div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "wpm" }
-                }
-                div {
-                    div { class: "text-3xl font-bold tabular-nums text-emerald-300",
-                        "{shown.accuracy:.0}%"
+                    div {
+                        div { class: "text-3xl font-bold tabular-nums text-indigo-300", "{shown.net_wpm}" }
+                        div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "wpm" }
                     }
-                    div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "accuracy" }
+                    div {
+                        div { class: "text-3xl font-bold tabular-nums text-emerald-300",
+                            "{shown.accuracy:.0}%"
+                        }
+                        div { class: "text-[0.65rem] uppercase tracking-wide text-gray-400", "accuracy" }
+                    }
                 }
-            }
             }
 
             // ── typing surface: fixed 3-row clip window ──────────────────────
-            div { class: "{surface_class}",
+            div { class: "{surface_class}", style: "{surface_style}",
                 div {
                     class: "{text_class}",
                     style: "{clip_dyn_style}",
-                    div { style: "{inner_style}",
+                    div { style: "{inner_dyn_style}",
                         { row_els.into_iter() }
                     }
                 }
@@ -757,83 +784,84 @@ pub fn WpmTest(
                     }
                 }
 
-                // ── results overlay (sits over the test) ─────────────────────
+                // ── results panel (translucent frosted overlay) ─────────────
                 if let (WpmState::Finished, Some(res)) = (st, result()) {
                     div {
-                        class: "fixed inset-0 z-50 overflow-y-auto bg-gray-900/95 backdrop-blur-sm",
-                      div {
-                        class: "min-h-full flex flex-col items-center justify-center gap-3 p-6",
+                        class: "absolute inset-0 z-20 overflow-y-auto rounded-lg",
+                        style: "background: rgba(17,24,39,0.72);",
+                        div {
+                            class: "min-h-full flex flex-col items-center justify-center gap-3 p-6",
 
-                        // headline
-                        div { class: "flex items-end gap-8",
-                            div { class: "text-center",
-                                div { class: "text-5xl font-bold tabular-nums text-indigo-300", "{res.net_wpm}" }
-                                div { class: "text-[0.6rem] uppercase tracking-widest text-gray-400", "wpm" }
-                            }
-                            div { class: "text-center",
-                                div { class: "text-5xl font-bold tabular-nums text-emerald-300", "{res.accuracy:.0}" }
-                                div { class: "text-[0.6rem] uppercase tracking-widest text-gray-400", "% acc" }
-                            }
-                        }
-
-                        // metric grid
-                        div { class: "grid grid-cols-3 gap-x-8 gap-y-2 text-center",
-                            div {
-                                div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.raw_wpm}" }
-                                div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "raw" }
-                            }
-                            div {
-                                div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.consistency:.0}%" }
-                                div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "consistency" }
-                            }
-                            div {
-                                div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.secs}s" }
-                                div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "time" }
-                            }
-                            div { class: "col-span-3",
-                                div { class: "text-lg font-semibold tabular-nums",
-                                    span { class: "text-emerald-300", "{res.correct}" }
-                                    span { class: "text-gray-500", " / " }
-                                    span { class: "text-red-400", "{res.incorrect}" }
-                                    span { class: "text-gray-500", " / " }
-                                    span { class: "text-slate-300", "{res.typed}" }
+                            // headline
+                            div { class: "flex items-end gap-8",
+                                div { class: "text-center",
+                                    div { class: "text-5xl font-bold tabular-nums text-indigo-300", "{res.net_wpm}" }
+                                    div { class: "text-[0.6rem] uppercase tracking-widest text-gray-400", "wpm" }
                                 }
-                                div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400",
-                                    "characters · correct / incorrect / total"
+                                div { class: "text-center",
+                                    div { class: "text-5xl font-bold tabular-nums text-emerald-300", "{res.accuracy:.0}" }
+                                    div { class: "text-[0.6rem] uppercase tracking-widest text-gray-400", "% acc" }
                                 }
                             }
-                        }
 
-                        // graph
-                        div { class: "w-full max-w-xl",
-                            { results_graph(&sample_data) }
-                            div { class: "flex justify-center gap-4 text-[0.65rem] mt-1",
-                                span { class: "text-indigo-300", "— wpm" }
-                                span { class: "text-slate-400", "— raw" }
-                                span { class: "text-red-400", "• errors" }
+                            // metric grid
+                            div { class: "grid grid-cols-3 gap-x-8 gap-y-2 text-center",
+                                div {
+                                    div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.raw_wpm}" }
+                                    div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "raw" }
+                                }
+                                div {
+                                    div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.consistency:.0}%" }
+                                    div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "consistency" }
+                                }
+                                div {
+                                    div { class: "text-lg font-semibold tabular-nums text-slate-200", "{res.secs}s" }
+                                    div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400", "time" }
+                                }
+                                div { class: "col-span-3",
+                                    div { class: "text-lg font-semibold tabular-nums",
+                                        span { class: "text-emerald-300", "{res.correct}" }
+                                        span { class: "text-gray-500", " / " }
+                                        span { class: "text-red-400", "{res.incorrect}" }
+                                        span { class: "text-gray-500", " / " }
+                                        span { class: "text-slate-300", "{res.typed}" }
+                                    }
+                                    div { class: "text-[0.6rem] uppercase tracking-wide text-gray-400",
+                                        "characters · correct / incorrect / total"
+                                    }
+                                }
                             }
-                        }
 
-                        // buttons
-                        div { class: "flex items-center gap-3",
-                            button {
-                                class: "px-4 py-1.5 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-sm cursor-pointer",
-                                onclick: move |_| restart.call(()),
-                                "Restart"
+                            // graph
+                            div { class: "w-full max-w-xl",
+                                { results_graph(&sample_data) }
+                                div { class: "flex justify-center gap-4 text-[0.65rem] mt-1",
+                                    span { class: "text-indigo-300", "— wpm" }
+                                    span { class: "text-slate-400", "— raw" }
+                                    span { class: "text-red-400", "• errors" }
+                                }
                             }
-                            button {
-                                class: "px-4 py-1.5 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm cursor-pointer",
-                                onclick: move |_| new_text.call(()),
-                                "New text"
+
+                            // buttons
+                            div { class: "flex items-center gap-3",
+                                button {
+                                    class: "px-4 py-1.5 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-sm cursor-pointer",
+                                    onclick: move |_| restart.call(()),
+                                    "Restart"
+                                }
+                                button {
+                                    class: "px-4 py-1.5 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm cursor-pointer",
+                                    onclick: move |_| new_text.call(()),
+                                    "New text"
+                                }
                             }
+                            div { class: "text-[0.6rem] text-gray-500", "Tab or Esc to restart" }
                         }
-                        div { class: "text-[0.6rem] text-gray-500", "Tab or Esc to restart" }
-                      }
                     }
                 }
             }
 
-            // ── controls (hidden once finished — the overlay carries them) ───
+            // ── controls (hidden once finished — the panel carries them) ─────
             if !matches!(st, WpmState::Finished) {
                 div { class: "flex items-center justify-center gap-4 text-xs text-gray-400",
                     span { "status: {status_label}" }
