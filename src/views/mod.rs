@@ -16,3 +16,6 @@ pub use navbar::Navbar;
 
 mod alphabet;
 pub use alphabet::Alphabet;
+
+mod dictionary;
+pub use dictionary::DictionaryPage;

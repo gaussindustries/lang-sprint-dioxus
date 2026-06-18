@@ -17,7 +17,7 @@ pub struct Letter {
     pub name: String,
     pub pron: String,
     #[serde(default)]
-    pub kind: LetterKind, // <-- new
+    pub kind: LetterKind,
     pub audio: Option<String>,
     pub finger: String,
     pub key_code: String,

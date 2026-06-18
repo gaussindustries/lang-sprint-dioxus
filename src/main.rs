@@ -1,7 +1,7 @@
 //for the goys who have (((windows)))
 //#![windows_subsystem = "windows"]
 mod components;
-use views::{Home, Navbar};
+use views::{DictionaryPage, Home, Navbar};
 pub mod assets;
 pub mod audio;
 mod calibration;
@@ -26,6 +26,8 @@ enum Route {
     #[layout(Navbar)]
 		#[route("/")]
 		Home {},
+		#[route("/dictionary")]
+        DictionaryPage {},
 		// Future tabs – just uncomment when you need them
 		// #[route("/alphabet")]
 		// Alphabet {},
@@ -52,7 +54,8 @@ fn main() {
 /// Components should be annotated with `#[component]` to support props, better error messages, and autocomplete
 #[component]
 fn App() -> Element {
-    // The `rsx!` macro lets us define HTML inside of rust. It expands to an Element with all of our HTML inside.
+    let lang = use_signal(|| "georgian".to_string());
+    use_context_provider(|| lang);
 
     rsx! {
         // In addition to element and text (which we will see later), rsx can contain other components. In this case,

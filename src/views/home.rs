@@ -1,18 +1,17 @@
+use crate::assets::alphabet_json_for;
 use dioxus::prelude::*;
 use std::fs;
 use strum::IntoEnumIterator;
-use crate::assets::alphabet_json_for;
 
 use crate::{
     // we don't actually USE these here, but keeping the import is fine
     components::{
-        Keyboard,
-        TypingTest,
         select::{
-            Select, SelectTrigger, SelectValue, SelectList,
-            SelectGroup, SelectGroupLabel, SelectOption, SelectItemIndicator,
+            Select, SelectGroup, SelectGroupLabel, SelectItemIndicator, SelectList, SelectOption,
+            SelectTrigger, SelectValue,
         },
         separator::Separator,
+        Keyboard, TypingTest,
     },
     models::letter::Letter,
     views::Alphabet,
@@ -28,21 +27,21 @@ impl Languages {
     const fn emoji(&self) -> &'static str {
         match self {
             Languages::Georgian => "🇬🇪",
-            Languages::Russian  => "🇷🇺",
+            Languages::Russian => "🇷🇺",
         }
     }
 
     fn code(&self) -> &'static str {
         match self {
             Languages::Georgian => "georgian",
-            Languages::Russian  => "russian",
+            Languages::Russian => "russian",
         }
     }
 }
 
 #[component]
 pub fn Home() -> Element {
-    let mut lang = use_signal(|| "georgian".to_string());
+    let mut lang = use_context::<Signal<String>>();
     let mut lang_sig = lang.clone();
 
     let mut load_error = use_signal(|| None::<String>);
@@ -82,8 +81,7 @@ pub fn Home() -> Element {
         })
     };
 
-
-    let letters_vec  = letters.read().clone().unwrap_or_default();
+    let letters_vec = letters.read().clone().unwrap_or_default();
     let current_lang = lang();
 
     rsx! {

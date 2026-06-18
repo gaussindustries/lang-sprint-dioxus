@@ -1,2 +1,2 @@
-pub mod freq_word;
 pub mod letter;
+pub mod lexicon;

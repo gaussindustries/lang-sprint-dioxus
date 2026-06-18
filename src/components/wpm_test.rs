@@ -23,7 +23,7 @@ use std::collections::HashMap;
 use std::time::Duration;
 
 use crate::components::keyboard::code_to_qwerty_label;
-use crate::models::{freq_word::FrequencyWord, letter::Letter};
+use crate::models::{letter::Letter, lexicon::LexEntry};
 
 /// Breathing caret animation. Injected once via a <style> element.
 const WPM_CARET_CSS: &str = "\
@@ -79,7 +79,7 @@ fn clean_word(raw: &str) -> Option<String> {
     }
 }
 
-fn build_wpm_text(words: &[FrequencyWord], min_chars: usize) -> String {
+fn build_wpm_text(words: &[LexEntry], min_chars: usize) -> String {
     if words.is_empty() {
         return String::new();
     }
@@ -327,11 +327,7 @@ fn results_graph(samples: &[Sample]) -> Element {
 // ── component ───────────────────────────────────────────────────────────────
 
 #[component]
-pub fn WpmTest(
-    words: Vec<FrequencyWord>,
-    lang: Signal<String>,
-    letters_vec: Vec<Letter>,
-) -> Element {
+pub fn WpmTest(words: Vec<LexEntry>, lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let mut target = use_signal(String::new);
     let mut typed = use_signal(String::new);
     let mut state = use_signal(|| WpmState::Idle);

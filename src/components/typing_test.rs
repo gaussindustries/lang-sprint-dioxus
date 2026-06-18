@@ -7,7 +7,7 @@ use crate::components::tabs::{TabContent, TabList, TabTrigger, Tabs};
 use crate::components::toggle::Toggle;
 use crate::components::tooltip::{Tooltip, TooltipContent, TooltipTrigger};
 use crate::components::wpm_test::WpmTest;
-use crate::models::{freq_word::FrequencyWord, letter::Letter};
+use crate::models::{letter::Letter, lexicon::LexEntry};
 /**
  * TODO:
  * implementing user data{
@@ -102,7 +102,7 @@ fn clean_word(raw: &str) -> Option<String> {
     }
 }
 
-fn build_wpm_text(words: &[FrequencyWord], min_chars: usize) -> String {
+fn build_wpm_text(words: &[LexEntry], min_chars: usize) -> String {
     if words.is_empty() {
         return String::new();
     }
@@ -192,7 +192,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         async move {
             let json = freq_json_for(&lang_name);
 
-            serde_json::from_str::<Vec<FrequencyWord>>(json).unwrap_or_else(|e| {
+            serde_json::from_str::<Vec<LexEntry>>(json).unwrap_or_else(|e| {
                 eprintln!("Failed to parse 1000.json for {lang_name}: {e}");
                 Vec::new()
             })
@@ -233,7 +233,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let active_now = active_pos();
 
     // First: POS filtering
-    let words_pos_filtered: Vec<FrequencyWord> = if active_now.is_empty() {
+    let words_pos_filtered: Vec<LexEntry> = if active_now.is_empty() {
         // No POS filter → keep all
         words.clone()
     } else {
@@ -253,7 +253,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let lo = min_rank();
     let hi = max_rank().max(lo); // keep hi >= lo
 
-    let filtered_words: Vec<FrequencyWord> = match mode_now {
+    let filtered_words: Vec<LexEntry> = match mode_now {
         TestMode::Bounded => words_pos_filtered
             .into_iter()
             .filter(|w| w.rank >= lo && w.rank <= hi)

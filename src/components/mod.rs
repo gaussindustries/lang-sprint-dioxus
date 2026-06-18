@@ -2,14 +2,19 @@
 //! They can be used to defined common UI elements like buttons, forms, and modals. In this template, we define a Hero
 //! component  to be used in our app.
 
+pub mod dict_search;
+pub mod dictionary;
 pub mod keyboard;
 pub mod typing_test;
 pub mod wordcard;
 pub mod wpm_test;
 
+pub use dict_search::DictSearch;
+pub use dictionary::Dictionary;
 pub use keyboard::Keyboard;
 pub use typing_test::TypingTest;
 pub use wordcard::WordCard;
+
 pub mod avatar;
 pub mod button;
 pub mod input;
