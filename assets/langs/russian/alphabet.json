@@ -3,6 +3,7 @@
     "letter": "А",
     "name": "a",
     "pron": "/a/",
+    "kind": "vowel",
     "audio": "a.wav",
     "finger": "index_left",
     "key_code": "KeyF",
@@ -12,16 +13,17 @@
     "letter": "а",
     "name": "a",
     "pron": "/a/",
+    "kind": "vowel",
     "audio": "a.wav",
     "finger": "index_left",
     "key_code": "KeyF",
     "shifted": false
   },
-
   {
     "letter": "Б",
     "name": "b",
     "pron": "/b/",
+    "kind": "consonant",
     "audio": "b.wav",
     "finger": "middle_right",
     "key_code": "Comma",
@@ -31,16 +33,17 @@
     "letter": "б",
     "name": "b",
     "pron": "/b/",
+    "kind": "consonant",
     "audio": "b.wav",
     "finger": "middle_right",
     "key_code": "Comma",
     "shifted": false
   },
-
   {
     "letter": "В",
     "name": "v",
     "pron": "/v/",
+    "kind": "consonant",
     "audio": "v.wav",
     "finger": "middle_left",
     "key_code": "KeyD",
@@ -50,16 +53,17 @@
     "letter": "в",
     "name": "v",
     "pron": "/v/",
+    "kind": "consonant",
     "audio": "v.wav",
     "finger": "middle_left",
     "key_code": "KeyD",
     "shifted": false
   },
-
   {
     "letter": "Г",
     "name": "g",
     "pron": "/ɡ/",
+    "kind": "consonant",
     "audio": "g.wav",
     "finger": "index_right",
     "key_code": "KeyU",
@@ -69,16 +73,17 @@
     "letter": "г",
     "name": "g",
     "pron": "/ɡ/",
+    "kind": "consonant",
     "audio": "g.wav",
     "finger": "index_right",
     "key_code": "KeyU",
     "shifted": false
   },
-
   {
     "letter": "Д",
     "name": "d",
     "pron": "/d/",
+    "kind": "consonant",
     "audio": "d.wav",
     "finger": "ring_right",
     "key_code": "KeyL",
@@ -88,16 +93,17 @@
     "letter": "д",
     "name": "d",
     "pron": "/d/",
+    "kind": "consonant",
     "audio": "d.wav",
     "finger": "ring_right",
     "key_code": "KeyL",
     "shifted": false
   },
-
   {
     "letter": "Е",
     "name": "ye",
     "pron": "/je/",
+    "kind": "vowel",
     "audio": "ye.wav",
     "finger": "index_left",
     "key_code": "KeyT",
@@ -107,16 +113,17 @@
     "letter": "е",
     "name": "ye",
     "pron": "/je/",
+    "kind": "vowel",
     "audio": "ye.wav",
     "finger": "index_left",
     "key_code": "KeyT",
     "shifted": false
   },
-
   {
     "letter": "Ё",
     "name": "yo",
     "pron": "/jo/",
+    "kind": "vowel",
     "audio": "yo.wav",
     "finger": "little_left",
     "key_code": "Backquote",
@@ -126,16 +133,17 @@
     "letter": "ё",
     "name": "yo",
     "pron": "/jo/",
+    "kind": "vowel",
     "audio": "yo.wav",
     "finger": "little_left",
     "key_code": "Backquote",
     "shifted": false
   },
-
   {
     "letter": "Ж",
     "name": "zh",
     "pron": "/ʐ/",
+    "kind": "consonant",
     "audio": "zh.wav",
     "finger": "little_right",
     "key_code": "Semicolon",
@@ -145,16 +153,17 @@
     "letter": "ж",
     "name": "zh",
     "pron": "/ʐ/",
+    "kind": "consonant",
     "audio": "zh.wav",
     "finger": "little_right",
     "key_code": "Semicolon",
     "shifted": false
   },
-
   {
     "letter": "З",
     "name": "z",
     "pron": "/z/",
+    "kind": "consonant",
     "audio": "z.wav",
     "finger": "little_right",
     "key_code": "KeyP",
@@ -164,16 +173,17 @@
     "letter": "з",
     "name": "z",
     "pron": "/z/",
+    "kind": "consonant",
     "audio": "z.wav",
     "finger": "little_right",
     "key_code": "KeyP",
     "shifted": false
   },
-
   {
     "letter": "И",
     "name": "i",
     "pron": "/i/",
+    "kind": "vowel",
     "audio": "i.wav",
     "finger": "index_left",
     "key_code": "KeyB",
@@ -183,16 +193,17 @@
     "letter": "и",
     "name": "i",
     "pron": "/i/",
+    "kind": "vowel",
     "audio": "i.wav",
     "finger": "index_left",
     "key_code": "KeyB",
     "shifted": false
   },
-
   {
     "letter": "Й",
     "name": "y",
     "pron": "/j/",
+    "kind": "consonant",
     "audio": "y.wav",
     "finger": "little_left",
     "key_code": "KeyQ",
@@ -202,16 +213,17 @@
     "letter": "й",
     "name": "y",
     "pron": "/j/",
+    "kind": "consonant",
     "audio": "y.wav",
     "finger": "little_left",
     "key_code": "KeyQ",
     "shifted": false
   },
-
   {
     "letter": "К",
     "name": "k",
     "pron": "/k/",
+    "kind": "consonant",
     "audio": "k.wav",
     "finger": "index_left",
     "key_code": "KeyR",
@@ -221,16 +233,17 @@
     "letter": "к",
     "name": "k",
     "pron": "/k/",
+    "kind": "consonant",
     "audio": "k.wav",
     "finger": "index_left",
     "key_code": "KeyR",
     "shifted": false
   },
-
   {
     "letter": "Л",
     "name": "l",
     "pron": "/l/",
+    "kind": "consonant",
     "audio": "l.wav",
     "finger": "middle_right",
     "key_code": "KeyK",
@@ -240,16 +253,17 @@
     "letter": "л",
     "name": "l",
     "pron": "/l/",
+    "kind": "consonant",
     "audio": "l.wav",
     "finger": "middle_right",
     "key_code": "KeyK",
     "shifted": false
   },
-
   {
     "letter": "М",
     "name": "m",
     "pron": "/m/",
+    "kind": "consonant",
     "audio": "m.wav",
     "finger": "index_left",
     "key_code": "KeyV",
@@ -259,16 +273,17 @@
     "letter": "м",
     "name": "m",
     "pron": "/m/",
+    "kind": "consonant",
     "audio": "m.wav",
     "finger": "index_left",
     "key_code": "KeyV",
     "shifted": false
   },
-
   {
     "letter": "Н",
     "name": "n",
     "pron": "/n/",
+    "kind": "consonant",
     "audio": "n.wav",
     "finger": "index_right",
     "key_code": "KeyY",
@@ -278,16 +293,17 @@
     "letter": "н",
     "name": "n",
     "pron": "/n/",
+    "kind": "consonant",
     "audio": "n.wav",
     "finger": "index_right",
     "key_code": "KeyY",
     "shifted": false
   },
-
   {
     "letter": "О",
     "name": "o",
     "pron": "/o/",
+    "kind": "vowel",
     "audio": "o.wav",
     "finger": "index_right",
     "key_code": "KeyJ",
@@ -297,16 +313,17 @@
     "letter": "о",
     "name": "o",
     "pron": "/o/",
+    "kind": "vowel",
     "audio": "o.wav",
     "finger": "index_right",
     "key_code": "KeyJ",
     "shifted": false
   },
-
   {
     "letter": "П",
     "name": "p",
     "pron": "/p/",
+    "kind": "consonant",
     "audio": "p.wav",
     "finger": "index_left",
     "key_code": "KeyG",
@@ -316,16 +333,17 @@
     "letter": "п",
     "name": "p",
     "pron": "/p/",
+    "kind": "consonant",
     "audio": "p.wav",
     "finger": "index_left",
     "key_code": "KeyG",
     "shifted": false
   },
-
   {
     "letter": "Р",
     "name": "r",
     "pron": "/r/",
+    "kind": "consonant",
     "audio": "r.wav",
     "finger": "index_right",
     "key_code": "KeyH",
@@ -335,16 +353,17 @@
     "letter": "р",
     "name": "r",
     "pron": "/r/",
+    "kind": "consonant",
     "audio": "r.wav",
     "finger": "index_right",
     "key_code": "KeyH",
     "shifted": false
   },
-
   {
     "letter": "С",
     "name": "s",
     "pron": "/s/",
+    "kind": "consonant",
     "audio": "s.wav",
     "finger": "middle_left",
     "key_code": "KeyC",
@@ -354,16 +373,17 @@
     "letter": "с",
     "name": "s",
     "pron": "/s/",
+    "kind": "consonant",
     "audio": "s.wav",
     "finger": "middle_left",
     "key_code": "KeyC",
     "shifted": false
   },
-
   {
     "letter": "Т",
     "name": "t",
     "pron": "/t/",
+    "kind": "consonant",
     "audio": "t.wav",
     "finger": "index_right",
     "key_code": "KeyN",
@@ -373,16 +393,17 @@
     "letter": "т",
     "name": "t",
     "pron": "/t/",
+    "kind": "consonant",
     "audio": "t.wav",
     "finger": "index_right",
     "key_code": "KeyN",
     "shifted": false
   },
-
   {
     "letter": "У",
     "name": "u",
     "pron": "/u/",
+    "kind": "vowel",
     "audio": "u.wav",
     "finger": "middle_left",
     "key_code": "KeyE",
@@ -392,16 +413,17 @@
     "letter": "у",
     "name": "u",
     "pron": "/u/",
+    "kind": "vowel",
     "audio": "u.wav",
     "finger": "middle_left",
     "key_code": "KeyE",
     "shifted": false
   },
-
   {
     "letter": "Ф",
     "name": "f",
     "pron": "/f/",
+    "kind": "consonant",
     "audio": "f.wav",
     "finger": "little_left",
     "key_code": "KeyA",
@@ -411,16 +433,17 @@
     "letter": "ф",
     "name": "f",
     "pron": "/f/",
+    "kind": "consonant",
     "audio": "f.wav",
     "finger": "little_left",
     "key_code": "KeyA",
     "shifted": false
   },
-
   {
     "letter": "Х",
     "name": "kh",
     "pron": "/x/",
+    "kind": "consonant",
     "audio": "kh.wav",
     "finger": "little_right",
     "key_code": "BracketLeft",
@@ -430,16 +453,17 @@
     "letter": "х",
     "name": "kh",
     "pron": "/x/",
+    "kind": "consonant",
     "audio": "kh.wav",
     "finger": "little_right",
     "key_code": "BracketLeft",
     "shifted": false
   },
-
   {
     "letter": "Ц",
     "name": "ts",
     "pron": "/t͡s/",
+    "kind": "consonant",
     "audio": "ts.wav",
     "finger": "ring_left",
     "key_code": "KeyW",
@@ -449,16 +473,17 @@
     "letter": "ц",
     "name": "ts",
     "pron": "/t͡s/",
+    "kind": "consonant",
     "audio": "ts.wav",
     "finger": "ring_left",
     "key_code": "KeyW",
     "shifted": false
   },
-
   {
     "letter": "Ч",
     "name": "ch",
     "pron": "/t͡ɕ/",
+    "kind": "consonant",
     "audio": "ch.wav",
     "finger": "ring_left",
     "key_code": "KeyX",
@@ -468,16 +493,17 @@
     "letter": "ч",
     "name": "ch",
     "pron": "/t͡ɕ/",
+    "kind": "consonant",
     "audio": "ch.wav",
     "finger": "ring_left",
     "key_code": "KeyX",
     "shifted": false
   },
-
   {
     "letter": "Ш",
     "name": "sh",
     "pron": "/ʂ/",
+    "kind": "consonant",
     "audio": "sh.wav",
     "finger": "middle_right",
     "key_code": "KeyI",
@@ -487,16 +513,17 @@
     "letter": "ш",
     "name": "sh",
     "pron": "/ʂ/",
+    "kind": "consonant",
     "audio": "sh.wav",
     "finger": "middle_right",
     "key_code": "KeyI",
     "shifted": false
   },
-
   {
     "letter": "Щ",
     "name": "shch",
     "pron": "/ɕː/",
+    "kind": "consonant",
     "audio": "shch.wav",
     "finger": "ring_right",
     "key_code": "KeyO",
@@ -506,16 +533,17 @@
     "letter": "щ",
     "name": "shch",
     "pron": "/ɕː/",
+    "kind": "consonant",
     "audio": "shch.wav",
     "finger": "ring_right",
     "key_code": "KeyO",
     "shifted": false
   },
-
   {
     "letter": "Ъ",
     "name": "hard sign",
     "pron": "",
+    "kind": "other",
     "audio": "hard.wav",
     "finger": "little_right",
     "key_code": "BracketRight",
@@ -525,16 +553,17 @@
     "letter": "ъ",
     "name": "hard sign",
     "pron": "",
+    "kind": "other",
     "audio": "hard.wav",
     "finger": "little_right",
     "key_code": "BracketRight",
     "shifted": false
   },
-
   {
     "letter": "Ы",
     "name": "y",
     "pron": "/ɨ/",
+    "kind": "vowel",
     "audio": "yy.wav",
     "finger": "ring_left",
     "key_code": "KeyS",
@@ -544,16 +573,17 @@
     "letter": "ы",
     "name": "y",
     "pron": "/ɨ/",
+    "kind": "vowel",
     "audio": "yy.wav",
     "finger": "ring_left",
     "key_code": "KeyS",
     "shifted": false
   },
-
   {
     "letter": "Ь",
     "name": "soft sign",
     "pron": "",
+    "kind": "other",
     "audio": "soft.wav",
     "finger": "index_right",
     "key_code": "KeyM",
@@ -563,16 +593,17 @@
     "letter": "ь",
     "name": "soft sign",
     "pron": "",
+    "kind": "other",
     "audio": "soft.wav",
     "finger": "index_right",
     "key_code": "KeyM",
     "shifted": false
   },
-
   {
     "letter": "Э",
     "name": "e",
     "pron": "/e/",
+    "kind": "vowel",
     "audio": "e.wav",
     "finger": "little_right",
     "key_code": "Quote",
@@ -582,16 +613,17 @@
     "letter": "э",
     "name": "e",
     "pron": "/e/",
+    "kind": "vowel",
     "audio": "e.wav",
     "finger": "little_right",
     "key_code": "Quote",
     "shifted": false
   },
-
   {
     "letter": "Ю",
     "name": "yu",
     "pron": "/ju/",
+    "kind": "vowel",
     "audio": "yu.wav",
     "finger": "ring_right",
     "key_code": "Period",
@@ -601,16 +633,17 @@
     "letter": "ю",
     "name": "yu",
     "pron": "/ju/",
+    "kind": "vowel",
     "audio": "yu.wav",
     "finger": "ring_right",
     "key_code": "Period",
     "shifted": false
   },
-
   {
     "letter": "Я",
     "name": "ya",
     "pron": "/ja/",
+    "kind": "vowel",
     "audio": "ya.wav",
     "finger": "little_left",
     "key_code": "KeyZ",
@@ -620,6 +653,7 @@
     "letter": "я",
     "name": "ya",
     "pron": "/ja/",
+    "kind": "vowel",
     "audio": "ya.wav",
     "finger": "little_left",
     "key_code": "KeyZ",
