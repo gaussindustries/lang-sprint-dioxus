@@ -20,8 +20,9 @@ use dioxus::prelude::*;
 use std::collections::{HashMap, HashSet};
 
 use crate::assets::{alphabet_json_for, freq_json_for};
+use crate::components::WordDetail;
 use crate::models::letter::Letter;
-use crate::models::lexicon::Lexicon;
+use crate::models::lexicon::{LexEntry, Lexicon};
 
 /// First lowercased scalar of a string (the collation / leading-letter key).
 fn first_key_char(s: &str) -> Option<char> {
@@ -65,12 +66,22 @@ struct Row {
     pos: Option<String>,
     gloss: String,
     example: Option<String>,
+    /// Full entry, opened in the word card on click.
+    entry: LexEntry,
 }
+
+/// Hover highlight for clickable entries (Tailwind v4 JIT can miss arbitrary
+/// colors, so this lives in a tiny injected stylesheet).
+const ENTRY_CSS: &str = "\
+.lex-entry{cursor:pointer;border-radius:3px;transition:background 0.1s ease;}\
+.lex-entry:hover{background:rgba(110,43,43,0.09);}\
+";
 
 #[component]
 pub fn Dictionary(lang: Signal<String>, #[props(default = 28)] per_page: usize) -> Element {
     let per_page = per_page.max(1);
     let mut page = use_signal(|| 0usize);
+    let mut selected = use_signal(|| None::<LexEntry>);
 
     // Back to the first page whenever the language changes.
     use_effect(move || {
@@ -210,6 +221,7 @@ pub fn Dictionary(lang: Signal<String>, #[props(default = 28)] per_page: usize) 
             pos: e.pos.clone().map(|p| pos_abbr(&p)),
             gloss: e.en.clone(),
             example: e.example.clone(),
+            entry: e.clone(),
         });
     }
 
@@ -257,6 +269,7 @@ pub fn Dictionary(lang: Signal<String>, #[props(default = 28)] per_page: usize) 
     };
 
     rsx! {
+        style { dangerous_inner_html: ENTRY_CSS }
         section { class: "w-full flex justify-center py-8 px-4",
             div { class: "w-full max-w-4xl flex items-stretch",
 
@@ -304,9 +317,11 @@ pub fn Dictionary(lang: Signal<String>, #[props(default = 28)] per_page: usize) 
                             }
                             div {
                                 key: "{row.key}",
+                                class: "lex-entry",
                                 style: "break-inside:avoid; -webkit-column-break-inside:avoid; \
-                                        margin-bottom:0.5rem; text-indent:-0.9rem; \
-                                        padding-left:0.9rem; line-height:1.3;",
+                                        margin-bottom:0.35rem; text-indent:-0.9rem; \
+                                        padding:0.12rem 0.4rem 0.12rem 0.9rem; line-height:1.3;",
+                                onclick: move |_| { selected.set(Some(row.entry.clone())); },
                                 span { style: "font-family:{l2}; font-weight:700; font-size:1.02rem; color:{ink};", "{row.head}" }
                                 if let Some(p) = row.pos.clone() {
                                     span { style: "font-style:italic; font-size:0.76rem; color:{secondary}; margin-left:0.4rem;", "{p}" }
@@ -374,6 +389,10 @@ pub fn Dictionary(lang: Signal<String>, #[props(default = 28)] per_page: usize) 
                     }
                 }
             }
+        }
+
+        if let Some(entry) = selected() {
+            WordDetail { entry, on_close: move |_| selected.set(None) }
         }
     }
 }

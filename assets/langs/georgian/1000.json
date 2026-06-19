@@ -345,7 +345,40 @@
     "rank": 58,
     "en": "people",
     "word": "ხალხი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხალხი",
+        "plural": "ხალხები"
+      },
+      "ergative": {
+        "singular": "ხალხმა",
+        "plural": "ხალხებმა"
+      },
+      "dative": {
+        "singular": "ხალხს",
+        "plural": "ხალხებს"
+      },
+      "genitive": {
+        "singular": "ხალხის",
+        "plural": "ხალხების"
+      },
+      "instrumental": {
+        "singular": "ხალხით",
+        "plural": "ხალხებით"
+      },
+      "adverbial": {
+        "singular": "ხალხად",
+        "plural": "ხალხებად"
+      },
+      "vocative": {
+        "singular": "ხალხო",
+        "plural": "ხალხებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 59,
@@ -495,7 +528,38 @@
     "rank": 83,
     "en": "man",
     "word": "კაცი",
-    "pos": "noun"
+    "pos": "noun",
+    "example": "კაცი ქუჩაში დადიოდა.",
+    "declension": {
+      "nominative": {
+        "singular": "კაცი",
+        "plural": "კაცები"
+      },
+      "ergative": {
+        "singular": "კაცმა",
+        "plural": "კაცებმა"
+      },
+      "dative": {
+        "singular": "კაცს",
+        "plural": "კაცებს"
+      },
+      "genitive": {
+        "singular": "კაცის",
+        "plural": "კაცების"
+      },
+      "instrumental": {
+        "singular": "კაცით",
+        "plural": "კაცებით"
+      },
+      "adverbial": {
+        "singular": "კაცად",
+        "plural": "კაცებად"
+      },
+      "vocative": {
+        "singular": "კაცო",
+        "plural": "კაცებო"
+      }
+    }
   },
   {
     "rank": 84,
@@ -597,7 +661,40 @@
     "rank": 100,
     "en": "line (shape)",
     "word": "ხაზი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხაზი",
+        "plural": "ხაზები"
+      },
+      "ergative": {
+        "singular": "ხაზმა",
+        "plural": "ხაზებმა"
+      },
+      "dative": {
+        "singular": "ხაზს",
+        "plural": "ხაზებს"
+      },
+      "genitive": {
+        "singular": "ხაზის",
+        "plural": "ხაზების"
+      },
+      "instrumental": {
+        "singular": "ხაზით",
+        "plural": "ხაზებით"
+      },
+      "adverbial": {
+        "singular": "ხაზად",
+        "plural": "ხაზებად"
+      },
+      "vocative": {
+        "singular": "ხაზო",
+        "plural": "ხაზებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 101,
@@ -645,7 +742,40 @@
     "rank": 108,
     "en": "boy",
     "word": "ბიჭი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბიჭი",
+        "plural": "ბიჭები"
+      },
+      "ergative": {
+        "singular": "ბიჭმა",
+        "plural": "ბიჭებმა"
+      },
+      "dative": {
+        "singular": "ბიჭს",
+        "plural": "ბიჭებს"
+      },
+      "genitive": {
+        "singular": "ბიჭის",
+        "plural": "ბიჭების"
+      },
+      "instrumental": {
+        "singular": "ბიჭით",
+        "plural": "ბიჭებით"
+      },
+      "adverbial": {
+        "singular": "ბიჭად",
+        "plural": "ბიჭებად"
+      },
+      "vocative": {
+        "singular": "ბიჭო",
+        "plural": "ბიჭებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 109,
@@ -723,7 +853,40 @@
     "rank": 121,
     "en": "house / home",
     "word": "სახლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "სახლი",
+        "plural": "სახლები"
+      },
+      "ergative": {
+        "singular": "სახლმა",
+        "plural": "სახლებმა"
+      },
+      "dative": {
+        "singular": "სახლს",
+        "plural": "სახლებს"
+      },
+      "genitive": {
+        "singular": "სახლის",
+        "plural": "სახლების"
+      },
+      "instrumental": {
+        "singular": "სახლით",
+        "plural": "სახლებით"
+      },
+      "adverbial": {
+        "singular": "სახლად",
+        "plural": "სახლებად"
+      },
+      "vocative": {
+        "singular": "სახლო",
+        "plural": "სახლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 122,
@@ -735,7 +898,40 @@
     "rank": 123,
     "en": "hand",
     "word": "ხელი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხელი",
+        "plural": "ხელები"
+      },
+      "ergative": {
+        "singular": "ხელმა",
+        "plural": "ხელებმა"
+      },
+      "dative": {
+        "singular": "ხელს",
+        "plural": "ხელებს"
+      },
+      "genitive": {
+        "singular": "ხელის",
+        "plural": "ხელების"
+      },
+      "instrumental": {
+        "singular": "ხელით",
+        "plural": "ხელებით"
+      },
+      "adverbial": {
+        "singular": "ხელად",
+        "plural": "ხელებად"
+      },
+      "vocative": {
+        "singular": "ხელო",
+        "plural": "ხელებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 124,
@@ -903,7 +1099,40 @@
     "rank": 151,
     "en": "head",
     "word": "თავი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თავი",
+        "plural": "თავები"
+      },
+      "ergative": {
+        "singular": "თავმა",
+        "plural": "თავებმა"
+      },
+      "dative": {
+        "singular": "თავს",
+        "plural": "თავებს"
+      },
+      "genitive": {
+        "singular": "თავის",
+        "plural": "თავების"
+      },
+      "instrumental": {
+        "singular": "თავით",
+        "plural": "თავებით"
+      },
+      "adverbial": {
+        "singular": "თავად",
+        "plural": "თავებად"
+      },
+      "vocative": {
+        "singular": "თავო",
+        "plural": "თავებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 152,
@@ -921,7 +1150,40 @@
     "rank": 154,
     "en": "page",
     "word": "გვერდი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "გვერდი",
+        "plural": "გვერდები"
+      },
+      "ergative": {
+        "singular": "გვერდმა",
+        "plural": "გვერდებმა"
+      },
+      "dative": {
+        "singular": "გვერდს",
+        "plural": "გვერდებს"
+      },
+      "genitive": {
+        "singular": "გვერდის",
+        "plural": "გვერდების"
+      },
+      "instrumental": {
+        "singular": "გვერდით",
+        "plural": "გვერდებით"
+      },
+      "adverbial": {
+        "singular": "გვერდად",
+        "plural": "გვერდებად"
+      },
+      "vocative": {
+        "singular": "გვერდო",
+        "plural": "გვერდებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 155,
@@ -999,7 +1261,40 @@
     "rank": 167,
     "en": "eye",
     "word": "თვალი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თვალი",
+        "plural": "თვალები"
+      },
+      "ergative": {
+        "singular": "თვალმა",
+        "plural": "თვალებმა"
+      },
+      "dative": {
+        "singular": "თვალს",
+        "plural": "თვალებს"
+      },
+      "genitive": {
+        "singular": "თვალის",
+        "plural": "თვალების"
+      },
+      "instrumental": {
+        "singular": "თვალით",
+        "plural": "თვალებით"
+      },
+      "adverbial": {
+        "singular": "თვალად",
+        "plural": "თვალებად"
+      },
+      "vocative": {
+        "singular": "თვალო",
+        "plural": "თვალებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 168,
@@ -1023,7 +1318,40 @@
     "rank": 171,
     "en": "opinion / thought / sense",
     "word": "აზრი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "აზრი",
+        "plural": "აზრები"
+      },
+      "ergative": {
+        "singular": "აზრმა",
+        "plural": "აზრებმა"
+      },
+      "dative": {
+        "singular": "აზრს",
+        "plural": "აზრებს"
+      },
+      "genitive": {
+        "singular": "აზრის",
+        "plural": "აზრების"
+      },
+      "instrumental": {
+        "singular": "აზრით",
+        "plural": "აზრებით"
+      },
+      "adverbial": {
+        "singular": "აზრად",
+        "plural": "აზრებად"
+      },
+      "vocative": {
+        "singular": "აზრო",
+        "plural": "აზრებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 172,
@@ -1173,7 +1501,40 @@
     "rank": 196,
     "en": "child, baby",
     "word": "ბავშვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბავშვი",
+        "plural": "ბავშვები"
+      },
+      "ergative": {
+        "singular": "ბავშვმა",
+        "plural": "ბავშვებმა"
+      },
+      "dative": {
+        "singular": "ბავშვს",
+        "plural": "ბავშვებს"
+      },
+      "genitive": {
+        "singular": "ბავშვის",
+        "plural": "ბავშვების"
+      },
+      "instrumental": {
+        "singular": "ბავშვით",
+        "plural": "ბავშვებით"
+      },
+      "adverbial": {
+        "singular": "ბავშვად",
+        "plural": "ბავშვებად"
+      },
+      "vocative": {
+        "singular": "ბავშვო",
+        "plural": "ბავშვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 197,
@@ -1209,7 +1570,40 @@
     "rank": 202,
     "en": "group",
     "word": "ჯგუფი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ჯგუფი",
+        "plural": "ჯგუფები"
+      },
+      "ergative": {
+        "singular": "ჯგუფმა",
+        "plural": "ჯგუფებმა"
+      },
+      "dative": {
+        "singular": "ჯგუფს",
+        "plural": "ჯგუფებს"
+      },
+      "genitive": {
+        "singular": "ჯგუფის",
+        "plural": "ჯგუფების"
+      },
+      "instrumental": {
+        "singular": "ჯგუფით",
+        "plural": "ჯგუფებით"
+      },
+      "adverbial": {
+        "singular": "ჯგუფად",
+        "plural": "ჯგუფებად"
+      },
+      "vocative": {
+        "singular": "ჯგუფო",
+        "plural": "ჯგუფებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 203,
@@ -1263,7 +1657,40 @@
     "rank": 211,
     "en": "foot, leg",
     "word": "ფეხი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფეხი",
+        "plural": "ფეხები"
+      },
+      "ergative": {
+        "singular": "ფეხმა",
+        "plural": "ფეხებმა"
+      },
+      "dative": {
+        "singular": "ფეხს",
+        "plural": "ფეხებს"
+      },
+      "genitive": {
+        "singular": "ფეხის",
+        "plural": "ფეხების"
+      },
+      "instrumental": {
+        "singular": "ფეხით",
+        "plural": "ფეხებით"
+      },
+      "adverbial": {
+        "singular": "ფეხად",
+        "plural": "ფეხებად"
+      },
+      "vocative": {
+        "singular": "ფეხო",
+        "plural": "ფეხებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 212,
@@ -1281,7 +1708,40 @@
     "rank": 214,
     "en": "book",
     "word": "წიგნი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "წიგნი",
+        "plural": "წიგნები"
+      },
+      "ergative": {
+        "singular": "წიგნმა",
+        "plural": "წიგნებმა"
+      },
+      "dative": {
+        "singular": "წიგნს",
+        "plural": "წიგნებს"
+      },
+      "genitive": {
+        "singular": "წიგნის",
+        "plural": "წიგნების"
+      },
+      "instrumental": {
+        "singular": "წიგნით",
+        "plural": "წიგნებით"
+      },
+      "adverbial": {
+        "singular": "წიგნად",
+        "plural": "წიგნებად"
+      },
+      "vocative": {
+        "singular": "წიგნო",
+        "plural": "წიგნებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 215,
@@ -1317,7 +1777,40 @@
     "rank": 220,
     "en": "fish",
     "word": "თევზი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თევზი",
+        "plural": "თევზები"
+      },
+      "ergative": {
+        "singular": "თევზმა",
+        "plural": "თევზებმა"
+      },
+      "dative": {
+        "singular": "თევზს",
+        "plural": "თევზებს"
+      },
+      "genitive": {
+        "singular": "თევზის",
+        "plural": "თევზების"
+      },
+      "instrumental": {
+        "singular": "თევზით",
+        "plural": "თევზებით"
+      },
+      "adverbial": {
+        "singular": "თევზად",
+        "plural": "თევზებად"
+      },
+      "vocative": {
+        "singular": "თევზო",
+        "plural": "თევზებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 221,
@@ -1347,7 +1840,40 @@
     "rank": 225,
     "en": "horse",
     "word": "ცხენი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ცხენი",
+        "plural": "ცხენები"
+      },
+      "ergative": {
+        "singular": "ცხენმა",
+        "plural": "ცხენებმა"
+      },
+      "dative": {
+        "singular": "ცხენს",
+        "plural": "ცხენებს"
+      },
+      "genitive": {
+        "singular": "ცხენის",
+        "plural": "ცხენების"
+      },
+      "instrumental": {
+        "singular": "ცხენით",
+        "plural": "ცხენებით"
+      },
+      "adverbial": {
+        "singular": "ცხენად",
+        "plural": "ცხენებად"
+      },
+      "vocative": {
+        "singular": "ცხენო",
+        "plural": "ცხენებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 226,
@@ -1359,7 +1885,40 @@
     "rank": 227,
     "en": "color",
     "word": "ფერი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფერი",
+        "plural": "ფერები"
+      },
+      "ergative": {
+        "singular": "ფერმა",
+        "plural": "ფერებმა"
+      },
+      "dative": {
+        "singular": "ფერს",
+        "plural": "ფერებს"
+      },
+      "genitive": {
+        "singular": "ფერის",
+        "plural": "ფერების"
+      },
+      "instrumental": {
+        "singular": "ფერით",
+        "plural": "ფერებით"
+      },
+      "adverbial": {
+        "singular": "ფერად",
+        "plural": "ფერებად"
+      },
+      "vocative": {
+        "singular": "ფერო",
+        "plural": "ფერებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 228,
@@ -1425,7 +1984,40 @@
     "rank": 238,
     "en": "though",
     "word": "ფიქრი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფიქრი",
+        "plural": "ფიქრები"
+      },
+      "ergative": {
+        "singular": "ფიქრმა",
+        "plural": "ფიქრებმა"
+      },
+      "dative": {
+        "singular": "ფიქრს",
+        "plural": "ფიქრებს"
+      },
+      "genitive": {
+        "singular": "ფიქრის",
+        "plural": "ფიქრების"
+      },
+      "instrumental": {
+        "singular": "ფიქრით",
+        "plural": "ფიქრებით"
+      },
+      "adverbial": {
+        "singular": "ფიქრად",
+        "plural": "ფიქრებად"
+      },
+      "vocative": {
+        "singular": "ფიქრო",
+        "plural": "ფიქრებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 239,
@@ -1437,7 +2029,40 @@
     "rank": 240,
     "en": "bird",
     "word": "ჩიტი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ჩიტი",
+        "plural": "ჩიტები"
+      },
+      "ergative": {
+        "singular": "ჩიტმა",
+        "plural": "ჩიტებმა"
+      },
+      "dative": {
+        "singular": "ჩიტს",
+        "plural": "ჩიტებს"
+      },
+      "genitive": {
+        "singular": "ჩიტის",
+        "plural": "ჩიტების"
+      },
+      "instrumental": {
+        "singular": "ჩიტით",
+        "plural": "ჩიტებით"
+      },
+      "adverbial": {
+        "singular": "ჩიტად",
+        "plural": "ჩიტებად"
+      },
+      "vocative": {
+        "singular": "ჩიტო",
+        "plural": "ჩიტებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 241,
@@ -1455,7 +2080,40 @@
     "rank": 243,
     "en": "dog",
     "word": "ძაღლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ძაღლი",
+        "plural": "ძაღლები"
+      },
+      "ergative": {
+        "singular": "ძაღლმა",
+        "plural": "ძაღლებმა"
+      },
+      "dative": {
+        "singular": "ძაღლს",
+        "plural": "ძაღლებს"
+      },
+      "genitive": {
+        "singular": "ძაღლის",
+        "plural": "ძაღლების"
+      },
+      "instrumental": {
+        "singular": "ძაღლით",
+        "plural": "ძაღლებით"
+      },
+      "adverbial": {
+        "singular": "ძაღლად",
+        "plural": "ძაღლებად"
+      },
+      "vocative": {
+        "singular": "ძაღლო",
+        "plural": "ძაღლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 244,
@@ -1491,7 +2149,40 @@
     "rank": 249,
     "en": "door",
     "word": "კარი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კარი",
+        "plural": "კარები"
+      },
+      "ergative": {
+        "singular": "კარმა",
+        "plural": "კარებმა"
+      },
+      "dative": {
+        "singular": "კარს",
+        "plural": "კარებს"
+      },
+      "genitive": {
+        "singular": "კარის",
+        "plural": "კარების"
+      },
+      "instrumental": {
+        "singular": "კარით",
+        "plural": "კარებით"
+      },
+      "adverbial": {
+        "singular": "კარად",
+        "plural": "კარებად"
+      },
+      "vocative": {
+        "singular": "კარო",
+        "plural": "კარებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 250,
@@ -1515,13 +2206,79 @@
     "rank": 253,
     "en": "class",
     "word": "კლასი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კლასი",
+        "plural": "კლასები"
+      },
+      "ergative": {
+        "singular": "კლასმა",
+        "plural": "კლასებმა"
+      },
+      "dative": {
+        "singular": "კლასს",
+        "plural": "კლასებს"
+      },
+      "genitive": {
+        "singular": "კლასის",
+        "plural": "კლასების"
+      },
+      "instrumental": {
+        "singular": "კლასით",
+        "plural": "კლასებით"
+      },
+      "adverbial": {
+        "singular": "კლასად",
+        "plural": "კლასებად"
+      },
+      "vocative": {
+        "singular": "კლასო",
+        "plural": "კლასებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 254,
     "en": "wind",
     "word": "ქარი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ქარი",
+        "plural": "ქარები"
+      },
+      "ergative": {
+        "singular": "ქარმა",
+        "plural": "ქარებმა"
+      },
+      "dative": {
+        "singular": "ქარს",
+        "plural": "ქარებს"
+      },
+      "genitive": {
+        "singular": "ქარის",
+        "plural": "ქარების"
+      },
+      "instrumental": {
+        "singular": "ქარით",
+        "plural": "ქარებით"
+      },
+      "adverbial": {
+        "singular": "ქარად",
+        "plural": "ქარებად"
+      },
+      "vocative": {
+        "singular": "ქარო",
+        "plural": "ქარებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 255,
@@ -1539,7 +2296,40 @@
     "rank": 257,
     "en": "ship",
     "word": "გემი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "გემი",
+        "plural": "გემები"
+      },
+      "ergative": {
+        "singular": "გემმა",
+        "plural": "გემებმა"
+      },
+      "dative": {
+        "singular": "გემს",
+        "plural": "გემებს"
+      },
+      "genitive": {
+        "singular": "გემის",
+        "plural": "გემების"
+      },
+      "instrumental": {
+        "singular": "გემით",
+        "plural": "გემებით"
+      },
+      "adverbial": {
+        "singular": "გემად",
+        "plural": "გემებად"
+      },
+      "vocative": {
+        "singular": "გემო",
+        "plural": "გემებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 258,
@@ -1557,7 +2347,40 @@
     "rank": 260,
     "en": "fire",
     "word": "ცეცხლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ცეცხლი",
+        "plural": "ცეცხლები"
+      },
+      "ergative": {
+        "singular": "ცეცხლმა",
+        "plural": "ცეცხლებმა"
+      },
+      "dative": {
+        "singular": "ცეცხლს",
+        "plural": "ცეცხლებს"
+      },
+      "genitive": {
+        "singular": "ცეცხლის",
+        "plural": "ცეცხლების"
+      },
+      "instrumental": {
+        "singular": "ცეცხლით",
+        "plural": "ცეცხლებით"
+      },
+      "adverbial": {
+        "singular": "ცეცხლად",
+        "plural": "ცეცხლებად"
+      },
+      "vocative": {
+        "singular": "ცეცხლო",
+        "plural": "ცეცხლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 261,
@@ -1731,7 +2554,40 @@
     "rank": 289,
     "en": "war",
     "word": "ომი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ომი",
+        "plural": "ომები"
+      },
+      "ergative": {
+        "singular": "ომმა",
+        "plural": "ომებმა"
+      },
+      "dative": {
+        "singular": "ომს",
+        "plural": "ომებს"
+      },
+      "genitive": {
+        "singular": "ომის",
+        "plural": "ომების"
+      },
+      "instrumental": {
+        "singular": "ომით",
+        "plural": "ომებით"
+      },
+      "adverbial": {
+        "singular": "ომად",
+        "plural": "ომებად"
+      },
+      "vocative": {
+        "singular": "ომო",
+        "plural": "ომებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 290,
@@ -1755,7 +2611,40 @@
     "rank": 293,
     "en": "center",
     "word": "ცენტრი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ცენტრი",
+        "plural": "ცენტრები"
+      },
+      "ergative": {
+        "singular": "ცენტრმა",
+        "plural": "ცენტრებმა"
+      },
+      "dative": {
+        "singular": "ცენტრს",
+        "plural": "ცენტრებს"
+      },
+      "genitive": {
+        "singular": "ცენტრის",
+        "plural": "ცენტრების"
+      },
+      "instrumental": {
+        "singular": "ცენტრით",
+        "plural": "ცენტრებით"
+      },
+      "adverbial": {
+        "singular": "ცენტრად",
+        "plural": "ცენტრებად"
+      },
+      "vocative": {
+        "singular": "ცენტრო",
+        "plural": "ცენტრებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 294,
@@ -1767,7 +2656,40 @@
     "rank": 295,
     "en": "money",
     "word": "ფული",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფული",
+        "plural": "ფულები"
+      },
+      "ergative": {
+        "singular": "ფულმა",
+        "plural": "ფულებმა"
+      },
+      "dative": {
+        "singular": "ფულს",
+        "plural": "ფულებს"
+      },
+      "genitive": {
+        "singular": "ფულის",
+        "plural": "ფულების"
+      },
+      "instrumental": {
+        "singular": "ფულით",
+        "plural": "ფულებით"
+      },
+      "adverbial": {
+        "singular": "ფულად",
+        "plural": "ფულებად"
+      },
+      "vocative": {
+        "singular": "ფულო",
+        "plural": "ფულებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 296,
@@ -1791,7 +2713,40 @@
     "rank": 299,
     "en": "rule",
     "word": "წესი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "წესი",
+        "plural": "წესები"
+      },
+      "ergative": {
+        "singular": "წესმა",
+        "plural": "წესებმა"
+      },
+      "dative": {
+        "singular": "წესს",
+        "plural": "წესებს"
+      },
+      "genitive": {
+        "singular": "წესის",
+        "plural": "წესების"
+      },
+      "instrumental": {
+        "singular": "წესით",
+        "plural": "წესებით"
+      },
+      "adverbial": {
+        "singular": "წესად",
+        "plural": "წესებად"
+      },
+      "vocative": {
+        "singular": "წესო",
+        "plural": "წესებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 300,
@@ -1863,7 +2818,40 @@
     "rank": 311,
     "en": "box",
     "word": "ყუთი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ყუთი",
+        "plural": "ყუთები"
+      },
+      "ergative": {
+        "singular": "ყუთმა",
+        "plural": "ყუთებმა"
+      },
+      "dative": {
+        "singular": "ყუთს",
+        "plural": "ყუთებს"
+      },
+      "genitive": {
+        "singular": "ყუთის",
+        "plural": "ყუთების"
+      },
+      "instrumental": {
+        "singular": "ყუთით",
+        "plural": "ყუთებით"
+      },
+      "adverbial": {
+        "singular": "ყუთად",
+        "plural": "ყუთებად"
+      },
+      "vocative": {
+        "singular": "ყუთო",
+        "plural": "ყუთებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 312,
@@ -1947,7 +2935,40 @@
     "rank": 325,
     "en": "minute",
     "word": "წუთი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "წუთი",
+        "plural": "წუთები"
+      },
+      "ergative": {
+        "singular": "წუთმა",
+        "plural": "წუთებმა"
+      },
+      "dative": {
+        "singular": "წუთს",
+        "plural": "წუთებს"
+      },
+      "genitive": {
+        "singular": "წუთის",
+        "plural": "წუთების"
+      },
+      "instrumental": {
+        "singular": "წუთით",
+        "plural": "წუთებით"
+      },
+      "adverbial": {
+        "singular": "წუთად",
+        "plural": "წუთებად"
+      },
+      "vocative": {
+        "singular": "წუთო",
+        "plural": "წუთებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 326,
@@ -1977,13 +2998,79 @@
     "rank": 330,
     "en": "tail",
     "word": "კუდი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კუდი",
+        "plural": "კუდები"
+      },
+      "ergative": {
+        "singular": "კუდმა",
+        "plural": "კუდებმა"
+      },
+      "dative": {
+        "singular": "კუდს",
+        "plural": "კუდებს"
+      },
+      "genitive": {
+        "singular": "კუდის",
+        "plural": "კუდების"
+      },
+      "instrumental": {
+        "singular": "კუდით",
+        "plural": "კუდებით"
+      },
+      "adverbial": {
+        "singular": "კუდად",
+        "plural": "კუდებად"
+      },
+      "vocative": {
+        "singular": "კუდო",
+        "plural": "კუდებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 331,
     "en": "fact",
     "word": "ფაქტი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფაქტი",
+        "plural": "ფაქტები"
+      },
+      "ergative": {
+        "singular": "ფაქტმა",
+        "plural": "ფაქტებმა"
+      },
+      "dative": {
+        "singular": "ფაქტს",
+        "plural": "ფაქტებს"
+      },
+      "genitive": {
+        "singular": "ფაქტის",
+        "plural": "ფაქტების"
+      },
+      "instrumental": {
+        "singular": "ფაქტით",
+        "plural": "ფაქტებით"
+      },
+      "adverbial": {
+        "singular": "ფაქტად",
+        "plural": "ფაქტებად"
+      },
+      "vocative": {
+        "singular": "ფაქტო",
+        "plural": "ფაქტებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 332,
@@ -2001,7 +3088,40 @@
     "rank": 334,
     "en": "course",
     "word": "კურსი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კურსი",
+        "plural": "კურსები"
+      },
+      "ergative": {
+        "singular": "კურსმა",
+        "plural": "კურსებმა"
+      },
+      "dative": {
+        "singular": "კურსს",
+        "plural": "კურსებს"
+      },
+      "genitive": {
+        "singular": "კურსის",
+        "plural": "კურსების"
+      },
+      "instrumental": {
+        "singular": "კურსით",
+        "plural": "კურსებით"
+      },
+      "adverbial": {
+        "singular": "კურსად",
+        "plural": "კურსებად"
+      },
+      "vocative": {
+        "singular": "კურსო",
+        "plural": "კურსებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 335,
@@ -2085,7 +3205,40 @@
     "rank": 348,
     "en": "boat",
     "word": "ნავი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ნავი",
+        "plural": "ნავები"
+      },
+      "ergative": {
+        "singular": "ნავმა",
+        "plural": "ნავებმა"
+      },
+      "dative": {
+        "singular": "ნავს",
+        "plural": "ნავებს"
+      },
+      "genitive": {
+        "singular": "ნავის",
+        "plural": "ნავების"
+      },
+      "instrumental": {
+        "singular": "ნავით",
+        "plural": "ნავებით"
+      },
+      "adverbial": {
+        "singular": "ნავად",
+        "plural": "ნავებად"
+      },
+      "vocative": {
+        "singular": "ნავო",
+        "plural": "ნავებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 349,
@@ -2169,7 +3322,40 @@
     "rank": 362,
     "en": "snow",
     "word": "თოვლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თოვლი",
+        "plural": "თოვლები"
+      },
+      "ergative": {
+        "singular": "თოვლმა",
+        "plural": "თოვლებმა"
+      },
+      "dative": {
+        "singular": "თოვლს",
+        "plural": "თოვლებს"
+      },
+      "genitive": {
+        "singular": "თოვლის",
+        "plural": "თოვლების"
+      },
+      "instrumental": {
+        "singular": "თოვლით",
+        "plural": "თოვლებით"
+      },
+      "adverbial": {
+        "singular": "თოვლად",
+        "plural": "თოვლებად"
+      },
+      "vocative": {
+        "singular": "თოვლო",
+        "plural": "თოვლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 363,
@@ -2223,7 +3409,40 @@
     "rank": 371,
     "en": "ball",
     "word": "ბურთი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბურთი",
+        "plural": "ბურთები"
+      },
+      "ergative": {
+        "singular": "ბურთმა",
+        "plural": "ბურთებმა"
+      },
+      "dative": {
+        "singular": "ბურთს",
+        "plural": "ბურთებს"
+      },
+      "genitive": {
+        "singular": "ბურთის",
+        "plural": "ბურთების"
+      },
+      "instrumental": {
+        "singular": "ბურთით",
+        "plural": "ბურთებით"
+      },
+      "adverbial": {
+        "singular": "ბურთად",
+        "plural": "ბურთებად"
+      },
+      "vocative": {
+        "singular": "ბურთო",
+        "plural": "ბურთებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 372,
@@ -2241,7 +3460,40 @@
     "rank": 374,
     "en": "heart",
     "word": "გული",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "გული",
+        "plural": "გულები"
+      },
+      "ergative": {
+        "singular": "გულმა",
+        "plural": "გულებმა"
+      },
+      "dative": {
+        "singular": "გულს",
+        "plural": "გულებს"
+      },
+      "genitive": {
+        "singular": "გულის",
+        "plural": "გულების"
+      },
+      "instrumental": {
+        "singular": "გულით",
+        "plural": "გულებით"
+      },
+      "adverbial": {
+        "singular": "გულად",
+        "plural": "გულებად"
+      },
+      "vocative": {
+        "singular": "გულო",
+        "plural": "გულებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 375,
@@ -2271,7 +3523,40 @@
     "rank": 379,
     "en": "arm",
     "word": "მკლავი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "მკლავი",
+        "plural": "მკლავები"
+      },
+      "ergative": {
+        "singular": "მკლავმა",
+        "plural": "მკლავებმა"
+      },
+      "dative": {
+        "singular": "მკლავს",
+        "plural": "მკლავებს"
+      },
+      "genitive": {
+        "singular": "მკლავის",
+        "plural": "მკლავების"
+      },
+      "instrumental": {
+        "singular": "მკლავით",
+        "plural": "მკლავებით"
+      },
+      "adverbial": {
+        "singular": "მკლავად",
+        "plural": "მკლავებად"
+      },
+      "vocative": {
+        "singular": "მკლავო",
+        "plural": "მკლავებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 380,
@@ -2421,7 +3706,40 @@
     "rank": 404,
     "en": "egg",
     "word": "კვერცხი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კვერცხი",
+        "plural": "კვერცხები"
+      },
+      "ergative": {
+        "singular": "კვერცხმა",
+        "plural": "კვერცხებმა"
+      },
+      "dative": {
+        "singular": "კვერცხს",
+        "plural": "კვერცხებს"
+      },
+      "genitive": {
+        "singular": "კვერცხის",
+        "plural": "კვერცხების"
+      },
+      "instrumental": {
+        "singular": "კვერცხით",
+        "plural": "კვერცხებით"
+      },
+      "adverbial": {
+        "singular": "კვერცხად",
+        "plural": "კვერცხებად"
+      },
+      "vocative": {
+        "singular": "კვერცხო",
+        "plural": "კვერცხებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 405,
@@ -2469,7 +3787,40 @@
     "rank": 412,
     "en": "sleep",
     "word": "ძილი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ძილი",
+        "plural": "ძილები"
+      },
+      "ergative": {
+        "singular": "ძილმა",
+        "plural": "ძილებმა"
+      },
+      "dative": {
+        "singular": "ძილს",
+        "plural": "ძილებს"
+      },
+      "genitive": {
+        "singular": "ძილის",
+        "plural": "ძილების"
+      },
+      "instrumental": {
+        "singular": "ძილით",
+        "plural": "ძილებით"
+      },
+      "adverbial": {
+        "singular": "ძილად",
+        "plural": "ძილებად"
+      },
+      "vocative": {
+        "singular": "ძილო",
+        "plural": "ძილებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 413,
@@ -2619,7 +3970,40 @@
     "rank": 437,
     "en": "bear",
     "word": "დათვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "დათვი",
+        "plural": "დათვები"
+      },
+      "ergative": {
+        "singular": "დათვმა",
+        "plural": "დათვებმა"
+      },
+      "dative": {
+        "singular": "დათვს",
+        "plural": "დათვებს"
+      },
+      "genitive": {
+        "singular": "დათვის",
+        "plural": "დათვების"
+      },
+      "instrumental": {
+        "singular": "დათვით",
+        "plural": "დათვებით"
+      },
+      "adverbial": {
+        "singular": "დათვად",
+        "plural": "დათვებად"
+      },
+      "vocative": {
+        "singular": "დათვო",
+        "plural": "დათვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 438,
@@ -2679,7 +4063,40 @@
     "rank": 447,
     "en": "root",
     "word": "ფესვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ფესვი",
+        "plural": "ფესვები"
+      },
+      "ergative": {
+        "singular": "ფესვმა",
+        "plural": "ფესვებმა"
+      },
+      "dative": {
+        "singular": "ფესვს",
+        "plural": "ფესვებს"
+      },
+      "genitive": {
+        "singular": "ფესვის",
+        "plural": "ფესვების"
+      },
+      "instrumental": {
+        "singular": "ფესვით",
+        "plural": "ფესვებით"
+      },
+      "adverbial": {
+        "singular": "ფესვად",
+        "plural": "ფესვებად"
+      },
+      "vocative": {
+        "singular": "ფესვო",
+        "plural": "ფესვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 448,
@@ -2745,7 +4162,40 @@
     "rank": 458,
     "en": "hill",
     "word": "ბორცვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბორცვი",
+        "plural": "ბორცვები"
+      },
+      "ergative": {
+        "singular": "ბორცვმა",
+        "plural": "ბორცვებმა"
+      },
+      "dative": {
+        "singular": "ბორცვს",
+        "plural": "ბორცვებს"
+      },
+      "genitive": {
+        "singular": "ბორცვის",
+        "plural": "ბორცვების"
+      },
+      "instrumental": {
+        "singular": "ბორცვით",
+        "plural": "ბორცვებით"
+      },
+      "adverbial": {
+        "singular": "ბორცვად",
+        "plural": "ბორცვებად"
+      },
+      "vocative": {
+        "singular": "ბორცვო",
+        "plural": "ბორცვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 459,
@@ -2769,7 +4219,40 @@
     "rank": 462,
     "en": "type",
     "word": "ტიპი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ტიპი",
+        "plural": "ტიპები"
+      },
+      "ergative": {
+        "singular": "ტიპმა",
+        "plural": "ტიპებმა"
+      },
+      "dative": {
+        "singular": "ტიპს",
+        "plural": "ტიპებს"
+      },
+      "genitive": {
+        "singular": "ტიპის",
+        "plural": "ტიპების"
+      },
+      "instrumental": {
+        "singular": "ტიპით",
+        "plural": "ტიპებით"
+      },
+      "adverbial": {
+        "singular": "ტიპად",
+        "plural": "ტიპებად"
+      },
+      "vocative": {
+        "singular": "ტიპო",
+        "plural": "ტიპებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 463,
@@ -2829,7 +4312,40 @@
     "rank": 472,
     "en": "finger",
     "word": "თითი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თითი",
+        "plural": "თითები"
+      },
+      "ergative": {
+        "singular": "თითმა",
+        "plural": "თითებმა"
+      },
+      "dative": {
+        "singular": "თითს",
+        "plural": "თითებს"
+      },
+      "genitive": {
+        "singular": "თითის",
+        "plural": "თითების"
+      },
+      "instrumental": {
+        "singular": "თითით",
+        "plural": "თითებით"
+      },
+      "adverbial": {
+        "singular": "თითად",
+        "plural": "თითებად"
+      },
+      "vocative": {
+        "singular": "თითო",
+        "plural": "თითებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 473,
@@ -2877,13 +4393,79 @@
     "rank": 480,
     "en": "view",
     "word": "ხედი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხედი",
+        "plural": "ხედები"
+      },
+      "ergative": {
+        "singular": "ხედმა",
+        "plural": "ხედებმა"
+      },
+      "dative": {
+        "singular": "ხედს",
+        "plural": "ხედებს"
+      },
+      "genitive": {
+        "singular": "ხედის",
+        "plural": "ხედების"
+      },
+      "instrumental": {
+        "singular": "ხედით",
+        "plural": "ხედებით"
+      },
+      "adverbial": {
+        "singular": "ხედად",
+        "plural": "ხედებად"
+      },
+      "vocative": {
+        "singular": "ხედო",
+        "plural": "ხედებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 481,
     "en": "ear",
     "word": "ყური",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ყური",
+        "plural": "ყურები"
+      },
+      "ergative": {
+        "singular": "ყურმა",
+        "plural": "ყურებმა"
+      },
+      "dative": {
+        "singular": "ყურს",
+        "plural": "ყურებს"
+      },
+      "genitive": {
+        "singular": "ყურის",
+        "plural": "ყურების"
+      },
+      "instrumental": {
+        "singular": "ყურით",
+        "plural": "ყურებით"
+      },
+      "adverbial": {
+        "singular": "ყურად",
+        "plural": "ყურებად"
+      },
+      "vocative": {
+        "singular": "ყურო",
+        "plural": "ყურებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 482,
@@ -2913,7 +4495,40 @@
     "rank": 486,
     "en": "son",
     "word": "შვილი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "შვილი",
+        "plural": "შვილები"
+      },
+      "ergative": {
+        "singular": "შვილმა",
+        "plural": "შვილებმა"
+      },
+      "dative": {
+        "singular": "შვილს",
+        "plural": "შვილებს"
+      },
+      "genitive": {
+        "singular": "შვილის",
+        "plural": "შვილების"
+      },
+      "instrumental": {
+        "singular": "შვილით",
+        "plural": "შვილებით"
+      },
+      "adverbial": {
+        "singular": "შვილად",
+        "plural": "შვილებად"
+      },
+      "vocative": {
+        "singular": "შვილო",
+        "plural": "შვილებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 487,
@@ -2967,7 +4582,40 @@
     "rank": 495,
     "en": "nation",
     "word": "ერი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ერი",
+        "plural": "ერები"
+      },
+      "ergative": {
+        "singular": "ერმა",
+        "plural": "ერებმა"
+      },
+      "dative": {
+        "singular": "ერს",
+        "plural": "ერებს"
+      },
+      "genitive": {
+        "singular": "ერის",
+        "plural": "ერების"
+      },
+      "instrumental": {
+        "singular": "ერით",
+        "plural": "ერებით"
+      },
+      "adverbial": {
+        "singular": "ერად",
+        "plural": "ერებად"
+      },
+      "vocative": {
+        "singular": "ერო",
+        "plural": "ერებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 496,
@@ -3099,7 +4747,40 @@
     "rank": 517,
     "en": "stick (of wood)",
     "word": "ჯოხი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ჯოხი",
+        "plural": "ჯოხები"
+      },
+      "ergative": {
+        "singular": "ჯოხმა",
+        "plural": "ჯოხებმა"
+      },
+      "dative": {
+        "singular": "ჯოხს",
+        "plural": "ჯოხებს"
+      },
+      "genitive": {
+        "singular": "ჯოხის",
+        "plural": "ჯოხების"
+      },
+      "instrumental": {
+        "singular": "ჯოხით",
+        "plural": "ჯოხებით"
+      },
+      "adverbial": {
+        "singular": "ჯოხად",
+        "plural": "ჯოხებად"
+      },
+      "vocative": {
+        "singular": "ჯოხო",
+        "plural": "ჯოხებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 518,
@@ -3117,7 +4798,40 @@
     "rank": 520,
     "en": "skin",
     "word": "კანი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კანი",
+        "plural": "კანები"
+      },
+      "ergative": {
+        "singular": "კანმა",
+        "plural": "კანებმა"
+      },
+      "dative": {
+        "singular": "კანს",
+        "plural": "კანებს"
+      },
+      "genitive": {
+        "singular": "კანის",
+        "plural": "კანების"
+      },
+      "instrumental": {
+        "singular": "კანით",
+        "plural": "კანებით"
+      },
+      "adverbial": {
+        "singular": "კანად",
+        "plural": "კანებად"
+      },
+      "vocative": {
+        "singular": "კანო",
+        "plural": "კანებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 521,
@@ -3159,13 +4873,79 @@
     "rank": 527,
     "en": "row, line, queue",
     "word": "რიგი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "რიგი",
+        "plural": "რიგები"
+      },
+      "ergative": {
+        "singular": "რიგმა",
+        "plural": "რიგებმა"
+      },
+      "dative": {
+        "singular": "რიგს",
+        "plural": "რიგებს"
+      },
+      "genitive": {
+        "singular": "რიგის",
+        "plural": "რიგების"
+      },
+      "instrumental": {
+        "singular": "რიგით",
+        "plural": "რიგებით"
+      },
+      "adverbial": {
+        "singular": "რიგად",
+        "plural": "რიგებად"
+      },
+      "vocative": {
+        "singular": "რიგო",
+        "plural": "რიგებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 528,
     "en": "mouth",
     "word": "პირი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "პირი",
+        "plural": "პირები"
+      },
+      "ergative": {
+        "singular": "პირმა",
+        "plural": "პირებმა"
+      },
+      "dative": {
+        "singular": "პირს",
+        "plural": "პირებს"
+      },
+      "genitive": {
+        "singular": "პირის",
+        "plural": "პირების"
+      },
+      "instrumental": {
+        "singular": "პირით",
+        "plural": "პირებით"
+      },
+      "adverbial": {
+        "singular": "პირად",
+        "plural": "პირებად"
+      },
+      "vocative": {
+        "singular": "პირო",
+        "plural": "პირებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 529,
@@ -3195,13 +4975,79 @@
     "rank": 533,
     "en": "seed",
     "word": "თესლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თესლი",
+        "plural": "თესლები"
+      },
+      "ergative": {
+        "singular": "თესლმა",
+        "plural": "თესლებმა"
+      },
+      "dative": {
+        "singular": "თესლს",
+        "plural": "თესლებს"
+      },
+      "genitive": {
+        "singular": "თესლის",
+        "plural": "თესლების"
+      },
+      "instrumental": {
+        "singular": "თესლით",
+        "plural": "თესლებით"
+      },
+      "adverbial": {
+        "singular": "თესლად",
+        "plural": "თესლებად"
+      },
+      "vocative": {
+        "singular": "თესლო",
+        "plural": "თესლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 534,
     "en": "tone",
     "word": "ტონი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ტონი",
+        "plural": "ტონები"
+      },
+      "ergative": {
+        "singular": "ტონმა",
+        "plural": "ტონებმა"
+      },
+      "dative": {
+        "singular": "ტონს",
+        "plural": "ტონებს"
+      },
+      "genitive": {
+        "singular": "ტონის",
+        "plural": "ტონების"
+      },
+      "instrumental": {
+        "singular": "ტონით",
+        "plural": "ტონებით"
+      },
+      "adverbial": {
+        "singular": "ტონად",
+        "plural": "ტონებად"
+      },
+      "vocative": {
+        "singular": "ტონო",
+        "plural": "ტონებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 535,
@@ -3231,7 +5077,40 @@
     "rank": 539,
     "en": "rice",
     "word": "ბრინჯი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბრინჯი",
+        "plural": "ბრინჯები"
+      },
+      "ergative": {
+        "singular": "ბრინჯმა",
+        "plural": "ბრინჯებმა"
+      },
+      "dative": {
+        "singular": "ბრინჯს",
+        "plural": "ბრინჯებს"
+      },
+      "genitive": {
+        "singular": "ბრინჯის",
+        "plural": "ბრინჯების"
+      },
+      "instrumental": {
+        "singular": "ბრინჯით",
+        "plural": "ბრინჯებით"
+      },
+      "adverbial": {
+        "singular": "ბრინჯად",
+        "plural": "ბრინჯებად"
+      },
+      "vocative": {
+        "singular": "ბრინჯო",
+        "plural": "ბრინჯებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 540,
@@ -3249,13 +5128,79 @@
     "rank": 542,
     "en": "oil",
     "word": "ნავთი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ნავთი",
+        "plural": "ნავთები"
+      },
+      "ergative": {
+        "singular": "ნავთმა",
+        "plural": "ნავთებმა"
+      },
+      "dative": {
+        "singular": "ნავთს",
+        "plural": "ნავთებს"
+      },
+      "genitive": {
+        "singular": "ნავთის",
+        "plural": "ნავთების"
+      },
+      "instrumental": {
+        "singular": "ნავთით",
+        "plural": "ნავთებით"
+      },
+      "adverbial": {
+        "singular": "ნავთად",
+        "plural": "ნავთებად"
+      },
+      "vocative": {
+        "singular": "ნავთო",
+        "plural": "ნავთებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 543,
     "en": "blood",
     "word": "სისხლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "სისხლი",
+        "plural": "სისხლები"
+      },
+      "ergative": {
+        "singular": "სისხლმა",
+        "plural": "სისხლებმა"
+      },
+      "dative": {
+        "singular": "სისხლს",
+        "plural": "სისხლებს"
+      },
+      "genitive": {
+        "singular": "სისხლის",
+        "plural": "სისხლების"
+      },
+      "instrumental": {
+        "singular": "სისხლით",
+        "plural": "სისხლებით"
+      },
+      "adverbial": {
+        "singular": "სისხლად",
+        "plural": "სისხლებად"
+      },
+      "vocative": {
+        "singular": "სისხლო",
+        "plural": "სისხლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 544,
@@ -3267,7 +5212,40 @@
     "rank": 545,
     "en": "team",
     "word": "გუნდი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "გუნდი",
+        "plural": "გუნდები"
+      },
+      "ergative": {
+        "singular": "გუნდმა",
+        "plural": "გუნდებმა"
+      },
+      "dative": {
+        "singular": "გუნდს",
+        "plural": "გუნდებს"
+      },
+      "genitive": {
+        "singular": "გუნდის",
+        "plural": "გუნდების"
+      },
+      "instrumental": {
+        "singular": "გუნდით",
+        "plural": "გუნდებით"
+      },
+      "adverbial": {
+        "singular": "გუნდად",
+        "plural": "გუნდებად"
+      },
+      "vocative": {
+        "singular": "გუნდო",
+        "plural": "გუნდებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 546,
@@ -3297,7 +5275,40 @@
     "rank": 550,
     "en": "garden",
     "word": "ბაღი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბაღი",
+        "plural": "ბაღები"
+      },
+      "ergative": {
+        "singular": "ბაღმა",
+        "plural": "ბაღებმა"
+      },
+      "dative": {
+        "singular": "ბაღს",
+        "plural": "ბაღებს"
+      },
+      "genitive": {
+        "singular": "ბაღის",
+        "plural": "ბაღების"
+      },
+      "instrumental": {
+        "singular": "ბაღით",
+        "plural": "ბაღებით"
+      },
+      "adverbial": {
+        "singular": "ბაღად",
+        "plural": "ბაღებად"
+      },
+      "vocative": {
+        "singular": "ბაღო",
+        "plural": "ბაღებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 551,
@@ -3339,7 +5350,40 @@
     "rank": 557,
     "en": "bank",
     "word": "ბანკი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბანკი",
+        "plural": "ბანკები"
+      },
+      "ergative": {
+        "singular": "ბანკმა",
+        "plural": "ბანკებმა"
+      },
+      "dative": {
+        "singular": "ბანკს",
+        "plural": "ბანკებს"
+      },
+      "genitive": {
+        "singular": "ბანკის",
+        "plural": "ბანკების"
+      },
+      "instrumental": {
+        "singular": "ბანკით",
+        "plural": "ბანკებით"
+      },
+      "adverbial": {
+        "singular": "ბანკად",
+        "plural": "ბანკებად"
+      },
+      "vocative": {
+        "singular": "ბანკო",
+        "plural": "ბანკებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 558,
@@ -3375,7 +5419,40 @@
     "rank": 563,
     "en": "woman",
     "word": "ქალი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ქალი",
+        "plural": "ქალები"
+      },
+      "ergative": {
+        "singular": "ქალმა",
+        "plural": "ქალებმა"
+      },
+      "dative": {
+        "singular": "ქალს",
+        "plural": "ქალებს"
+      },
+      "genitive": {
+        "singular": "ქალის",
+        "plural": "ქალების"
+      },
+      "instrumental": {
+        "singular": "ქალით",
+        "plural": "ქალებით"
+      },
+      "adverbial": {
+        "singular": "ქალად",
+        "plural": "ქალებად"
+      },
+      "vocative": {
+        "singular": "ქალო",
+        "plural": "ქალებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 564,
@@ -3555,7 +5632,40 @@
     "rank": 593,
     "en": "chair",
     "word": "სკამი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "სკამი",
+        "plural": "სკამები"
+      },
+      "ergative": {
+        "singular": "სკამმა",
+        "plural": "სკამებმა"
+      },
+      "dative": {
+        "singular": "სკამს",
+        "plural": "სკამებს"
+      },
+      "genitive": {
+        "singular": "სკამის",
+        "plural": "სკამების"
+      },
+      "instrumental": {
+        "singular": "სკამით",
+        "plural": "სკამებით"
+      },
+      "adverbial": {
+        "singular": "სკამად",
+        "plural": "სკამებად"
+      },
+      "vocative": {
+        "singular": "სკამო",
+        "plural": "სკამებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 594,
@@ -3567,7 +5677,40 @@
     "rank": 595,
     "en": "fruit",
     "word": "ხილი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხილი",
+        "plural": "ხილები"
+      },
+      "ergative": {
+        "singular": "ხილმა",
+        "plural": "ხილებმა"
+      },
+      "dative": {
+        "singular": "ხილს",
+        "plural": "ხილებს"
+      },
+      "genitive": {
+        "singular": "ხილის",
+        "plural": "ხილების"
+      },
+      "instrumental": {
+        "singular": "ხილით",
+        "plural": "ხილებით"
+      },
+      "adverbial": {
+        "singular": "ხილად",
+        "plural": "ხილებად"
+      },
+      "vocative": {
+        "singular": "ხილო",
+        "plural": "ხილებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 596,
@@ -3645,7 +5788,40 @@
     "rank": 608,
     "en": "poem",
     "word": "ლექსი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ლექსი",
+        "plural": "ლექსები"
+      },
+      "ergative": {
+        "singular": "ლექსმა",
+        "plural": "ლექსებმა"
+      },
+      "dative": {
+        "singular": "ლექსს",
+        "plural": "ლექსებს"
+      },
+      "genitive": {
+        "singular": "ლექსის",
+        "plural": "ლექსების"
+      },
+      "instrumental": {
+        "singular": "ლექსით",
+        "plural": "ლექსებით"
+      },
+      "adverbial": {
+        "singular": "ლექსად",
+        "plural": "ლექსებად"
+      },
+      "vocative": {
+        "singular": "ლექსო",
+        "plural": "ლექსებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 609,
@@ -3657,13 +5833,79 @@
     "rank": 610,
     "en": "bell",
     "word": "ზარი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ზარი",
+        "plural": "ზარები"
+      },
+      "ergative": {
+        "singular": "ზარმა",
+        "plural": "ზარებმა"
+      },
+      "dative": {
+        "singular": "ზარს",
+        "plural": "ზარებს"
+      },
+      "genitive": {
+        "singular": "ზარის",
+        "plural": "ზარების"
+      },
+      "instrumental": {
+        "singular": "ზარით",
+        "plural": "ზარებით"
+      },
+      "adverbial": {
+        "singular": "ზარად",
+        "plural": "ზარებად"
+      },
+      "vocative": {
+        "singular": "ზარო",
+        "plural": "ზარებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 611,
     "en": "meat",
     "word": "ხორცი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ხორცი",
+        "plural": "ხორცები"
+      },
+      "ergative": {
+        "singular": "ხორცმა",
+        "plural": "ხორცებმა"
+      },
+      "dative": {
+        "singular": "ხორცს",
+        "plural": "ხორცებს"
+      },
+      "genitive": {
+        "singular": "ხორცის",
+        "plural": "ხორცების"
+      },
+      "instrumental": {
+        "singular": "ხორცით",
+        "plural": "ხორცებით"
+      },
+      "adverbial": {
+        "singular": "ხორცად",
+        "plural": "ხორცებად"
+      },
+      "vocative": {
+        "singular": "ხორცო",
+        "plural": "ხორცებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 612,
@@ -3675,7 +5917,40 @@
     "rank": 613,
     "en": "pipe, tube",
     "word": "მილი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "მილი",
+        "plural": "მილები"
+      },
+      "ergative": {
+        "singular": "მილმა",
+        "plural": "მილებმა"
+      },
+      "dative": {
+        "singular": "მილს",
+        "plural": "მილებს"
+      },
+      "genitive": {
+        "singular": "მილის",
+        "plural": "მილების"
+      },
+      "instrumental": {
+        "singular": "მილით",
+        "plural": "მილებით"
+      },
+      "adverbial": {
+        "singular": "მილად",
+        "plural": "მილებად"
+      },
+      "vocative": {
+        "singular": "მილო",
+        "plural": "მილებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 614,
@@ -3693,13 +5968,79 @@
     "rank": 616,
     "en": "steam (vapour)",
     "word": "ორთქლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ორთქლი",
+        "plural": "ორთქლები"
+      },
+      "ergative": {
+        "singular": "ორთქლმა",
+        "plural": "ორთქლებმა"
+      },
+      "dative": {
+        "singular": "ორთქლს",
+        "plural": "ორთქლებს"
+      },
+      "genitive": {
+        "singular": "ორთქლის",
+        "plural": "ორთქლების"
+      },
+      "instrumental": {
+        "singular": "ორთქლით",
+        "plural": "ორთქლებით"
+      },
+      "adverbial": {
+        "singular": "ორთქლად",
+        "plural": "ორთქლებად"
+      },
+      "vocative": {
+        "singular": "ორთქლო",
+        "plural": "ორთქლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 617,
     "en": "fear",
     "word": "შიში",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "შიში",
+        "plural": "შიშები"
+      },
+      "ergative": {
+        "singular": "შიშმა",
+        "plural": "შიშებმა"
+      },
+      "dative": {
+        "singular": "შიშს",
+        "plural": "შიშებს"
+      },
+      "genitive": {
+        "singular": "შიშის",
+        "plural": "შიშების"
+      },
+      "instrumental": {
+        "singular": "შიშით",
+        "plural": "შიშებით"
+      },
+      "adverbial": {
+        "singular": "შიშად",
+        "plural": "შიშებად"
+      },
+      "vocative": {
+        "singular": "შიშო",
+        "plural": "შიშებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 618,
@@ -3771,7 +6112,40 @@
     "rank": 629,
     "en": "gun",
     "word": "თოფი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თოფი",
+        "plural": "თოფები"
+      },
+      "ergative": {
+        "singular": "თოფმა",
+        "plural": "თოფებმა"
+      },
+      "dative": {
+        "singular": "თოფს",
+        "plural": "თოფებს"
+      },
+      "genitive": {
+        "singular": "თოფის",
+        "plural": "თოფების"
+      },
+      "instrumental": {
+        "singular": "თოფით",
+        "plural": "თოფებით"
+      },
+      "adverbial": {
+        "singular": "თოფად",
+        "plural": "თოფებად"
+      },
+      "vocative": {
+        "singular": "თოფო",
+        "plural": "თოფებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 630,
@@ -3801,13 +6175,79 @@
     "rank": 634,
     "en": "elevator, lift",
     "word": "ლიფტი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ლიფტი",
+        "plural": "ლიფტები"
+      },
+      "ergative": {
+        "singular": "ლიფტმა",
+        "plural": "ლიფტებმა"
+      },
+      "dative": {
+        "singular": "ლიფტს",
+        "plural": "ლიფტებს"
+      },
+      "genitive": {
+        "singular": "ლიფტის",
+        "plural": "ლიფტების"
+      },
+      "instrumental": {
+        "singular": "ლიფტით",
+        "plural": "ლიფტებით"
+      },
+      "adverbial": {
+        "singular": "ლიფტად",
+        "plural": "ლიფტებად"
+      },
+      "vocative": {
+        "singular": "ლიფტო",
+        "plural": "ლიფტებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 635,
     "en": "rose",
     "word": "ვარდი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ვარდი",
+        "plural": "ვარდები"
+      },
+      "ergative": {
+        "singular": "ვარდმა",
+        "plural": "ვარდებმა"
+      },
+      "dative": {
+        "singular": "ვარდს",
+        "plural": "ვარდებს"
+      },
+      "genitive": {
+        "singular": "ვარდის",
+        "plural": "ვარდების"
+      },
+      "instrumental": {
+        "singular": "ვარდით",
+        "plural": "ვარდებით"
+      },
+      "adverbial": {
+        "singular": "ვარდად",
+        "plural": "ვარდებად"
+      },
+      "vocative": {
+        "singular": "ვარდო",
+        "plural": "ვარდებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 636,
@@ -3819,13 +6259,79 @@
     "rank": 637,
     "en": "block",
     "word": "ბლოკი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბლოკი",
+        "plural": "ბლოკები"
+      },
+      "ergative": {
+        "singular": "ბლოკმა",
+        "plural": "ბლოკებმა"
+      },
+      "dative": {
+        "singular": "ბლოკს",
+        "plural": "ბლოკებს"
+      },
+      "genitive": {
+        "singular": "ბლოკის",
+        "plural": "ბლოკების"
+      },
+      "instrumental": {
+        "singular": "ბლოკით",
+        "plural": "ბლოკებით"
+      },
+      "adverbial": {
+        "singular": "ბლოკად",
+        "plural": "ბლოკებად"
+      },
+      "vocative": {
+        "singular": "ბლოკო",
+        "plural": "ბლოკებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 638,
     "en": "hat",
     "word": "ქუდი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ქუდი",
+        "plural": "ქუდები"
+      },
+      "ergative": {
+        "singular": "ქუდმა",
+        "plural": "ქუდებმა"
+      },
+      "dative": {
+        "singular": "ქუდს",
+        "plural": "ქუდებს"
+      },
+      "genitive": {
+        "singular": "ქუდის",
+        "plural": "ქუდების"
+      },
+      "instrumental": {
+        "singular": "ქუდით",
+        "plural": "ქუდებით"
+      },
+      "adverbial": {
+        "singular": "ქუდად",
+        "plural": "ქუდებად"
+      },
+      "vocative": {
+        "singular": "ქუდო",
+        "plural": "ქუდებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 639,
@@ -3867,7 +6373,40 @@
     "rank": 645,
     "en": "wife",
     "word": "ცოლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ცოლი",
+        "plural": "ცოლები"
+      },
+      "ergative": {
+        "singular": "ცოლმა",
+        "plural": "ცოლებმა"
+      },
+      "dative": {
+        "singular": "ცოლს",
+        "plural": "ცოლებს"
+      },
+      "genitive": {
+        "singular": "ცოლის",
+        "plural": "ცოლების"
+      },
+      "instrumental": {
+        "singular": "ცოლით",
+        "plural": "ცოლებით"
+      },
+      "adverbial": {
+        "singular": "ცოლად",
+        "plural": "ცოლებად"
+      },
+      "vocative": {
+        "singular": "ცოლო",
+        "plural": "ცოლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 646,
@@ -3939,7 +6478,40 @@
     "rank": 657,
     "en": "chance",
     "word": "შანსი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "შანსი",
+        "plural": "შანსები"
+      },
+      "ergative": {
+        "singular": "შანსმა",
+        "plural": "შანსებმა"
+      },
+      "dative": {
+        "singular": "შანსს",
+        "plural": "შანსებს"
+      },
+      "genitive": {
+        "singular": "შანსის",
+        "plural": "შანსების"
+      },
+      "instrumental": {
+        "singular": "შანსით",
+        "plural": "შანსებით"
+      },
+      "adverbial": {
+        "singular": "შანსად",
+        "plural": "შანსებად"
+      },
+      "vocative": {
+        "singular": "შანსო",
+        "plural": "შანსებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 658,
@@ -4017,7 +6589,40 @@
     "rank": 670,
     "en": "nose",
     "word": "ცხვირი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ცხვირი",
+        "plural": "ცხვირები"
+      },
+      "ergative": {
+        "singular": "ცხვირმა",
+        "plural": "ცხვირებმა"
+      },
+      "dative": {
+        "singular": "ცხვირს",
+        "plural": "ცხვირებს"
+      },
+      "genitive": {
+        "singular": "ცხვირის",
+        "plural": "ცხვირების"
+      },
+      "instrumental": {
+        "singular": "ცხვირით",
+        "plural": "ცხვირებით"
+      },
+      "adverbial": {
+        "singular": "ცხვირად",
+        "plural": "ცხვირებად"
+      },
+      "vocative": {
+        "singular": "ცხვირო",
+        "plural": "ცხვირებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 671,
@@ -4095,7 +6700,40 @@
     "rank": 683,
     "en": "silver",
     "word": "ვერცხლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ვერცხლი",
+        "plural": "ვერცხლები"
+      },
+      "ergative": {
+        "singular": "ვერცხლმა",
+        "plural": "ვერცხლებმა"
+      },
+      "dative": {
+        "singular": "ვერცხლს",
+        "plural": "ვერცხლებს"
+      },
+      "genitive": {
+        "singular": "ვერცხლის",
+        "plural": "ვერცხლების"
+      },
+      "instrumental": {
+        "singular": "ვერცხლით",
+        "plural": "ვერცხლებით"
+      },
+      "adverbial": {
+        "singular": "ვერცხლად",
+        "plural": "ვერცხლებად"
+      },
+      "vocative": {
+        "singular": "ვერცხლო",
+        "plural": "ვერცხლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 684,
@@ -4107,13 +6745,79 @@
     "rank": 685,
     "en": "branch (of a tree)",
     "word": "ტოტი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ტოტი",
+        "plural": "ტოტები"
+      },
+      "ergative": {
+        "singular": "ტოტმა",
+        "plural": "ტოტებმა"
+      },
+      "dative": {
+        "singular": "ტოტს",
+        "plural": "ტოტებს"
+      },
+      "genitive": {
+        "singular": "ტოტის",
+        "plural": "ტოტების"
+      },
+      "instrumental": {
+        "singular": "ტოტით",
+        "plural": "ტოტებით"
+      },
+      "adverbial": {
+        "singular": "ტოტად",
+        "plural": "ტოტებად"
+      },
+      "vocative": {
+        "singular": "ტოტო",
+        "plural": "ტოტებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 686,
     "en": "match",
     "word": "მატჩი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "მატჩი",
+        "plural": "მატჩები"
+      },
+      "ergative": {
+        "singular": "მატჩმა",
+        "plural": "მატჩებმა"
+      },
+      "dative": {
+        "singular": "მატჩს",
+        "plural": "მატჩებს"
+      },
+      "genitive": {
+        "singular": "მატჩის",
+        "plural": "მატჩების"
+      },
+      "instrumental": {
+        "singular": "მატჩით",
+        "plural": "მატჩებით"
+      },
+      "adverbial": {
+        "singular": "მატჩად",
+        "plural": "მატჩებად"
+      },
+      "vocative": {
+        "singular": "მატჩო",
+        "plural": "მატჩებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 687,
@@ -4131,7 +6835,40 @@
     "rank": 689,
     "en": "fig",
     "word": "ლეღვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ლეღვი",
+        "plural": "ლეღვები"
+      },
+      "ergative": {
+        "singular": "ლეღვმა",
+        "plural": "ლეღვებმა"
+      },
+      "dative": {
+        "singular": "ლეღვს",
+        "plural": "ლეღვებს"
+      },
+      "genitive": {
+        "singular": "ლეღვის",
+        "plural": "ლეღვების"
+      },
+      "instrumental": {
+        "singular": "ლეღვით",
+        "plural": "ლეღვებით"
+      },
+      "adverbial": {
+        "singular": "ლეღვად",
+        "plural": "ლეღვებად"
+      },
+      "vocative": {
+        "singular": "ლეღვო",
+        "plural": "ლეღვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 690,
@@ -4191,7 +6928,40 @@
     "rank": 699,
     "en": "apple",
     "word": "ვაშლი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ვაშლი",
+        "plural": "ვაშლები"
+      },
+      "ergative": {
+        "singular": "ვაშლმა",
+        "plural": "ვაშლებმა"
+      },
+      "dative": {
+        "singular": "ვაშლს",
+        "plural": "ვაშლებს"
+      },
+      "genitive": {
+        "singular": "ვაშლის",
+        "plural": "ვაშლების"
+      },
+      "instrumental": {
+        "singular": "ვაშლით",
+        "plural": "ვაშლებით"
+      },
+      "adverbial": {
+        "singular": "ვაშლად",
+        "plural": "ვაშლებად"
+      },
+      "vocative": {
+        "singular": "ვაშლო",
+        "plural": "ვაშლებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 700,
@@ -4215,7 +6985,40 @@
     "rank": 703,
     "en": "rope",
     "word": "თოკი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "თოკი",
+        "plural": "თოკები"
+      },
+      "ergative": {
+        "singular": "თოკმა",
+        "plural": "თოკებმა"
+      },
+      "dative": {
+        "singular": "თოკს",
+        "plural": "თოკებს"
+      },
+      "genitive": {
+        "singular": "თოკის",
+        "plural": "თოკების"
+      },
+      "instrumental": {
+        "singular": "თოკით",
+        "plural": "თოკებით"
+      },
+      "adverbial": {
+        "singular": "თოკად",
+        "plural": "თოკებად"
+      },
+      "vocative": {
+        "singular": "თოკო",
+        "plural": "თოკებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 704,
@@ -4305,7 +7108,40 @@
     "rank": 718,
     "en": "post (online",
     "word": "პოსტი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "პოსტი",
+        "plural": "პოსტები"
+      },
+      "ergative": {
+        "singular": "პოსტმა",
+        "plural": "პოსტებმა"
+      },
+      "dative": {
+        "singular": "პოსტს",
+        "plural": "პოსტებს"
+      },
+      "genitive": {
+        "singular": "პოსტის",
+        "plural": "პოსტების"
+      },
+      "instrumental": {
+        "singular": "პოსტით",
+        "plural": "პოსტებით"
+      },
+      "adverbial": {
+        "singular": "პოსტად",
+        "plural": "პოსტებად"
+      },
+      "vocative": {
+        "singular": "პოსტო",
+        "plural": "პოსტებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 719,
@@ -4341,7 +7177,40 @@
     "rank": 724,
     "en": "bread",
     "word": "პური",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "პური",
+        "plural": "პურები"
+      },
+      "ergative": {
+        "singular": "პურმა",
+        "plural": "პურებმა"
+      },
+      "dative": {
+        "singular": "პურს",
+        "plural": "პურებს"
+      },
+      "genitive": {
+        "singular": "პურის",
+        "plural": "პურების"
+      },
+      "instrumental": {
+        "singular": "პურით",
+        "plural": "პურებით"
+      },
+      "adverbial": {
+        "singular": "პურად",
+        "plural": "პურებად"
+      },
+      "vocative": {
+        "singular": "პურო",
+        "plural": "პურებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 725,
@@ -4359,7 +7228,40 @@
     "rank": 727,
     "en": "bar (for drinking)",
     "word": "ბარი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "ბარი",
+        "plural": "ბარები"
+      },
+      "ergative": {
+        "singular": "ბარმა",
+        "plural": "ბარებმა"
+      },
+      "dative": {
+        "singular": "ბარს",
+        "plural": "ბარებს"
+      },
+      "genitive": {
+        "singular": "ბარის",
+        "plural": "ბარების"
+      },
+      "instrumental": {
+        "singular": "ბარით",
+        "plural": "ბარებით"
+      },
+      "adverbial": {
+        "singular": "ბარად",
+        "plural": "ბარებად"
+      },
+      "vocative": {
+        "singular": "ბარო",
+        "plural": "ბარებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 728,
@@ -4383,7 +7285,40 @@
     "rank": 731,
     "en": "duck",
     "word": "იხვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "იხვი",
+        "plural": "იხვები"
+      },
+      "ergative": {
+        "singular": "იხვმა",
+        "plural": "იხვებმა"
+      },
+      "dative": {
+        "singular": "იხვს",
+        "plural": "იხვებს"
+      },
+      "genitive": {
+        "singular": "იხვის",
+        "plural": "იხვების"
+      },
+      "instrumental": {
+        "singular": "იხვით",
+        "plural": "იხვებით"
+      },
+      "adverbial": {
+        "singular": "იხვად",
+        "plural": "იხვებად"
+      },
+      "vocative": {
+        "singular": "იხვო",
+        "plural": "იხვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 732,
@@ -4401,7 +7336,40 @@
     "rank": 734,
     "en": "dear",
     "word": "დათვი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "დათვი",
+        "plural": "დათვები"
+      },
+      "ergative": {
+        "singular": "დათვმა",
+        "plural": "დათვებმა"
+      },
+      "dative": {
+        "singular": "დათვს",
+        "plural": "დათვებს"
+      },
+      "genitive": {
+        "singular": "დათვის",
+        "plural": "დათვების"
+      },
+      "instrumental": {
+        "singular": "დათვით",
+        "plural": "დათვებით"
+      },
+      "adverbial": {
+        "singular": "დათვად",
+        "plural": "დათვებად"
+      },
+      "vocative": {
+        "singular": "დათვო",
+        "plural": "დათვებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 735,
@@ -4455,13 +7423,79 @@
     "rank": 743,
     "en": "log (of a tree)",
     "word": "მორი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "მორი",
+        "plural": "მორები"
+      },
+      "ergative": {
+        "singular": "მორმა",
+        "plural": "მორებმა"
+      },
+      "dative": {
+        "singular": "მორს",
+        "plural": "მორებს"
+      },
+      "genitive": {
+        "singular": "მორის",
+        "plural": "მორების"
+      },
+      "instrumental": {
+        "singular": "მორით",
+        "plural": "მორებით"
+      },
+      "adverbial": {
+        "singular": "მორად",
+        "plural": "მორებად"
+      },
+      "vocative": {
+        "singular": "მორო",
+        "plural": "მორებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 744,
     "en": "tooth",
     "word": "კბილი",
-    "pos": "noun"
+    "pos": "noun",
+    "declension": {
+      "nominative": {
+        "singular": "კბილი",
+        "plural": "კბილები"
+      },
+      "ergative": {
+        "singular": "კბილმა",
+        "plural": "კბილებმა"
+      },
+      "dative": {
+        "singular": "კბილს",
+        "plural": "კბილებს"
+      },
+      "genitive": {
+        "singular": "კბილის",
+        "plural": "კბილების"
+      },
+      "instrumental": {
+        "singular": "კბილით",
+        "plural": "კბილებით"
+      },
+      "adverbial": {
+        "singular": "კბილად",
+        "plural": "კბილებად"
+      },
+      "vocative": {
+        "singular": "კბილო",
+        "plural": "კბილებო"
+      }
+    },
+    "tags": [
+      "auto-decl"
+    ]
   },
   {
     "rank": 745,

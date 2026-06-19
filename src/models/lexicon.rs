@@ -49,6 +49,12 @@ pub struct LexEntry {
     /// True for entries the user added (vs the seeded frequency list).
     #[serde(default)]
     pub user_added: bool,
+
+    /// Full nominal declension. For Georgian this is the 7-case paradigm
+    /// (singular / plural / attributive "with noun"). Optional + `serde(default)`,
+    /// so entries without it — i.e. all current data — stay valid.
+    #[serde(default)]
+    pub declension: Option<Declension>,
 }
 
 impl LexEntry {
@@ -56,6 +62,133 @@ impl LexEntry {
     /// Mirrors the `clean_word` logic the drills use when generating prompts.
     pub fn head(&self) -> &str {
         self.word.split('/').next().unwrap_or(&self.word).trim()
+    }
+}
+
+/// The seven Georgian grammatical cases, in canonical paradigm order.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum GeoCase {
+    Nominative,
+    Ergative,
+    Dative,
+    Genitive,
+    Instrumental,
+    Adverbial,
+    Vocative,
+}
+
+impl GeoCase {
+    /// All cases in display order.
+    pub const ALL: [GeoCase; 7] = [
+        GeoCase::Nominative,
+        GeoCase::Ergative,
+        GeoCase::Dative,
+        GeoCase::Genitive,
+        GeoCase::Instrumental,
+        GeoCase::Adverbial,
+        GeoCase::Vocative,
+    ];
+
+    /// English case name (proper case), for the table's first column.
+    pub fn label(self) -> &'static str {
+        match self {
+            GeoCase::Nominative => "Nominative",
+            GeoCase::Ergative => "Ergative",
+            GeoCase::Dative => "Dative",
+            GeoCase::Genitive => "Genitive",
+            GeoCase::Instrumental => "Instrumental",
+            GeoCase::Adverbial => "Adverbial",
+            GeoCase::Vocative => "Vocative",
+        }
+    }
+
+    /// One-line "what this case is for", shown as a hover tooltip.
+    pub fn blurb(self) -> &'static str {
+        match self {
+            GeoCase::Nominative => {
+                "The dictionary form. Marks the subject with present/future-series \
+                 verbs and with intransitives."
+            }
+            GeoCase::Ergative => {
+                "Marks the subject of a transitive verb in the aorist (past) series — \
+                 Georgian's split ergativity."
+            }
+            GeoCase::Dative => {
+                "The 'to / for' case: the indirect object, and the direct object in \
+                 some tense series."
+            }
+            GeoCase::Genitive => "Possession or association — the 'of' case (whose? of what?).",
+            GeoCase::Instrumental => {
+                "'By means of' — the tool, material, or means by which something is done."
+            }
+            GeoCase::Adverbial => {
+                "Transformation or manner — 'as', 'into', 'in the form of'; also the \
+                 translative."
+            }
+            GeoCase::Vocative => {
+                "Direct address — calling out to someone or something ('O friend!')."
+            }
+        }
+    }
+}
+
+/// The three column forms a Georgian word takes per case.
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+pub struct CaseForms {
+    #[serde(default)]
+    pub singular: String,
+    #[serde(default)]
+    pub plural: String,
+    /// Attributive form, used when the word directly modifies a following noun.
+    #[serde(default, rename = "with_noun")]
+    pub with_noun: String,
+}
+
+impl CaseForms {
+    pub fn is_empty(&self) -> bool {
+        self.singular.trim().is_empty()
+            && self.plural.trim().is_empty()
+            && self.with_noun.trim().is_empty()
+    }
+}
+
+/// A full case × number paradigm. The field names are the JSON keys the lexicon
+/// stores, so the data file reads exactly like the matrix it represents.
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+pub struct Declension {
+    #[serde(default)]
+    pub nominative: CaseForms,
+    #[serde(default)]
+    pub ergative: CaseForms,
+    #[serde(default)]
+    pub dative: CaseForms,
+    #[serde(default)]
+    pub genitive: CaseForms,
+    #[serde(default)]
+    pub instrumental: CaseForms,
+    #[serde(default)]
+    pub adverbial: CaseForms,
+    #[serde(default)]
+    pub vocative: CaseForms,
+}
+
+impl Declension {
+    /// Borrow the forms for a given case.
+    pub fn forms(&self, case: GeoCase) -> &CaseForms {
+        match case {
+            GeoCase::Nominative => &self.nominative,
+            GeoCase::Ergative => &self.ergative,
+            GeoCase::Dative => &self.dative,
+            GeoCase::Genitive => &self.genitive,
+            GeoCase::Instrumental => &self.instrumental,
+            GeoCase::Adverbial => &self.adverbial,
+            GeoCase::Vocative => &self.vocative,
+        }
+    }
+
+    /// True if at least one cell is non-empty (gate for showing the table).
+    pub fn any_filled(&self) -> bool {
+        GeoCase::ALL.iter().any(|&c| !self.forms(c).is_empty())
     }
 }
 
@@ -235,5 +368,20 @@ mod tests {
         let lex = Lexicon::from_json(json).unwrap();
         assert_eq!(lex.len(), 1);
         assert_eq!(lex.all()[0].user_added, false);
+    }
+
+    #[test]
+    fn declension_parses_and_absent_cells_default() {
+        let json = r#"[
+            {"rank":1,"en":"man","word":"კაცი","pos":"noun",
+             "declension":{"nominative":{"singular":"კაცი","plural":"კაცები"}}}
+        ]"#;
+        let lex = Lexicon::from_json(json).unwrap();
+        let d = lex.all()[0].declension.clone().unwrap();
+        assert_eq!(d.nominative.singular, "კაცი");
+        assert_eq!(d.nominative.plural, "კაცები");
+        assert!(d.nominative.with_noun.is_empty());
+        assert!(d.dative.is_empty());
+        assert!(d.any_filled());
     }
 }
