@@ -8,7 +8,7 @@ It currently includes full support for **Georgian**, with the system designed to
 The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful input**, blending typing practice with actual language understanding.
 
 ---
-![Alphabet Showcase](assets/readme_images/Alphabet_Showcase_V1.png)
+![Alphabet Showcase](assets/readme_images/Alphabet_Showcase_V2.png)
 
 ## **Features**
 
@@ -24,12 +24,11 @@ The app focuses on **muscle memory**, **visual reinforcement**, and **meaningful
   * Finger-position hints (touch-typing guidance)
 * Designed to map foreign alphabets onto your **physical QWERTY keyboard**, so you always know where to press.
 
-![Alphabet Showcase](assets/readme_images/Typing_Test_Showcase_V1.png)
+![Typing Test Showcase](assets/readme_images/Typing_Test_Showcase_V2-0.png)
 
 ### **✓ Fully Interactive Keyboard**
 
 * Real-time per-key highlighting
-* Shift-left / shift-right tracking (soon)
 * Multiple simultaneous keypress support
 * Spacebar visualization
 * Works with custom key maps per language
@@ -39,6 +38,8 @@ Useful for:
 * Learning new keyboard layouts
 * Typing drills
 * Muscle-memory training for foreign alphabets
+
+![Typing Test Showcase](assets/readme_images/Typing_Test_Showcase_V2-1.png)
 
 ### **✓ Frequency-Based Typing Test (Top 1000 Words)**
 
@@ -50,7 +51,20 @@ Useful for:
   * Optional example sentences
 * Trains both recognition and typing fluency using practical vocabulary.
 
+![Typing Test Showcase](assets/readme_images/Typing_Test_Showcase_V2-1_hint.png)
+
+![Typing Test Showcase](assets/readme_images/Typing_Test_Showcase_V2-1_done.png)
+
+### **✓ Comprehensive Dictionary**
+
+* Searchable in the top bar at all times!
+
+![Dictionary Showcase](assets/readme_images/Dictionary_Showcase_V1.png)
+
+![Dictionary Showcase](assets/readme_images/Dictionary_Showcase_V1_Detail.png)
+
 ---
+
 
 ## **Future Language Support**
 
