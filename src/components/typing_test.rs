@@ -453,6 +453,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let target_len = target_chars.len();
 
     let mut input_focused = use_signal(|| false);
+    let mut focus_target = use_signal(|| None::<std::rc::Rc<MountedData>>);
     let mut active_test_tab = use_signal(|| "drill".to_string());
 
     // ── WPM-state signals ───────────────────────────────────────────────
@@ -605,7 +606,16 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                              value: "drill".to_string(),
 
                              // ⬇️ NO extra { } here – just children
-                             div { class: "relative flex justify-center min-h-[4rem]",
+                             div {
+                                                              class: "relative flex justify-center min-h-[4rem] cursor-text",
+                                                              onclick: move |_| {
+                                                                  let t = focus_target();
+                                                                  spawn(async move {
+                                                                      if let Some(t) = t {
+                                                                          let _ = t.set_focus(true).await;
+                                                                      }
+                                                                  });
+                                                              },
 
                                  input {
                                      r#type: "text",
@@ -619,9 +629,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                      onblur: move |_| {
                                          input_focused.set(false);
                                      },
+                                     onmounted: move |e| {
+                                                                              let el = e.data();
+                                                                              focus_target.set(Some(el.clone()));
+                                                                              spawn(async move { let _ = el.set_focus(true).await; });
+                                                                          },
 
                                      class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
-                                     style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none; height: 55px; width: 33%;",
+                                     style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none;",
                                      autocomplete: "off",
                                      autocorrect: "off",
                                      spellcheck: "false",
