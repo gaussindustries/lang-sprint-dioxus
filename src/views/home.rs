@@ -28,42 +28,31 @@ pub fn Home() -> Element {
             }
         }
     });
-
     let letters_vec = letters.read().clone().unwrap_or_default();
-    let current_lang = lang();
 
+    // NOTE: the fade-in now lives in the Navbar layout, so it replays on every
+    // route change AND language switch — no per-page wrapper needed here.
     rsx! {
         div { class: "flex flex-col min-h-screen bg-gray-800 text-white",
             header { class: "bg-indigo-600 text-center p-3 space-y-2 flex justify-center gap-6 items-center",
                 h1 { class: "text-3xl font-bold", "LangSprint" }
             }
-
             if let Some(err) = load_error() {
                 div { class: "bg-red-900 text-red-200 px-4 py-2 text-sm text-center", "{err}" }
             }
-
-            // TODO: figure out a proper fade in/out on language switch
-            div {
-                key: "{current_lang}",
-                class: "fade-in-soft",
-
-                div { class: "shadow-inner",
-                    Alphabet { letters: letters_vec.clone(), lang }
+            div { class: "shadow-inner",
+                Alphabet { letters: letters_vec.clone(), lang }
+            }
+            div { class: "flex justify-center",
+                div { class: "w-11/12",
+                    Separator { horizontal: true }
                 }
-
-                div { class: "flex justify-center",
-                    div { class: "w-11/12",
-                        Separator { horizontal: true }
-                    }
-                }
-
-                section { class: "flex justify-center",
-                    div { class: "mt-auto p-4 w-full shadow-xs",
-                        h2 { class: "text-2xl font-semibold text-center", "Typing Test" }
-
-                        Keyboard { letters: letters_vec.clone(),
-                            TypingTest { lang, letters_vec: letters_vec.clone() }
-                        }
+            }
+            section { class: "flex justify-center",
+                div { class: "mt-auto p-4 w-full shadow-xs",
+                    h2 { class: "text-2xl font-semibold text-center", "Typing Test" }
+                    Keyboard { letters: letters_vec.clone(),
+                        TypingTest { lang, letters_vec: letters_vec.clone() }
                     }
                 }
             }

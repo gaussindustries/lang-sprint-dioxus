@@ -39,6 +39,8 @@ impl Languages {
 #[component]
 pub fn Navbar() -> Element {
     let mut lang = use_context::<Signal<String>>();
+    let route = use_route::<Route>();
+    let lang_now = use_context::<Signal<String>>()();
 
     let languages = Languages::iter().enumerate().map(|(i, f)| {
         rsx! {
@@ -97,6 +99,12 @@ pub fn Navbar() -> Element {
                 DictSearch {}
             }
         }
-        Outlet::<Route> {}
+        for fade_key in [format!("{route:?}-{lang_now}")] {
+            div {
+                key: "{fade_key}",
+                class: "fade-in-soft",
+                Outlet::<Route> {}
+            }
+        }
     }
 }

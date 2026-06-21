@@ -56,5 +56,5 @@ background-color: #e21fe2;
 }
 
 .fade-in-soft {
-  animation: fade-in-soft 600ms ease-out;
+  animation: fade-in-soft 350ms ease-out;
 }
