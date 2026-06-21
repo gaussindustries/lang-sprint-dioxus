@@ -1,18 +1,15 @@
 // src/components/word_detail.rs
 //
 // The focused word card (modal): head word, POS, gloss, example, and — when the
-// lexicon entry carries one — the full Georgian declension table, with a hover
-// tooltip on each case name explaining what that case is for.
-//
-// Self-contained: render `WordDetail { entry, on_close }` and it draws its own
-// backdrop. Reused by the navbar search and the dictionary browse view.
+// lexicon entry carries one — the Georgian declension table with a hover tooltip
+// on each case name. The "With noun" (attributive) column is dropped entirely
+// when no case has such a form, so nouns show a clean 3-column table and
+// adjectives get the 4th column.
 
 use dioxus::prelude::*;
 
 use crate::models::lexicon::{GeoCase, LexEntry};
 
-// Hover tooltip for the case names. Lives in an injected <style> because it
-// needs a descendant :hover rule (not expressible inline / via Tailwind JIT).
 const CASE_TIP_CSS: &str = "\
 .lex-case{position:relative;cursor:help;border-bottom:1px dotted #9b8f76;}\
 .lex-case .lex-tip{position:absolute;left:0;top:130%;z-index:80;width:15rem;\
@@ -25,7 +22,6 @@ box-shadow:0 8px 22px rgba(0,0,0,0.4);}\
 
 #[component]
 pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
-    // paperback palette (matches the dictionary)
     let paper = "#efe7d3";
     let paper_edge = "#e7ddc6";
     let ink = "#2a2622";
@@ -35,14 +31,12 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
     let l2 = "'Noto Serif Georgian','Noto Serif',Georgia,'Times New Roman',serif";
     let body = "Georgia,'Times New Roman','Noto Serif',serif";
 
-    // header / meaning values (precomputed; no method calls in the template)
     let head = entry.head().to_string();
     let rank = entry.rank;
     let pos = entry.pos.clone();
     let gloss = entry.en.clone();
     let example = entry.example.clone();
 
-    // declension rows: (label, blurb, singular, plural, with_noun); empty → "—"
     let dash = |s: &str| {
         if s.trim().is_empty() {
             "—".to_string()
@@ -50,6 +44,14 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
             s.to_string()
         }
     };
+
+    // Column-level decision: does ANY case carry an attributive "with noun" form?
+    let has_with_noun = entry.declension.as_ref().map_or(false, |d| {
+        GeoCase::ALL
+            .iter()
+            .any(|&c| !d.forms(c).with_noun.trim().is_empty())
+    });
+
     let decl_rows: Vec<(&'static str, &'static str, String, String, String)> = entry
         .declension
         .as_ref()
@@ -72,7 +74,6 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
         .unwrap_or_default();
     let has_table = !decl_rows.is_empty();
 
-    // shared cell styles
     let header_cell = format!(
         "text-align:left; font-size:0.64rem; letter-spacing:0.08em; text-transform:uppercase; \
          color:{secondary}; background:{paper_edge}; padding:0.4rem 0.6rem; border:1px solid {rule};"
@@ -89,13 +90,11 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
     rsx! {
         style { dangerous_inner_html: CASE_TIP_CSS }
 
-        // backdrop (click to dismiss); scrolls if the card is taller than the viewport
         div {
             class: "fixed inset-0 flex items-start justify-center p-4 overflow-y-auto",
             style: "background: rgba(0,0,0,0.5); z-index:60;",
             onclick: move |_| on_close.call(()),
 
-            // card (stop propagation so clicking inside doesn't dismiss)
             div {
                 class: "w-full max-w-2xl my-8 shadow-2xl",
                 style: "background:{paper}; color:{ink}; font-family:{body}; \
@@ -103,7 +102,6 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                         overflow:visible;",
                 onclick: move |e| e.stop_propagation(),
 
-                // headword + rank
                 div {
                     style: "display:flex; align-items:baseline; justify-content:space-between; \
                             border-bottom:1.5px solid {accent}; padding-bottom:0.55rem;",
@@ -111,7 +109,6 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                     span { style: "font-size:0.68rem; color:{secondary};", "#{rank}" }
                 }
 
-                // POS badge
                 if let Some(p) = pos {
                     div { style: "margin-top:0.7rem;",
                         span {
@@ -123,15 +120,12 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                     }
                 }
 
-                // gloss
                 div { style: "margin-top:0.55rem; font-size:1.08rem; color:{ink};", "{gloss}" }
 
-                // example
                 if let Some(ex) = example {
                     div { style: "font-family:{l2}; font-style:italic; font-size:0.95rem; color:{secondary}; margin-top:0.75rem;", "{ex}" }
                 }
 
-                // declension table
                 if has_table {
                     div { style: "margin-top:1.4rem;",
                         div {
@@ -145,7 +139,9 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                                     th { style: "{header_cell} width:8.5rem;", "Case" }
                                     th { style: "{header_cell}", "Singular" }
                                     th { style: "{header_cell}", "Plural" }
-                                    th { style: "{header_cell}", "With noun" }
+                                    if has_with_noun {
+                                        th { style: "{header_cell}", "With noun" }
+                                    }
                                 }
                             }
                             tbody {
@@ -160,7 +156,9 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                                         }
                                         td { style: "{form_cell}", "{sg}" }
                                         td { style: "{form_cell}", "{pl}" }
-                                        td { style: "{form_cell}", "{wn}" }
+                                        if has_with_noun {
+                                            td { style: "{form_cell}", "{wn}" }
+                                        }
                                     }
                                 }
                             }
@@ -168,7 +166,6 @@ pub fn WordDetail(entry: LexEntry, on_close: EventHandler<()>) -> Element {
                     }
                 }
 
-                // close
                 div { style: "text-align:right; margin-top:1.3rem;",
                     button {
                         class: "focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-700",

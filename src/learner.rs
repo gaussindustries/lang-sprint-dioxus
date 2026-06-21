@@ -124,3 +124,23 @@ pub fn wpm_evidence(
         })
         .collect()
 }
+
+/// Evidence from the word drill (copy-typing a displayed L2 word). The answer is
+/// on screen, so this is mostly a Script & Sound / hand-eye signal, logged at a
+/// low difficulty so a clean fast type nudges the axis only a little — it can't
+/// stand in for recall. `difficulty` is the weighting knob; lower = counts less.
+pub fn word_drill_evidence(lang: &str, word: &str, latency_ms: u32) -> Vec<Evidence> {
+    use crate::learning::{Skill, Source};
+    if word.trim().is_empty() {
+        return Vec::new();
+    }
+    vec![Evidence::new(
+        now_ms(),
+        format!("{lang}:word:{word}"),
+        Skill::ScriptSound,
+        1.0,  // the drill only advances on a correct match
+        -1.0, // low difficulty: success here is weak positive evidence
+        latency_ms,
+        Source::WordDrill,
+    )]
+}

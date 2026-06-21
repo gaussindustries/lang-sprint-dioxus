@@ -312,6 +312,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     let advance_progress = use_signal(|| None::<f32>);
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
 
+    // ── learning-engine hook (word drill) ────────────────────────────────
+    let learner = crate::learner::use_learner();
+    let mut word_start = use_signal(|| crate::learner::now_ms());
+    use_effect(move || {
+        let _ = current_index(); // reset the per-word timer on change
+        word_start.set(crate::learner::now_ms());
+    });
+
     // === AUTO-ADVANCE EFFECT + COUNTDOWN ==================================
     {
         let mut idx_sig = current_index.clone();
@@ -322,6 +330,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         let len_snapshot = word_count;
         let mode_sig = test_mode.clone(); // <── NEW
         let bounded_order_sig = bounded_order.clone();
+        let learner = learner.clone();
+        let lang_sig = lang;
+        let word_start_sig = word_start;
 
         //this section is respect to real time
         use_resource(move || {
@@ -331,6 +342,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
             let delay_snapshot = delay_sig();
             let mode_snapshot = mode_sig();
             let order_snapshot = bounded_order_sig(); // <── new
+            let lang_snapshot = lang_sig.read().clone();
+            let started_snapshot = word_start_sig();
+            let learner = learner.clone();
 
             async move {
                 if typed_snapshot.is_empty()
@@ -340,6 +354,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                     progress_sig.set(None);
                     return;
                 }
+
+                // word reached the correct spelling → low-weight Script & Sound signal
+                let latency = crate::learner::now_ms().saturating_sub(started_snapshot) as u32;
+                learner.emit_all(crate::learner::word_drill_evidence(
+                    &lang_snapshot,
+                    &target_snapshot,
+                    latency,
+                ));
 
                 let steps: u64 = 20;
                 let total_ms: u64 = delay_snapshot.as_millis() as u64;

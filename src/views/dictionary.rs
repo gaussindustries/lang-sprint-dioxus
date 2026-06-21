@@ -12,7 +12,7 @@ pub fn DictionaryPage() -> Element {
     let lang = use_context::<Signal<String>>();
 
     rsx! {
-        div { class: "min-h-screen bg-gray-800 text-white",
+        div { class: "min-h-screen bg-gray-800 text-white ",
             Dictionary { lang }
         }
     }

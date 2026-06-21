@@ -57,6 +57,7 @@ pub fn Navbar() -> Element {
         div {
             id: "navbar",
             style: "display:flex; justify-content:center; align-items:center; gap:1.25rem;",
+            class: "fade-in-soft",
 
             Link { to: Route::Home {}, "Home" }
             Link { to: Route::DashboardPage {}, "Dashboard" }
