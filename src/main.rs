@@ -1,10 +1,12 @@
 //for the goys who have (((windows)))
 //#![windows_subsystem = "windows"]
 mod components;
-use views::{DictionaryPage, Home, Navbar};
+use views::{DashboardPage, DictionaryPage, Home, Navbar, ReadingPage};
 pub mod assets;
 pub mod audio;
 mod calibration;
+pub mod learner;
+mod learning;
 pub mod models;
 mod views;
 use dioxus::prelude::*;
@@ -26,8 +28,15 @@ enum Route {
     #[layout(Navbar)]
 		#[route("/")]
 		Home {},
+
+		#[route("/dashboard")]
+		DashboardPage,
+
 		#[route("/dictionary")]
         DictionaryPage {},
+
+        #[route("/reading")]
+        ReadingPage{},
 		// Future tabs – just uncomment when you need them
 		// #[route("/alphabet")]
 		// Alphabet {},
@@ -56,6 +65,8 @@ fn main() {
 fn App() -> Element {
     let lang = use_signal(|| "georgian".to_string());
     use_context_provider(|| lang);
+
+    crate::learner::provide_learner();
 
     rsx! {
         // In addition to element and text (which we will see later), rsx can contain other components. In this case,

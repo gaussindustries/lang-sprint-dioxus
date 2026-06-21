@@ -59,6 +59,8 @@ pub fn Navbar() -> Element {
             style: "display:flex; justify-content:center; align-items:center; gap:1.25rem;",
 
             Link { to: Route::Home {}, "Home" }
+            Link { to: Route::DashboardPage {}, "Dashboard" }
+            Link { to: Route::ReadingPage {}, "Reading" }
             Link { to: Route::DictionaryPage {}, "Dictionary" }
 
             div { class: "text-black",

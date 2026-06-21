@@ -27,3 +27,5 @@ pub mod slider;
 pub mod tabs;
 pub mod toggle;
 pub mod tooltip;
+
+pub mod drills;

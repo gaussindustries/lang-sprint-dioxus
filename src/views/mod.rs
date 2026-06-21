@@ -19,3 +19,9 @@ pub use alphabet::Alphabet;
 
 mod dictionary;
 pub use dictionary::DictionaryPage;
+
+mod dashboard;
+pub use dashboard::DashboardPage;
+
+mod reading;
+pub use reading::ReadingPage;
