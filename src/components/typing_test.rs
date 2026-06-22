@@ -309,6 +309,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         }
     }
 
+    // glyph -> audio filename (e.g. 'ა' -> "a.wav"); used for click-to-hear in the drill
+    let mut audio_map: HashMap<char, String> = HashMap::new();
+    for letter in &letters_vec {
+        if let (Some(ch), Some(file)) = (letter.letter.chars().next(), letter.audio.clone()) {
+            audio_map.insert(ch, file);
+        }
+    }
+
     // this is for the word drill tab
     let advance_progress = use_signal(|| None::<f32>);
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
@@ -659,13 +667,14 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
 
                                 rsx! {
                                     div {
-                                        class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
-                                                rounded-md transition-all duration-150 {focus_class}",
+                                        class: "relative z-10 flex justify-center gap-4 text-3xl min-h-[4rem] \
+                                                                                             rounded-md transition-all duration-150 {focus_class}",
 
                                         if has_words {
                                             {
                                                 let hint_map = hint_map.clone();
-                                                let typed_chars_for_display = typed_chars_for_display.clone();
+                                                                                                     let typed_chars_for_display = typed_chars_for_display.clone();
+                                                                                                     let audio_map = audio_map.clone();
 
                                                 target_chars.iter().enumerate().map(move |(i, ch)| {
                                                     let base = if i < typed_chars_for_display.len() {
@@ -685,16 +694,27 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                                     };
 
                                                     let hint = hint_map
-                                                        .get(ch)
-                                                        .map(|s| s.as_str())
-                                                        .unwrap_or("");
+                                                                                                                 .get(ch)
+                                                                                                                 .map(|s| s.as_str())
+                                                                                                                 .unwrap_or("");
 
-                                                    rsx! {
-                                                        div { class: "flex flex-col items-center leading-tight",
-                                                            span { class: "{class} font-bold", "{ch}" }
-                                                            span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
-                                                        }
-                                                    }
+                                                                                                             let audio_file = audio_map.get(ch).cloned();
+
+                                                                                                             rsx! {
+                                                                                                                 div {
+                                                                                                                     class: "flex flex-col items-center leading-tight cursor-pointer hover:opacity-80",
+                                                                                                                     onclick: move |_| {
+                                                                                                                         if let Some(file) = audio_file.as_deref() {
+                                                                                                                             let l = lang();
+                                                                                                                             if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
+                                                                                                                                 crate::audio::play_audio_bytes(&format!("{l}/{file}"), bytes, 1.0);
+                                                                                                                             }
+                                                                                                                         }
+                                                                                                                     },
+                                                                                                                     span { class: "{class} font-bold", "{ch}" }
+                                                                                                                     span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+                                                                                                                 }
+                                                                                                             }
                                                 })
                                             }
                                         } else {
@@ -706,6 +726,35 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                 }
                             }
                         }
+                        // sound it out — stopgap that plays each letter's recording in
+                                                     // sequence; replace this handler with real word-level TTS later
+                                                     if has_words {
+                                                         div { class: "flex justify-center mt-3",
+                                                             button {
+                                                                 class: "text-xs text-gray-400 hover:text-indigo-300 transition-colors hover:cursor-pointer",
+                                                                 onclick: {
+                                                                     let word = target_word.clone();
+                                                                     let am = audio_map.clone();
+                                                                     move |_| {
+                                                                         let l = lang();
+                                                                         let am = am.clone();
+                                                                         let chars: Vec<char> = word.chars().collect();
+                                                                         spawn(async move {
+                                                                             for (i, ch) in chars.into_iter().enumerate() {
+                                                                                 if let Some(file) = am.get(&ch) {
+                                                                                     if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
+                                                                                         crate::audio::play_audio_bytes(&format!("{l}/{file}#{i}"), bytes, 1.0);
+                                                                                     }
+                                                                                 }
+                                                                                 tokio::time::sleep(std::time::Duration::from_millis(380)).await;
+                                                                             }
+                                                                         });
+                                                                     }
+                                                                 },
+                                                                 "🔊 sound it out"
+                                                             }
+                                                         }
+                                                     }
                         // Status + countdown indicator
                         div { class: "flex justify-center items-center gap-5 text-sm mt-6",
                             if all_correct {
