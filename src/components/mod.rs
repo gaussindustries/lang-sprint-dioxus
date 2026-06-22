@@ -5,6 +5,7 @@
 pub mod dict_search;
 pub mod dictionary;
 pub mod keyboard;
+pub mod meaning_test;
 pub mod typing_test;
 pub mod word_detail;
 pub mod wordcard;
@@ -13,6 +14,7 @@ pub mod wpm_test;
 pub use dict_search::DictSearch;
 pub use dictionary::Dictionary;
 pub use keyboard::Keyboard;
+pub use meaning_test::MeaningTest;
 pub use typing_test::TypingTest;
 pub use word_detail::WordDetail;
 pub use wordcard::WordCard;

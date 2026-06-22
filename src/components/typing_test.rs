@@ -1,6 +1,7 @@
 use crate::assets::freq_json_for;
 use crate::components::input::Input;
 use crate::components::keyboard::code_to_qwerty_label;
+use crate::components::meaning_test::MeaningTest;
 use crate::components::radio_group::{RadioGroup, RadioItem};
 use crate::components::slider::{Slider, SliderRange, SliderThumb, SliderTrack};
 use crate::components::tabs::{TabContent, TabList, TabTrigger, Tabs};
@@ -564,485 +565,495 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
     }
 
     rsx! {
-         section { class: "flex justify-center",
-             div { class: "w-full max-w-4xl flex gap-8",
+    section { class: "flex justify-center",
+        div { class: "w-full max-w-4xl flex gap-8",
 
-                 div { class: "flex-1 flex flex-col gap-4",
-                     Tabs {
-                         class: "w-full".to_string(),
-                         value: active_test_tab(),
-                         default_value: "drill".to_string(),
-                         on_value_change: move |v: String| {
-                             active_test_tab.set(v);
+            div { class: "flex-1 flex flex-col gap-4",
+                Tabs {
+                    class: "w-full".to_string(),
+                    value: active_test_tab(),
+                    default_value: "drill".to_string(),
+                    on_value_change: move |v: String| {
+                        active_test_tab.set(v);
 
-                             // reset drill state
-                             typed.set(String::new());
-                             current_index.set(0);
+                        // reset drill state
+                        typed.set(String::new());
+                        current_index.set(0);
 
-                             // reset wpm state
-                             wpm_typed.set(String::new());
-                             wpm_state.set(WpmState::Idle);
-                             wpm_remaining.set(wpm_duration());
-                             wpm_result.set(None);
-                         },
+                        // reset wpm state
+                        wpm_typed.set(String::new());
+                        wpm_state.set(WpmState::Idle);
+                        wpm_remaining.set(wpm_duration());
+                        wpm_result.set(None);
+                    },
 
 
-                         TabList {
-                             TabTrigger {
-                                 index: 0usize,
-                                 value: "drill".to_string(),
-                                 "Word drill"
-                             }
-                             TabTrigger {
-                                 index: 1usize,
-                                 value: "wpm".to_string(),
-                                 "WPM"
-                             }
-                             // you can add more TabTrigger here for other tests
-                         }
+                    TabList {
+                        TabTrigger {
+                            index: 0usize,
+                            value: "drill".to_string(),
+                            "Word drill"
+                        }
+                        TabTrigger {
+                            index: 1usize,
+                            value: "wpm".to_string(),
+                            "WPM"
+                        }
+                        TabTrigger {
+                                                         index: 2usize,
+                                                         value: "meaning".to_string(),
+                                                         "Meaning"
+                                                     }
+                        // you can add more TabTrigger here for other tests
+                    }
 
-                         TabContent {
-                             index: 0usize,
-                             value: "drill".to_string(),
+                    TabContent {
+                        index: 0usize,
+                        value: "drill".to_string(),
 
-                             // ⬇️ NO extra { } here – just children
-                             div {
-                                                              class: "relative flex justify-center min-h-[4rem] cursor-text",
-                                                              onclick: move |_| {
-                                                                  let t = focus_target();
-                                                                  spawn(async move {
-                                                                      if let Some(t) = t {
-                                                                          let _ = t.set_focus(true).await;
-                                                                      }
-                                                                  });
-                                                              },
-
-                                 input {
-                                     r#type: "text",
-                                     value: "{typed_now}",
-                                     oninput: move |evt: FormEvent| {
-                                         typed.set(evt.value());
-                                     },
-                                     onfocus: move |_| {
-                                         input_focused.set(true);
-                                     },
-                                     onblur: move |_| {
-                                         input_focused.set(false);
-                                     },
-                                     onmounted: move |e| {
-                                                                              let el = e.data();
-                                                                              focus_target.set(Some(el.clone()));
-                                                                              spawn(async move { let _ = el.set_focus(true).await; });
-                                                                          },
-
-                                     class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
-                                     style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none;",
-                                     autocomplete: "off",
-                                     autocorrect: "off",
-                                     spellcheck: "false",
-                                     autofocus: "true",
-                                 }
-
-                                 {
-                                     let is_focused = input_focused();
-                                     let focus_class = if is_focused {
-                                         "bg-slate-800/40 ring-1 ring-indigo-500/60 rounded px-3"
-                                     } else {
-                                         ""
-                                     };
-
-                                     rsx! {
-                                         div {
-                                             class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
-                                                     rounded-md transition-all duration-150 {focus_class}",
-
-                                             if has_words {
-                                                 {
-                                                     let hint_map = hint_map.clone();
-                                                     let typed_chars_for_display = typed_chars_for_display.clone();
-
-                                                     target_chars.iter().enumerate().map(move |(i, ch)| {
-                                                         let base = if i < typed_chars_for_display.len() {
-                                                             if typed_chars_for_display[i] == *ch {
-                                                                 "text-white"
-                                                             } else {
-                                                                 "text-red-400"
-                                                             }
-                                                         } else {
-                                                             "text-gray-500"
-                                                         };
-
-                                                         let class = if is_focused {
-                                                             format!("{base} drop-shadow-[0_0_6px_rgba(129,140,248,0.6)]")
-                                                         } else {
-                                                             base.to_string()
-                                                         };
-
-                                                         let hint = hint_map
-                                                             .get(ch)
-                                                             .map(|s| s.as_str())
-                                                             .unwrap_or("");
-
-                                                         rsx! {
-                                                             div { class: "flex flex-col items-center leading-tight",
-                                                                 span { class: "{class} font-bold", "{ch}" }
-                                                                 span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
-                                                             }
-                                                         }
-                                                     })
-                                                 }
-                                             } else {
-                                                 div { class: "text-sm text-gray-400 text-center",
-                                                     "No words match the current filters / rank range."
-                                                 }
-                                             }
-                                         }
-                                     }
-                                 }
-                             }
-                             // Status + countdown indicator
-                             div { class: "flex justify-center items-center gap-5 text-sm mt-6",
-                                 if all_correct {
-                                     span { class: "text-green-400 font-semibold", "Correct! 🎉" }
-                                 } else {
-                                     span { class: "text-gray-400",
-                                         "Letters: {typed_chars.len()} / {target_chars.len()}"
-                                     }
-                                 }
-
-                                 if is_counting {
-                                     div { class: "w-10 h-10",
-                                         svg {
-                                             width: "40",
-                                             height: "40",
-                                             view_box: "0 0 40 40",
-
-                                             circle {
-                                                 cx: "20",
-                                                 cy: "20",
-                                                 r: "16",
-                                                 stroke: "rgba(255,255,255,0.2)",
-                                                 "stroke-width": "4",
-                                                 fill: "none",
-                                             }
-
-                                             circle {
-                                                 cx: "20",
-                                                 cy: "20",
-                                                 r: "16",
-                                                 stroke: "rgb(129, 140, 248)",
-                                                 "stroke-width": "4",
-                                                 fill: "none",
-                                                 "stroke-linecap": "round",
-                                                 "stroke-dasharray": "{circumference_str}",
-                                                 "stroke-dashoffset": "{offset_str}",
-                                                 transform: "rotate(-90 20 20)",
-                                                 class: "transition-[stroke-dashoffset] duration-50 linear",
-                                             }
-                                         }
-                                     }
-                                 }
-                             }
-
-                             // Tiny meta info (rank + EN + POS + example)
-                             div { class: "text-xs text-gray-300 mt-1 flex flex-col items-center gap-1",
-                                 if let Some(current) = &current_opt {
-                                     div { class: "flex flex-col items-center gap-2",
-                                         span { "Rank: #" b{"{current.rank}"} }
-                                         span {
-                                             "Translation: {current.en} \u{00A0}"
-                                             if let Some(pos) = current.pos.clone() {
-                                                 span {
-                                                     class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
-                                                             text-[0.65rem] uppercase tracking-wide",
-                                                     "[{pos}]"
-                                                 }
-                                             }
-                                         }
-                                     }
-
-                                     if let Some(ex) = current.example.clone() {
-                                         div {
-                                             class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
-                                             "{ex}"
-                                         }
-                                     }
-                                 } else {
-                                     div {
-                                         class: "text-[0.7rem] text-gray-500 italic text-center max-w-md",
-                                         "Adjust POS filters or rank range in Settings to see words here."
-                                     }
-                                 }
-                             }
-                         }
-                      TabContent {
-        index: 1usize,
-        value: "wpm".to_string(),
-        WpmTest { words: filtered_words.clone(), lang, letters_vec: letters_vec.clone() }
-    }
-                         //settings
-                     if show_settings() {
-                         div { class:"flex flex-col items-center gap-3 mb-3 border-b-1 rounded",
-
-                             div { class:"grid gap-5",
-                                 // ── Delay slider + label ─────────────────────────────
-                             h4 { class: "text-xs text-gray-400 text-center", "Auto Advance Delay" }
-
-                             div { class: "flex justify-center gap-5",
-
-                                 Slider {
-                                     default_value: SliderValue::Single(advance_delay().as_millis() as f64),
-                                     min: 100.0,
-                                     max: 1500.0,
-                                     step: 50.0,
-                                     horizontal: true,
-                                     on_value_change: move |value: SliderValue| {
-                                         let SliderValue::Single(v) = value;
-                                         advance_delay.set(Duration::from_millis(v as u64));
-                                     },
-
-                                     SliderTrack {
-                                         SliderRange {}
-                                         SliderThumb {}
-                                     }
-                                 }
-
-                                 div { style: "font-size: 16px; font-weight: bold;",
-                                     "{duration_display}"
-                                 }
-                             }
-
-                             // ── POS FILTER TOGGLES (separate row) ─────────────────
-                             if !all_pos.is_empty() {
-                                 // Outer: limited width, scrolls horizontally
-                                 h4 { class: "text-xs text-gray-400 text-center", "Point of Speech Filtration [all by default]" }
-
-                                 div { class: "w-full max-w-md mx-auto overflow-x-auto",
-                                     // Inner: single line, horizontally scrollable
-                                     div { class: "grid grid-cols-6 gap-1 text-xs whitespace-nowrap",
-                                         {all_pos.iter().map(|pos_label| {
-                                             let label_text        = pos_label.clone();          // display
-                                             let label_for_closure = label_text.clone();         // move into closure
-
-                                             let mut active_pos_sig = active_pos.clone();
-                                             let mut idx_sig        = current_index.clone();
-                                             let mut typed_sig      = typed.clone();
-                                             let all_pos_clone      = all_pos.clone();
-
-                                             let pressed_now = {
-                                                 let act = active_pos_sig.read();
-                                                 act.is_empty() || act.contains(&label_text)
-                                             };
-
-                                             rsx! {
-                                                 div{class:"flex justify-center",
-                                                     Toggle {
-                                                         pressed: pressed_now,
-                                                         on_pressed_change: move |pressed: bool| {
-                                                             active_pos_sig.with_mut(|vec| {
-                                                                 if vec.is_empty() {
-                                                                     *vec = all_pos_clone.clone();
-                                                                 }
-
-                                                                 let idx = vec.iter().position(|p| p == &label_for_closure);
-
-                                                                 match (pressed, idx) {
-                                                                     (true,  None)    => vec.push(label_for_closure.clone()),
-                                                                     (false, Some(i)) => { vec.remove(i); }
-                                                                     _ => {}
+                        // ⬇️ NO extra { } here – just children
+                        div {
+                                                         class: "relative flex justify-center min-h-[4rem] cursor-text",
+                                                         onclick: move |_| {
+                                                             let t = focus_target();
+                                                             spawn(async move {
+                                                                 if let Some(t) = t {
+                                                                     let _ = t.set_focus(true).await;
                                                                  }
                                                              });
-
-                                                             idx_sig.set(0);
-                                                             typed_sig.set(String::new());
                                                          },
-                                                         {label_text}
-                                                     }
-                                                 }
-                                             }
-                                         })}
-                                     }
-                                 }
-                             }
-                             div{
-                                 // ── TEST MODE RADIO GROUP ─────────────────────────────────
-                                 div { class: "w-full max-w-md mx-auto mb-2",
-                                     h4 { class: "text-xs text-gray-400 mb-1 text-center", "Test mode" }
-                                     div{ class:"flex justify-center",
 
-                                         RadioGroup {
-                                             // current selection
-                                             value: test_mode().as_str().to_string(),
-                                             horizontal: true,
-                                             on_value_change: move |value: String| {
-                                                 test_mode.set(TestMode::from_str(&value));
-                                                 // reset index & input when mode changes
-                                                 current_index.set(0);
-                                                 typed.set(String::new());
-                                             },
+                            input {
+                                r#type: "text",
+                                value: "{typed_now}",
+                                oninput: move |evt: FormEvent| {
+                                    typed.set(evt.value());
+                                },
+                                onfocus: move |_| {
+                                    input_focused.set(true);
+                                },
+                                onblur: move |_| {
+                                    input_focused.set(false);
+                                },
+                                onmounted: move |e| {
+                                                                         let el = e.data();
+                                                                         focus_target.set(Some(el.clone()));
+                                                                         spawn(async move { let _ = el.set_focus(true).await; });
+                                                                     },
 
-                                                 RadioItem {
-                                                     value: "sequential".to_string(),
-                                                     index: 0usize,
-                                                     "Sequential"
-                                                 }
-                                                 RadioItem {
-                                                     value: "random".to_string(),
-                                                     index: 1usize,
-                                                     "Random"
-                                                 }
-                                                 RadioItem {
-                                                     value: "bounded".to_string(),
-                                                     index: 2usize,
-                                                     "Bounded (by rank)"
-                                                 }
-                                             }
-                                         }
-                                         if matches!(test_mode(), TestMode::Bounded) {
-                                             {
-                                                 let mut min_rank_sig = min_rank.clone();
-                                                 let mut max_rank_sig = max_rank.clone();
-                                                 let mut idx_sig      = current_index.clone();
-                                                 let mut typed_sig    = typed.clone();
-                                                 let max_rank_available = words.iter().map(|w| w.rank).max().unwrap_or(1);
-                                                 let mut bounded_order_sig = bounded_order.clone();
+                                class: "absolute inset-0 w-full h-full opacity-0 cursor-text",
+                                style: "caret-color: transparent; color: transparent; border: none; outline: none; box-shadow: none;",
+                                autocomplete: "off",
+                                autocorrect: "off",
+                                spellcheck: "false",
+                                autofocus: "true",
+                            }
 
-                                                 rsx! {
-                                                     div {
-                                                         class: "flex flex-col items-center gap-2 text-xs text-gray-300 mt-2",
+                            {
+                                let is_focused = input_focused();
+                                let focus_class = if is_focused {
+                                    "bg-slate-800/40 ring-1 ring-indigo-500/60 rounded px-3"
+                                } else {
+                                    ""
+                                };
 
-                                                         // rank range row (your existing inputs) ...
-                                                         div {
-                                                             class: "flex items-center justify-center gap-2",
-                                                             span { "Rank range:" }
+                                rsx! {
+                                    div {
+                                        class: "flex justify-center gap-4 text-3xl min-h-[4rem] \
+                                                rounded-md transition-all duration-150 {focus_class}",
 
-                                                             // MIN
-                                                             Input {
-                                                                 r#type: "number",
-                                                                 min: "1",
-                                                                 max: max_rank_available.to_string(),
-                                                                 step: "1",
-                                                                 value: min_rank().to_string(),
-                                                                 oninput: move |evt: FormEvent| {
-                                                                     let raw = evt.value();
-                                                                     if let Ok(mut v) = raw.parse::<u32>() {
-                                                                         if v < 1 { v = 1; }
-                                                                         if v > max_rank_available { v = max_rank_available; }
+                                        if has_words {
+                                            {
+                                                let hint_map = hint_map.clone();
+                                                let typed_chars_for_display = typed_chars_for_display.clone();
 
-                                                                         let current_max = max_rank_sig();
-                                                                         if v > current_max {
-                                                                             max_rank_sig.set(v);
-                                                                         }
+                                                target_chars.iter().enumerate().map(move |(i, ch)| {
+                                                    let base = if i < typed_chars_for_display.len() {
+                                                        if typed_chars_for_display[i] == *ch {
+                                                            "text-white"
+                                                        } else {
+                                                            "text-red-400"
+                                                        }
+                                                    } else {
+                                                        "text-gray-500"
+                                                    };
 
-                                                                         min_rank_sig.set(v);
-                                                                         idx_sig.set(0);
-                                                                         typed_sig.set(String::new());
-                                                                     }
-                                                                 }
-                                                             }
+                                                    let class = if is_focused {
+                                                        format!("{base} drop-shadow-[0_0_6px_rgba(129,140,248,0.6)]")
+                                                    } else {
+                                                        base.to_string()
+                                                    };
 
-                                                             span { "–" }
+                                                    let hint = hint_map
+                                                        .get(ch)
+                                                        .map(|s| s.as_str())
+                                                        .unwrap_or("");
 
-                                                             // MAX
-                                                             Input {
-                                                                 r#type: "number",
-                                                                 min: "1",
-                                                                 max: max_rank_available.to_string(),
-                                                                 step: "1",
-                                                                 value: max_rank().to_string(),
-                                                                 oninput: move |evt: FormEvent| {
-                                                                     let raw = evt.value();
-                                                                     if let Ok(mut v) = raw.parse::<u32>() {
-                                                                         if v < 1 { v = 1; }
-                                                                         if v > max_rank_available { v = max_rank_available; }
+                                                    rsx! {
+                                                        div { class: "flex flex-col items-center leading-tight",
+                                                            span { class: "{class} font-bold", "{ch}" }
+                                                            span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+                                                        }
+                                                    }
+                                                })
+                                            }
+                                        } else {
+                                            div { class: "text-sm text-gray-400 text-center",
+                                                "No words match the current filters / rank range."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // Status + countdown indicator
+                        div { class: "flex justify-center items-center gap-5 text-sm mt-6",
+                            if all_correct {
+                                span { class: "text-green-400 font-semibold", "Correct! 🎉" }
+                            } else {
+                                span { class: "text-gray-400",
+                                    "Letters: {typed_chars.len()} / {target_chars.len()}"
+                                }
+                            }
 
-                                                                         let current_min = min_rank_sig();
-                                                                         if v < current_min {
-                                                                             v = current_min;
-                                                                         }
+                            if is_counting {
+                                div { class: "w-10 h-10",
+                                    svg {
+                                        width: "40",
+                                        height: "40",
+                                        view_box: "0 0 40 40",
 
-                                                                         max_rank_sig.set(v);
-                                                                         idx_sig.set(0);
-                                                                         typed_sig.set(String::new());
-                                                                     }
-                                                                 }
-                                                             }
-                                                         }
+                                        circle {
+                                            cx: "20",
+                                            cy: "20",
+                                            r: "16",
+                                            stroke: "rgba(255,255,255,0.2)",
+                                            "stroke-width": "4",
+                                            fill: "none",
+                                        }
 
-                                                         // order within bounded range
-                                                         div {
-                                                             class: "flex items-center gap-2 mt-1",
-                                                             span { "Order in range:" }
+                                        circle {
+                                            cx: "20",
+                                            cy: "20",
+                                            r: "16",
+                                            stroke: "rgb(129, 140, 248)",
+                                            "stroke-width": "4",
+                                            fill: "none",
+                                            "stroke-linecap": "round",
+                                            "stroke-dasharray": "{circumference_str}",
+                                            "stroke-dashoffset": "{offset_str}",
+                                            transform: "rotate(-90 20 20)",
+                                            class: "transition-[stroke-dashoffset] duration-50 linear",
+                                        }
+                                    }
+                                }
+                            }
+                        }
 
-                                                             RadioGroup {
-                                                                 value: bounded_order_sig().as_str().to_string(),
-                                                                 horizontal: true,
-                                                                 on_value_change: move |value: String| {
-                                                                     bounded_order_sig.set(BoundedOrder::from_str(&value));
-                                                                     idx_sig.set(0);
-                                                                     typed_sig.set(String::new());
-                                                                 },
+                        // Tiny meta info (rank + EN + POS + example)
+                        div { class: "text-xs text-gray-300 mt-1 flex flex-col items-center gap-1",
+                            if let Some(current) = &current_opt {
+                                div { class: "flex flex-col items-center gap-2",
+                                    span { "Rank: #" b{"{current.rank}"} }
+                                    span {
+                                        "Translation: {current.en} \u{00A0}"
+                                        if let Some(pos) = current.pos.clone() {
+                                            span {
+                                                class: "px-2 py-0.5 rounded-full bg-indigo-900 text-indigo-200 \
+                                                        text-[0.65rem] uppercase tracking-wide",
+                                                "[{pos}]"
+                                            }
+                                        }
+                                    }
+                                }
 
-                                                                 RadioItem {
-                                                                     value: "bounded_seq".to_string(),
-                                                                     index: 0usize,
-                                                                     "Sequential"
-                                                                 }
-                                                                 RadioItem {
-                                                                     value: "bounded_rand".to_string(),
-                                                                     index: 1usize,
-                                                                     "Random"
-                                                                 }
-                                                             }
-                                                         }
-                                                     }
-                                                 }
-                                             }
-                                         }
-                                     }
-                                 }
-                             }
+                                if let Some(ex) = current.example.clone() {
+                                    div {
+                                        class: "text-[0.7rem] text-gray-400 italic text-center max-w-md",
+                                        "{ex}"
+                                    }
+                                }
+                            } else {
+                                div {
+                                    class: "text-[0.7rem] text-gray-500 italic text-center max-w-md",
+                                    "Adjust POS filters or rank range in Settings to see words here."
+                                }
+                            }
+                        }
+                    }
+                 TabContent {
+                       index: 1usize,
+                       value: "wpm".to_string(),
+                       WpmTest { words: filtered_words.clone(), lang, letters_vec: letters_vec.clone() }
+                   }
+                   TabContent {
+                                                index: 2usize,
+                                                value: "meaning".to_string(),
+                                                MeaningTest { words: filtered_words.clone(), lang }
+                                            }
+                    //settings
+                if show_settings() {
+                    div { class:"flex flex-col items-center gap-3 mb-3 border-b-1 rounded",
+
+                        div { class:"grid gap-5",
+                            // ── Delay slider + label ─────────────────────────────
+                        h4 { class: "text-xs text-gray-400 text-center", "Auto Advance Delay" }
+
+                        div { class: "flex justify-center gap-5",
+
+                            Slider {
+                                default_value: SliderValue::Single(advance_delay().as_millis() as f64),
+                                min: 100.0,
+                                max: 1500.0,
+                                step: 50.0,
+                                horizontal: true,
+                                on_value_change: move |value: SliderValue| {
+                                    let SliderValue::Single(v) = value;
+                                    advance_delay.set(Duration::from_millis(v as u64));
+                                },
+
+                                SliderTrack {
+                                    SliderRange {}
+                                    SliderThumb {}
+                                }
+                            }
+
+                            div { style: "font-size: 16px; font-weight: bold;",
+                                "{duration_display}"
+                            }
+                        }
+
+                        // ── POS FILTER TOGGLES (separate row) ─────────────────
+                        if !all_pos.is_empty() {
+                            // Outer: limited width, scrolls horizontally
+                            h4 { class: "text-xs text-gray-400 text-center", "Point of Speech Filtration [all by default]" }
+
+                            div { class: "w-full max-w-md mx-auto overflow-x-auto",
+                                // Inner: single line, horizontally scrollable
+                                div { class: "grid grid-cols-6 gap-1 text-xs whitespace-nowrap",
+                                    {all_pos.iter().map(|pos_label| {
+                                        let label_text        = pos_label.clone();          // display
+                                        let label_for_closure = label_text.clone();         // move into closure
+
+                                        let mut active_pos_sig = active_pos.clone();
+                                        let mut idx_sig        = current_index.clone();
+                                        let mut typed_sig      = typed.clone();
+                                        let all_pos_clone      = all_pos.clone();
+
+                                        let pressed_now = {
+                                            let act = active_pos_sig.read();
+                                            act.is_empty() || act.contains(&label_text)
+                                        };
+
+                                        rsx! {
+                                            div{class:"flex justify-center",
+                                                Toggle {
+                                                    pressed: pressed_now,
+                                                    on_pressed_change: move |pressed: bool| {
+                                                        active_pos_sig.with_mut(|vec| {
+                                                            if vec.is_empty() {
+                                                                *vec = all_pos_clone.clone();
+                                                            }
+
+                                                            let idx = vec.iter().position(|p| p == &label_for_closure);
+
+                                                            match (pressed, idx) {
+                                                                (true,  None)    => vec.push(label_for_closure.clone()),
+                                                                (false, Some(i)) => { vec.remove(i); }
+                                                                _ => {}
+                                                            }
+                                                        });
+
+                                                        idx_sig.set(0);
+                                                        typed_sig.set(String::new());
+                                                    },
+                                                    {label_text}
+                                                }
+                                            }
+                                        }
+                                    })}
+                                }
+                            }
+                        }
+                        div{
+                            // ── TEST MODE RADIO GROUP ─────────────────────────────────
+                            div { class: "w-full max-w-md mx-auto mb-2",
+                                h4 { class: "text-xs text-gray-400 mb-1 text-center", "Test mode" }
+                                div{ class:"flex justify-center",
+
+                                    RadioGroup {
+                                        // current selection
+                                        value: test_mode().as_str().to_string(),
+                                        horizontal: true,
+                                        on_value_change: move |value: String| {
+                                            test_mode.set(TestMode::from_str(&value));
+                                            // reset index & input when mode changes
+                                            current_index.set(0);
+                                            typed.set(String::new());
+                                        },
+
+                                            RadioItem {
+                                                value: "sequential".to_string(),
+                                                index: 0usize,
+                                                "Sequential"
+                                            }
+                                            RadioItem {
+                                                value: "random".to_string(),
+                                                index: 1usize,
+                                                "Random"
+                                            }
+                                            RadioItem {
+                                                value: "bounded".to_string(),
+                                                index: 2usize,
+                                                "Bounded (by rank)"
+                                            }
+                                        }
+                                    }
+                                    if matches!(test_mode(), TestMode::Bounded) {
+                                        {
+                                            let mut min_rank_sig = min_rank.clone();
+                                            let mut max_rank_sig = max_rank.clone();
+                                            let mut idx_sig      = current_index.clone();
+                                            let mut typed_sig    = typed.clone();
+                                            let max_rank_available = words.iter().map(|w| w.rank).max().unwrap_or(1);
+                                            let mut bounded_order_sig = bounded_order.clone();
+
+                                            rsx! {
+                                                div {
+                                                    class: "flex flex-col items-center gap-2 text-xs text-gray-300 mt-2",
+
+                                                    // rank range row (your existing inputs) ...
+                                                    div {
+                                                        class: "flex items-center justify-center gap-2",
+                                                        span { "Rank range:" }
+
+                                                        // MIN
+                                                        Input {
+                                                            r#type: "number",
+                                                            min: "1",
+                                                            max: max_rank_available.to_string(),
+                                                            step: "1",
+                                                            value: min_rank().to_string(),
+                                                            oninput: move |evt: FormEvent| {
+                                                                let raw = evt.value();
+                                                                if let Ok(mut v) = raw.parse::<u32>() {
+                                                                    if v < 1 { v = 1; }
+                                                                    if v > max_rank_available { v = max_rank_available; }
+
+                                                                    let current_max = max_rank_sig();
+                                                                    if v > current_max {
+                                                                        max_rank_sig.set(v);
+                                                                    }
+
+                                                                    min_rank_sig.set(v);
+                                                                    idx_sig.set(0);
+                                                                    typed_sig.set(String::new());
+                                                                }
+                                                            }
+                                                        }
+
+                                                        span { "–" }
+
+                                                        // MAX
+                                                        Input {
+                                                            r#type: "number",
+                                                            min: "1",
+                                                            max: max_rank_available.to_string(),
+                                                            step: "1",
+                                                            value: max_rank().to_string(),
+                                                            oninput: move |evt: FormEvent| {
+                                                                let raw = evt.value();
+                                                                if let Ok(mut v) = raw.parse::<u32>() {
+                                                                    if v < 1 { v = 1; }
+                                                                    if v > max_rank_available { v = max_rank_available; }
+
+                                                                    let current_min = min_rank_sig();
+                                                                    if v < current_min {
+                                                                        v = current_min;
+                                                                    }
+
+                                                                    max_rank_sig.set(v);
+                                                                    idx_sig.set(0);
+                                                                    typed_sig.set(String::new());
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    // order within bounded range
+                                                    div {
+                                                        class: "flex items-center gap-2 mt-1",
+                                                        span { "Order in range:" }
+
+                                                        RadioGroup {
+                                                            value: bounded_order_sig().as_str().to_string(),
+                                                            horizontal: true,
+                                                            on_value_change: move |value: String| {
+                                                                bounded_order_sig.set(BoundedOrder::from_str(&value));
+                                                                idx_sig.set(0);
+                                                                typed_sig.set(String::new());
+                                                            },
+
+                                                            RadioItem {
+                                                                value: "bounded_seq".to_string(),
+                                                                index: 0usize,
+                                                                "Sequential"
+                                                            }
+                                                            RadioItem {
+                                                                value: "bounded_rand".to_string(),
+                                                                index: 1usize,
+                                                                "Random"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
 
 
-                             // ── Hide button ──────────────────────────────────────
-                             button {
-                                 class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 \
-                                     hover:scale-105 hover:cursor-pointer",
-                                 onclick: move |_| {
-                                     show_settings.set(false);
-                                 },
-                                 "Hide"
-                             }
-                         }
-                     } else {
-                         div {class:"flex justify-center mb-3",
-                             Tooltip {
-                                 TooltipTrigger { class:"flex justify-center",
-                                     button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
-                                             show_settings.set(true);
-                                         },
-                                         "Settings"
-                                     }
-                                 }
-                                 TooltipContent {
-                                     side: ContentSide::Top,
-                                     align: ContentAlign::Center,
-                                     div{class:"w-[150px] text-center border-b","Current"}
-                                     div{class:"w-[150px] text-center","Advance Delay: {duration_display}"}
-                                     div{class:"w-[150px] text-center","Expand for POS filters"}
-                                     div{class:"w-[150px] text-center","Test Mode: {test_mode().as_str()}"}
+                        // ── Hide button ──────────────────────────────────────
+                        button {
+                            class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 \
+                                hover:scale-105 hover:cursor-pointer",
+                            onclick: move |_| {
+                                show_settings.set(false);
+                            },
+                            "Hide"
+                        }
+                    }
+                } else {
+                    div {class:"flex justify-center mb-3",
+                        Tooltip {
+                            TooltipTrigger { class:"flex justify-center",
+                                button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
+                                        show_settings.set(true);
+                                    },
+                                    "Settings"
+                                }
+                            }
+                            TooltipContent {
+                                side: ContentSide::Top,
+                                align: ContentAlign::Center,
+                                div{class:"w-[150px] text-center border-b","Current"}
+                                div{class:"w-[150px] text-center","Advance Delay: {duration_display}"}
+                                div{class:"w-[150px] text-center","Expand for POS filters"}
+                                div{class:"w-[150px] text-center","Test Mode: {test_mode().as_str()}"}
 
-                                 }
-                             }
-                         }
-                     }
-                     }
+                            }
+                        }
+                    }
+                }
+                }
 
-                 }
+            }
 
 
 
-                 }
-             }
-         }
+            }
+        }
+    }
 }
