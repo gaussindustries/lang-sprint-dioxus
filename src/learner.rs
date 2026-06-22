@@ -114,6 +114,7 @@ pub fn wpm_evidence(
             let y = yw.get(i).copied().unwrap_or("");
             Evidence::new(
                 now,
+                lang,
                 format!("{lang}:word:{t}"),
                 Skill::ScriptSound,
                 word_accuracy(t, y),
@@ -136,11 +137,45 @@ pub fn word_drill_evidence(lang: &str, word: &str, latency_ms: u32) -> Vec<Evide
     }
     vec![Evidence::new(
         now_ms(),
+        lang,
         format!("{lang}:word:{word}"),
         Skill::ScriptSound,
         1.0,  // the drill only advances on a correct match
         -1.0, // low difficulty: success here is weak positive evidence
         latency_ms,
         Source::WordDrill,
+    )]
+}
+
+/// Evidence from the timed meaning-recall drill ("WPM, but type the meaning").
+/// Answering in English tests recognition (L2 word -> meaning); answering in the
+/// target language tests production (meaning -> L2 word). Full difficulty (0.0):
+/// this is real recall, not copy-typing. `grade` is the continuous score from the
+/// grading core (1.0 exact; lower for typos / wrong answers).
+pub fn meaning_evidence(
+    lang: &str,
+    to_english: bool,
+    headword: &str,
+    grade: f32,
+    latency_ms: u32,
+) -> Vec<Evidence> {
+    use crate::learning::{Skill, Source};
+    if headword.trim().is_empty() {
+        return Vec::new();
+    }
+    let (skill, item) = if to_english {
+        (Skill::VocabRecognition, format!("{lang}:rec:{headword}"))
+    } else {
+        (Skill::VocabProduction, format!("{lang}:prod:{headword}"))
+    };
+    vec![Evidence::new(
+        now_ms(),
+        lang,
+        item,
+        skill,
+        grade,
+        0.0,
+        latency_ms,
+        Source::Recall,
     )]
 }

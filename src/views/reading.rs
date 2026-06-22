@@ -117,6 +117,7 @@ pub fn ReadingPage() -> Element {
             let l = lang.read().clone();
             learner.emit(Evidence::new(
                 now,
+                l.clone(),
                 format!("{l}:word:{}", tok.surface),
                 Skill::VocabRecognition,
                 score,
@@ -150,6 +151,7 @@ pub fn ReadingPage() -> Element {
                 let l = lang.read().clone();
                 learner.emit(Evidence::new(
                     now_ms(),
+                    l.clone(),
                     sentence_id(&l, &sentence_input()),
                     Skill::Reading,
                     avg,
@@ -171,6 +173,7 @@ pub fn ReadingPage() -> Element {
             let l = lang.read().clone();
             learner.emit(Evidence::new(
                 now_ms(),
+                l.clone(),
                 sentence_id(&l, &sentence_input()),
                 Skill::Reading,
                 0.5, // "encountered", not tested

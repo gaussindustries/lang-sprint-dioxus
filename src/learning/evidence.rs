@@ -9,7 +9,7 @@ use super::skill::Skill;
 /// Unix epoch milliseconds.
 pub type Millis = u64;
 
-/// Stable identifier for the thing tested, e.g. `"ka:word:კაცი"`. Stringly
+/// Stable identifier for the thing tested, e.g. `"georgian:word:კაცი"`. Stringly
 /// typed on purpose so any drill can mint one.
 pub type ItemId = String;
 
@@ -26,12 +26,19 @@ pub enum Source {
     Lookup,
     /// A scheduler-initiated probe to resolve uncertainty.
     Probe,
+    /// Timed meaning-recall drill (“WPM, but type the meaning”).
+    Recall,
 }
 
 /// One graded observation.
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Evidence {
     pub at: Millis,
+    /// Language bucket, e.g. `"georgian"`. `serde(default)` so logs written before
+    /// this field existed still parse; `lang_key()` then recovers the language
+    /// from the item-id prefix.
+    #[serde(default)]
+    pub lang: String,
     pub item: ItemId,
     pub skill: Skill,
     /// Graded outcome in `0.0..=1.0` (1.0 = fully correct).
@@ -47,6 +54,7 @@ impl Evidence {
     #[allow(clippy::too_many_arguments)]
     pub fn new(
         at: Millis,
+        lang: impl Into<String>,
         item: impl Into<ItemId>,
         skill: Skill,
         outcome: f32,
@@ -56,12 +64,23 @@ impl Evidence {
     ) -> Self {
         Self {
             at,
+            lang: lang.into(),
             item: item.into(),
             skill,
             outcome: outcome.clamp(0.0, 1.0),
             difficulty,
             latency_ms,
             source,
+        }
+    }
+
+    /// The language bucket this evidence belongs to: the `lang` field if set,
+    /// else the item-id prefix before the first ':' (migrates pre-`lang` logs).
+    pub fn lang_key(&self) -> &str {
+        if !self.lang.is_empty() {
+            &self.lang
+        } else {
+            self.item.split(':').next().unwrap_or("")
         }
     }
 }

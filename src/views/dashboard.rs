@@ -1,10 +1,9 @@
 // src/views/dashboard.rs
 //
-// Mastery dashboard: a six-axis radar of the conservative per-skill estimate,
-// fed by the folded evidence log. The brain is untouched — this only reads
-// model.mastery(). Untested axes sit at the center; the shape contracts as
-// confidence decays and snaps back when a probe is passed. Reading evidence
-// floors its prerequisites, so those axes can rise without being drilled.
+// Per-language mastery dashboard. The active language comes from the same
+// app-wide context the navbar drives; the radar + bars show ONLY that language's
+// folded estimate (the brain now buckets evidence by language, so no bleed).
+// Language chips switch the active language (and the rest of the app follows).
 
 use dioxus::prelude::*;
 use strum::IntoEnumIterator;
@@ -23,20 +22,50 @@ fn short_label(s: Skill) -> &'static str {
     }
 }
 
+fn nice(lang: &str) -> String {
+    let mut c = lang.chars();
+    match c.next() {
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+        None => "—".to_string(),
+    }
+}
+
 #[component]
 pub fn DashboardPage() -> Element {
+    let mut active = use_context::<Signal<String>>();
     let learner = use_learner();
     let now = now_ms();
     let model = learner.model();
-    let mastery = model.mastery(now);
-    let events = learner.log_len();
-    let items = model.item_count();
-    let due = model.due(now, 0.9).len();
 
+    let lang = active();
+    let lang_display = nice(&lang);
+
+    let mastery = model.mastery(&lang, now);
+    let events = model.event_count(&lang);
+    let items = model.item_count(&lang);
+    let due = model.due(&lang, now, 0.9).len();
+
+    // language chips: everything with data, plus the active one (so it always shows)
+    let mut lang_codes = model.languages();
+    if !lang_codes.iter().any(|l| l == &lang) {
+        lang_codes.push(lang.clone());
+    }
+    lang_codes.sort();
+    lang_codes.dedup();
+    let chips: Vec<(String, String, String, bool)> = lang_codes
+        .iter()
+        .map(|code| {
+            let mean_txt = match model.mean_mastery(code, now) {
+                Some(v) => format!("{}%", (v * 100.0).round() as i32),
+                None => "—".to_string(),
+            };
+            (code.clone(), nice(code), mean_txt, code == &lang)
+        })
+        .collect();
+
+    // ── radar geometry (computed here; rsx only interpolates finished values) ──
     let skills: Vec<Skill> = Skill::iter().collect();
     let n = skills.len();
-
-    // ── geometry (all computed here; rsx only interpolates finished values) ──
     let size = 360i32;
     let cx = 180.0f32;
     let cy = 180.0f32;
@@ -76,7 +105,6 @@ pub fn DashboardPage() -> Element {
         .collect();
 
     let spokes: Vec<(i32, i32)> = (0..n).map(|i| point(i, 1.0)).collect();
-
     let data_pts: String = (0..n)
         .map(|i| {
             let (x, y) = point(i, vals[i]);
@@ -103,77 +131,119 @@ pub fn DashboardPage() -> Element {
         })
         .collect();
 
-    let readout: Vec<(String, String)> = skills
+    // per-axis bars below the radar
+    let rows: Vec<(String, String, i32)> = skills
         .iter()
         .map(|s| {
-            let txt = match mastery.get(s).copied().flatten() {
-                Some(x) => format!("{}%", (x * 100.0).round() as i32),
-                None => "untested".to_string(),
-            };
-            (s.label().to_string(), txt)
+            let label = s.label().to_string();
+            match mastery.get(s).copied().flatten() {
+                Some(v) => {
+                    let p = (v * 100.0).round().clamp(0.0, 100.0) as i32;
+                    (label, format!("{p}%"), p)
+                }
+                None => (label, "untested".to_string(), 0),
+            }
         })
         .collect();
+
+    let empty = events == 0;
 
     rsx! {
         div { class: "min-h-screen bg-gray-800 text-white p-8",
             div { class: "max-w-2xl mx-auto",
-                h1 { class: "text-2xl font-semibold mb-1", "Progress" }
-                p { class: "text-sm text-gray-400 mb-6",
-                    "{events} observations · {items} items tracked · {due} due for review"
+                h1 { class: "text-2xl font-semibold mb-3", "Progress" }
+
+                // language chips
+                div { class: "flex flex-wrap gap-2 mb-6",
+                    for (code, name, mean_txt, is_active) in chips.iter().cloned() {
+                        button {
+                            key: "{code}",
+                            class: format!(
+                                "px-3 py-1.5 rounded-lg border text-sm flex items-center gap-2 transition-colors {}",
+                                if is_active { "bg-indigo-600 border-indigo-400 text-white" }
+                                else { "bg-gray-900/40 border-gray-700 text-gray-300 hover:border-gray-500" }
+                            ),
+                            onclick: move |_| active.set(code.clone()),
+                            span { "{name}" }
+                            span { class: "text-xs opacity-70", "{mean_txt}" }
+                        }
+                    }
                 }
 
-                div { class: "flex justify-center",
-                    svg {
-                        width: "{size}",
-                        height: "{size}",
-                        view_box: "0 0 {size} {size}",
+                // active-language card
+                div { class: "rounded-xl bg-gray-900/40 border border-gray-700 p-6",
+                    div { class: "flex items-baseline justify-between mb-4",
+                        h2 { class: "text-lg font-semibold text-indigo-200", "{lang_display}" }
+                        p { class: "text-xs text-gray-400",
+                            "{events} observations · {items} items · {due} due"
+                        }
+                    }
 
-                        for ring in rings.iter().cloned() {
-                            polygon {
-                                points: "{ring}",
-                                fill: "none",
-                                stroke: "rgba(148,163,184,0.18)",
-                                "stroke-width": "1",
+                    if empty {
+                        div { class: "text-center text-sm text-gray-400 py-10",
+                            "No evidence for {lang_display} yet — run a drill in this language and it'll show up here."
+                        }
+                    } else {
+                        div { class: "flex justify-center",
+                            svg {
+                                width: "{size}",
+                                height: "{size}",
+                                view_box: "0 0 {size} {size}",
+
+                                for ring in rings.iter().cloned() {
+                                    polygon {
+                                        points: "{ring}",
+                                        fill: "none",
+                                        stroke: "rgba(148,163,184,0.18)",
+                                        "stroke-width": "1",
+                                    }
+                                }
+                                for (x, y) in spokes.iter().cloned() {
+                                    line {
+                                        x1: "{cx}", y1: "{cy}", x2: "{x}", y2: "{y}",
+                                        stroke: "rgba(148,163,184,0.22)", "stroke-width": "1",
+                                    }
+                                }
+                                polygon {
+                                    points: "{data_pts}",
+                                    fill: "rgba(99,102,241,0.35)",
+                                    stroke: "rgb(129,140,248)",
+                                    "stroke-width": "2",
+                                    "stroke-linejoin": "round",
+                                }
+                                for (x, y) in vertices.iter().cloned() {
+                                    circle { cx: "{x}", cy: "{y}", r: "3", fill: "rgb(129,140,248)" }
+                                }
+                                for (lx, ly, anchor, label) in labels.iter().cloned() {
+                                    text {
+                                        x: "{lx}", y: "{ly}",
+                                        "text-anchor": "{anchor}",
+                                        fill: "#cbd5e1", "font-size": "11",
+                                        "{label}"
+                                    }
+                                }
                             }
                         }
-                        for (x, y) in spokes.iter().cloned() {
-                            line {
-                                x1: "{cx}", y1: "{cy}", x2: "{x}", y2: "{y}",
-                                stroke: "rgba(148,163,184,0.22)", "stroke-width": "1",
-                            }
-                        }
-                        polygon {
-                            points: "{data_pts}",
-                            fill: "rgba(99,102,241,0.35)",
-                            stroke: "rgb(129,140,248)",
-                            "stroke-width": "2",
-                            "stroke-linejoin": "round",
-                        }
-                        for (x, y) in vertices.iter().cloned() {
-                            circle { cx: "{x}", cy: "{y}", r: "3", fill: "rgb(129,140,248)" }
-                        }
-                        for (lx, ly, anchor, label) in labels.iter().cloned() {
-                            text {
-                                x: "{lx}", y: "{ly}",
-                                "text-anchor": "{anchor}",
-                                fill: "#cbd5e1", "font-size": "11",
-                                "{label}"
+
+                        // per-axis bars
+                        div { class: "mt-4 space-y-2",
+                            for (label, text, pct) in rows.iter().cloned() {
+                                div { class: "flex items-center gap-3",
+                                    span { class: "w-32 text-sm text-gray-300", "{label}" }
+                                    div { class: "flex-1 h-2 rounded bg-gray-700 overflow-hidden",
+                                        div { class: "h-full bg-indigo-500", style: "width: {pct}%;" }
+                                    }
+                                    span { class: "w-16 text-right text-sm text-gray-400", "{text}" }
+                                }
                             }
                         }
                     }
                 }
 
-                div { class: "grid grid-cols-2 gap-x-8 gap-y-2 mt-6 text-sm",
-                    for (label, txt) in readout.iter().cloned() {
-                        div { class: "flex justify-between",
-                            span { "{label}" }
-                            span { class: "text-gray-400", "{txt}" }
-                        }
-                    }
-                }
-
-                p { class: "text-xs text-gray-500 mt-8",
-                    "A conservative estimate (mean − k·σ): untested axes sit at center, the shape contracts as time passes without a probe, and a passed probe snaps it back. Reading floors its prerequisites, so those axes can rise without being drilled directly."
+                p { class: "text-xs text-gray-500 mt-6",
+                    "Each language is scored independently. Mastery is a conservative estimate (mean − k·σ): \
+                     untested axes read \"untested,\" confidence contracts as time passes without a probe, and a \
+                     passed probe snaps it back. Reading floors its prerequisites within the same language."
                 }
             }
         }
