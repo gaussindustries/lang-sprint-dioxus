@@ -151,10 +151,9 @@ pub fn DashboardPage() -> Element {
     rsx! {
         div { class: "min-h-screen bg-gray-800 text-white p-8",
             div { class: "max-w-2xl mx-auto",
-                h1 { class: "text-2xl font-semibold mb-3", "Progress" }
 
                 // language chips
-                div { class: "flex flex-wrap gap-2 mb-6",
+                div { class: "flex flex-wrap gap-2 mb-6 ",
                     for (code, name, mean_txt, is_active) in chips.iter().cloned() {
                         button {
                             key: "{code}",
@@ -171,12 +170,14 @@ pub fn DashboardPage() -> Element {
                 }
 
                 // active-language card
-                div { class: "rounded-xl bg-gray-900/40 border border-gray-700 p-6",
-                    div { class: "flex items-baseline justify-between mb-4",
+                div { class: "rounded-xl bg-gray-900/40 border border-gray-700 p-6 ",
+                    div { class: "text-center mb-4",
                         h2 { class: "text-lg font-semibold text-indigo-200", "{lang_display}" }
+
                         p { class: "text-xs text-gray-400",
                             "{events} observations · {items} items · {due} due"
                         }
+
                     }
 
                     if empty {
@@ -225,18 +226,25 @@ pub fn DashboardPage() -> Element {
                             }
                         }
 
-                        // per-axis bars
-                        div { class: "mt-4 space-y-2",
-                            for (label, text, pct) in rows.iter().cloned() {
-                                div { class: "flex items-center gap-3",
-                                    span { class: "w-32 text-sm text-gray-300", "{label}" }
-                                    div { class: "flex-1 h-2 rounded bg-gray-700 overflow-hidden",
-                                        div { class: "h-full bg-indigo-500", style: "width: {pct}%;" }
-                                    }
-                                    span { class: "w-16 text-right text-sm text-gray-400", "{text}" }
-                                }
-                            }
-                        }
+                        // per-axis bars — inline-styled so they don't depend on Tailwind
+                                                // emitting h-2 / bg-* (that collapse was hiding them)
+                                                div { class: "mt-4",
+                                                    for (label, value, pct) in rows.iter().cloned() {
+                                                        div {
+                                                            style: "display:flex; align-items:center; gap:0.75rem; margin-top:0.5rem;",
+                                                            span { style: "width:8rem; font-size:0.875rem; color:#d1d5db;", "{label}" }
+                                                            div {
+                                                                style: "flex:1 1 0%; height:0.5rem; border-radius:9999px; \
+                                                                        background:#374151; overflow:hidden;",
+                                                                div { style: "height:100%; background:#6366f1; width:{pct}%;" }
+                                                            }
+                                                            span {
+                                                                style: "width:4rem; text-align:right; font-size:0.875rem; color:#9ca3af;",
+                                                                "{value}"
+                                                            }
+                                                        }
+                                                    }
+                                                }
                     }
                 }
 

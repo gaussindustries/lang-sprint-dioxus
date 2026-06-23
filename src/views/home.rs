@@ -46,7 +46,7 @@ pub fn Home() -> Element {
                     Link {
                         key: "{title}",
                         to: route,
-                        class: "block rounded-xl border border-gray-700 bg-gray-900/40 p-5 \
+                        class: "block rounded-full border border-gray-700 bg-gray-900/40 p-6 \
                                 hover:border-indigo-400 transition-colors",
                         div { class: "text-lg font-semibold text-indigo-200", "{title}" }
                         div { class: "text-sm text-gray-400 mt-1", "{blurb}" }
