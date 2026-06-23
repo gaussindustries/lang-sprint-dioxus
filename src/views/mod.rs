@@ -15,7 +15,7 @@ mod navbar;
 pub use navbar::Navbar;
 
 mod alphabet;
-pub use alphabet::Alphabet;
+pub use alphabet::AlphabetPage;
 
 mod dictionary;
 pub use dictionary::DictionaryPage;
@@ -25,3 +25,6 @@ pub use dashboard::DashboardPage;
 
 mod reading;
 pub use reading::ReadingPage;
+
+mod typing_test;
+pub use typing_test::TypingPage;

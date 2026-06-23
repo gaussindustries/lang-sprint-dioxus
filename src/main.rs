@@ -1,7 +1,7 @@
 //for the goys who have (((windows)))
 //#![windows_subsystem = "windows"]
 mod components;
-use views::{DashboardPage, DictionaryPage, Home, Navbar, ReadingPage};
+use views::{AlphabetPage, DashboardPage, DictionaryPage, Home, Navbar, ReadingPage, TypingPage};
 pub mod assets;
 pub mod audio;
 mod calibration;
@@ -38,10 +38,10 @@ enum Route {
         #[route("/reading")]
         ReadingPage{},
 		// Future tabs – just uncomment when you need them
-		// #[route("/alphabet")]
-		// Alphabet {},
-		// #[route("/test")]
-		// Test {},
+		#[route("/alphabet")]
+		AlphabetPage {},
+		#[route("/typing-test")]
+		TypingPage {},
 		// #[route("/conjugate")]
 		// Conjugate {},
 		// #[route("/grammar")]

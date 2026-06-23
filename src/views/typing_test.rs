@@ -1,12 +1,16 @@
 use dioxus::prelude::*;
 
-use crate::{assets::alphabet_json_for, components::Alphabet, models::letter::Letter};
+use crate::{
+    assets::alphabet_json_for,
+    components::{Keyboard, TypingTest},
+    models::letter::Letter,
+};
 
-/// Route wrapper for the alphabet. Loads the active language's alphabet from
-/// context and hands it to the `Alphabet` component. Routes take no props, so
-/// the data-loading lives here while the rendering lives in the component.
+/// Route wrapper for the typing test. Loads the active language's letters (the
+/// keyboard + per-key hints need them) and renders the on-screen keyboard
+/// wrapping the typing drill.
 #[component]
-pub fn AlphabetPage() -> Element {
+pub fn TypingPage() -> Element {
     let lang = use_context::<Signal<String>>();
     let mut load_error = use_signal(|| None::<String>);
 
@@ -31,7 +35,14 @@ pub fn AlphabetPage() -> Element {
             if let Some(err) = load_error() {
                 div { class: "bg-red-900 text-red-200 px-4 py-2 text-sm text-center", "{err}" }
             }
-            Alphabet { letters: letters_vec.clone(), lang }
+            section { class: "flex justify-center",
+                div { class: "p-4 w-full",
+                    h2 { class: "text-2xl font-semibold text-center mb-2", "Typing Test" }
+                    Keyboard { letters: letters_vec.clone(),
+                        TypingTest { lang, letters_vec: letters_vec.clone() }
+                    }
+                }
+            }
         }
     }
 }
