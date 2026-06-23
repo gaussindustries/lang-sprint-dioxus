@@ -69,7 +69,11 @@ pub fn Navbar() -> Element {
             Link { to: Route::ReadingPage {}, "Reading" }
             Link { to: Route::DictionaryPage {}, "Dictionary" }
 
+            div {
+                            style: "display:flex; align-items:center; gap:0.75rem;",
+                            DictSearch {}
 
+            }
             div { class: "text-black",
                 Select::<Languages> {
                     placeholder: "Select a Language...",
@@ -94,13 +98,9 @@ pub fn Navbar() -> Element {
                     }
                 }
             }
+            SettingsButton {}
 
-            div {
-                            style: "display:flex; align-items:center; gap:0.75rem;",
-                            DictSearch {}
-                            SettingsButton {}
 
-            }
         }
         for fade_key in [format!("{route:?}-{lang_now}")] {
             div {
