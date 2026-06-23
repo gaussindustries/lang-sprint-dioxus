@@ -43,12 +43,13 @@ pub fn Navbar() -> Element {
     let lang_now = use_context::<Signal<String>>()();
 
     let languages = Languages::iter().enumerate().map(|(i, f)| {
+        let label = format!("{} {f}", f.emoji()); // e.g. "🇬🇪 Georgian"
         rsx! {
             SelectOption::<Languages> {
                 index: i,
                 value: f,
-                text_value: format!("{f}"),
-                { format!("{f} {}", f.emoji()) }
+                text_value: label.clone(),
+                {label}
                 SelectItemIndicator {}
             }
         }
