@@ -238,14 +238,14 @@ pub fn ReadingPage() -> Element {
 
     rsx! {
         div { class: "min-h-screen bg-gray-800 text-white p-8",
-            div { class: "max-w-2xl mx-auto",
+            div { class: "max-w-2xl mx-auto text-center",
                 h1 { class: "text-2xl font-semibold mb-1", "Reading" }
                 p { class: "text-sm text-gray-400 mb-5",
                     "Paste a sentence in your target language. Known words are quizzed; the rest is context."
                 }
 
                 // mode toggle
-                div { class: "flex gap-2 mb-5",
+                div { class: "flex justify-center gap-2 mb-5",
                     button {
                         class: if mode_meaning { "px-3 py-1.5 rounded text-sm bg-indigo-600" } else { "px-3 py-1.5 rounded text-sm bg-gray-700" },
                         onclick: move |_| meaning_mode.set(true),
@@ -260,16 +260,16 @@ pub fn ReadingPage() -> Element {
 
                 if !loaded_v {
                     // paste + load
-                    div {
+                    div { class:"justify-center items-center",
                         textarea {
-                            class: "w-full h-28 p-3 rounded bg-gray-900 text-white text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
+                            class: "w-full p-3 rounded bg-gray-900 text-white text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500",
                             style: "font-family:{geo};",
                             placeholder: "კაცი ქუჩაში დადიოდა.",
                             value: "{sentence}",
                             oninput: move |e| sentence_input.set(e.value()),
                         }
                         button {
-                            class: "mt-3 px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 text-sm",
+                            class: " mt-3 px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500 text-sm",
                             onclick: load,
                             "Load sentence"
                         }
