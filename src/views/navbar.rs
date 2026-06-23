@@ -54,13 +54,14 @@ pub fn Navbar() -> Element {
             }
         }
     });
-
+    // somewhere before the rsx
+    let current = Languages::iter().find(|l| l.code() == lang_now);
     rsx! {
         document::Link { rel: "stylesheet", href: NAVBAR_CSS }
         div {
             id: "navbar",
             style: "display:flex; justify-content:center; align-items:center; gap:1.25rem;",
-            class: "fade-in-soft",
+            class: "fade-in-soft p-2",
 
             Link { to: Route::Home {}, "Dashboard" }
             Link { to: Route::AlphabetPage {  }, "Alphabet" }
@@ -72,6 +73,7 @@ pub fn Navbar() -> Element {
             div { class: "text-black",
                 Select::<Languages> {
                     placeholder: "Select a Language...",
+                    value:current,
                     on_value_change: move |value: Option<Languages>| {
                         if let Some(lang_enum) = value {
                             lang.set(lang_enum.code().to_string());
