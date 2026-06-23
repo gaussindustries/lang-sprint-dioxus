@@ -32,7 +32,7 @@ fn nice(lang: &str) -> String {
 
 #[component]
 pub fn DashboardPage() -> Element {
-    let mut active = use_context::<Signal<String>>();
+    let active = use_context::<Signal<String>>();
     let learner = use_learner();
     let now = now_ms();
     let model = learner.model();
@@ -152,22 +152,21 @@ pub fn DashboardPage() -> Element {
         div { class: "min-h-screen bg-gray-800 text-white p-8",
             div { class: "max-w-2xl mx-auto",
 
-                // language chips
-                div { class: "flex flex-wrap gap-2 mb-6 ",
-                    for (code, name, mean_txt, is_active) in chips.iter().cloned() {
-                        button {
-                            key: "{code}",
-                            class: format!(
-                                "px-3 py-1.5 rounded-lg border text-sm flex items-center gap-2 transition-colors {}",
-                                if is_active { "bg-indigo-600 border-indigo-400 text-white" }
-                                else { "bg-gray-900/40 border-gray-700 text-gray-300 hover:border-gray-500" }
-                            ),
-                            onclick: move |_| active.set(code.clone()),
-                            span { "{name}" }
-                            span { class: "text-xs opacity-70", "{mean_txt}" }
-                        }
-                    }
-                }
+                // language chip — read-only (switch languages from the navbar select)
+                                div { class: "flex flex-wrap gap-2 mb-6",
+                                    for (code, name, mean_txt, is_active) in chips.iter().cloned() {
+                                        div {
+                                            key: "{code}",
+                                            class: format!(
+                                                "px-3 py-1.5 rounded-lg border text-sm flex items-center gap-2 {}",
+                                                if is_active { "bg-indigo-600 border-indigo-400 text-white" }
+                                                else { "bg-gray-900/40 border-gray-700 text-gray-400" }
+                                            ),
+                                            span { "{name}" }
+                                            span { class: "text-xs opacity-70", "{mean_txt}" }
+                                        }
+                                    }
+                                }
 
                 // active-language card
                 div { class: "rounded-xl bg-gray-900/40 border border-gray-700 p-6 ",
