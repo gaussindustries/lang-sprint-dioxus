@@ -5,6 +5,7 @@
 pub mod alphabet;
 pub mod dict_search;
 pub mod dictionary;
+pub mod grammar;
 pub mod keyboard;
 pub mod meaning_test;
 pub mod settings;
@@ -16,6 +17,7 @@ pub mod wpm_test;
 pub use alphabet::Alphabet;
 pub use dict_search::DictSearch;
 pub use dictionary::Dictionary;
+pub use grammar::Grammar;
 pub use keyboard::Keyboard;
 pub use meaning_test::MeaningTest;
 pub use settings::SettingsButton;

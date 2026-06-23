@@ -28,3 +28,6 @@ pub use reading::ReadingPage;
 
 mod typing_test;
 pub use typing_test::TypingPage;
+
+mod grammar;
+pub use grammar::GrammarPage;

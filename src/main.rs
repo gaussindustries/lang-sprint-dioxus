@@ -1,15 +1,19 @@
 //for the goys who have (((windows)))
 //#![windows_subsystem = "windows"]
 mod components;
-use views::{AlphabetPage, DashboardPage, DictionaryPage, Home, Navbar, ReadingPage, TypingPage};
+use views::{
+    AlphabetPage, DashboardPage, DictionaryPage, GrammarPage, Home, Navbar, ReadingPage, TypingPage,
+};
 pub mod assets;
 pub mod audio;
 mod calibration;
+mod grammar;
 pub mod learner;
 mod learning;
 pub mod models;
 mod settings;
 mod views;
+
 use dioxus::prelude::*;
 
 // ---------------------------------------------------------------------
@@ -35,15 +39,15 @@ enum Route {
 
         #[route("/reading")]
         ReadingPage{},
-		// Future tabs – just uncomment when you need them
 		#[route("/alphabet")]
 		AlphabetPage {},
 		#[route("/typing-test")]
 		TypingPage {},
+		#[route("/grammar")]
+		 GrammarPage {},
+		// Future tabs – just uncomment when you need them
 		// #[route("/conjugate")]
 		// Conjugate {},
-		// #[route("/grammar")]
-		// Grammar {},
 }
 
 // ---------------------------------------------------------------------

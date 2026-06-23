@@ -65,6 +65,7 @@ pub fn Navbar() -> Element {
 
             Link { to: Route::Home {}, "Dashboard" }
             Link { to: Route::AlphabetPage {  }, "Alphabet" }
+            Link { to: Route::GrammarPage {}, "Grammar" }
             Link { to: Route::TypingPage {  }, "Typing Test" }
             Link { to: Route::ReadingPage {}, "Reading" }
             Link { to: Route::DictionaryPage {}, "Dictionary" }

@@ -13,6 +13,11 @@ pub fn Home() -> Element {
             Route::AlphabetPage {},
         ),
         (
+            "Grammar",
+            "Learn the idiosyncrasies of your desired language",
+            Route::GrammarPage {},
+        ),
+        (
             "Typing test",
             "Drill muscle memory of the keyboard and the meaning of the lexicon. Or test your WPM!",
             Route::TypingPage {},
@@ -27,6 +32,7 @@ pub fn Home() -> Element {
             "Browse the 1000 most common words in the lexicon",
             Route::DictionaryPage {},
         ),
+        ("Resources", "Will be implemented soon...", Route::Home {}),
     ];
 
     rsx! {
