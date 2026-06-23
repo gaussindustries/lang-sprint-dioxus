@@ -8,6 +8,7 @@ mod calibration;
 pub mod learner;
 mod learning;
 pub mod models;
+mod settings;
 mod views;
 use dioxus::prelude::*;
 
@@ -28,9 +29,6 @@ enum Route {
     #[layout(Navbar)]
 		#[route("/")]
 		Home {},
-
-		#[route("/dashboard")]
-		DashboardPage,
 
 		#[route("/dictionary")]
         DictionaryPage {},
@@ -63,7 +61,8 @@ fn main() {
 /// Components should be annotated with `#[component]` to support props, better error messages, and autocomplete
 #[component]
 fn App() -> Element {
-    let lang = use_signal(|| "georgian".to_string());
+    let settings = crate::settings::provide_settings();
+    let lang = use_signal(|| settings.peek().default_language.clone());
     use_context_provider(|| lang);
 
     crate::learner::provide_learner();

@@ -9,6 +9,7 @@ use crate::components::toggle::Toggle;
 use crate::components::tooltip::{Tooltip, TooltipContent, TooltipTrigger};
 use crate::components::wpm_test::WpmTest;
 use crate::models::{letter::Letter, lexicon::LexEntry};
+use crate::settings::use_settings;
 /**
  * TODO:
  * implementing user data{
@@ -171,6 +172,7 @@ fn compute_wpm_result(target: &str, typed: &str, duration_secs: u64) -> WpmResul
 
 #[component]
 pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
+    let settings = use_settings();
     // Which word index we are on
     let mut current_index = use_signal(|| 0usize);
     // What the user has typed for the current word
@@ -743,7 +745,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                                                              for (i, ch) in chars.into_iter().enumerate() {
                                                                                  if let Some(file) = am.get(&ch) {
                                                                                      if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
-                                                                                         crate::audio::play_audio_bytes(&format!("{l}/{file}#{i}"), bytes, 1.0);
+                                                                                         crate::audio::play_audio_bytes(&format!("{l}/{file}#{i}"), bytes, settings.read().volume);
                                                                                      }
                                                                                  }
                                                                                  tokio::time::sleep(std::time::Duration::from_millis(380)).await;

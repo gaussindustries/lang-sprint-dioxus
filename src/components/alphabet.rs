@@ -1,12 +1,11 @@
 use dioxus::prelude::*;
-use dioxus_primitives::slider::SliderValue;
 use std::time::Duration;
 
 use crate::{
     assets::letter_audio_bytes,
     audio,
-    components::slider::{Slider, SliderRange, SliderThumb, SliderTrack},
     models::letter::{Letter, LetterKind},
+    settings::use_settings,
 };
 
 const FLASH_DURATION: Duration = Duration::from_millis(700);
@@ -15,7 +14,8 @@ const FLASH_DURATION: Duration = Duration::from_millis(700);
 pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
     // Logical id of the card currently flashing its ring (e.g. "georgian/a.wav").
     let mut flashing = use_signal(|| None::<String>);
-    let mut volume = use_signal(|| 0.4);
+    // Volume now lives in the shared settings store (set from the navbar gear).
+    let settings = use_settings();
 
     let title = match lang.read().as_str() {
         "georgian" => "ანბანი",
@@ -71,7 +71,7 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
                         let id = format!("{lang_name}/{file}");
                         if let Some(bytes) = letter_audio_bytes(&lang_name, file) {
                             #[cfg(not(target_arch = "wasm32"))]
-                            audio::play_audio_bytes(&id, bytes, volume());
+                            audio::play_audio_bytes(&id, bytes, settings.read().volume);
                             flashing.set(Some(id));
                         } else {
                             eprintln!("No embedded audio for {lang_name}/{file}");
@@ -86,34 +86,11 @@ pub fn Alphabet(letters: Vec<Letter>, lang: Signal<String>) -> Element {
         }
     });
 
-    let volume_pct = (volume() * 100.0).round() as i32;
-
     rsx! {
         section { class: "p-6",
             h2 { class: "text-2xl font-semibold mb-4 text-center", "Alphabet – {title}" }
 
-            // volume
-            div { class: "flex justify-center gap-3 items-center",
-                h4 { "Volume" }
-                Slider {
-                    default_value: SliderValue::Single(volume() as f64),
-                    min: 0.0,
-                    max: 1.0,
-                    step: 0.05,
-                    horizontal: true,
-                    on_value_change: move |value: SliderValue| {
-                        let SliderValue::Single(v) = value;
-                        volume.set(v as f32);
-                    },
-                    SliderTrack {
-                        SliderRange {}
-                        SliderThumb {}
-                    }
-                }
-                div { style: "font-size: 16px; font-weight: bold;", "{volume_pct}%" }
-            }
-
-            // legend
+            // legend (volume moved to the settings dialog in the navbar)
             div { class: "flex justify-center gap-4 my-3 text-xs text-gray-400",
                 div { class: "flex items-center gap-1.5",
                     span { class: "inline-block w-3 h-3 rounded-sm border-2 border-amber-400" }

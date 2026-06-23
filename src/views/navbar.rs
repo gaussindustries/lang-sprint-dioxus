@@ -3,7 +3,7 @@ use crate::components::{
         Select, SelectGroup, SelectGroupLabel, SelectItemIndicator, SelectList, SelectOption,
         SelectTrigger, SelectValue,
     },
-    DictSearch,
+    DictSearch, SettingsButton,
 };
 use crate::Route;
 use dioxus::prelude::*;
@@ -61,12 +61,11 @@ pub fn Navbar() -> Element {
             style: "display:flex; justify-content:center; align-items:center; gap:1.25rem;",
             class: "fade-in-soft",
 
-            Link { to: Route::Home {}, "Home" }
+            Link { to: Route::Home {}, "Dashboard" }
             Link { to: Route::AlphabetPage {  }, "Alphabet" }
             Link { to: Route::TypingPage {  }, "Typing Test" }
             Link { to: Route::ReadingPage {}, "Reading" }
             Link { to: Route::DictionaryPage {}, "Dictionary" }
-            Link { to: Route::DashboardPage {}, "Dashboard" }
 
 
             div { class: "text-black",
@@ -93,13 +92,11 @@ pub fn Navbar() -> Element {
                 }
             }
 
-            // right-aligned group: language switcher + search
             div {
-                style: "display:flex; align-items:center; gap:0.75rem;",
+                            style: "display:flex; align-items:center; gap:0.75rem;",
+                            DictSearch {}
+                            SettingsButton {}
 
-
-
-                DictSearch {}
             }
         }
         for fade_key in [format!("{route:?}-{lang_now}")] {

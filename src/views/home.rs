@@ -9,28 +9,23 @@ pub fn Home() -> Element {
     let tiles = [
         (
             "Alphabet",
-            "Learn the script, letter by letter",
+            "Learn to pronounce the script, letter by letter",
             Route::AlphabetPage {},
         ),
         (
             "Typing test",
-            "Drill the keyboard and your vocabulary",
+            "Drill muscle memory of the keyboard and the meaning of the lexicon. Or test your WPM!",
             Route::TypingPage {},
         ),
         (
             "Reading",
-            "Read sentences and mine new words",
+            "Read sentences and learn new words",
             Route::ReadingPage {},
         ),
         (
             "Dictionary",
             "Browse the 1000 most common words in the lexicon",
             Route::DictionaryPage {},
-        ),
-        (
-            "Progress",
-            "Your mastery, per language",
-            Route::DashboardPage {},
         ),
     ];
 
