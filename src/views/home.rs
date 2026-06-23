@@ -33,7 +33,7 @@ pub fn Home() -> Element {
         div { class: "flex flex-col min-h-screen bg-gray-800 text-white",
             header { class: "bg-indigo-600 text-center p-6",
                 h1 { class: "text-3xl font-bold", "LangSprint" }
-                p { class: "text-indigo-200 text-sm mt-1", "Comprehension is the only finish line." }
+                p { class: "text-indigo-200 text-sm mt-1", "The antithesis of duolingo." }
             }
             div { class: "max-w-3xl mx-auto w-full p-6 grid grid-cols-1 sm:grid-cols-2 gap-4",
                 for (title, blurb, route) in tiles {
