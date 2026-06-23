@@ -33,3 +33,4 @@ pub mod toggle;
 pub mod tooltip;
 
 pub mod drills;
+pub mod dialog;

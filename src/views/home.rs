@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::Route;
-
+use crate::{components::separator::Separator, views::DashboardPage, Route};
 /// Landing hub. The alphabet and typing test are now their own routed views;
 /// Home is just the entry point that links into the sections. Slim on purpose —
 /// flesh it out or retire it later.
@@ -52,6 +51,14 @@ pub fn Home() -> Element {
                         div { class: "text-sm text-gray-400 mt-1", "{blurb}" }
                     }
                 }
+            }
+            div { class: "flex justify-center",
+                div { class: "w-11/12",
+                    Separator { horizontal: true }
+                }
+            }
+            section { class: "flex justify-center",
+                DashboardPage{}
             }
         }
     }
