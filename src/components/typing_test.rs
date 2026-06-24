@@ -319,6 +319,13 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
         }
     }
 
+    let mut info_map: HashMap<char, (String, String)> = HashMap::new();
+    for letter in &letters_vec {
+        if let Some(ch) = letter.letter.chars().next() {
+            info_map.insert(ch, (letter.name.clone(), letter.pron.clone()));
+        }
+    }
+
     // this is for the word drill tab
     let advance_progress = use_signal(|| None::<f32>);
     let mut advance_delay = use_signal(|| Duration::from_millis(1500));
@@ -675,9 +682,9 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                         if has_words {
                                             {
                                                 let hint_map = hint_map.clone();
-                                                                                                     let typed_chars_for_display = typed_chars_for_display.clone();
-                                                                                                     let audio_map = audio_map.clone();
-
+                                                let typed_chars_for_display = typed_chars_for_display.clone();
+                                                let audio_map = audio_map.clone();
+                                                let info_map = info_map.clone();
                                                 target_chars.iter().enumerate().map(move |(i, ch)| {
                                                     let base = if i < typed_chars_for_display.len() {
                                                         if typed_chars_for_display[i] == *ch {
@@ -700,23 +707,42 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                                                                                                  .map(|s| s.as_str())
                                                                                                                  .unwrap_or("");
 
-                                                                                                             let audio_file = audio_map.get(ch).cloned();
+                                                    let audio_file = audio_map.get(ch).cloned();
+                                                    let (lname, lpron) = info_map.get(ch).cloned().unwrap_or_default();
 
-                                                                                                             rsx! {
-                                                                                                                 div {
-                                                                                                                     class: "flex flex-col items-center leading-tight cursor-pointer hover:opacity-80",
-                                                                                                                     onclick: move |_| {
-                                                                                                                         if let Some(file) = audio_file.as_deref() {
-                                                                                                                             let l = lang();
-                                                                                                                             if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
-                                                                                                                                 crate::audio::play_audio_bytes(&format!("{l}/{file}"), bytes, 1.0);
-                                                                                                                             }
-                                                                                                                         }
-                                                                                                                     },
-                                                                                                                     span { class: "{class} font-bold", "{ch}" }
-                                                                                                                     span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
-                                                                                                                 }
-                                                                                                             }
+                                                    rsx! {
+                                                        Tooltip {
+                                                            key: "{i}",
+                                                            TooltipTrigger {
+                                                                div {
+                                                                    class: "flex flex-col items-center leading-tight cursor-pointer hover:opacity-80",
+                                                                    onclick: move |_| {
+                                                                        if let Some(file) = audio_file.as_deref() {
+                                                                            let l = lang();
+                                                                            if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
+                                                                                crate::audio::play_audio_bytes(&format!("{l}/{file}"), bytes, 1.0);
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    span { class: "{class} font-bold", "{ch}" }
+                                                                    span { class: "text-xs text-gray-500 opacity-60 mt-1", "{hint}" }
+                                                                }
+                                                            }
+                                                            TooltipContent {
+                                                                side: ContentSide::Top,
+                                                                align: ContentAlign::Center,
+                                                                div { class: "px-2 py-1 text-center leading-tight",
+                                                                    if !lname.is_empty() {
+                                                                        div { class: "font-semibold", "{lname}" }
+                                                                    }
+                                                                    if !lpron.is_empty() {
+                                                                        div { class: "text-xs opacity-80", "{lpron}" }
+                                                                    }
+                                                                    div { class: "text-[3rem] opacity-60 mt-1", "🔊" }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 })
                                             }
                                         } else {
@@ -1070,7 +1096,7 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                 button{ class:"text-center opacity-50 hover:opacity-100 transition-all duration-300 hover:scale-105 hover:cursor-pointer", onclick: move |_| {
                                         show_settings.set(true);
                                     },
-                                    "Settings"
+                                    "Typing Test Settings"
                                 }
                             }
                             TooltipContent {
