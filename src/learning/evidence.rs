@@ -28,6 +28,8 @@ pub enum Source {
     Probe,
     /// Timed meaning-recall drill (“WPM, but type the meaning”).
     Recall,
+    /// Authored grammar drill (the grammar “Practice” mode).
+    Grammar,
 }
 
 /// One graded observation.

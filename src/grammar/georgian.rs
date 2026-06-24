@@ -203,5 +203,62 @@ pub(super) fn doc() -> GrammarDoc {
                 ],
             ),
         ],
+        drills: vec![
+            mc(
+                "In the aorist (Series II), the subject of a transitive verb takes which case?",
+                &["Nominative", "Ergative", "Dative", "Genitive"],
+                1,
+                "Series II flips the subject to the ergative (narrative) case: კაცმა, not კაცი.",
+            ),
+            tin(
+                "Give the ergative of კაცი (“man”).",
+                &["კაცმა"],
+                "Consonant-stem nouns take -მა in the ergative: კაცი → კაცმა.",
+            ),
+            mc(
+                "In the present tense (Series I), the direct object takes which case?",
+                &["Nominative", "Dative", "Genitive", "Instrumental"],
+                1,
+                "Series I: subject nominative, direct object dative — კაცი წერს წერილს.",
+            ),
+            mc(
+                "Which case marks the subject in the perfect (Series III)?",
+                &["Nominative", "Ergative", "Dative", "Vocative"],
+                2,
+                "Series III inverts: the logical subject goes to the dative — კაცს დაუწერია.",
+            ),
+            tin(
+                "Write the number 20 in Georgian.",
+                &["ოცი"],
+                "Georgian counts in twenties; 20 is ოცი (otsi), the base of the system.",
+            ),
+            mc(
+                "Georgian numerals are built on which base?",
+                &["base 10", "base 12", "base 20", "base 60"],
+                2,
+                "Vigesimal: 40 is ორმოცი (2×20), 60 is სამოცი (3×20).",
+            ),
+            mc(
+                "ბ, ფ, and პ differ in…",
+                &["vowel length", "voicing, aspiration, and ejection", "pitch", "stress"],
+                1,
+                "Voiced ბ /b/, aspirated ფ /p/, ejective პ /p'/ — the three-way contrast English lacks.",
+            ),
+            tin(
+                "What case does the postposition -თვის (“for”) govern?",
+                &["genitive", "gen"],
+                "-თვის takes the genitive: ბავშვისთვის (“for the child”).",
+            ),
+            tin(
+                "How many noun cases does Georgian have? (digit)",
+                &["7", "seven"],
+                "Nominative, ergative, dative, genitive, instrumental, adverbial, vocative.",
+            ),
+            tin(
+                "Type the Georgian for “I see you” — one word.",
+                &["გხედავ"],
+                "Polypersonal: the prefix გ- marks the 2nd-person object, so the whole clause is one verb.",
+            ),
+        ],
     }
 }
