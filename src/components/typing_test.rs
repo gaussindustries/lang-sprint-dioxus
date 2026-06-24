@@ -735,24 +735,11 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                                                              button {
                                                                  class: "text-xs text-gray-400 hover:text-indigo-300 transition-colors hover:cursor-pointer",
                                                                  onclick: {
-                                                                     let word = target_word.clone();
-                                                                     let am = audio_map.clone();
-                                                                     move |_| {
-                                                                         let l = lang();
-                                                                         let am = am.clone();
-                                                                         let chars: Vec<char> = word.chars().collect();
-                                                                         spawn(async move {
-                                                                             for (i, ch) in chars.into_iter().enumerate() {
-                                                                                 if let Some(file) = am.get(&ch) {
-                                                                                     if let Some(bytes) = crate::assets::letter_audio_bytes(&l, file) {
-                                                                                         crate::audio::play_audio_bytes(&format!("{l}/{file}#{i}"), bytes, settings.read().volume);
-                                                                                     }
-                                                                                 }
-                                                                                 tokio::time::sleep(std::time::Duration::from_millis(380)).await;
-                                                                             }
-                                                                         });
-                                                                     }
-                                                                 },
+                                                                                                     let word = target_word.clone();
+                                                                                                     move |_| {
+                                                                                                         crate::audio::speak(&lang(), &word, settings.read().volume);
+                                                                                                     }
+                                                                                                 },
                                                                  "🔊 sound it out"
                                                              }
                                                          }
