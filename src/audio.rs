@@ -281,18 +281,27 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
 
         match cmd.status() {
             Ok(s) if s.success() => {
-                if let Ok(stream_handle) = OutputStreamBuilder::open_default_stream() {
-                    let mixer = stream_handle.mixer();
-                    match File::open(&wav) {
-                        Ok(file) => match rodio::play(&mixer, BufReader::new(file)) {
-                            Ok(sink) => {
-                                sink.set_volume(volume);
-                                sink.sleep_until_end();
+                // read the synthesized bytes so we can measure the clip length
+                match std::fs::read(&wav) {
+                    Ok(bytes) => {
+                        if let Ok(stream_handle) = OutputStreamBuilder::open_default_stream() {
+                            let mixer = stream_handle.mixer();
+                            let cursor = std::io::Cursor::new(bytes);
+                            match rodio::play(&mixer, std::io::BufReader::new(cursor)) {
+                                Ok(sink) => {
+                                    sink.set_volume(volume);
+                                    sink.sleep_until_end();
+                                    // belt-and-suspenders: keep the stream alive a beat longer
+                                    // so WASAPI doesn't cut the tail on Windows
+                                    std::thread::sleep(std::time::Duration::from_millis(150));
+                                }
+                                Err(e) => eprintln!("[tts] play failed: {e}"),
                             }
-                            Err(e) => eprintln!("[tts] play failed: {e}"),
-                        },
-                        Err(e) => eprintln!("[tts] couldn't open synthesized wav: {e}"),
+                            // stream_handle is still in scope here — only drops now
+                            let _ = stream_handle;
+                        }
                     }
+                    Err(e) => eprintln!("[tts] couldn't read synthesized wav: {e}"),
                 }
             }
             Ok(s) => eprintln!("[tts] espeak-ng exited with {s} for voice {voice:?}"),
