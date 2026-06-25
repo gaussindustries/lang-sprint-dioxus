@@ -259,6 +259,7 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
             .duration_since(std::time::UNIX_EPOCH)
             .map(|d| d.as_nanos())
             .unwrap_or(0);
+
         let mut wav = std::env::temp_dir(); // %TEMP% on Windows, /tmp on unix
         wav.push(format!(
             "lang-sprint-tts-{}-{}.wav",
@@ -266,7 +267,21 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
             stamp
         ));
 
-        // [--path <dir>] -v <voice> -s 150 -w <file> <text>
+        // Write the text as UTF-8 and feed espeak with -f, so the word reaches
+        // the engine intact regardless of console code page / argv quirks.
+        let mut txt = std::env::temp_dir();
+        txt.push(format!(
+            "lang-sprint-tts-{}-{}.txt",
+            std::process::id(),
+            stamp
+        ));
+        if let Err(e) = std::fs::write(&txt, text.as_bytes()) {
+            eprintln!("[tts] couldn't write text file: {e}");
+            cleanup_id(&id);
+            return;
+        }
+
+        // [--path <dir>] -v <voice> -s 150 -w <wav> -f <txt>
         let mut cmd = espeak_command();
         if let Some(dir) = espeak_data_dir() {
             cmd.arg("--path").arg(dir);
@@ -277,37 +292,33 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
             .arg("150")
             .arg("-w")
             .arg(&wav)
-            .arg(&text);
+            .arg("-f")
+            .arg(&txt);
 
         match cmd.status() {
-            Ok(s) if s.success() => {
-                // read the synthesized bytes so we can measure the clip length
-                match std::fs::read(&wav) {
-                    Ok(bytes) => {
-                        if let Ok(stream_handle) = OutputStreamBuilder::open_default_stream() {
-                            let mixer = stream_handle.mixer();
-                            let cursor = std::io::Cursor::new(bytes);
-                            match rodio::play(&mixer, std::io::BufReader::new(cursor)) {
-                                Ok(sink) => {
-                                    sink.set_volume(volume);
-                                    sink.sleep_until_end();
-                                    // belt-and-suspenders: keep the stream alive a beat longer
-                                    // so WASAPI doesn't cut the tail on Windows
-                                    std::thread::sleep(std::time::Duration::from_millis(150));
-                                }
-                                Err(e) => eprintln!("[tts] play failed: {e}"),
+            Ok(s) if s.success() => match std::fs::read(&wav) {
+                Ok(bytes) => {
+                    if let Ok(stream_handle) = OutputStreamBuilder::open_default_stream() {
+                        let mixer = stream_handle.mixer();
+                        let cursor = std::io::Cursor::new(bytes);
+                        match rodio::play(&mixer, std::io::BufReader::new(cursor)) {
+                            Ok(sink) => {
+                                sink.set_volume(volume);
+                                sink.sleep_until_end();
+                                std::thread::sleep(std::time::Duration::from_millis(150));
                             }
-                            // stream_handle is still in scope here — only drops now
-                            let _ = stream_handle;
+                            Err(e) => eprintln!("[tts] play failed: {e}"),
                         }
+                        let _ = stream_handle;
                     }
-                    Err(e) => eprintln!("[tts] couldn't read synthesized wav: {e}"),
                 }
-            }
+                Err(e) => eprintln!("[tts] couldn't read synthesized wav: {e}"),
+            },
             Ok(s) => eprintln!("[tts] espeak-ng exited with {s} for voice {voice:?}"),
             Err(e) => eprintln!("[tts] couldn't run espeak-ng (is it installed?): {e}"),
         }
 
+        let _ = std::fs::remove_file(&txt);
         let _ = std::fs::remove_file(&wav);
         cleanup_id(&id);
     });
