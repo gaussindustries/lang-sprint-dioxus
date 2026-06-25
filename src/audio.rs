@@ -179,6 +179,62 @@ fn cleanup_id(id: &str) {
     }
 }
 
+// ─── ADD TO src/audio.rs ───────────────────────────────────────────────────
+//
+// Cross-platform whole-word TTS via the espeak-ng CLI (Windows + Linux/macOS).
+// Windows specifics handled here: the binary is espeak-ng.exe and the installer
+// often doesn't add it to PATH (so we also probe its default location and a
+// bundled copy next to our exe), and CREATE_NO_WINDOW stops a console window
+// from flashing on every call. Engine + data must be the same version, so a
+// private/bundled dir must hold a matched pair — never data alone.
+
+#[cfg(all(not(target_arch = "wasm32"), windows))]
+const ESPEAK_EXE: &str = "espeak-ng.exe";
+#[cfg(all(not(target_arch = "wasm32"), not(windows)))]
+const ESPEAK_EXE: &str = "espeak-ng";
+
+/// Resolve the espeak-ng executable: bundled next to our app, then (Windows) the
+/// installer's default location, then PATH.
+#[cfg(not(target_arch = "wasm32"))]
+fn espeak_bin() -> std::path::PathBuf {
+    use std::path::PathBuf;
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let bundled = dir.join(ESPEAK_EXE);
+            if bundled.exists() {
+                return bundled;
+            }
+        }
+    }
+    #[cfg(windows)]
+    {
+        for var in ["ProgramFiles", "ProgramW6432", "ProgramFiles(x86)"] {
+            if let Some(pf) = std::env::var_os(var) {
+                let p = PathBuf::from(pf).join("eSpeak NG").join(ESPEAK_EXE);
+                if p.exists() {
+                    return p;
+                }
+            }
+        }
+    }
+    PathBuf::from(ESPEAK_EXE)
+}
+
+/// A `Command` for espeak-ng with the resolved binary and, on Windows, no
+/// console-window flash.
+#[cfg(not(target_arch = "wasm32"))]
+fn espeak_command() -> std::process::Command {
+    #[allow(unused_mut)]
+    let mut cmd = std::process::Command::new(espeak_bin());
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        const CREATE_NO_WINDOW: u32 = 0x0800_0000;
+        cmd.creation_flags(CREATE_NO_WINDOW);
+    }
+    cmd
+}
+
 #[cfg(not(target_arch = "wasm32"))]
 pub fn speak(lang: &str, text: &str, volume: f32) {
     let Some(voice) = espeak_voice(lang) else {
@@ -203,15 +259,15 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
             .duration_since(std::time::UNIX_EPOCH)
             .map(|d| d.as_nanos())
             .unwrap_or(0);
-        let mut wav = std::env::temp_dir();
+        let mut wav = std::env::temp_dir(); // %TEMP% on Windows, /tmp on unix
         wav.push(format!(
             "lang-sprint-tts-{}-{}.wav",
             std::process::id(),
             stamp
         ));
 
-        // espeak-ng [--path <dir>] -v <voice> -s 150 -w <file> <text>
-        let mut cmd = std::process::Command::new("espeak-ng");
+        // [--path <dir>] -v <voice> -s 150 -w <file> <text>
+        let mut cmd = espeak_command();
         if let Some(dir) = espeak_data_dir() {
             cmd.arg("--path").arg(dir);
         }
@@ -248,8 +304,7 @@ pub fn speak(lang: &str, text: &str, volume: f32) {
     });
 }
 
-/// App's language string -> espeak-ng voice code. Add a line per language;
-/// unknown -> None -> silent.
+/// App language string -> espeak-ng voice code. Add a line per language.
 #[cfg(not(target_arch = "wasm32"))]
 fn espeak_voice(lang: &str) -> Option<&'static str> {
     match lang {
@@ -259,39 +314,42 @@ fn espeak_voice(lang: &str) -> Option<&'static str> {
     }
 }
 
-/// A private, app-owned espeak data dir, IF it exists and looks valid (this is
-/// where a future "Install voices" download would land). `None` -> use the
-/// system install's default data path.
+/// espeak data dir to pass via `--path`: a downloaded copy under our data dir,
+/// else a bundled copy next to the app, else `None` (use the engine's own data).
 #[cfg(not(target_arch = "wasm32"))]
 pub fn espeak_data_dir() -> Option<std::path::PathBuf> {
-    let base = std::env::var_os("XDG_DATA_HOME")
-        .map(std::path::PathBuf::from)
-        .or_else(|| {
-            std::env::var_os("HOME").map(|h| std::path::PathBuf::from(h).join(".local/share"))
-        })?;
-    let dir = base.join("lang-sprint").join("espeak-ng-data");
-    // treat as present only if the shared phoneme table is there
-    dir.join("phontab").exists().then_some(dir)
+    if let Some(root) = crate::paths::data_root() {
+        let d = root.join("espeak-ng-data");
+        if d.join("phontab").exists() {
+            return Some(d);
+        }
+    }
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let d = dir.join("espeak-ng-data");
+            if d.join("phontab").exists() {
+                return Some(d);
+            }
+        }
+    }
+    None
 }
 
-/// Is the espeak-ng engine runnable at all?
 #[cfg(not(target_arch = "wasm32"))]
 pub fn espeak_present() -> bool {
-    std::process::Command::new("espeak-ng")
+    espeak_command()
         .arg("--version")
         .output()
         .map(|o| o.status.success())
         .unwrap_or(false)
 }
 
-/// Can we actually synthesize THIS language? (engine present AND its voice/data
-/// resolvable, honoring the private dir). `-q` = process the text, emit no audio.
 #[cfg(not(target_arch = "wasm32"))]
 pub fn voice_available(lang: &str) -> bool {
     let Some(voice) = espeak_voice(lang) else {
         return false;
     };
-    let mut cmd = std::process::Command::new("espeak-ng");
+    let mut cmd = espeak_command();
     if let Some(dir) = espeak_data_dir() {
         cmd.arg("--path").arg(dir);
     }
@@ -299,6 +357,21 @@ pub fn voice_available(lang: &str) -> bool {
     cmd.output().map(|o| o.status.success()).unwrap_or(false)
 }
 
+// ─── WASM STUBS (unchanged shape) ───────────────────────────────────────────
+#[cfg(target_arch = "wasm32")]
+pub fn speak(_lang: &str, _text: &str, _volume: f32) {}
+#[cfg(target_arch = "wasm32")]
+pub fn espeak_data_dir() -> Option<std::path::PathBuf> {
+    None
+}
+#[cfg(target_arch = "wasm32")]
+pub fn espeak_present() -> bool {
+    false
+}
+#[cfg(target_arch = "wasm32")]
+pub fn voice_available(_lang: &str) -> bool {
+    false
+}
 // ─── WASM STUBS ───────────────────────────────────────────────────────────────
 
 #[cfg(target_arch = "wasm32")]

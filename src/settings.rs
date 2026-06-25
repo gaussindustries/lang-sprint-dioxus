@@ -16,6 +16,8 @@ pub struct Settings {
     /// Language the app boots into (e.g. "georgian").
     #[serde(default = "default_language")]
     pub default_language: String,
+    #[serde(default)]
+    pub tts_enabled: bool,
 }
 
 fn default_volume() -> f32 {
@@ -30,6 +32,7 @@ impl Default for Settings {
         Settings {
             volume: default_volume(),
             default_language: default_language(),
+            tts_enabled: false,
         }
     }
 }
@@ -61,10 +64,7 @@ impl Settings {
 // learner's evidence log.
 #[cfg(not(target_arch = "wasm32"))]
 fn settings_path() -> Option<PathBuf> {
-    let base = std::env::var_os("XDG_DATA_HOME")
-        .map(PathBuf::from)
-        .or_else(|| std::env::var_os("HOME").map(|h| PathBuf::from(h).join(".local/share")))?;
-    Some(base.join("lang-sprint").join("settings.json"))
+    crate::paths::data_root().map(|d| d.join("settings.json"))
 }
 
 #[cfg(target_arch = "wasm32")]

@@ -755,21 +755,27 @@ pub fn TypingTest(lang: Signal<String>, letters_vec: Vec<Letter>) -> Element {
                             }
                         }
                         // sound it out — stopgap that plays each letter's recording in
-                                                     // sequence; replace this handler with real word-level TTS later
-                                                     if has_words {
-                                                         div { class: "flex justify-center mt-3",
-                                                             button {
-                                                                 class: "text-xs text-gray-400 hover:text-indigo-300 transition-colors hover:cursor-pointer",
-                                                                 onclick: {
-                                                                                                     let word = target_word.clone();
-                                                                                                     move |_| {
-                                                                                                         crate::audio::speak(&lang(), &word, settings.read().volume);
-                                                                                                     }
-                                                                                                 },
-                                                                 "🔊 sound it out"
-                                                             }
-                                                         }
-                                                     }
+                            // sequence; replace this handler with real word-level TTS later
+                            if has_words {
+                            if settings.read().tts_enabled {
+                                div { class: "flex justify-center mt-3",
+                                    button {
+                                        class: "text-xs text-gray-400 hover:text-indigo-300 transition-colors hover:cursor-pointer",
+                                        onclick: {
+                                            let word = target_word.clone();
+                                            move |_| {
+                                                crate::audio::speak(&lang(), &word, settings.read().volume);
+                                            }
+                                        },
+                                        "🔊 sound it out"
+                                    }
+                                }
+                            } else {
+                                div { class: "flex justify-center mt-3 text-xs text-gray-600",
+                                    "Enable pronunciation in settings to hear words"
+                                }
+                            }
+                        }
                         // Status + countdown indicator
                         div { class: "flex justify-center items-center gap-5 text-sm mt-6",
                             if all_correct {

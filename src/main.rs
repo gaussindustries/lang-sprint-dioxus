@@ -11,6 +11,7 @@ mod grammar;
 pub mod learner;
 mod learning;
 pub mod models;
+pub mod paths;
 mod settings;
 mod views;
 

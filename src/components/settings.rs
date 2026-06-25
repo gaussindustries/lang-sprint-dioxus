@@ -1,16 +1,16 @@
 // src/components/settings.rs
 //
-// Settings modal: volume, boot/default language, and a Pronunciation (TTS)
-// section that DETECTS espeak-ng rather than bundling it. If the engine or the
-// current language's voice is missing, it tells the user how to enable it and
-// offers a re-check. (The "Install voices" download — Model A — would slot into
-// the `engine && !voice` arm; the detection below is unchanged either way.)
+// Settings modal: volume, boot/default language, and an OPT-IN Pronunciation
+// (TTS) section. TTS is off by default; the toggle is the opt-in. When on, it
+// detects espeak-ng and — if missing — shows install guidance branched per OS
+// with cfg!(windows) (NOT the windows_subsystem attribute, which is unrelated).
 
 use dioxus::prelude::*;
 use dioxus_primitives::slider::SliderValue;
 
 use crate::components::dialog::{DialogContent, DialogDescription, DialogRoot, DialogTitle};
 use crate::components::slider::{Slider, SliderRange, SliderThumb, SliderTrack};
+use crate::components::toggle::Toggle;
 use crate::settings::use_settings;
 
 const LANGS: [(&str, &str); 2] = [("georgian", "Georgian"), ("russian", "Russian")];
@@ -32,14 +32,14 @@ pub fn SettingsButton() -> Element {
     let volume = settings.read().volume;
     let volume_pct = (volume * 100.0).round() as i32;
     let default_lang = settings.read().default_language.clone();
+    let tts_enabled = settings.read().tts_enabled;
 
     // ── TTS detection (re-runs on language change or manual re-check) ──
     let mut recheck = use_signal(|| 0u32);
     let probe = use_resource(move || {
-        let _ = recheck(); // bump to re-probe
-        let lang = active_lang(); // re-probe when the active language changes
+        let _ = recheck();
+        let lang = active_lang();
         async move {
-            // brief: a couple of quick `espeak-ng` invocations
             (
                 crate::audio::espeak_present(),
                 crate::audio::voice_available(&lang),
@@ -49,6 +49,21 @@ pub fn SettingsButton() -> Element {
     });
     let probe_now = probe.read().clone();
     let lang_name = nice(&active_lang());
+
+    // Platform-specific "how to install the engine" guidance.
+    let (engine_hint, engine_cmd): (&str, Option<&str>) = if cfg!(windows) {
+        (
+            "Spoken pronunciation needs the eSpeak NG engine. Install it from espeak-ng (GitHub releases), \
+             or bundle it with the app, then re-check.",
+            None,
+        )
+    } else {
+        (
+            "Spoken pronunciation needs the espeak-ng engine. Install it with your package manager \
+             (e.g. on Arch), then re-check:",
+            Some("sudo pacman -S espeak-ng"),
+        )
+    };
 
     let recheck_btn = "margin-top:0.45rem; padding:0.3rem 0.7rem; border-radius:0.4rem; background:#374151; color:#e5e7eb; cursor:pointer; border:none; font-size:0.8rem;";
 
@@ -118,54 +133,75 @@ pub fn SettingsButton() -> Element {
                     }
                 }
 
-                // ── pronunciation / text-to-speech ──
+                // ── pronunciation / text-to-speech (opt-in) ──
                 div { style: "margin-top:1.25rem;",
-                    div { style: "font-size:0.85rem; margin-bottom:0.35rem;", "Pronunciation (text-to-speech)" }
-                    {
-                        match probe_now {
-                            None => rsx! {
-                                div { style: "font-size:0.8rem; color:#9ca3af;", "Checking for espeak-ng…" }
+                    div { style: "display:flex; justify-content:space-between; align-items:center; gap:0.75rem;",
+                        span { style: "font-size:0.85rem;", "Pronunciation (text-to-speech)" }
+                        Toggle {
+                            pressed: tts_enabled,
+                            on_pressed_change: move |on: bool| {
+                                settings.with_mut(|s| s.tts_enabled = on);
+                                if on {
+                                    recheck.with_mut(|n| *n += 1); // re-probe when turning it on
+                                }
                             },
-                            Some((false, _, _)) => rsx! {
-                                div {
-                                    p { style: "font-size:0.8rem; color:#9ca3af; line-height:1.55;",
-                                        "Spoken pronunciation uses the espeak-ng engine, which isn't installed. Install it, then re-check:"
-                                    }
-                                    code { style: "display:inline-block; margin-top:0.35rem; padding:0.15rem 0.45rem; background:#111827; border-radius:0.3rem; font-size:0.8rem; color:#e5e7eb;",
-                                        "sudo pacman -S espeak-ng"
-                                    }
-                                    div {
-                                        button {
-                                            style: "{recheck_btn}",
-                                            onclick: move |_| recheck.with_mut(|n| *n += 1),
-                                            "Re-check"
+                            if tts_enabled { "On" } else { "Off" }
+                        }
+                    }
+
+                    if tts_enabled {
+                        div { style: "margin-top:0.5rem;",
+                            {
+                                match probe_now {
+                                    None => rsx! {
+                                        div { style: "font-size:0.8rem; color:#9ca3af;", "Checking for espeak-ng…" }
+                                    },
+                                    Some((false, _, _)) => rsx! {
+                                        div {
+                                            p { style: "font-size:0.8rem; color:#9ca3af; line-height:1.55;", "{engine_hint}" }
+                                            if let Some(cmd) = engine_cmd {
+                                                code { style: "display:inline-block; margin-top:0.35rem; padding:0.15rem 0.45rem; background:#111827; border-radius:0.3rem; font-size:0.8rem; color:#e5e7eb;",
+                                                    "{cmd}"
+                                                }
+                                            }
+                                            div {
+                                                button {
+                                                    style: "{recheck_btn}",
+                                                    onclick: move |_| recheck.with_mut(|n| *n += 1),
+                                                    "Re-check"
+                                                }
+                                            }
                                         }
-                                    }
-                                }
-                            },
-                            Some((true, true, using_private)) => rsx! {
-                                div { style: "font-size:0.8rem; color:#86efac;",
-                                    if using_private {
-                                        "Ready — using installed voices."
-                                    } else {
-                                        "Ready — using system voices."
-                                    }
-                                }
-                            },
-                            Some((true, false, _)) => rsx! {
-                                div {
-                                    p { style: "font-size:0.8rem; color:#fca5a5; line-height:1.55;",
-                                        "espeak-ng is installed, but the {lang_name} voice data wasn't found. Re-check after installing the voice data:"
-                                    }
-                                    div {
-                                        button {
-                                            style: "{recheck_btn}",
-                                            onclick: move |_| recheck.with_mut(|n| *n += 1),
-                                            "Re-check"
+                                    },
+                                    Some((true, true, using_private)) => rsx! {
+                                        div { style: "font-size:0.8rem; color:#86efac;",
+                                            if using_private {
+                                                "Ready — using installed voices."
+                                            } else {
+                                                "Ready — using system voices."
+                                            }
                                         }
-                                    }
+                                    },
+                                    Some((true, false, _)) => rsx! {
+                                        div {
+                                            p { style: "font-size:0.8rem; color:#fca5a5; line-height:1.55;",
+                                                "espeak-ng is installed, but the {lang_name} voice data wasn't found. Re-check after installing or bundling the voices:"
+                                            }
+                                            div {
+                                                button {
+                                                    style: "{recheck_btn}",
+                                                    onclick: move |_| recheck.with_mut(|n| *n += 1),
+                                                    "Re-check"
+                                                }
+                                            }
+                                        }
+                                    },
                                 }
-                            },
+                            }
+                        }
+                    } else {
+                        div { style: "font-size:0.78rem; color:#9ca3af; line-height:1.5; margin-top:0.5rem;",
+                            "Off. Turn this on to hear whole words spoken aloud — it uses the free, offline espeak-ng engine."
                         }
                     }
                 }

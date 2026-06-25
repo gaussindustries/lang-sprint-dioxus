@@ -24,17 +24,9 @@ pub fn now_ms() -> Millis {
 /// Where the append-only evidence log lives. Linux/XDG for now; swap in the
 /// `directories` crate when you want macOS/Windows correctness.
 fn log_path() -> PathBuf {
-    let base = std::env::var("XDG_DATA_HOME")
-        .ok()
-        .or_else(|| {
-            std::env::var("HOME")
-                .ok()
-                .map(|h| format!("{h}/.local/share"))
-        })
-        .unwrap_or_else(|| ".".to_string());
-    PathBuf::from(base)
-        .join("lang-sprint")
-        .join("evidence.jsonl")
+    crate::paths::data_root()
+        .map(|d| d.join("evidence.jsonl"))
+        .unwrap_or_else(|| PathBuf::from("evidence.jsonl"))
 }
 
 /// Cheap, cloneable handle that drills and views read from context.
