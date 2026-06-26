@@ -1,14 +1,10 @@
 //! Grammar content as data. One renderer (`components::Grammar`) walks a
 //! `GrammarDoc` for instruction; one quiz (`components::GrammarQuiz`) walks its
 //! authored `Drill`s for assessment. Adding a language means writing its `doc()`
-//! and a match arm — no new UI. Content is authored (not user-generated), so it
-//! lives in Rust: type-checked, and rich prose + tables don't fight a schema.
-//!
-//! Note the deliberate split: `Block`s are for *reading* (formatted display),
-//! `Drill`s are for *testing* (clean fields + accepted answers). Display tables
-//! make poor auto-questions, so questions are authored, not derived.
+//! and a match arm — no new UI.
 
 mod georgian;
+mod russian;
 
 #[derive(Clone, PartialEq)]
 pub enum Block {
@@ -33,21 +29,15 @@ pub struct Section {
     pub blocks: Vec<Block>,
 }
 
-/// How a drill is answered.
 #[derive(Clone, PartialEq)]
 pub enum Answer {
-    /// Free text; any listed answer counts (graded fuzzily by the typing core).
-    /// Best for producing forms — "give the ergative of კაცი" → ["კაცმა"].
     TypeIn(Vec<String>),
-    /// Pick one of `options`; `options[correct]` is right. Best for concepts,
-    /// where spelling the term shouldn't be the test.
     Choice {
         options: Vec<String>,
         correct: usize,
     },
 }
 
-/// One authored grammar question. `note` is the "why," shown after answering.
 #[derive(Clone, PartialEq)]
 pub struct Drill {
     pub prompt: String,
@@ -60,15 +50,13 @@ pub struct GrammarDoc {
     pub language: String,
     pub intro: String,
     pub sections: Vec<Section>,
-    /// The question bank. Empty for languages whose drills aren't written yet.
     pub drills: Vec<Drill>,
 }
 
-/// Look up the grammar doc for a language. Unknown languages get a friendly
-/// placeholder so neither the page nor the quiz breaks.
 pub fn doc_for(lang: &str) -> GrammarDoc {
     match lang {
         "georgian" => georgian::doc(),
+        "russian" => russian::doc(),
         other => GrammarDoc {
             language: other.to_string(),
             intro: format!("Grammar notes for \u{201c}{other}\u{201d} haven't been written yet."),
@@ -78,7 +66,6 @@ pub fn doc_for(lang: &str) -> GrammarDoc {
     }
 }
 
-// ── terse builders so the content modules read like an outline ──
 pub(crate) fn para(s: &str) -> Block {
     Block::Para(s.to_string())
 }
@@ -111,8 +98,6 @@ pub(crate) fn section(title: &str, blocks: Vec<Block>) -> Section {
         blocks,
     }
 }
-
-// drill builders
 pub(crate) fn tin(prompt: &str, answers: &[&str], note: &str) -> Drill {
     Drill {
         prompt: prompt.to_string(),
